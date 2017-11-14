@@ -1,0 +1,1 @@
+git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search&subdirectory=azure-cognitiveservices-search

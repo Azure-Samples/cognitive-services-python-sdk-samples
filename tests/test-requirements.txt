@@ -1,0 +1,6 @@
+-r ../requirements.txt
+
+azure-devtools~=0.4.3
+mock;python_version<="2.7"
+nose
+six
