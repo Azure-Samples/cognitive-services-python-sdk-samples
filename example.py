@@ -8,6 +8,9 @@ import pkgutil
 import sys
 import types
 
+# import logging
+# logging.basicConfig(level=logging.DEBUG)
+
 import samples
 
 def run_example():
