@@ -1,1 +1,2 @@
-git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search&subdirectory=azure-cognitiveservices-search
+git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-entitysearch&subdirectory=azure-cognitiveservices-search-entitysearch
+git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-websearch&subdirectory=azure-cognitiveservices-search-websearch
