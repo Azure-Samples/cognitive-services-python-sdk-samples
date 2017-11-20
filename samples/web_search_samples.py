@@ -150,3 +150,8 @@ def web_search_with_answer_count_promote_and_safe_search(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+
+
+if __name__ == "__main__":
+    from tools import execute_samples
+    execute_samples(globals())

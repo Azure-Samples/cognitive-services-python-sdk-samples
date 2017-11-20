@@ -179,3 +179,7 @@ def error(subscription_key):
                 print("Parameter \"{}\" has an invalid value \"{}\". SubCode is \"{}\". Detailed message is \"{}\"".format(error.parameter, error.value, error.sub_code, error.message))
         else:
             print("There was no details on the error.")
+
+if __name__ == "__main__":
+    from tools import execute_samples
+    execute_samples(globals())
