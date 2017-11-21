@@ -6,8 +6,11 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-  - "nightly"
+env:
+  - AZURE_TEST_RUN_LIVE=true
+  - AZURE_TEST_RUN_LIVE=false
 install:
+  - pip install -U setuptools pip
   - pip install -r tests/test-requirements.txt
 script:
   - nosetests

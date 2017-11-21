@@ -29,7 +29,7 @@ class SearchExampleTest(ReplayableTest):
         else:
             with mock.patch.dict('os.environ',
                 {"ENTITYSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
-                 "ENTITYSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000"}):
+                 "WEBSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000"}):
                  run_all_samples()
 
 
