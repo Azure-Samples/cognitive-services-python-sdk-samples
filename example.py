@@ -1,3 +1,9 @@
+"""Sample launcher.
+
+This file is just the samples launcher. Nothing here os related
+to Cognitive Services. Look into the "samples" folder for actual code
+"""
+
 import importlib
 import pkgutil
 
