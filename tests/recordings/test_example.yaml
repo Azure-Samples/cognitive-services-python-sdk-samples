@@ -1,0 +1,1849 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          entitysearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/entities?mkt=en-us&q=tom%20cruise
+  response:
+    body: {string: '{"_type": "SearchResponse", "queryContext": {"_type": "QueryContext",
+        "originalQuery": "tom cruise"}, "entities": {"_type": "Entities", "value":
+        [{"_type": "Thing", "contractualRules": [{"_type": "ContractualRules\/LicenseAttribution",
+        "targetPropertyName": "description", "mustBeCloseToContent": true, "license":
+        {"_type": "License", "name": "CC-BY-SA", "url": "http:\/\/creativecommons.org\/licenses\/by-sa\/3.0\/"},
+        "licenseNotice": "Text under CC-BY-SA license"}, {"_type": "ContractualRules\/LinkAttribution",
+        "targetPropertyName": "description", "mustBeCloseToContent": true, "text":
+        "Wikipedia", "url": "http:\/\/en.wikipedia.org\/wiki\/Tom_Cruise"}, {"_type":
+        "ContractualRules\/MediaAttribution", "targetPropertyName": "image", "mustBeCloseToContent":
+        true, "url": "http:\/\/en.wikipedia.org\/wiki\/Tom_Cruise"}], "webSearchUrl":
+        "https:\/\/www.bing.com\/search?q=Tom+Cruise&filters=sid:%22fdc9ba0e-f198-b3c3-3cad-cf81595a654c%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "Tom Cruise", "url": "http:\/\/www.tomcruise.com\/", "image": {"_type":
+        "ImageObject", "name": "The thing about filmmaking is I give it everything,
+        that''s why I work so hard. I always tell young actors to take charge. It''s
+        not that hard. Sign your own checks, be responsible.", "thumbnailUrl": "https:\/\/www.bing.com\/th?id=Ac39434661a09a3d49138d28b1d25c6db&w=110&h=110&c=12&rs=1&qlt=80&cdv=1&pid=16.2",
+        "provider": [{"_type": "Organization", "url": "http:\/\/en.wikipedia.org\/wiki\/Tom_Cruise"}],
+        "hostPageUrl": "http:\/\/img.radio.cz\/pictures\/c\/herci\/cruise_tom.jpg",
+        "width": 110, "height": 110}, "description": "Thomas Cruise Mapother IV, known
+        professionally as Tom Cruise, is an American actor and producer. He has been
+        nominated for three Academy Awards and has won three Golden Globe Awards.
+        He started his career at age 19 in the film Endless Love.", "entityPresentationInfo":
+        {"_type": "Entities\/EntityPresentationInfo", "entityScenario": "DominantEntity",
+        "entityTypeHints": ["Actor"], "entityTypeDisplayHint": "Actor"}, "bingId":
+        "fdc9ba0e-f198-b3c3-3cad-cf81595a654c"}]}}'}
+    headers:
+      apim-request-id: [ef59b029-d14c-4e5d-968f-0e2cb22dd893]
+      bingapis-market: [en-US]
+      bingapis-sessionid: [7DA5D4A171BD4552866DCB04E6136B52]
+      bingapis-traceid: [502C44FD51334BBEB0FB3F4830862893]
+      cache-control: ['private, max-age=0']
+      content-length: ['2153']
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 21 Nov 2017 00:38:31 GMT']
+      expires: ['Tue, 21 Nov 2017 00:37:30 GMT']
+      p3p: [CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"]
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      transfer-encoding: [chunked]
+      vary: [Accept-Encoding]
+      x-content-type-options: [nosniff]
+      x-msapi-userstate: [fa26]
+      x-msedge-clientid: [3D84171C91B56EF6265B1C5D90226F8B]
+      x-msedge-ref: ['Ref A: 502C44FD51334BBEB0FB3F4830862893 Ref B: CO1EDGE0208 Ref
+          C: 2017-11-21T00:38:31Z']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          entitysearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/entities?mkt=en-us&q=harry%20potter
+  response:
+    body: {string: "{\"_type\": \"SearchResponse\", \"queryContext\": {\"_type\":\
+        \ \"QueryContext\", \"originalQuery\": \"harry potter\"}, \"entities\": {\"\
+        _type\": \"Entities\", \"value\": [{\"_type\": \"Thing\", \"contractualRules\"\
+        : [{\"_type\": \"ContractualRules\\/LicenseAttribution\", \"targetPropertyName\"\
+        : \"description\", \"mustBeCloseToContent\": true, \"license\": {\"_type\"\
+        : \"License\", \"name\": \"CC-BY-SA\", \"url\": \"http:\\/\\/creativecommons.org\\\
+        /licenses\\/by-sa\\/3.0\\/\"}, \"licenseNotice\": \"Text under CC-BY-SA license\"\
+        }, {\"_type\": \"ContractualRules\\/LinkAttribution\", \"targetPropertyName\"\
+        : \"description\", \"mustBeCloseToContent\": true, \"text\": \"Wikipedia\"\
+        , \"url\": \"http:\\/\\/en.wikipedia.org\\/wiki\\/Harry_Potter\"}, {\"_type\"\
+        : \"ContractualRules\\/MediaAttribution\", \"targetPropertyName\": \"image\"\
+        , \"mustBeCloseToContent\": true, \"url\": \"http:\\/\\/en.wikipedia.org\\\
+        /wiki\\/Harry_Potter\"}], \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/search?q=Harry+Potter&filters=sid:%2243a0aa96-7961-8a5e-5c61-90a75a56d8f7%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr\"\
+        , \"name\": \"Harry Potter\", \"url\": \"https:\\/\\/www.pottermore.com\\\
+        /\", \"image\": {\"_type\": \"ImageObject\", \"name\": \"Harry Potter\", \"\
+        thumbnailUrl\": \"https:\\/\\/www.bing.com\\/th?id=A596d2a1c990a5a73850feef497cadc87&w=110&h=110&c=7&rs=1&qlt=80&cdv=1&pid=16.1\"\
+        , \"provider\": [{\"_type\": \"Organization\", \"url\": \"http:\\/\\/en.wikipedia.org\\\
+        /wiki\\/Harry_Potter\"}], \"hostPageUrl\": \"http:\\/\\/media-cache-ak0.pinimg.com\\\
+        /736x\\/e1\\/39\\/ff\\/e139ff6735d1799e4c4573ea274d367e.jpg\", \"width\":\
+        \ 110, \"height\": 110}, \"description\": \"Harry Potter is a series of fantasy\
+        \ novels written by British author J. K. Rowling. The novels chronicle the\
+        \ life of a young wizard, Harry Potter, and his friends Hermione Granger and\
+        \ Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and\
+        \ Wizardry. The main story arc concerns Harry's struggle against Lord Voldemort,\
+        \ a dark wizard who intends to become immortal, overthrow the wizard governing\
+        \ body known as the Ministry of Magic, and subjugate all wizards and muggles,\
+        \ a reference term that means non-magical people.\", \"entityPresentationInfo\"\
+        : {\"_type\": \"Entities\\/EntityPresentationInfo\", \"entityScenario\": \"\
+        DominantEntity\", \"entityTypeHints\": [\"Generic\"]}, \"bingId\": \"43a0aa96-7961-8a5e-5c61-90a75a56d8f7\"\
+        }, {\"_type\": \"Thing\", \"contractualRules\": [{\"_type\": \"ContractualRules\\\
+        /LicenseAttribution\", \"targetPropertyName\": \"description\", \"mustBeCloseToContent\"\
+        : true, \"license\": {\"_type\": \"License\", \"name\": \"CC-BY-SA\", \"url\"\
+        : \"http:\\/\\/creativecommons.org\\/licenses\\/by-sa\\/3.0\\/\"}, \"licenseNotice\"\
+        : \"Text under CC-BY-SA license\"}, {\"_type\": \"ContractualRules\\/LinkAttribution\"\
+        , \"targetPropertyName\": \"description\", \"mustBeCloseToContent\": true,\
+        \ \"text\": \"Wikipedia\", \"url\": \"http:\\/\\/en.wikipedia.org\\/wiki\\\
+        /Harry_Potter_(character)\"}, {\"_type\": \"ContractualRules\\/MediaAttribution\"\
+        , \"targetPropertyName\": \"image\", \"mustBeCloseToContent\": true, \"url\"\
+        : \"http:\\/\\/en.wikipedia.org\\/wiki\\/Harry_Potter_(character)\"}], \"\
+        webSearchUrl\": \"https:\\/\\/www.bing.com\\/search?q=Harry+Potter&filters=sid:%2266b28ab1-ac5d-46c1-c722-5f93597e57fd%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr\"\
+        , \"name\": \"Harry Potter\", \"url\": \"https:\\/\\/www.quora.com\\/topic\\\
+        /Harrypotter-1\", \"image\": {\"_type\": \"ImageObject\", \"name\": \"Harry\
+        \ Potter\", \"thumbnailUrl\": \"https:\\/\\/www.bing.com\\/th?id=Af70552f24a1f90020af764dd823fc8e4&w=50&h=50&c=7&rs=1&qlt=80&cdv=1&pid=16.1\"\
+        , \"provider\": [{\"_type\": \"Organization\", \"url\": \"http:\\/\\/en.wikipedia.org\\\
+        /wiki\\/Harry_Potter_(character)\"}], \"hostPageUrl\": \"http:\\/\\/upload.wikimedia.org\\\
+        /wikipedia\\/pt\\/5\\/5a\\/Harry_James_Potter1.jpg\", \"width\": 50, \"height\"\
+        : 50}, \"description\": \"Harry James Potter is the title character and protagonist\
+        \ of J. K. Rowling's Harry Potter series. The majority of the books' plot\
+        \ covers seven years in the life of the orphan Potter, who, on his eleventh\
+        \ birthday, learns he is a wizard. Thus, he attends Hogwarts School of Witchcraft\
+        \ and Wizardry to practise magic under the guidance of the kindly headmaster\
+        \ Albus Dumbledore and other school professors. Harry also discovers that\
+        \ he is already famous throughout the novel's magical community, and that\
+        \ his fate is tied with that of Lord Voldemort, the internationally feared\
+        \ Dark Wizard and murderer of his parents, Lily and James.\", \"entityPresentationInfo\"\
+        : {\"_type\": \"Entities\\/EntityPresentationInfo\", \"entityScenario\": \"\
+        DisambiguationItem\", \"entityTypeHints\": [\"Generic\"], \"entityTypeDisplayHint\"\
+        : \"Character\"}, \"bingId\": \"66b28ab1-ac5d-46c1-c722-5f93597e57fd\"}, {\"\
+        _type\": \"Thing\", \"contractualRules\": [{\"_type\": \"ContractualRules\\\
+        /MediaAttribution\", \"targetPropertyName\": \"image\", \"mustBeCloseToContent\"\
+        : true, \"url\": \"http:\\/\\/en.wikipedia.org\\/wiki\\/Harry_Potter_and_the_Philosopher's_Stone_(film)\"\
+        }], \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/search?q=Harry+Potter+and+the+Philosopher%27s+Stone&filters=sid:%2276db7d42-0b09-b169-68a3-fd9e85b8cb40%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr\"\
+        , \"name\": \"Harry Potter and the Philosopher's Stone\", \"url\": \"http:\\\
+        /\\/www.warnerbros.com\\/harry-potter-and-sorcerers-stone\", \"image\": {\"\
+        _type\": \"ImageObject\", \"name\": \"Let The Magic Begin.\", \"thumbnailUrl\"\
+        : \"https:\\/\\/www.bing.com\\/th?id=A34d9c1e0e4ab41194a72577ed129e33b&w=50&h=50&c=7&rs=1&qlt=80&cdv=1&pid=16.1\"\
+        , \"provider\": [{\"_type\": \"Organization\", \"url\": \"http:\\/\\/en.wikipedia.org\\\
+        /wiki\\/Harry_Potter_and_the_Philosopher's_Stone_(film)\"}], \"hostPageUrl\"\
+        : \"http:\\/\\/cps-static.rovicorp.com\\/2\\/Open\\/Warner%20Brothers%20Distribution\\\
+        /Movies\\/Harry%20Potter%20And%20The%20Sorcerer's%20Stone\\/_2by3\\/_derived_jpg_q90_600x800_m0\\\
+        /PosterArt1.jpg\", \"width\": 50, \"height\": 50}, \"description\": \"Harry\
+        \ Potter has learned to live with his bullying Uncle Vernon, his callous Aunt\
+        \ Petunia and the constant whining of his greedy, spoiled cousin Dudley. He's\
+        \ even learned to live with sleeping in the cupboard under the stairs. Harry's\
+        \ relatives have just as reluctantly learned to live with the unwelcome presence\
+        \ of their orphaned relation, a constant reminder of Petunia's \\\"wayward\\\
+        \" sister and brother-in-law and their mysterious and untimely demise. Even\
+        \ the impending arrival of his 11th birthday offers no excitement for Harry-\
+        \ as usual, there's little chance of cards, presents or any kind of birthday\
+        \ treat. This year, however, is different. On his 11th birthday, Harry learns\
+        \ that he is the orphaned son of two powerful wizards and possesses unique\
+        \ magical powers of his own. Invited to attend Hogwarts School of Witchcraft\
+        \ and Wizardry, Harry embarks on the adventure of a lifetime. At Hogwarts,\
+        \ he finds the home and family he has never had.\", \"entityPresentationInfo\"\
+        : {\"_type\": \"Entities\\/EntityPresentationInfo\", \"entityScenario\": \"\
+        DisambiguationItem\", \"entityTypeHints\": [\"Movie\"], \"entityTypeDisplayHint\"\
+        : \"2001 Film\"}, \"bingId\": \"76db7d42-0b09-b169-68a3-fd9e85b8cb40\"}, {\"\
+        _type\": \"Thing\", \"contractualRules\": [{\"_type\": \"ContractualRules\\\
+        /LicenseAttribution\", \"targetPropertyName\": \"description\", \"mustBeCloseToContent\"\
+        : true, \"license\": {\"_type\": \"License\", \"name\": \"CC-BY-SA\", \"url\"\
+        : \"http:\\/\\/creativecommons.org\\/licenses\\/by-sa\\/3.0\\/\"}, \"licenseNotice\"\
+        : \"Text under CC-BY-SA license\"}, {\"_type\": \"ContractualRules\\/LinkAttribution\"\
+        , \"targetPropertyName\": \"description\", \"mustBeCloseToContent\": true,\
+        \ \"text\": \"Wikipedia\", \"url\": \"http:\\/\\/en.wikipedia.org\\/wiki\\\
+        /Harry_Potter_(film_series)\"}, {\"_type\": \"ContractualRules\\/MediaAttribution\"\
+        , \"targetPropertyName\": \"image\", \"mustBeCloseToContent\": true, \"url\"\
+        : \"http:\\/\\/en.wikipedia.org\\/wiki\\/Harry_Potter_(film_series)\"}], \"\
+        webSearchUrl\": \"https:\\/\\/www.bing.com\\/search?q=Harry+Potter&filters=sid:%227647a795-7bba-caad-3d38-51c2d3d85961%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr\"\
+        , \"name\": \"Harry Potter\", \"url\": \"http:\\/\\/www.harrypotter.com\\\
+        /\", \"image\": {\"_type\": \"ImageObject\", \"name\": \"Harry Potter\", \"\
+        thumbnailUrl\": \"https:\\/\\/www.bing.com\\/th?id=Ad73bfe406b4249769325d17de6b40fed&w=50&h=50&c=7&rs=1&qlt=80&cdv=1&pid=16.1\"\
+        , \"provider\": [{\"_type\": \"Organization\", \"url\": \"http:\\/\\/en.wikipedia.org\\\
+        /wiki\\/Harry_Potter_(film_series)\"}], \"hostPageUrl\": \"http:\\/\\/upload.wikimedia.org\\\
+        /wikipedia\\/en\\/b\\/b5\\/Harry-film-logo.png\", \"width\": 50, \"height\"\
+        : 50}, \"description\": \"Harry Potter is a British-American film series based\
+        \ on the Harry Potter novels by author J. K. Rowling. The series is distributed\
+        \ by Warner Bros. and consists of eight fantasy films, beginning with Harry\
+        \ Potter and the Philosopher's Stone and culminating with Harry Potter and\
+        \ the Deathly Hallows \u2013 Part 2. A spin-off prequel series will consist\
+        \ of five films, starting with Fantastic Beasts and Where to Find Them. The\
+        \ Fantastic Beasts films mark the beginning of a shared media franchise known\
+        \ as J. K. Rowling's Wizarding World.\", \"entityPresentationInfo\": {\"_type\"\
+        : \"Entities\\/EntityPresentationInfo\", \"entityScenario\": \"DisambiguationItem\"\
+        , \"entityTypeHints\": [\"Generic\"], \"entityTypeDisplayHint\": \"Film Series\"\
+        }, \"bingId\": \"7647a795-7bba-caad-3d38-51c2d3d85961\"}]}}"}
+    headers:
+      apim-request-id: [00931b49-59e2-493b-b70c-b2ea941445a6]
+      bingapis-market: [en-US]
+      bingapis-sessionid: [D6C0380BB26E417B98CDA8E27210EE80]
+      bingapis-traceid: [D5F5E7B42F7240E8AB990F4F76CD210A]
+      cache-control: ['private, max-age=0']
+      content-length: ['9209']
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 21 Nov 2017 00:38:32 GMT']
+      expires: ['Tue, 21 Nov 2017 00:37:31 GMT']
+      p3p: [CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"]
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      transfer-encoding: [chunked]
+      vary: [Accept-Encoding]
+      x-content-type-options: [nosniff]
+      x-msapi-userstate: [ead6]
+      x-msedge-clientid: [13AA2764D2A365073BB42C25D3346453]
+      x-msedge-ref: ['Ref A: D5F5E7B42F7240E8AB990F4F76CD210A Ref B: CO1EDGE0210 Ref
+          C: 2017-11-21T00:38:31Z']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          entitysearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/entities?mkt=en-us&q=john%20howie%20bellevue
+  response:
+    body: {string: '{"_type": "SearchResponse", "queryContext": {"_type": "QueryContext",
+        "originalQuery": "john howie bellevue"}, "places": {"_type": "Places", "value":
+        [{"_type": "Restaurant", "webSearchUrl": "https:\/\/www.bing.com\/search?q=John+Howie+Steak&filters=local_ypid:%22YN873x130652351%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "John Howie Steak", "url": "http:\/\/www.johnhowiesteak.com\/", "entityPresentationInfo":
+        {"_type": "Entities\/EntityPresentationInfo", "entityScenario": "ListItem",
+        "entityTypeHints": ["Place", "LocalBusiness", "Restaurant"]}, "address": {"_type":
+        "PostalAddress", "addressLocality": "Bellevue", "addressRegion": "WA", "postalCode":
+        "98004", "addressCountry": "US", "neighborhood": "Downtown"}, "telephone":
+        "(425) 440-0880"}]}}'}
+    headers:
+      apim-request-id: [3968ea08-f08c-448f-9ea2-2b987b457fb2]
+      bingapis-market: [en-US]
+      bingapis-sessionid: [5BD1B7BD6D4F40B59C5F5484ADDBEE3C]
+      bingapis-traceid: [B47C39EBA609453AB54C06F9A54AFEC5]
+      cache-control: ['private, max-age=0']
+      content-length: ['835']
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 21 Nov 2017 00:38:33 GMT']
+      expires: ['Tue, 21 Nov 2017 00:37:31 GMT']
+      p3p: [CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"]
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      transfer-encoding: [chunked]
+      vary: [Accept-Encoding]
+      x-content-type-options: [nosniff]
+      x-msapi-userstate: ['8366']
+      x-msedge-clientid: [37217896DB7767DA25FE73D7DAE06615]
+      x-msedge-ref: ['Ref A: B47C39EBA609453AB54C06F9A54AFEC5 Ref B: CO1EDGE0420 Ref
+          C: 2017-11-21T00:38:32Z']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          entitysearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/entities?mkt=en-us&q=seattle%20restaurants
+  response:
+    body: {string: '{"_type": "SearchResponse", "queryContext": {"_type": "QueryContext",
+        "originalQuery": "seattle restaurants"}, "places": {"_type": "Places", "value":
+        [{"_type": "LocalBusiness", "webSearchUrl": "https:\/\/www.bing.com\/search?q=Park+Place&filters=local_ypid:%22YN873x5786319842120194005%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "Park Place", "url": "http:\/\/restaurantparkplace.com\/", "entityPresentationInfo":
+        {"_type": "Entities\/EntityPresentationInfo", "entityScenario": "ListItem",
+        "entityTypeHints": ["Place", "LocalBusiness"]}, "address": {"_type": "PostalAddress",
+        "addressLocality": "Seattle", "addressRegion": "WA", "postalCode": "98112",
+        "addressCountry": "US", "neighborhood": "Madison Park"}, "telephone": "(206)
+        453-5867"}, {"_type": "Restaurant", "webSearchUrl": "https:\/\/www.bing.com\/search?q=B-Side&filters=local_ypid:%22YN873x3143997231946382117%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "B-Side", "entityPresentationInfo": {"_type": "Entities\/EntityPresentationInfo",
+        "entityScenario": "ListItem", "entityTypeHints": ["Place", "LocalBusiness",
+        "Restaurant"]}, "address": {"_type": "PostalAddress", "addressLocality": "Seattle",
+        "addressRegion": "WA", "postalCode": "98102", "addressCountry": "US", "neighborhood":
+        "Capitol Hill"}, "telephone": "(206) 661-4794"}, {"_type": "Restaurant", "webSearchUrl":
+        "https:\/\/www.bing.com\/search?q=My+Thai&filters=local_ypid:%22YN873x17451995256651022791%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "My Thai", "entityPresentationInfo": {"_type": "Entities\/EntityPresentationInfo",
+        "entityScenario": "ListItem", "entityTypeHints": ["Place", "LocalBusiness",
+        "Restaurant"]}, "address": {"_type": "PostalAddress", "addressLocality": "Seattle",
+        "addressRegion": "WA", "postalCode": "98102", "addressCountry": "US", "neighborhood":
+        "Capitol Hill"}, "telephone": "(206) 457-5375"}, {"_type": "Restaurant", "webSearchUrl":
+        "https:\/\/www.bing.com\/search?q=All+Water+Seafood+%26+Oyster+Bar&filters=local_ypid:%22YN873x17921315096034691897%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "All Water Seafood & Oyster Bar", "url": "https:\/\/www.loewshotels.com\/hotel-1000-seattle\/dining\/restaurants",
+        "entityPresentationInfo": {"_type": "Entities\/EntityPresentationInfo", "entityScenario":
+        "ListItem", "entityTypeHints": ["Place", "LocalBusiness", "Restaurant"]},
+        "address": {"_type": "PostalAddress", "addressLocality": "Seattle", "addressRegion":
+        "WA", "postalCode": "98104", "addressCountry": "US", "neighborhood": "Downtown"},
+        "telephone": "(206) 357-9000"}, {"_type": "Restaurant", "webSearchUrl": "https:\/\/www.bing.com\/search?q=South+Satellite+Food+Court&filters=local_ypid:%22YN926x401257738%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "South Satellite Food Court", "entityPresentationInfo": {"_type":
+        "Entities\/EntityPresentationInfo", "entityScenario": "ListItem", "entityTypeHints":
+        ["Place", "LocalBusiness", "Restaurant"]}, "address": {"_type": "PostalAddress",
+        "addressLocality": "Seattle", "addressRegion": "WA", "postalCode": "98158",
+        "addressCountry": "US", "neighborhood": "Downtown"}, "telephone": "(206) 431-1232"},
+        {"_type": "Restaurant", "webSearchUrl": "https:\/\/www.bing.com\/search?q=Sogo+Brazilian+Grill&filters=local_ypid:%22YN873x114423022%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "Sogo Brazilian Grill", "url": "http:\/\/sogo-brazilian-grill.hub.biz\/",
+        "entityPresentationInfo": {"_type": "Entities\/EntityPresentationInfo", "entityScenario":
+        "ListItem", "entityTypeHints": ["Place", "LocalBusiness", "Restaurant"]},
+        "address": {"_type": "PostalAddress", "addressLocality": "Seattle", "addressRegion":
+        "WA", "postalCode": "98109", "addressCountry": "US", "neighborhood": "Downtown"},
+        "telephone": "(206) 453-4366"}, {"_type": "Restaurant", "webSearchUrl": "https:\/\/www.bing.com\/search?q=Truck+Stop+Cafe&filters=local_ypid:%22YN873x6455764462277893557%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "Truck Stop Cafe", "entityPresentationInfo": {"_type": "Entities\/EntityPresentationInfo",
+        "entityScenario": "ListItem", "entityTypeHints": ["Place", "LocalBusiness",
+        "Restaurant"]}, "address": {"_type": "PostalAddress", "addressLocality": "Seattle",
+        "addressRegion": "WA", "postalCode": "98101", "addressCountry": "US", "neighborhood":
+        "Denny Triangle"}}, {"_type": "Restaurant", "webSearchUrl": "https:\/\/www.bing.com\/search?q=Marketplace+Cafe&filters=local_ypid:%22YN873x81914677855609068%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "Marketplace Cafe", "url": "http:\/\/restaurants.nordstrom.com\/",
+        "entityPresentationInfo": {"_type": "Entities\/EntityPresentationInfo", "entityScenario":
+        "ListItem", "entityTypeHints": ["Place", "LocalBusiness", "Restaurant"]},
+        "address": {"_type": "PostalAddress", "addressLocality": "Seattle", "addressRegion":
+        "WA", "postalCode": "98101", "addressCountry": "US", "neighborhood": "Downtown"},
+        "telephone": "(206) 628-1610"}, {"_type": "Restaurant", "webSearchUrl": "https:\/\/www.bing.com\/search?q=Reem+Ghazal&filters=local_ypid:%22YN873x14668155155464497671%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "Reem Ghazal", "entityPresentationInfo": {"_type": "Entities\/EntityPresentationInfo",
+        "entityScenario": "ListItem", "entityTypeHints": ["Place", "LocalBusiness",
+        "Restaurant"]}, "address": {"_type": "PostalAddress", "addressLocality": "Seattle",
+        "addressRegion": "WA", "postalCode": "98109", "addressCountry": "US", "neighborhood":
+        "South Lake Union"}, "telephone": "(206) 402-3190"}, {"_type": "LocalBusiness",
+        "webSearchUrl": "https:\/\/www.bing.com\/search?q=Restaurant+Empl+Bartenders+%26+Hotel+Service+Employment+Welfare+Plan&filters=local_ypid:%22YN873x123139780%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr",
+        "name": "Restaurant Empl Bartenders & Hotel Service Employment Welfare Plan",
+        "entityPresentationInfo": {"_type": "Entities\/EntityPresentationInfo", "entityScenario":
+        "ListItem", "entityTypeHints": ["Place", "LocalBusiness"]}, "address": {"_type":
+        "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "postalCode":
+        "98101", "addressCountry": "US", "neighborhood": ""}, "telephone": "(206)
+        622-0156"}]}}'}
+    headers:
+      apim-request-id: [85f0dccf-7295-4488-a88a-cf862580ea35]
+      bingapis-market: [en-US]
+      bingapis-sessionid: [763102F0AC3348D897D560465A336E80]
+      bingapis-traceid: [2FDF7F5EFED6422FA26C9F841E283738]
+      cache-control: ['private, max-age=0']
+      content-length: ['6889']
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 21 Nov 2017 00:38:33 GMT']
+      expires: ['Tue, 21 Nov 2017 00:37:32 GMT']
+      p3p: [CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"]
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      transfer-encoding: [chunked]
+      vary: [Accept-Encoding]
+      x-content-type-options: [nosniff]
+      x-msapi-userstate: [0db2]
+      x-msedge-clientid: [26A09864623D62860D54932563AA63CB]
+      x-msedge-ref: ['Ref A: 2FDF7F5EFED6422FA26C9F841E283738 Ref B: CO1EDGE0417 Ref
+          C: 2017-11-21T00:38:32Z']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          entitysearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/entities?mkt=no-ty&q=tom%20cruise
+  response:
+    body: {string: '{"_type": "ErrorResponse", "errors": [{"code": "RequestParameterInvalidValue",
+        "message": "Parameter has invalid value. Only en-us market is allowed for
+        Entity Search.", "parameter": "mkt", "value": "no-ty"}]}'}
+    headers:
+      apim-request-id: [5f867ce9-40a3-4a83-953b-d1abbbc41bef]
+      content-type: [application/json]
+      date: ['Tue, 21 Nov 2017 00:38:31 GMT']
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      transfer-encoding: [chunked]
+      x-content-type-options: [nosniff]
+    status: {code: 400, message: Bad Request}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          websearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/search?mkt=en-us&q=xbox
+  response:
+    body: {string: "{\"_type\": \"SearchResponse\", \"queryContext\": {\"_type\":\
+        \ \"QueryContext\", \"originalQuery\": \"xbox\"}, \"webPages\": {\"_type\"\
+        : \"Web\\/WebAnswer\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/search?q=xbox\"\
+        , \"totalEstimatedMatches\": 19800000, \"value\": [{\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.0\"\
+        , \"name\": \"Xbox | Official Site\", \"url\": \"https:\\/\\/www.xbox.com\\\
+        /\", \"about\": [{\"_type\": \"Thing\", \"name\": \"Xbox\"}], \"displayUrl\"\
+        : \"https:\\/\\/www.xbox.com\", \"snippet\": \"Experience the new generation\
+        \ of games and entertainment with Xbox. Play Xbox games and stream video on\
+        \ all your devices.\", \"deepLinks\": [{\"_type\": \"WebPage\", \"name\":\
+        \ \"Xbox Live\", \"url\": \"https:\\/\\/www.xbox.com\\/en-US\\/live?xr%3Dshellnav\"\
+        , \"snippet\": \"Xbox Live is where your gaming life comes together with the\
+        \ games you love, the friends you play with, and the community that defines\
+        \ you.\"}, {\"_type\": \"WebPage\", \"name\": \"Support\", \"url\": \"https:\\\
+        /\\/support.xbox.com\\/\", \"snippet\": \"Xbox Support offers help for Xbox\
+        \ One, Xbox 360, Xbox Live, Kinect, and billing questions. Get advice and\
+        \ customer service in the Xbox Support community.\"}, {\"_type\": \"WebPage\"\
+        , \"name\": \"Xbox One\", \"url\": \"https:\\/\\/www.xbox.com\\/en-US\\/games\\\
+        /xbox-one?xr=shellnav\", \"snippet\": \"Play award-winning exclusive video\
+        \ games, all new franchises, and your favorite blockbuster. Multiplayer gaming\
+        \ is better than ever.\"}, {\"_type\": \"WebPage\", \"name\": \"Xbox 360 Games\"\
+        , \"url\": \"https:\\/\\/www.xbox.com\\/en-US\\/games\\/xbox-360\", \"snippet\"\
+        : \"Xbox 360 games have something for everyone. Play blockbuster titles. Enjoy\
+        \ unrivaled multiplayer. Kinect puts you in the fun.\"}, {\"_type\": \"WebPage\"\
+        , \"name\": \"Games With Gold\", \"url\": \"https:\\/\\/www.xbox.com\\/en-US\\\
+        /live\\/games-with-gold?xr=shellnav\", \"snippet\": \"Save up to 50 - 75%\
+        \ on games, add-ons, and more in the Xbox Store. Did you know there were more\
+        \ than $1,000 in discounts in 2014. Now you can play a growing number of ...\"\
+        }, {\"_type\": \"WebPage\", \"name\": \"Games Marketplace\", \"url\": \"https:\\\
+        /\\/marketplace.xbox.com\\/en-US\\/\", \"snippet\": \"Featured Games. Discover\
+        \ the hottest new games, add-ons, and more to enjoy on your Xbox 360, Kinect,\
+        \ Windows PC, and Windows Phone. Check out our weekly bargains and ...\"}],\
+        \ \"dateLastCrawled\": \"2017-11-18T01:46:00.0000000Z\"}, {\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.1\"\
+        , \"name\": \"Xbox 360 Games, New, Used & Pre-Order + Xbox 360 ...\", \"url\"\
+        : \"https:\\/\\/www.gamestop.com\\/xbox360\", \"about\": [{\"_type\": \"Thing\"\
+        , \"name\": \"GameStop\"}], \"displayUrl\": \"https:\\/\\/www.gamestop.com\\\
+        /xbox360\", \"snippet\": \"Buy the latest Xbox 360 games or choose from a\
+        \ massive selection of used Xbox 360 games + preorder and save money. Find\
+        \ Xbox 360 game release dates, bestsellers ...\", \"dateLastCrawled\": \"\
+        2017-11-16T19:00:00.0000000Z\"}, {\"_type\": \"WebPage\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.2\", \"name\": \"Amazon.com:\
+        \ Xbox - Retro Gaming & Microconsoles: Video ...\", \"url\": \"https:\\/\\\
+        /www.amazon.com\\/Xbox-Games\\/b?ie=UTF8&node=537504\", \"displayUrl\": \"\
+        https:\\/\\/www.amazon.com\\/Xbox-Games\\/b?ie=UTF8&node=537504\", \"snippet\"\
+        : \"Online shopping for Video Games from a great selection of Accessories,\
+        \ Games, Consoles, Computer And Console Video Game Products & more at everyday\
+        \ low prices.\", \"dateLastCrawled\": \"2017-11-16T14:13:00.0000000Z\"}, {\"\
+        _type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.3\", \"name\": \"Xbox - YouTube\", \"url\": \"https:\\\
+        /\\/www.youtube.com\\/channel\\/UCjBp_7RuDBUYbd1LegWEJ8g\", \"about\": [{\"\
+        _type\": \"Thing\", \"name\": \"Xbox\"}], \"displayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /channel\\/UCjBp_7RuDBUYbd1LegWEJ8g\", \"snippet\": \"The official home of\
+        \ Xbox on YouTube and the best place to watch this year's E3 news and trailers!\
+        \ Subscribe for the latest live streams, gameplay, behind-th...\", \"dateLastCrawled\"\
+        : \"2017-11-16T23:55:00.0000000Z\"}, {\"_type\": \"WebPage\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.4\", \"name\": \"Xbox\
+        \  | Twitter\", \"url\": \"https:\\/\\/twitter.com\\/xbox\", \"about\": [{\"\
+        _type\": \"Thing\", \"name\": \"Xbox\"}], \"displayUrl\": \"https:\\/\\/twitter.com\\\
+        /xbox\", \"snippet\": \"206K tweets \u2022 25.2K photos\\/videos \u2022 12.4M\
+        \ followers. \\\"Suit up. It\u2019s up to you and your favorite superheroes\
+        \ to save the universe in LEGO Marvel Super Heroes 2 ...\", \"dateLastCrawled\"\
+        : \"2017-11-17T03:38:00.0000000Z\"}, {\"_type\": \"WebPage\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.5\", \"name\": \"Xbox:\
+        \ Xbox One and Xbox One S Consoles, Games ...\", \"url\": \"https:\\/\\/www.microsoft.com\\\
+        /en-us\\/store\\/b\\/xbox\", \"displayUrl\": \"https:\\/\\/www.microsoft.com\\\
+        /en-us\\/store\\/b\\/xbox\", \"snippet\": \"Experience the power of Xbox.\
+        \ With innovative game consoles, like Xbox One S, the latest games and accessories,\
+        \ you can immerse yourself in all the action.\", \"dateLastCrawled\": \"2017-11-16T22:40:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.6\", \"name\": \"Xbox One Support | Xbox 360 Support\
+        \ | Xbox Live and ...\", \"url\": \"https:\\/\\/support.xbox.com\\/\", \"\
+        displayUrl\": \"https:\\/\\/support.xbox.com\", \"snippet\": \"Xbox Support\
+        \ offers help for Xbox One, Xbox 360, Xbox Live, Kinect, and billing questions.\
+        \ Get advice and customer service in the Xbox Support community.\", \"dateLastCrawled\"\
+        : \"2017-11-15T17:55:00.0000000Z\"}]}, \"entities\": {\"_type\": \"Entities\"\
+        , \"value\": [{\"_type\": \"Thing\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#Entities.0\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /search?q=Xbox+One&filters=sid:%221005f934-3ada-f98d-f203-bdf1717f9045%22&elv=AXXfrEiqqD9r3GuelwApulrSKl4rxP2Ue4ITlvznTXnE5yHzhQ20AGwWRILlXT5qkrdhycBtBrULxjHTcOm05cOKJF*3QFm33H2yF0QsqyTr\"\
+        , \"name\": \"Xbox One\", \"url\": \"http:\\/\\/www.newegg.com\\/Product\\\
+        /Product.aspx?Item=N82E16868105150\", \"image\": {\"_type\": \"ImageObject\"\
+        , \"thumbnailUrl\": \"https:\\/\\/www.bing.com\\/th?id=Af593207873c9db54f398621360edef68&w=110&h=110&rs=1&qlt=80&cdv=1&pid=18.2\"\
+        , \"hostPageUrl\": \"http:\\/\\/compass.xboxlive.com\\/assets\\/f6\\/1f\\\
+        /f61f0b46-c571-4552-a5e1-61d227c57949.png?n=XboxOne_Console_Sensor_cont.png\"\
+        , \"width\": 110, \"height\": 110}, \"entityPresentationInfo\": {\"_type\"\
+        : \"Entities\\/EntityPresentationInfo\", \"entityScenario\": \"DominantEntity\"\
+        , \"entityTypeHints\": [\"Product\"], \"entityTypeDisplayHint\": \"\\\"500\
+        \ gb\"}, \"bingId\": \"1005f934-3ada-f98d-f203-bdf1717f9045\"}]}, \"images\"\
+        : {\"_type\": \"Images\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#Images\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/images\\/search?q=xbox&qpvt=xbox\", \"webSearchUrl\": \"https:\\\
+        /\\/www.bing.com\\/images\\/search?q=xbox&qpvt=xbox\", \"isFamilyFriendly\"\
+        : true, \"value\": [{\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\\
+        /\\/www.bing.com\\/images\\/search?q=xbox&id=5A29C43967F0B5CB97FA1689566C194A047CB445&FORM=IQFRBA\"\
+        , \"name\": \"Next Gen Graphics, Part 3: Wii, PlayStation 3, Xbox 360 | USgamer\"\
+        , \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.eLB52TcNcqTEy4mlnK7URwEoEs&pid=Api\"\
+        , \"datePublished\": \"2013-11-29T17:55:00.0000000Z\", \"contentUrl\": \"\
+        http:\\/\\/images.eurogamer.net\\/2013\\/usgamer\\/NGL3---Xbox-360.jpg\",\
+        \ \"hostPageUrl\": \"http:\\/\\/www.usgamer.net\\/articles\\/next-gen-graphics-part-3-wii-playstation-3-xbox-360\"\
+        , \"contentSize\": \"109895 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/www.usgamer.net\\/articles\\/next-gen-graphics-part-3-wii-playstation-3-xbox-360\"\
+        , \"width\": 1300, \"height\": 1316, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 296, \"height\": 300}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 5, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=CE0EC3069DA05A812514E6F48E4F4B13FDAEC205&FORM=IQFRBA\"\
+        , \"name\": \"Original Xbox games are coming to Xbox One with backwards compatibility\
+        \ - The Verge\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.yhCGKpXma9VglyPSkZxBlAFNC7&pid=Api\"\
+        , \"datePublished\": \"2017-06-11T12:00:00.0000000Z\", \"contentUrl\": \"\
+        https:\\/\\/cdn.vox-cdn.com\\/thumbor\\/6SRL7-b2pwL6sVigCDZGCRRu4KU=\\/0x34:640x394\\\
+        /1600x900\\/cdn.vox-cdn.com\\/uploads\\/chorus_image\\/image\\/55199479\\\
+        /originalxbox.0.jpg\", \"hostPageUrl\": \"http:\\/\\/www.theverge.com\\/2017\\\
+        /6\\/11\\/15779536\\/microsoft-xbox-backwards-compatibility-original-games-e3-2017\"\
+        , \"contentSize\": \"89087 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/www.theverge.com\\/2017\\/6\\/11\\/15779536\\/microsoft-xbox-backwards-compatibility-original-games-e3-2017\"\
+        , \"width\": 1600, \"height\": 900, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 333, \"height\": 187}}, {\"_type\": \"ImageObject\", \"webSearchUrl\"\
+        : \"https:\\/\\/www.bing.com\\/images\\/search?q=xbox&id=8740359FDAE0B8766A244A011F24DA5F1529B2C1&FORM=IQFRBA\"\
+        , \"name\": \"Xbox - Sonic News Network, the Sonic Wiki\", \"thumbnailUrl\"\
+        : \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.uvcgWh0QWGclQZtoqgsTrAEsEb&pid=Api\"\
+        , \"datePublished\": \"2013-10-26T13:48:00.0000000Z\", \"contentUrl\": \"\
+        http:\\/\\/images1.wikia.nocookie.net\\/__cb20110306024032\\/sonic\\/images\\\
+        /d\\/d4\\/Xbox.png\", \"hostPageUrl\": \"http:\\/\\/sonic.wikia.com\\/wiki\\\
+        /Xbox\", \"contentSize\": \"2692290 B\", \"encodingFormat\": \"png\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/sonic.wikia.com\\/wiki\\/Xbox\", \"width\": 1800, \"height\"\
+        : 1700, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 283}, \"insightsMetadata\": {\"_type\": \"Images\\/ImageMetadata\", \"shoppingSourcesCount\"\
+        : 0, \"recipeSourcesCount\": 0}}, {\"_type\": \"ImageObject\", \"webSearchUrl\"\
+        : \"https:\\/\\/www.bing.com\\/images\\/search?q=xbox&id=B8269E59C1EA804BE08A918D0267D6F102436EDB&FORM=IQFRBA\"\
+        , \"name\": \"Xbox Turns 10! | Project COE\", \"thumbnailUrl\": \"https:\\\
+        /\\/tse1.mm.bing.net\\/th?id=OIP.fqQp5WYVV93VhKCXSWMwNAE_DD&pid=Api\", \"\
+        datePublished\": \"2011-11-15T12:00:00.0000000Z\", \"contentUrl\": \"http:\\\
+        /\\/www.projectcoe.com\\/wp-content\\/uploads\\/2011\\/11\\/Xbox_consol_modified.jpg\"\
+        , \"hostPageUrl\": \"http:\\/\\/www.projectcoe.com\\/2011\\/11\\/15\\/xbox-turns-10\\\
+        /\", \"contentSize\": \"683818 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/www.projectcoe.com\\/2011\\/11\\/15\\/xbox-turns-10\\/\", \"\
+        width\": 1376, \"height\": 840, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 319, \"height\": 195}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=486BC1006DF51249DAFD3DE4E876FC21E57634FF&FORM=IQFRBA\"\
+        , \"name\": \"Happy 10th birthday, Microsoft Xbox - Games Per Second\", \"\
+        thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.VfcdzKGlWsI324CPGLhbbQEsEV&pid=Api\"\
+        , \"datePublished\": \"2017-07-18T08:01:00.0000000Z\", \"contentUrl\": \"\
+        http:\\/\\/www.gamespersecond.com\\/media\\/2012\\/11\\/xbox-first-generation.jpg\"\
+        , \"hostPageUrl\": \"http:\\/\\/gamespersecond.com\\/2012\\/11\\/happy-10th-birthday-microsoft-xbox\\\
+        /\", \"contentSize\": \"67502 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/gamespersecond.com\\/2012\\/11\\/happy-10th-birthday-microsoft-xbox\\\
+        /\", \"width\": 902, \"height\": 835, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 300, \"height\": 277}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=A9CA7B45AC00E55DE96165502122C372CCDE7E70&FORM=IQFRBA\"\
+        , \"name\": \"The Technology Hobbit: Rumor: Next Xbox Will Have Two GPUs and\
+        \ Need Constant Internet Connection\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\\
+        /th?id=OIP.TZGlDubJ2r9xEiLI1Ah01ADZEs&pid=Api\", \"datePublished\": \"2012-04-02T12:00:00.0000000Z\"\
+        , \"contentUrl\": \"http:\\/\\/1.bp.blogspot.com\\/-hqRQQ26C_HM\\/T3pwAkbfrNI\\\
+        /AAAAAAAAAC4\\/qK8hXywmCRQ\\/s1600\\/Xbox+720+mockup.jpg\", \"hostPageUrl\"\
+        : \"http:\\/\\/technologyhobbit.blogspot.com\\/2012\\/04\\/rumor-next-xbox-will-have-two-gpus-and.html\"\
+        , \"contentSize\": \"153390 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/technologyhobbit.blogspot.com\\/2012\\/04\\/rumor-next-xbox-will-have-two-gpus-and.html\"\
+        , \"width\": 1162, \"height\": 1600, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 217, \"height\": 300}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=2F62C82EFDE79376941E763684D1FF5B2657F63D&FORM=IQFRBA\"\
+        , \"name\": \"Xbox Console: Amazon.co.uk: PC & Video Games\", \"thumbnailUrl\"\
+        : \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.sc6lIjCxJ7T47GX8k7nKqAEsC6&pid=Api\"\
+        , \"datePublished\": \"2017-10-24T06:40:00.0000000Z\", \"contentUrl\": \"\
+        https:\\/\\/images-eu.ssl-images-amazon.com\\/images\\/G\\/02\\/uk-videogames\\\
+        /2014\\/ConsoleComp\\/aplus\\/Xbox_Console_lg._V326623687_.jpg\", \"hostPageUrl\"\
+        : \"http:\\/\\/www.amazon.co.uk\\/d\\/Consoles\\/Microsoft-Xbox-Console\\\
+        /B00005RHQT\", \"contentSize\": \"64166 B\", \"encodingFormat\": \"jpeg\"\
+        , \"hostPageDisplayUrl\": \"http:\\/\\/www.amazon.co.uk\\/d\\/Consoles\\/Microsoft-Xbox-Console\\\
+        /B00005RHQT\", \"width\": 1024, \"height\": 636, \"thumbnail\": {\"_type\"\
+        : \"ImageObject\", \"width\": 300, \"height\": 186}, \"insightsMetadata\"\
+        : {\"_type\": \"Images\\/ImageMetadata\", \"shoppingSourcesCount\": 0, \"\
+        recipeSourcesCount\": 0}}, {\"_type\": \"ImageObject\", \"webSearchUrl\":\
+        \ \"https:\\/\\/www.bing.com\\/images\\/search?q=xbox&id=CBE21DF1359C2BDCD106F7CDFBE51EDBE85B675F&FORM=IQFRBA\"\
+        , \"name\": \"Xbox One review: More than a game console, less than a living\
+        \ room revolution | Ars Technica\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\\
+        /th?id=OIP.6KG6x8cEm0L4Lp783OIeuwEsDI&pid=Api\", \"datePublished\": \"2016-10-09T19:39:00.0000000Z\"\
+        , \"contentUrl\": \"https:\\/\\/cdn.arstechnica.net\\/wp-content\\/uploads\\\
+        /2013\\/11\\/xb1new-41.jpg\", \"hostPageUrl\": \"http:\\/\\/arstechnica.com\\\
+        /gaming\\/2013\\/11\\/xbox-one-review-more-than-a-game-console-less-than-a-living-room-revolution\\\
+        /\", \"contentSize\": \"164907 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/arstechnica.com\\/gaming\\/2013\\/11\\/xbox-one-review-more-than-a-game-console-less-than-a-living-room-revolution\\\
+        /\", \"width\": 1024, \"height\": 683, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 300, \"height\": 200}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=B34B52DFC81BAC7F25E1D60CF13682BDB8DA3299&FORM=IQFRBA\"\
+        , \"name\": \"$99 Xbox 360 \u2013 Is there a catch? Of course there is! |\
+        \ Fly Girl Gamers\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.UeoIseEypDKM48HFQMoD9gEsEQ&pid=Api\"\
+        , \"datePublished\": \"2012-05-07T12:00:00.0000000Z\", \"contentUrl\": \"\
+        https:\\/\\/flygirlgamers.files.wordpress.com\\/2012\\/05\\/xbox360_matte_controller_7-8view_jpg_jpgcopy.jpg\"\
+        , \"hostPageUrl\": \"https:\\/\\/flygirlgamers.wordpress.com\\/2012\\/05\\\
+        /07\\/99-xbox-360-is-there-a-catch-of-course-there-is\\/\", \"contentSize\"\
+        : \"407137 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\": \"https:\\\
+        /\\/flygirlgamers.wordpress.com\\/2012\\/05\\/07\\/99-xbox-360-is-there-a-catch-of-course-there-is\\\
+        /\", \"width\": 1584, \"height\": 1440, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 300, \"height\": 272}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=BB5C80EF9181F4038E8B711FEC683E672C217503&FORM=IQFRBA\"\
+        , \"name\": \"xbox | Bite.ca\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\\
+        /th?id=OIP.uDmHLCcQlVV1tz2nxuMmdgEsDh&pid=Api\", \"datePublished\": \"2012-10-09T01:36:00.0000000Z\"\
+        , \"contentUrl\": \"http:\\/\\/bite-prod.s3.amazonaws.com\\/wp-content\\/uploads\\\
+        /2012\\/09\\/xbox.jpg\", \"hostPageUrl\": \"http:\\/\\/www.bite.ca\\/bitedaily\\\
+        /2012\\/09\\/top-10-poorly-named-electronics\\/xbox\\/\", \"contentSize\"\
+        : \"31915 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\": \"http:\\\
+        /\\/www.bite.ca\\/bitedaily\\/2012\\/09\\/top-10-poorly-named-electronics\\\
+        /xbox\\/\", \"width\": 500, \"height\": 375, \"thumbnail\": {\"_type\": \"\
+        ImageObject\", \"width\": 300, \"height\": 225}, \"insightsMetadata\": {\"\
+        _type\": \"Images\\/ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\"\
+        : 0}}, {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=29C52FDE62520192B2FDA856935926C18538CE69&FORM=IQFRBA\"\
+        , \"name\": \"Xbox 720 specs: Kinect 2.0, new controllers & more\", \"thumbnailUrl\"\
+        : \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.6b4M7FDvoDDFjeKnm8gNtwE8DF&pid=Api\"\
+        , \"datePublished\": \"2013-11-26T00:25:00.0000000Z\", \"contentUrl\": \"\
+        http:\\/\\/www.tapscape.com\\/wp-content\\/uploads\\/2013\\/02\\/Xbox-720-controller.jpg\"\
+        , \"hostPageUrl\": \"http:\\/\\/www.tapscape.com\\/more-xbox-720-rumours\\\
+        /\", \"contentSize\": \"421856 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/www.tapscape.com\\/more-xbox-720-rumours\\/\", \"width\": 1680,\
+        \ \"height\": 1050, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\"\
+        : 316, \"height\": 197}}, {\"_type\": \"ImageObject\", \"webSearchUrl\": \"\
+        https:\\/\\/www.bing.com\\/images\\/search?q=xbox&id=F2DEFE62835D74F0552A47EF65B98DB294BCDE29&FORM=IQFRBA\"\
+        , \"name\": \"Xbox Rejected Names - Business Insider\", \"thumbnailUrl\":\
+        \ \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.9_w2BLw8EZQ6ZGs-uSQ8-wEsDh&pid=Api\"\
+        , \"datePublished\": \"2013-07-08T12:00:00.0000000Z\", \"contentUrl\": \"\
+        http:\\/\\/static5.businessinsider.com\\/image\\/51db0861eab8ea234b000006\\\
+        /here-are-the-names-microsoft-rejected-before-settling-on-xbox.jpg\", \"hostPageUrl\"\
+        : \"http:\\/\\/www.businessinsider.com\\/xbox-rejected-names-2013-7\", \"\
+        contentSize\": \"300439 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/www.businessinsider.com\\/xbox-rejected-names-2013-7\", \"\
+        width\": 3197, \"height\": 2398, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 300, \"height\": 225}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=B0C3ACF82976DFC59999369AAA74AABD316AA71F&FORM=IQFRBA\"\
+        , \"name\": \"Microsoft considered giving away the original Xbox for free\"\
+        , \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.lj1_2SrxEqTlqVDn0l3fEQEsDH&pid=Api\"\
+        , \"datePublished\": \"2017-09-25T08:26:00.0000000Z\", \"contentUrl\": \"\
+        http:\\/\\/s3.amazonaws.com\\/digitaltrends-uploads-prod\\/2015\\/04\\/original-xbox.png\"\
+        , \"hostPageUrl\": \"https:\\/\\/www.digitaltrends.com\\/gaming\\/microsoft-considered-free-xbox\\\
+        /\", \"contentSize\": \"395690 B\", \"encodingFormat\": \"png\", \"hostPageDisplayUrl\"\
+        : \"https:\\/\\/www.digitaltrends.com\\/gaming\\/microsoft-considered-free-xbox\\\
+        /\", \"width\": 1330, \"height\": 885, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 300, \"height\": 199}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=B6E647B0621FBD96EAA9B6046EF2C8E93CAC51F9&FORM=IQFRBA\"\
+        , \"name\": \"The original Xbox was almost free\", \"thumbnailUrl\": \"https:\\\
+        /\\/tse1.mm.bing.net\\/th?id=OIP.fY4WtJE-7kwEzetgTFr2HgEsEs&pid=Api\", \"\
+        datePublished\": \"2015-04-01T19:31:00.0000000Z\", \"contentUrl\": \"http:\\\
+        /\\/www.technobuffalo.com\\/wp-content\\/uploads\\/2015\\/03\\/original-xbox-0331.jpg\"\
+        , \"hostPageUrl\": \"http:\\/\\/www.technobuffalo.com\\/2015\\/04\\/01\\/the-original-xbox-was-almost-free\\\
+        /\", \"contentSize\": \"29692 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/www.technobuffalo.com\\/2015\\/04\\/01\\/the-original-xbox-was-almost-free\\\
+        /\", \"width\": 500, \"height\": 500, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 300, \"height\": 300}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=E7000441DDEB67AF947586E61FE37D741C1DB6E5&FORM=IQFRBA\"\
+        , \"name\": \"Xbox (Platform) - Giant Bomb\", \"thumbnailUrl\": \"https:\\\
+        /\\/tse1.mm.bing.net\\/th?id=OIP.rgmW8t5DfD6WbJNxmHqh5gD4D7&pid=Api\", \"\
+        datePublished\": \"2017-11-01T22:51:00.0000000Z\", \"contentUrl\": \"https:\\\
+        /\\/static.giantbomb.com\\/uploads\\/scale_small\\/0\\/3699\\/359843-xbox.jpg\"\
+        , \"hostPageUrl\": \"https:\\/\\/www.giantbomb.com\\/xbox\\/3045-32\\/\",\
+        \ \"contentSize\": \"65252 B\", \"encodingFormat\": \"jpeg\", \"hostPageDisplayUrl\"\
+        : \"https:\\/\\/www.giantbomb.com\\/xbox\\/3045-32\\/\", \"width\": 634, \"\
+        height\": 640, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 248,\
+        \ \"height\": 251}, \"insightsMetadata\": {\"_type\": \"Images\\/ImageMetadata\"\
+        , \"shoppingSourcesCount\": 4, \"recipeSourcesCount\": 0}}, {\"_type\": \"\
+        ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/images\\/search?q=xbox&id=D567C5FE3F0B59CF2189E5C49A4C2BFD05EC3EF6&FORM=IQFRBA\"\
+        , \"name\": \"File:Xbox-360-Elite-Console-Set.png\", \"thumbnailUrl\": \"\
+        https:\\/\\/tse1.mm.bing.net\\/th?id=OIP.H0YVT-7yU-1K1A_HXJrFjgC4Es&pid=Api\"\
+        , \"datePublished\": \"2012-04-18T12:00:00.0000000Z\", \"contentUrl\": \"\
+        http:\\/\\/upload.wikimedia.org\\/wikipedia\\/commons\\/0\\/08\\/Xbox-360-Elite-Console-Set.png\"\
+        , \"hostPageUrl\": \"http:\\/\\/commons.wikimedia.org\\/wiki\\/File:Xbox-360-Elite-Console-Set.png\"\
+        , \"contentSize\": \"5598209 B\", \"encodingFormat\": \"png\", \"hostPageDisplayUrl\"\
+        : \"http:\\/\\/commons.wikimedia.org\\/wiki\\/File:Xbox-360-Elite-Console-Set.png\"\
+        , \"width\": 2080, \"height\": 3380, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 184, \"height\": 300}, \"insightsMetadata\": {\"_type\": \"Images\\\
+        /ImageMetadata\", \"shoppingSourcesCount\": 0, \"recipeSourcesCount\": 0}},\
+        \ {\"_type\": \"ImageObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /images\\/search?q=xbox&id=A27716BF68188B12474017DFDD4815A467BBFF59&FORM=IQFRBA\"\
+        , \"name\": \"Xbox One | Official Site\", \"thumbnailUrl\": \"https:\\/\\\
+        /tse1.mm.bing.net\\/th?id=OIP.MFVcRDd1Lyl30e9ikGkb0AEsCo&pid=Api\", \"datePublished\"\
+        : \"2016-09-20T11:59:00.0000000Z\", \"contentUrl\": \"http:\\/\\/compass.xbox.com\\\
+        /assets\\/23\\/0d\\/230dc52a-8f0e-40bf-bbd1-c51fdb8371e3.png?n=Homepage-360-UA_Upgrade-big_1056x594.png\"\
+        , \"hostPageUrl\": \"http:\\/\\/www.xbox.com\\/en-US\\/xbox-one\", \"contentSize\"\
+        : \"530912 B\", \"encodingFormat\": \"png\", \"hostPageDisplayUrl\": \"http:\\\
+        /\\/www.xbox.com\\/en-US\\/xbox-one\", \"width\": 1056, \"height\": 594, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\": 168},\
+        \ \"insightsMetadata\": {\"_type\": \"Images\\/ImageMetadata\", \"shoppingSourcesCount\"\
+        : 0, \"recipeSourcesCount\": 0}}]}, \"news\": {\"_type\": \"News\", \"id\"\
+        : \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#News\", \"readLink\"\
+        : \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/news\\/search?q=Xbox\"\
+        , \"value\": [{\"_type\": \"NewsArticle\", \"contractualRules\": [{\"_type\"\
+        : \"ContractualRules\\/TextAttribution\", \"text\": \"Forbes\"}], \"name\"\
+        : \"7 Reasons Why This Holiday Is A Great Time To Buy An Xbox One\", \"url\"\
+        : \"https:\\/\\/www.forbes.com\\/sites\\/davidthier\\/2017\\/11\\/18\\/7-reasons-why-this-holiday-is-a-great-time-to-buy-an-xbox-one\\\
+        /\", \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /blogs-images.forbes.com\\/davidthier\\/files\\/2016\\/06\\/XboxOneS_BG_0613_1920x720_EN_US.JPG-1200x450.jpg\"\
+        , \"thumbnail\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /www.bing.com\\/th?id=ON.AD6033216CCD894B610843BAF46998E3&pid=News\", \"width\"\
+        : 700, \"height\": 262}}, \"description\": \"It\u2019s that time of year again:\
+        \ time to buy some video games. It\u2019s Black Friday season, it\u2019s gifting\
+        \ season, it\u2019s generally the time of year when people spend a decent\
+        \ portion of that budget they had set aside for frivolous purchases, either\
+        \ for ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\/\\\
+        /api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/446bb4df-4999-4243-84c0-74e0f6c60e75\"\
+        , \"name\": \"Xbox One\"}], \"provider\": [{\"_type\": \"Organization\", \"\
+        name\": \"Forbes\", \"image\": {\"_type\": \"ImageObject\", \"thumbnail\"\
+        : {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\\
+        /th?id=ON.SIR1120071153a9d86b81ee7fe4451218e0f95e2136&pid=News\"}}}], \"datePublished\"\
+        : \"2017-11-21T00:36:00.0000000Z\", \"category\": \"ScienceAndTechnology\"\
+        }, {\"_type\": \"NewsArticle\", \"contractualRules\": [{\"_type\": \"ContractualRules\\\
+        /TextAttribution\", \"text\": \"GameSpot\"}], \"name\": \"Black Friday 2017\
+        \ UK Deals At Game: All The PS4, Xbox One, Switch, PC, 3DS Games On Sale\"\
+        , \"url\": \"https:\\/\\/www.gamespot.com\\/articles\\/black-friday-2017-uk-deals-at-game-all-the-ps4-xbo\\\
+        /1100-6455049\\/\", \"image\": {\"_type\": \"ImageObject\", \"contentUrl\"\
+        : \"https:\\/\\/static.gamespot.com\\/uploads\\/screen_kubrick\\/1556\\/15568848\\\
+        /3317102-6762001791-30609.jpg\", \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.2464B3CF0E0EEF4D4E706EE9017CFEAC&pid=News\"\
+        , \"width\": 700, \"height\": 393}}, \"description\": \"Black Friday 2017\
+        \ is still a few days away, yet UK retailers are already announcing their\
+        \ cheap game deals and setting them live. If you're in the US, check out all\
+        \ the PS4 Black Friday deals or a bunch of Xbox One Black Friday deals; otherwise,\
+        \ scroll ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/2d6e3377-1b6a-4f07-ae1c-aada180f248f\"\
+        , \"name\": \"Black Friday\"}], \"provider\": [{\"_type\": \"Organization\"\
+        , \"name\": \"GameSpot\", \"image\": {\"_type\": \"ImageObject\", \"thumbnail\"\
+        : {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\\
+        /th?id=ON.SIR11200731e55ec394d018718eabba035ad6053f82&pid=News\"}}}], \"datePublished\"\
+        : \"2017-11-20T23:41:00.0000000Z\", \"video\": {\"_type\": \"VideoObject\"\
+        , \"name\": \"Black Friday 2017 UK Deals At Game: All The PS4, Xbox One, Switch,\
+        \ PC, 3DS Games On Sale\", \"thumbnailUrl\": \"https:\\/\\/www.bing.com\\\
+        /th?id=ON.2464B3CF0E0EEF4D4E706EE9017CFEAC&pid=News\", \"embedHtml\": \"<iframe\
+        \ src=\\\"https:\\/\\/www.gamespot.com\\/videos\\/embed\\/6441915\\/\\\" width=\\\
+        \"640\\\" height=\\\"360\\\" scrolling=\\\"no\\\" frameborder=\\\"0\\\" webkitallowfullscreen=\\\
+        \"\\\" mozallowfullscreen=\\\"\\\" allowfullscreen=\\\"\\\"><\\/iframe>\"\
+        , \"allowHttpsEmbed\": true, \"thumbnail\": {\"_type\": \"ImageObject\", \"\
+        width\": 480, \"height\": 269}}, \"category\": \"ScienceAndTechnology\"},\
+        \ {\"_type\": \"NewsArticle\", \"contractualRules\": [{\"_type\": \"ContractualRules\\\
+        /TextAttribution\", \"text\": \"Xbox Wire\"}], \"name\": \"Inside Xbox One\
+        \ X Enhanced: World of Tanks\", \"url\": \"https:\\/\\/news.xbox.com\\/2017\\\
+        /11\\/20\\/inside-xbox-one-x-enhanced-world-tanks\\/\", \"image\": {\"_type\"\
+        : \"ImageObject\", \"contentUrl\": \"https:\\/\\/news.xbox.com\\/wp-content\\\
+        /uploads\\/InsideXboxTanksHERO-hero.jpg\", \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.813F63C86B7CF2EDD4A52E938097F1F2&pid=News\"\
+        , \"width\": 700, \"height\": 393}}, \"description\": \"Many of gaming\u2019\
+        s most compelling stories come from those who\u2019ve helped to create our\
+        \ favorite Xbox One games. In our Inside Xbox One X Enhanced series, these\
+        \ creators will share the behind-the-scenes accounts of the work involved\
+        \ in enhancing these ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\"\
+        : \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/c0cac6ef-ab93-a9ec-2de6-70a8ef0a7a8d\"\
+        , \"name\": \"Xbox Live\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/446bb4df-4999-4243-84c0-74e0f6c60e75\"\
+        , \"name\": \"Xbox One\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/595e44be-f445-d997-7d70-92b9f35592e2\"\
+        , \"name\": \"Xbox\"}], \"provider\": [{\"_type\": \"Organization\", \"name\"\
+        : \"Xbox Wire\", \"image\": {\"_type\": \"ImageObject\", \"thumbnail\": {\"\
+        _type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.SIR112010446b0dc696f914e5246f42c9902e1d58cb&pid=News\"\
+        }}}], \"datePublished\": \"2017-11-20T15:00:00.0000000Z\", \"category\": \"\
+        ScienceAndTechnology\"}, {\"_type\": \"NewsArticle\", \"contractualRules\"\
+        : [{\"_type\": \"ContractualRules\\/TextAttribution\", \"text\": \"The Daily\
+        \ Express\"}], \"name\": \"ARK Survival Evolved PS4 and Xbox One UPDATE as\
+        \ Wildcard reveal new Turret weapon\", \"url\": \"https:\\/\\/www.express.co.uk\\\
+        /entertainment\\/gaming\\/882078\\/ARK-Survival-Evolved-PS4-update-Xbox-One-Wildcard-Turret-weapon\"\
+        , \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/cdn.images.express.co.uk\\\
+        /img\\/dynamic\\/galleries\\/x701\\/278983.jpg\", \"thumbnail\": {\"_type\"\
+        : \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.9E6DAC78771BCCD0E2CD0FABC0A163F3&pid=News\"\
+        , \"width\": 700, \"height\": 546}}, \"description\": \"It was recently revealed\
+        \ by the development team that ARK Survival Evolved on PS4, Xbox One and PC\
+        \ was about to see a major change. According to Wildcard, there\u2019s been\
+        \ a dramatic change in how turrets are being used on official servers. More\
+        \ turrets are ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/dcc9114a-9396-19bd-5d44-4bc794034484\"\
+        , \"name\": \"Gaming, Austria\"}, {\"_type\": \"Thing\", \"readLink\": \"\
+        https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/a77fc12b-772e-4804-268d-9febd6126ab3\"\
+        , \"name\": \"Daily Express\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/c490120a-4460-aa39-cdf9-2c91c37f541b\"\
+        , \"name\": \"Wild card\"}], \"provider\": [{\"_type\": \"Organization\",\
+        \ \"name\": \"The Daily Express\", \"image\": {\"_type\": \"ImageObject\"\
+        , \"thumbnail\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /www.bing.com\\/th?id=ON.SIR11200740f047cbddff341a471b7b05bd5f4ee660&pid=News\"\
+        }}}], \"datePublished\": \"2017-11-20T19:33:00.0000000Z\", \"category\": \"\
+        ScienceAndTechnology\"}, {\"_type\": \"NewsArticle\", \"contractualRules\"\
+        : [{\"_type\": \"ContractualRules\\/TextAttribution\", \"text\": \"Gaming\
+        \ Bolt\"}], \"name\": \"Phil Spencer Discusses 4K App Support, Picture to\
+        \ Picture Mode, and Backward Compatibility for Xbox One\", \"url\": \"https:\\\
+        /\\/gamingbolt.com\\/phil-spencer-discusses-4k-app-support-picture-to-picture-mode-and-backward-compatibility-for-xbox-one\"\
+        , \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/gamingbolt.com\\\
+        /wp-content\\/uploads\\/2017\\/09\\/Xbox-One-X.jpg\", \"thumbnail\": {\"_type\"\
+        : \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.D23A7D3598786E2C359BA6850328D27F&pid=News\"\
+        , \"width\": 700, \"height\": 393}}, \"description\": \"The Xbox One had a\
+        \ rough year through most of 2017, but it has managed to come back strong\
+        \ thanks to the triumphant launch of the excellent Xbox One X. Xbox is now\
+        \ in a good place- its fanbase is rallied, the hardware is best on the market,\
+        \ its strides in ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"\
+        https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/446bb4df-4999-4243-84c0-74e0f6c60e75\"\
+        , \"name\": \"Xbox One\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/b9c2f6c5-9683-14fc-92d8-09b50ea4259e\"\
+        , \"name\": \"Phil Spencer\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/cabcbaaa-091e-ef07-4b5e-0a9c2fd72f3c\"\
+        , \"name\": \"Video game\"}], \"provider\": [{\"_type\": \"Organization\"\
+        , \"name\": \"Gaming Bolt\"}], \"datePublished\": \"2017-11-20T19:30:00.0000000Z\"\
+        , \"category\": \"ScienceAndTechnology\"}]}, \"videos\": {\"_type\": \"Videos\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#Videos\"\
+        , \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/videos\\\
+        /search?q=xbox\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox\", \"isFamilyFriendly\": true, \"value\": [{\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=xbox&view=detail&mid=6DD2E2E108DD5912B5366DD2E2E108DD5912B536\"\
+        , \"name\": \"Xbox 360 - \\\"Project Natal\\\" World Premiere Promo\", \"\
+        description\": \"Find out all you need to know about the World Premiere of\
+        \ \\\"the Project Natal Experience\\\", imagined by Cirque du Soleil\xAE Be\
+        \ sure to catch the full show this T...\", \"thumbnailUrl\": \"https:\\/\\\
+        /tse1.mm.bing.net\\/th?id=OVP.D8vzRXWVPm6mfyJ8bH7AqgEsCo&pid=Api\", \"datePublished\"\
+        : \"2010-06-11T18:32:19.0000000\", \"publisher\": [{\"_type\": \"Organization\"\
+        , \"name\": \"YouTube\"}], \"isAccessibleForFree\": true, \"contentUrl\":\
+        \ \"https:\\/\\/www.youtube.com\\/watch?v=cq4iatlz3eQ\", \"hostPageUrl\":\
+        \ \"https:\\/\\/www.youtube.com\\/watch?v=cq4iatlz3eQ\", \"encodingFormat\"\
+        : \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=cq4iatlz3eQ\"\
+        , \"width\": 1280, \"height\": 720, \"duration\": \"PT1M10S\", \"motionThumbnailUrl\"\
+        : \"https:\\/\\/tse1.mm.bing.net\\/th?id=OM.NrUSWd0I4eLSbQ_1509486570&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/cq4iatlz3eQ?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 25007, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 168}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\":\
+        \ \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox&view=detail&mid=CB5F38C1C28D138B661FCB5F38C1C28D138B661F\"\
+        , \"name\": \"Connect a Million Minds Case Study: Project Natal\", \"description\"\
+        : \"Discover how science, technology, engineering and math have influenced\
+        \ Project Natal in this case study from Time Warner Cable's Connect a Million\
+        \ Minds init...\", \"thumbnailUrl\": \"https:\\/\\/tse2.mm.bing.net\\/th?id=OVP.Daowcn6h-uAEtTzKKGzklAEsCp&pid=Api\"\
+        , \"datePublished\": \"2010-02-03T19:40:34.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"YouTube\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=nhQtbdmno7I\"\
+        , \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=nhQtbdmno7I\",\
+        \ \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=nhQtbdmno7I\", \"width\": 480, \"height\": 360, \"duration\": \"\
+        PT3M31S\", \"motionThumbnailUrl\": \"https:\\/\\/tse2.mm.bing.net\\/th?id=OM.H2aLE43CwThfyw_1510802080&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/nhQtbdmno7I?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 92591, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 169}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\":\
+        \ \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox&view=detail&mid=23A6DB5F22D6EDF6663723A6DB5F22D6EDF66637\"\
+        , \"name\": \"Xbox 360 -- LEGO Harry Potter: Years 1-4 - Video #3\", \"description\"\
+        : \"LEGO Harry Potter: Years 1-4 shows the Hogwarts experience: attend lessons,\
+        \ mix potions, fly on broomsticks, and complete tasks to collect LEGO studs\
+        \ and rel...\", \"thumbnailUrl\": \"https:\\/\\/tse4.mm.bing.net\\/th?id=OVP.IWtrlk5Su7phA27HGnsFrAEsCo&pid=Api\"\
+        , \"datePublished\": \"2010-06-10T17:24:21.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"YouTube\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=hiwhA6E1JaM\"\
+        , \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=hiwhA6E1JaM\",\
+        \ \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=hiwhA6E1JaM\", \"width\": 1280, \"height\": 720, \"duration\": \"\
+        PT1M27S\", \"motionThumbnailUrl\": \"https:\\/\\/tse4.mm.bing.net\\/th?id=OM1.N2b27dYiX9umIw_1496855982&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/hiwhA6E1JaM?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 10965, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 168}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\":\
+        \ \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox&view=detail&mid=B66975600D5B6CC8EEB3B66975600D5B6CC8EEB3\"\
+        , \"name\": \"Project Natal - The Innovation Journey\", \"description\": \"\
+        See the innovation journey of Project Natal, coming Holiday 2010.\", \"thumbnailUrl\"\
+        : \"https:\\/\\/tse1.mm.bing.net\\/th?id=OVP.MApunYSsEPt1uYEJsUDQpAEsCo&pid=Api\"\
+        , \"datePublished\": \"2010-01-07T22:49:44.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"YouTube\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=-_UzcnTYqc4\"\
+        , \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=-_UzcnTYqc4\",\
+        \ \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=-_UzcnTYqc4\", \"width\": 480, \"height\": 360, \"duration\": \"\
+        PT2M53S\", \"motionThumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OM.s%2b7IbFsNYHVptg_1510759966&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/-_UzcnTYqc4?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 388143, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 168}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\":\
+        \ \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox&view=detail&mid=3DC699A63C269498908F3DC699A63C269498908F\"\
+        , \"name\": \"Xbox 360 -- LEGO Harry Potter: Years 1-4 - Video #2\", \"description\"\
+        : \"LEGO Harry Potter: Years 1-4 shows the Hogwarts experience: attend lessons,\
+        \ mix potions, fly on broomsticks, and complete tasks to collect LEGO studs\
+        \ and rel...\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OVP.UyeajDVubvqq4KV6qejZ2wEsDh&pid=Api\"\
+        , \"datePublished\": \"2010-06-10T17:18:27.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"YouTube\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=aeVlcLRzQfo\"\
+        , \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=aeVlcLRzQfo\",\
+        \ \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=aeVlcLRzQfo\", \"width\": 1280, \"height\": 720, \"duration\": \"\
+        PT1M48S\", \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\"\
+        \ src=\\\"http:\\/\\/www.youtube.com\\/embed\\/aeVlcLRzQfo?autoplay=1\\\"\
+        \ frameborder=\\\"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\"\
+        : true, \"viewCount\": 2251, \"thumbnail\": {\"_type\": \"ImageObject\", \"\
+        width\": 300, \"height\": 225}, \"allowMobileEmbed\": true, \"isSuperfresh\"\
+        : false}, {\"_type\": \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /videos\\/search?q=xbox&view=detail&mid=26840B5EF168E3C01A3926840B5EF168E3C01A39\"\
+        , \"name\": \"Robbie Bach discusses Project Natal\", \"description\": \"You've\
+        \ heard about it. You've seen it. Now tell us what games and experiences you\
+        \ can imagine with Project Natal! Visit youtube.com\\/xboxprojectnatal and\
+        \ subm...\", \"thumbnailUrl\": \"https:\\/\\/tse3.mm.bing.net\\/th?id=OVP.7nzbWDhEOVD0jMupR4yhwgEsCp&pid=Api\"\
+        , \"datePublished\": \"2009-06-10T21:41:56.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"YouTube\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=H3s6P18_plM\"\
+        , \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=H3s6P18_plM\",\
+        \ \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=H3s6P18_plM\", \"width\": 480, \"height\": 360, \"duration\": \"\
+        PT1M17S\", \"motionThumbnailUrl\": \"https:\\/\\/tse3.mm.bing.net\\/th?id=OM.ORrA42jxXguEJg_1510682375&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/H3s6P18_plM?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 130592, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 169}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\":\
+        \ \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox&view=detail&mid=8341AB35CC493F9683DA8341AB35CC493F9683DA\"\
+        , \"name\": \"Xbox Project Natal Hands On at E3 (2 of 3)\", \"description\"\
+        : \"Watch what happens when we surprise select individuals with a sneak peak\
+        \ of Project Natal at E3. See more at youtube.com\\/xboxprojectnatal and tell\
+        \ us what ga...\", \"thumbnailUrl\": \"https:\\/\\/tse4.mm.bing.net\\/th?id=OVP._7Jcd8v_L0j8MYc-YqUvpAEsCp&pid=Api\"\
+        , \"datePublished\": \"2009-06-10T02:13:11.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"YouTube\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=mGBOv4wsddo\"\
+        , \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=mGBOv4wsddo\",\
+        \ \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=mGBOv4wsddo\", \"width\": 480, \"height\": 360, \"duration\": \"\
+        PT1M19S\", \"motionThumbnailUrl\": \"https:\\/\\/tse4.mm.bing.net\\/th?id=OM.2oOWP0nMNatBgw_1510929556&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/mGBOv4wsddo?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 196040, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 169}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\":\
+        \ \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox&view=detail&mid=FF6E4F97F42AC08B8B25FF6E4F97F42AC08B8B25\"\
+        , \"name\": \"Xbox 360 -- LEGO Harry Potter: Years 1-4 - #1\", \"description\"\
+        : \"Experience Hogwarts\u2122 in LEGO\xAE Harry Potter\u2122: Years 1-4: attend\
+        \ lessons, mix potions, fly on broomsticks, and complete tasks to collect\
+        \ LEGO studs and relive ...\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\\
+        /th?id=OVP.7yhSIidbFmWh92HKWg1bQgEsCo&pid=Api\", \"datePublished\": \"2010-06-10T17:01:32.0000000\"\
+        , \"publisher\": [{\"_type\": \"Organization\", \"name\": \"YouTube\"}], \"\
+        isAccessibleForFree\": true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=qBCdq-WfsKI\", \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=qBCdq-WfsKI\"\
+        , \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=qBCdq-WfsKI\", \"width\": 1280, \"height\": 720, \"duration\": \"\
+        PT1M42S\", \"motionThumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OM1.JYuLwCr0l09u%2fw_1507046074&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/qBCdq-WfsKI?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 3780, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 168}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\":\
+        \ \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox&view=detail&mid=8DD41811E0317C66B8498DD41811E0317C66B849\"\
+        , \"name\": \"Xbox Project Natal : Wayne Ellington and Jeremy Tyler\", \"\
+        description\": \"Basketball stars Wayne Ellington and Jeremy Tyler get a sneak\
+        \ peak at Project Natal at E3.\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\\
+        /th?id=OVP.qd38HSFdZYonlklNHrBCYgEsCo&pid=Api\", \"datePublished\": \"2009-06-10T02:08:19.0000000\"\
+        , \"publisher\": [{\"_type\": \"Organization\", \"name\": \"YouTube\"}], \"\
+        isAccessibleForFree\": true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=fEZ1SZ3d_rE\", \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=fEZ1SZ3d_rE\"\
+        , \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=fEZ1SZ3d_rE\", \"width\": 480, \"height\": 360, \"duration\": \"\
+        PT1M4S\", \"motionThumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OM.SbhmfDHgERjUjQ_1510794270&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/fEZ1SZ3d_rE?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 151375, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 168}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\":\
+        \ \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=xbox&view=detail&mid=9B9E3CDA7CF00B72513E9B9E3CDA7CF00B72513E\"\
+        , \"name\": \"Xbox 360 - Crackdown 2 - ViDoc #2 - \\\"Nothing Is Sacred\\\"\
+        \", \"description\": \"Justice. By Any Means Necessary. Crackdown 2 coming\
+        \ July 6, 2010. Find out more at: http:\\/\\/bit.ly\\/aUGsLy ESRB Rating:\
+        \ MATURE (Blood and Gore, Violence, Stron...\", \"thumbnailUrl\": \"https:\\\
+        /\\/tse1.mm.bing.net\\/th?id=OVP.f_RmnaxY8ZELJ0oPknkpGQEsCo&pid=Api\", \"\
+        datePublished\": \"2010-06-05T18:45:51.0000000\", \"publisher\": [{\"_type\"\
+        : \"Organization\", \"name\": \"YouTube\"}], \"isAccessibleForFree\": true,\
+        \ \"contentUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=dEj9HRQq4Tw\", \"\
+        hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=dEj9HRQq4Tw\", \"encodingFormat\"\
+        : \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=dEj9HRQq4Tw\"\
+        , \"width\": 480, \"height\": 360, \"duration\": \"PT2M8S\", \"motionThumbnailUrl\"\
+        : \"https:\\/\\/tse1.mm.bing.net\\/th?id=OM1.PlFyC%2fB82jyemw_1492223547&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/dEj9HRQq4Tw?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 4432, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 300, \"height\"\
+        : 168}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}], \"scenario\"\
+        : \"List\"}, \"rankingResponse\": {\"_type\": \"Ranking\\/RankingResponse\"\
+        , \"mainline\": {\"_type\": \"Ranking\\/RankingGroup\", \"items\": [{\"_type\"\
+        : \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 0, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.0\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"News\", \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\\
+        /api.cognitive.microsoft.com\\/api\\/v7\\/#News\"}}, {\"_type\": \"Ranking\\\
+        /RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\": 1, \"value\"\
+        : {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.1\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 2, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.2\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"Images\", \"\
+        value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#Images\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 3, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.3\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 4, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.4\"}}, {\"_type\":\
+        \ \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 5, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.5\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 6, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.6\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"Videos\", \"\
+        value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#Videos\"}}]}, \"sidebar\": {\"_type\": \"Ranking\\/RankingGroup\"\
+        , \"items\": [{\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"Entities\"\
+        , \"resultIndex\": 0, \"value\": {\"_type\": \"Identifiable\", \"id\": \"\
+        https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#Entities.0\"}}]}}}"}
+    headers:
+      apim-request-id: [be1642be-5423-4802-aa09-6f7dfeb4d615]
+      bingapis-market: [en-US]
+      bingapis-sessionid: [BA9099FE41A84D60A61279E785EEF249]
+      bingapis-traceid: [178E9467EF504B4BBBBDBBABE12C7CE6]
+      cache-control: ['private, max-age=0']
+      content-length: ['45795']
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 21 Nov 2017 00:38:33 GMT']
+      expires: ['Tue, 21 Nov 2017 00:37:33 GMT']
+      p3p: [CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"]
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      vary: [Accept-Encoding]
+      x-content-type-options: [nosniff]
+      x-msapi-userstate: [2d88]
+      x-msedge-clientid: [13AAFBC0986060760328F08199F761CB]
+      x-msedge-ref: ['Ref A: 178E9467EF504B4BBBBDBBABE12C7CE6 Ref B: CO1EDGE0308 Ref
+          C: 2017-11-21T00:38:33Z']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          websearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/search?count=20&mkt=en-us&offset=10&q=Best%20restaurants%20in%20Seattle
+  response:
+    body: {string: "{\"_type\": \"SearchResponse\", \"queryContext\": {\"_type\":\
+        \ \"QueryContext\", \"originalQuery\": \"Best restaurants in Seattle\"}, \"\
+        webPages\": {\"_type\": \"Web\\/WebAnswer\", \"webSearchUrl\": \"https:\\\
+        /\\/www.bing.com\\/search?q=Best+restaurants+in+Seattle\", \"totalEstimatedMatches\"\
+        : 17800000, \"value\": [{\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.0\", \"name\": \"Seattle 2017: Best of Seattle, WA Tourism\
+        \ - TripAdvisor\", \"url\": \"https:\\/\\/www.tripadvisor.com\\/Tourism-g60878-Seattle_Washington-Vacations.html\"\
+        , \"displayUrl\": \"https:\\/\\/www.tripadvisor.com\\/Tourism-g60878\", \"\
+        snippet\": \"Seattle Tourism: TripAdvisor has 463,782 reviews of Seattle Hotels,\
+        \ Attractions, and Restaurants making it your best Seattle resource.\", \"\
+        dateLastCrawled\": \"2017-11-17T10:42:00.0000000Z\"}, {\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.1\"\
+        , \"name\": \"Downtown Seattle Restaurants | OpenTable\", \"url\": \"https:\\\
+        /\\/www.opentable.com\\/seattle\\/downtown-seattle-restaurants\", \"displayUrl\"\
+        : \"https:\\/\\/www.opentable.com\\/seattle\\/downtown-seattle-restaurants\"\
+        , \"snippet\": \"Find Downtown Seattle restaurants in the Seattle area and\
+        \ other neighborhoods such as Capitol Hill (Seattle), Ballard, West Seattle,\
+        \ and more. Make restaurant ...\", \"dateLastCrawled\": \"2017-11-17T14:01:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.2\", \"name\": \"18 Seattle Restaurants With the Best\
+        \ Views in Town, Summer ...\", \"url\": \"https:\\/\\/seattle.eater.com\\\
+        /maps\\/seattle-restaurant-views-map\", \"displayUrl\": \"https:\\/\\/seattle.eater.com\\\
+        /maps\\/seattle-restaurant-views-map\", \"snippet\": \"Seattle is made of\
+        \ scenery. Mountains, skyline, water: There's basically something for everyone.\
+        \ And when it comes to views, these local spots occupy choice real ...\",\
+        \ \"dateLastCrawled\": \"2017-11-15T10:53:00.0000000Z\"}, {\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.3\"\
+        , \"name\": \"Find the best Seattle restaurants for your taste - Zomato ...\"\
+        , \"url\": \"https:\\/\\/www.zomato.com\\/seattle\", \"displayUrl\": \"https:\\\
+        /\\/www.zomato.com\\/seattle\", \"snippet\": \"Seattle Restaurants - Menus,\
+        \ Photos, Ratings and Reviews for over 3500 Restaurants in Seattle. Find the\
+        \ Best Restaurants in Seattle on Zomato - Seattle Restaurants\", \"dateLastCrawled\"\
+        : \"2017-11-17T18:41:00.0000000Z\"}, {\"_type\": \"WebPage\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.4\", \"name\": \"Best\
+        \ New Restaurants in Seattle That Opened in 2017 ...\", \"url\": \"https:\\\
+        /\\/www.thrillist.com\\/eat\\/seattle\\/best-new-restaurants-seattle-2017\"\
+        , \"thumbnailUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.517733F6B97491DAB1F4AF2149664261&pid=5.1&w=80&h=80&c=8\"\
+        , \"displayUrl\": \"https:\\/\\/www.thrillist.com\\/eat\\/seattle\\/best-new-restaurants-seattle...\"\
+        , \"snippet\": \"We handpicked the best Seattle openings of 2017, how many\
+        \ have you tried?\", \"dateLastCrawled\": \"2017-11-15T14:51:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.5\", \"name\": \"The Best Restaurants in Seattle 2016\
+        \ | Seattle Magazine\", \"url\": \"http:\\/\\/www.seattlemag.com\\/article\\\
+        /best-restaurants-seattle-2016\", \"displayUrl\": \"www.seattlemag.com\\/article\\\
+        /best-restaurants-seattle-2016\", \"snippet\": \"The Best of Dining NowWith\
+        \ the rapid-fire succession of restaurant openings we\u2019ve experienced\
+        \ of late comes an equally great diversity of cuisine. The days of ...\",\
+        \ \"dateLastCrawled\": \"2017-11-17T14:25:00.0000000Z\"}, {\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.6\"\
+        , \"name\": \"Andaluca, Seattle - Menu, Prices & Restaurant Reviews ...\"\
+        , \"url\": \"https:\\/\\/www.tripadvisor.com\\/Restaurant_Review-g60878-d432630-Reviews-Andaluca-Seattle_Washington.html\"\
+        , \"displayUrl\": \"https:\\/\\/www.tripadvisor.com\\/Restaurant_Review-g60878-d432630...\"\
+        , \"snippet\": \"Reserve a table at Andaluca, Seattle on TripAdvisor: See\
+        \ 613 unbiased reviews of Andaluca, rated 4.5 of 5 on TripAdvisor and ranked\
+        \ #12 of 4,232 ...\", \"dateLastCrawled\": \"2017-11-17T00:49:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.7\", \"name\": \"The Best 10 Restaurants near University\
+        \ District, Seattle, WA\", \"url\": \"https:\\/\\/www.yelp.com\\/search?cflt=restaurants&find_loc=University+District%2C+Seattle%2C+WA\"\
+        , \"displayUrl\": \"https:\\/\\/www.yelp.com\\/search?cflt=restaurants&find_loc=University...\"\
+        , \"snippet\": \"Best Restaurants in University District, Seattle, WA - Din\
+        \ Tai Fung, Xi'an Noodles, Ma'ono Fried Chicken, Itadakimasu, Morsel, Arepa\
+        \ Venezuelan Kitchen, Hiroshi's ...\", \"dateLastCrawled\": \"2017-11-13T14:18:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.8\", \"name\": \"Canlis\", \"url\": \"http:\\/\\/canlis.com\\\
+        /\", \"about\": [{\"_type\": \"Thing\", \"name\": \"Canlis\"}], \"displayUrl\"\
+        : \"canlis.com\", \"snippet\": \"Seattle's landmark fine-dining destination\
+        \ for 66 years, offering Pacific NW fare in a midcentury-modern home.\", \"\
+        dateLastCrawled\": \"2017-11-17T01:38:00.0000000Z\"}, {\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.9\"\
+        , \"name\": \"Seattle's 100 Very Best Restaurants | Seattle Met\", \"url\"\
+        : \"http:\\/\\/www.seattlemet.com\\/articles\\/2016\\/10\\/17\\/seattle-s-100-very-best-restaurants\"\
+        , \"displayUrl\": \"www.seattlemet.com\\/...\\/2016\\/10\\/17\\/seattle-s-100-very-best-restaurants\"\
+        , \"snippet\": \"Truth is, Seattle has easily twice this number of genuinely\
+        \ extraordinary restaurants. But here, including this year\u2019s new standouts,\
+        \ are the most vivid ...\", \"dateLastCrawled\": \"2017-11-17T15:59:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.10\", \"name\": \"Seattle\u2019s Finest Italian Restaurants\
+        \ | Seattle Met\", \"url\": \"https:\\/\\/www.seattlemet.com\\/articles\\\
+        /2015\\/1\\/5\\/seattles-finest-italian-restaurants-2015\", \"displayUrl\"\
+        : \"https:\\/\\/www.seattlemet.com\\/articles\\/2015\\/1\\/5\\/seattles-finest...\"\
+        , \"snippet\": \"Our collection of Seattle's best bets for Italian food\"\
+        , \"dateLastCrawled\": \"2017-11-17T19:28:00.0000000Z\"}, {\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.11\"\
+        , \"name\": \"Italian Downtown Seattle Restaurants | Tulio Ristorante\", \"\
+        url\": \"http:\\/\\/www.tulio.com\\/\", \"displayUrl\": \"www.tulio.com\"\
+        , \"snippet\": \"Touted by a national magazine as the best Italian restaurant\
+        \ in Seattle, Tulio is a local favorite for delicious Italian food and a warm\
+        \ atmosphere.\", \"dateLastCrawled\": \"2017-11-17T13:09:00.0000000Z\"}, {\"\
+        _type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.12\", \"name\": \"The Pink Door\", \"url\": \"https:\\\
+        /\\/www.thepinkdoor.net\\/\", \"displayUrl\": \"https:\\/\\/www.thepinkdoor.net\"\
+        , \"snippet\": \"Along the quaint Post Alley at Seattle\u2019s Pike Place\
+        \ Market awaits one of the city\u2019s most beloved restaurant destinations\
+        \ since 1981: The Pink Door.\", \"dateLastCrawled\": \"2017-11-15T03:50:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.13\", \"name\": \"Top 10 restaurants and cafes in Seattle\
+        \ | Travel | The ...\", \"url\": \"https:\\/\\/www.theguardian.com\\/travel\\\
+        /2013\\/may\\/25\\/top-10-restaurants-cafes-seattle\", \"displayUrl\": \"\
+        https:\\/\\/www.theguardian.com\\/...\\/25\\/top-10-restaurants-cafes-seattle\"\
+        , \"snippet\": \"The Seattle restaurant scene is burgeoning and eclectic,\
+        \ ... Top 10 restaurants and cafes in Seattle ... That's because it serves\
+        \ the best Vietnamese food around.\", \"dateLastCrawled\": \"2017-11-13T14:17:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.14\", \"name\": \"The 10 Best Seattle Restaurants -\
+        \ TripAdvisor\", \"url\": \"https:\\/\\/www.tripadvisor.co.uk\\/Restaurants-g60878-Seattle_Washington.html\"\
+        , \"displayUrl\": \"https:\\/\\/www.tripadvisor.co.uk\\/Restaurants-g60878-Seattle...\"\
+        , \"snippet\": \"Reserve a table for the best dining in Seattle, Washington\
+        \ on TripAdvisor: See 187,926 reviews of 4,232 Seattle restaurants and search\
+        \ by cuisine, price, location ...\", \"dateLastCrawled\": \"2017-11-17T17:06:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.15\", \"name\": \"The 10 Best Seattle Restaurants of\
+        \ 2017 - TripAdvisor\", \"url\": \"https:\\/\\/www.tripadvisor.in\\/Restaurants-g60878-Seattle_Washington.html\"\
+        , \"displayUrl\": \"https:\\/\\/www.tripadvisor.in\\/Restaurants-g60878-Seattle_Washington.html\"\
+        , \"snippet\": \"Dining in Seattle, Washington: See 1,87,756 TripAdvisor traveller\
+        \ reviews of 4,230 Seattle restaurants and search by cuisine, price, location,\
+        \ and more.\", \"dateLastCrawled\": \"2017-11-15T07:32:00.0000000Z\"}, {\"\
+        _type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.16\", \"name\": \"Readers' Choice: 2012 Best Restaurants\
+        \ | Seattle Magazine\", \"url\": \"http:\\/\\/www.seattlemag.com\\/article\\\
+        /readers-choice-2012-best-restaurants\", \"displayUrl\": \"www.seattlemag.com\\\
+        /article\\/readers-choice-2012-best-restaurants\", \"snippet\": \"The best\
+        \ places in Seattle for eating, drinking and more, as determined by Seattle\
+        \ magazine readers.\", \"dateLastCrawled\": \"2017-11-15T18:53:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.17\", \"name\": \"Best things to do in Seattle with\
+        \ Kids, Best Restaurants ...\", \"url\": \"http:\\/\\/momvoyage.hilton.com\\\
+        /articles\\/best-things-to-do-seattle-with-kids-2-days\\/\", \"displayUrl\"\
+        : \"momvoyage.hilton.com\\/articles\\/best-things-to-do-seattle-with-kids...\"\
+        , \"snippet\": \"See our list of the best things to do in Seattle with kids\
+        \ in 2 days. Don't miss Pike Place Market, Chihuly Garden and Glass or the\
+        \ Space Needle!\", \"dateLastCrawled\": \"2017-11-06T13:33:00.0000000Z\"},\
+        \ {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.18\", \"name\": \"Most Romantic Restaurants in Seattle\
+        \ - Thrillist\", \"url\": \"https:\\/\\/www.thrillist.com\\/eat\\/seattle\\\
+        /most-romantic-restaurants-in-seattle\", \"displayUrl\": \"https:\\/\\/www.thrillist.com\\\
+        /...\\/most-romantic-restaurants-in-seattle\", \"snippet\": \"From Canlis\
+        \ to Altura, these are the most romantic restaurants in Seattle.\", \"dateLastCrawled\"\
+        : \"2017-11-17T01:40:00.0000000Z\"}, {\"_type\": \"WebPage\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.19\", \"name\": \"\
+        Seattle Dining Guide - seattlesbestrestaurants.com\", \"url\": \"http:\\/\\\
+        /www.seattlesbestrestaurants.com\\/\", \"displayUrl\": \"www.seattlesbestrestaurants.com\"\
+        , \"snippet\": \"Seattle Dining Guide - seattlesbestrestaurants.com\", \"\
+        dateLastCrawled\": \"2017-11-12T11:14:00.0000000Z\"}], \"someResultsRemoved\"\
+        : true}, \"relatedSearches\": {\"_type\": \"RelatedSearches\\/RelatedSearchAnswer\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#RelatedSearches\"\
+        , \"value\": [{\"_type\": \"Query\", \"text\": \"top 10 restaurants downtown\
+        \ seattle\", \"displayText\": \"top 10 restaurants downtown seattle\", \"\
+        webSearchUrl\": \"https:\\/\\/www.bing.com\\/search?q=top+10+restaurants+downtown+seattle\"\
+        }, {\"_type\": \"Query\", \"text\": \"best restaurants in seattle 2017\",\
+        \ \"displayText\": \"best restaurants in seattle 2017\", \"webSearchUrl\"\
+        : \"https:\\/\\/www.bing.com\\/search?q=best+restaurants+in+seattle+2017\"\
+        }, {\"_type\": \"Query\", \"text\": \"unique places to eat in seattle\", \"\
+        displayText\": \"unique places to eat in seattle\", \"webSearchUrl\": \"https:\\\
+        /\\/www.bing.com\\/search?q=unique+places+to+eat+in+seattle\"}, {\"_type\"\
+        : \"Query\", \"text\": \"zagat seattle top restaurants\", \"displayText\"\
+        : \"zagat seattle top restaurants\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /search?q=zagat+seattle+top+restaurants\"}, {\"_type\": \"Query\", \"text\"\
+        : \"best restaurants in west seattle\", \"displayText\": \"best restaurants\
+        \ in west seattle\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/search?q=best+restaurants+in+west+seattle\"\
+        }, {\"_type\": \"Query\", \"text\": \"best restaurants in north seattle\"\
+        , \"displayText\": \"best restaurants in north seattle\", \"webSearchUrl\"\
+        : \"https:\\/\\/www.bing.com\\/search?q=best+restaurants+in+north+seattle\"\
+        }, {\"_type\": \"Query\", \"text\": \"best restaurants in seattle downtown\"\
+        , \"displayText\": \"best restaurants in seattle downtown\", \"webSearchUrl\"\
+        : \"https:\\/\\/www.bing.com\\/search?q=best+restaurants+in+seattle+downtown\"\
+        }, {\"_type\": \"Query\", \"text\": \"six seven restaurant seattle\", \"displayText\"\
+        : \"six seven restaurant seattle\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\\
+        /search?q=six+seven+restaurant+seattle\"}]}, \"rankingResponse\": {\"_type\"\
+        : \"Ranking\\/RankingResponse\", \"mainline\": {\"_type\": \"Ranking\\/RankingGroup\"\
+        , \"items\": [{\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\"\
+        , \"resultIndex\": 0, \"value\": {\"_type\": \"Identifiable\", \"id\": \"\
+        https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.0\"}}, {\"\
+        _type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 1, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.1\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 2, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.2\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 3, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.3\"}}, {\"_type\":\
+        \ \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 4, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.4\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 5, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.5\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 6, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.6\"}}, {\"_type\":\
+        \ \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 7, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.7\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 8, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.8\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 9, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.9\"}}, {\"_type\":\
+        \ \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 10, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.10\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 11, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.11\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 12, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.12\"}}, {\"_type\"\
+        : \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 13, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.13\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 14, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.14\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 15, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.15\"}}, {\"_type\"\
+        : \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 16, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.16\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 17, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.17\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 18, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.18\"}}, {\"_type\"\
+        : \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 19, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.19\"}}]}, \"sidebar\": {\"_type\": \"Ranking\\/RankingGroup\"\
+        , \"items\": [{\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"RelatedSearches\"\
+        , \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#RelatedSearches\"}}]}}}"}
+    headers:
+      apim-request-id: [33b902c6-d5e0-41da-a610-5858e1bd6fae]
+      bingapis-market: [en-US]
+      bingapis-sessionid: [31C7D1B3BD034A67AB040C477DC61897]
+      bingapis-traceid: [E730AAC7E5224C5D9E030B7E91BFF667]
+      cache-control: ['private, max-age=0']
+      content-length: ['16347']
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 21 Nov 2017 00:38:34 GMT']
+      expires: ['Tue, 21 Nov 2017 00:37:33 GMT']
+      p3p: [CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"]
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      vary: [Accept-Encoding]
+      x-content-type-options: [nosniff]
+      x-msapi-userstate: [3acd]
+      x-msedge-clientid: [0D3D8BD71AB267D736B980961B25668D]
+      x-msedge-ref: ['Ref A: E730AAC7E5224C5D9E030B7E91BFF667 Ref B: CO1EDGE0118 Ref
+          C: 2017-11-21T00:38:33Z']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          websearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/search?mkt=en-us&q=Microsoft&responseFilter=news
+  response:
+    body: {string: "{\"_type\": \"SearchResponse\", \"queryContext\": {\"_type\":\
+        \ \"QueryContext\", \"originalQuery\": \"Microsoft\"}, \"news\": {\"_type\"\
+        : \"News\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\\
+        /#News\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\\
+        /v7\\/news\\/search?q=Microsoft\", \"value\": [{\"_type\": \"NewsArticle\"\
+        , \"contractualRules\": [{\"_type\": \"ContractualRules\\/TextAttribution\"\
+        , \"text\": \"GeekWire\"}], \"name\": \"Pixvana raises $14M from Vulcan, Microsoft,\
+        \ top VC firms for VR production platform\", \"url\": \"https:\\/\\/www.geekwire.com\\\
+        /2017\\/pixvana-raises-14m-vulcan-microsoft-top-vc-firms-vr-production-platform\\\
+        /\", \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /cdn.geekwire.com\\/wp-content\\/uploads\\/2017\\/11\\/pasted-image-0-1260x650.png\"\
+        , \"thumbnail\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /www.bing.com\\/th?id=ON.D8B618830F19AA182477129B96714A7D&pid=News\", \"width\"\
+        : 700, \"height\": 361}}, \"description\": \"Madrona Venture Group investors\
+        \ watch Pixvana\u2019s pitch in virtual reality. (Photo via Pixvana) What\
+        \ better way to pitch a virtual or augmented reality startup idea than to\
+        \ strap a bunch of headsets on the heads of venture capitalists and turn a\
+        \ basic ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/44d3d12d-c522-ee6d-fec5-37e6f770f615\"\
+        , \"name\": \"Vulcan Inc.\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/091d4028-2f4b-0804-872a-4d5b6205115e\"\
+        , \"name\": \"Gnome-Rh\xF4ne 14M\"}, {\"_type\": \"Thing\", \"readLink\":\
+        \ \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/a093e9b9-90f5-a3d5-c4b8-5855e1b01f85\"\
+        , \"name\": \"Microsoft\"}], \"provider\": [{\"_type\": \"Organization\",\
+        \ \"name\": \"GeekWire\", \"image\": {\"_type\": \"ImageObject\", \"thumbnail\"\
+        : {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\\
+        /th?id=ON.SIR11201126f31b8cc7aee06a56fa7c7c058ce811ac&pid=News\"}}}], \"datePublished\"\
+        : \"2017-11-21T00:10:00.0000000Z\", \"category\": \"ScienceAndTechnology\"\
+        }, {\"_type\": \"NewsArticle\", \"contractualRules\": [{\"_type\": \"ContractualRules\\\
+        /TextAttribution\", \"text\": \"eWeek\"}], \"name\": \"Microsoft Adding New\
+        \ HDR and On-Screen Input Options to Windows 10\", \"url\": \"http:\\/\\/www.eweek.com\\\
+        /innovation\\/microsoft-adding-new-hdr-and-on-screen-input-options-to-windows-10\"\
+        , \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"http:\\/\\/www.eweek.com\\\
+        /imagesvr_ez\\/b2bezp\\/2016\\/08\\/290_WindowsXPMigration_3.jpg?alias=social_image\"\
+        , \"thumbnail\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /www.bing.com\\/th?id=ON.69E56B9FFC63E66C2E1AF17E67C1CAC5&pid=News\", \"width\"\
+        : 560, \"height\": 300}}, \"description\": \"Windows 10 users with monitors\
+        \ capable of displaying high dynamic range (HDR) content will soon have new\
+        \ settings that improve the quality of non-HDR visuals. New in build number\
+        \ 17040 of the PC operating system, which is available now to members of the\
+        \ ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/16aeb6d9-9098-0a40-4970-8e46a4fcee12\", \"name\": \"\
+        Microsoft Windows\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/fd31547a-9016-4940-b644-78988670c18a\", \"name\": \"\
+        Build\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/04a5a8ae-3ef3-a312-e79c-f977541b844a\", \"name\": \"\
+        Handwriting\"}], \"provider\": [{\"_type\": \"Organization\", \"name\": \"\
+        eWeek\", \"image\": {\"_type\": \"ImageObject\", \"thumbnail\": {\"_type\"\
+        : \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.SIR11201100573b27a33ca2873969ce1850fca4946a&pid=News\"\
+        }}}], \"datePublished\": \"2017-11-21T00:29:00.0000000Z\", \"category\": \"\
+        ScienceAndTechnology\"}, {\"_type\": \"NewsArticle\", \"contractualRules\"\
+        : [{\"_type\": \"ContractualRules\\/TextAttribution\", \"text\": \"Forbes\"\
+        }], \"name\": \"Surface Book 2 Reviews: Microsoft Improves On Excellence\"\
+        , \"url\": \"https:\\/\\/www.forbes.com\\/sites\\/ewanspence\\/2017\\/11\\\
+        /19\\/microsoft-surface-book2-reviews-perfection-excellence-macbook-pro-competitor\\\
+        /\", \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /blogs-images.forbes.com\\/ewanspence\\/files\\/2017\\/10\\/surfacebook2_square.jpg?width=640&height=434\"\
+        , \"thumbnail\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /www.bing.com\\/th?id=ON.B5C313CE8DD808B4C54B042D45DC32D9&pid=News\", \"width\"\
+        : 640, \"height\": 434}}, \"description\": \"There are two ways to look at\
+        \ Microsoft\u2019s Surface Book 2, announced mid October. The first is that\
+        \ Microsoft has pushed hard to innovate the hardware that it uses to showcase\
+        \ Windows 10 and the cloud features championed by the Redmond-based company.\"\
+        , \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/d3cf09a9-76dd-973e-2179-47f7f24c5e37\", \"name\": \"\
+        Microsoft Surface\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/a093e9b9-90f5-a3d5-c4b8-5855e1b01f85\", \"name\": \"\
+        Microsoft\"}], \"provider\": [{\"_type\": \"Organization\", \"name\": \"Forbes\"\
+        , \"image\": {\"_type\": \"ImageObject\", \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.SIR1120071153a9d86b81ee7fe4451218e0f95e2136&pid=News\"\
+        }}}], \"datePublished\": \"2017-11-20T19:58:00.0000000Z\", \"video\": {\"\
+        _type\": \"VideoObject\", \"name\": \"Surface Book 2 Reviews: Microsoft Improves\
+        \ On Excellence\", \"thumbnailUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.B5C313CE8DD808B4C54B042D45DC32D9&pid=News\"\
+        , \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 480, \"height\":\
+        \ 325}}, \"category\": \"ScienceAndTechnology\"}, {\"_type\": \"NewsArticle\"\
+        , \"contractualRules\": [{\"_type\": \"ContractualRules\\/TextAttribution\"\
+        , \"text\": \"The Hill\"}], \"name\": \"Microsoft attempts to provide internet\
+        \ in Puerto Rico with unused TV frequencies\", \"url\": \"http:\\/\\/thehill.com\\\
+        /policy\\/technology\\/361286-microsoft-is-trying-to-provide-internet-in-puerto-rico-with-unused-tv\"\
+        , \"description\": \"Microsoft is taking advantage of unused airwaves between\
+        \ TV stations \u2014 or white spaces \u2014 to provide wireless internet in\
+        \ Puerto Rico after its broadband infrastructure was severely damaged during\
+        \ Hurricane Maria. The U.S. territory is still reeling ...\", \"about\": [{\"\
+        _type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/72752f4d-11d3-5470-b64e-b9e012b0520f\", \"name\": \"\
+        Puerto Rico\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/a093e9b9-90f5-a3d5-c4b8-5855e1b01f85\", \"name\": \"\
+        Microsoft\"}], \"provider\": [{\"_type\": \"Organization\", \"name\": \"The\
+        \ Hill\", \"image\": {\"_type\": \"ImageObject\", \"thumbnail\": {\"_type\"\
+        : \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.SIR1120094004eec05b28991ffa7950d3c7e8a5dafe&pid=News\"\
+        }}}], \"datePublished\": \"2017-11-20T22:38:00.0000000Z\", \"category\": \"\
+        ScienceAndTechnology\"}]}, \"rankingResponse\": {\"_type\": \"Ranking\\/RankingResponse\"\
+        , \"mainline\": {\"_type\": \"Ranking\\/RankingGroup\", \"items\": [{\"_type\"\
+        : \"Ranking\\/RankingItem\", \"answerType\": \"News\", \"value\": {\"_type\"\
+        : \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\\
+        /v7\\/#News\"}}]}}}"}
+    headers:
+      apim-request-id: [8366585e-c014-4084-aa6f-5f8751ebd517]
+      bingapis-market: [en-US]
+      bingapis-sessionid: [1DED0AB7A50540B1B44BE483782AEB2C]
+      bingapis-traceid: [89A59ACF0C0244CE8430059808BDB08C]
+      cache-control: ['private, max-age=0']
+      content-length: ['7023']
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 21 Nov 2017 00:38:34 GMT']
+      expires: ['Tue, 21 Nov 2017 00:37:34 GMT']
+      p3p: [CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"]
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      vary: [Accept-Encoding]
+      x-content-type-options: [nosniff]
+      x-msapi-userstate: [51b5]
+      x-msedge-clientid: [042A25D7A90668A826232E96A8916951]
+      x-msedge-ref: ['Ref A: 89A59ACF0C0244CE8430059808BDB08C Ref B: CO1EDGE0121 Ref
+          C: 2017-11-21T00:38:34Z']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: [application/json]
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      Content-Type: [application/json; charset=utf-8]
+      User-Agent: [python/3.6.2 (Windows-10-10.0.16299-SP0) requests/2.18.4 msrest/0.4.19
+          websearchapi/0.1.0]
+      X-BingApis-SDK: ['true']
+      X-BingApis-SDK-Client: [Python-SDK]
+    method: GET
+    uri: https://api.cognitive.microsoft.com/bing/v7.0/search?answerCount=2&mkt=en-us&promote=videos&q=Lady%20Gaga&safeSearch=Strict
+  response:
+    body: {string: "{\"_type\": \"SearchResponse\", \"queryContext\": {\"_type\":\
+        \ \"QueryContext\", \"originalQuery\": \"Lady Gaga\"}, \"webPages\": {\"_type\"\
+        : \"Web\\/WebAnswer\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/search?q=Lady+Gaga\"\
+        , \"totalEstimatedMatches\": 3140000, \"value\": [{\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.0\"\
+        , \"name\": \"Lady Gaga - Official Site\", \"url\": \"https:\\/\\/www.ladygaga.com\\\
+        /\", \"about\": [{\"_type\": \"Thing\", \"name\": \"LADY GAGA\"}], \"displayUrl\"\
+        : \"https:\\/\\/www.ladygaga.com\", \"snippet\": \"https:\\/\\/www.ladygaga.com\\\
+        /videos\\/lady-gaga-lady-gagas-pepsi-zero-sugar-super-bowl... Thursday, February\
+        \ 9th, ...\", \"deepLinks\": [{\"_type\": \"WebPage\", \"name\": \"Official\
+        \ Shop\", \"url\": \"https:\\/\\/shop.ladygaga.com\\/\", \"snippet\": \"Shop\
+        \ exclusive Joanne merch in the Lady Gaga Official Shop\"}, {\"_type\": \"\
+        WebPage\", \"name\": \"Tour Dates\", \"url\": \"https:\\/\\/www.ladygaga.com\\\
+        /tourdates\", \"snippet\": \"Tour Dates. Nov 13. KFC Yum! Center. Louisville,\
+        \ KY, USA. Tickets. Nov 15. Sprint Center. Kansas City, MO, USA. Tickets.\
+        \ Nov 16. Scottrade Center. St Louis, MO, USA ...\"}, {\"_type\": \"WebPage\"\
+        , \"name\": \"Photos\", \"url\": \"https:\\/\\/www.ladygaga.com\\/photos\\\
+        /guy-told-gifs\", \"snippet\": \"You are here. X. Photos\"}, {\"_type\": \"\
+        WebPage\", \"name\": \"Videos\", \"url\": \"https:\\/\\/www.ladygaga.com\\\
+        /videos\", \"snippet\": \"Videos; X. Gallery (field_gallery) All . Making\
+        \ Joanne . Music Videos . Performances . Vevo . Footer Logo. Videos 1u9EdaI3rFw.\
+        \ pdxyVnJMg64 ...\"}, {\"_type\": \"WebPage\", \"name\": \"Follow\", \"url\"\
+        : \"https:\\/\\/www.ladygaga.com\\/follow\", \"snippet\": \"You are here.\
+        \ X. Social Links. facebook; instagram; snapchat; twitter\"}, {\"_type\":\
+        \ \"WebPage\", \"name\": \"GAGAMOJI\", \"url\": \"https:\\/\\/www.ladygaga.com\\\
+        /news\\/gagamoji\", \"snippet\": \"GAGAMOJI. How to Use The Editor Formatting\
+        \ . Begin typing in the editor to write your post. Select text to change formatting\
+        \ or add links. Adding Photos \\/ Videos\"}], \"dateLastCrawled\": \"2017-11-15T01:44:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.1\", \"name\": \"Lady Gaga - Wikipedia\", \"url\": \"\
+        https:\\/\\/en.wikipedia.org\\/wiki\\/Lady_Gaga\", \"about\": [{\"_type\"\
+        : \"Thing\", \"name\": \"LADY GAGA\"}], \"displayUrl\": \"https:\\/\\/en.wikipedia.org\\\
+        /wiki\\/Lady_Gaga\", \"snippet\": \"Stefani Joanne Angelina Germanotta (born\
+        \ March 28, 1986), known professionally as Lady Gaga, is an American singer,\
+        \ songwriter, and actress. She is known for ...\", \"dateLastCrawled\": \"\
+        2017-11-14T15:00:00.0000000Z\"}, {\"_type\": \"WebPage\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.2\", \"name\": \"Lady\
+        \ Gaga  | Twitter\", \"url\": \"https:\\/\\/twitter.com\\/ladygaga\", \"about\"\
+        : [{\"_type\": \"Thing\", \"name\": \"Lady Gaga\"}], \"displayUrl\": \"https:\\\
+        /\\/twitter.com\\/ladygaga\", \"snippet\": \"8,582 tweets \u2022 1,270 photos\\\
+        /videos \u2022 73.4M followers. \\\"GAGA x TUDOR And yes, that\u2019s really\
+        \ me playing. #BornToDare The most important person to dare is yourself.\"\
+        , \"dateLastCrawled\": \"2017-11-12T23:57:00.0000000Z\"}, {\"_type\": \"WebPage\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.3\"\
+        , \"name\": \"Lady Gaga - Home | Facebook\", \"url\": \"https:\\/\\/www.facebook.com\\\
+        /ladygaga\", \"about\": [{\"_type\": \"Thing\", \"name\": \"Lady Gaga\"}],\
+        \ \"displayUrl\": \"https:\\/\\/www.facebook.com\\/ladygaga\", \"snippet\"\
+        : \"Order merchandise by Lady Gaga sold only at the Joanne World Tour on the\
+        \ official Lady Gaga Shop now. gaga.lk\\/GagaShop\", \"dateLastCrawled\":\
+        \ \"2017-11-15T00:58:00.0000000Z\"}, {\"_type\": \"WebPage\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.4\", \"name\": \"Lady\
+        \ Gaga - Biography.com\", \"url\": \"https:\\/\\/www.biography.com\\/people\\\
+        /lady-gaga-481598?_escaped_fragment_=\", \"displayUrl\": \"https:\\/\\/www.biography.com\\\
+        /people\\/lady-gaga-481598?_escaped_fragment_=\", \"snippet\": \"Learn more\
+        \ about the early life and rise to fame of international pop superstar Lady\
+        \ Gaga on Biography.com.\", \"dateLastCrawled\": \"2017-11-13T06:42:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.5\", \"name\": \"Lady Gaga News, Pictures, and Videos\
+        \ | TMZ.com\", \"url\": \"http:\\/\\/www.tmz.com\\/person\\/lady-gaga\\/\"\
+        , \"displayUrl\": \"www.tmz.com\\/person\\/lady-gaga\", \"snippet\": \"Lady\
+        \ Gaga was born Stefani Joanne Angelina Germanotta on March 28, 1986 in New\
+        \ York City. She and sister Natali were raised by strict Catholic parents,\
+        \ Cynthia and ...\", \"dateLastCrawled\": \"2017-11-15T02:44:00.0000000Z\"\
+        }, {\"_type\": \"WebPage\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.6\", \"name\": \"Lady Gaga (@ladygaga) \u2022 Instagram\
+        \ photos and videos\", \"url\": \"https:\\/\\/www.instagram.com\\/ladygaga\\\
+        /\", \"about\": [{\"_type\": \"Thing\", \"name\": \"Lady Gaga\"}], \"displayUrl\"\
+        : \"https:\\/\\/www.instagram.com\\/ladygaga\", \"snippet\": \"26.3m Followers,\
+        \ 33 Following, 2,689 Posts - See Instagram photos and videos from Lady Gaga\
+        \ (@ladygaga)\", \"dateLastCrawled\": \"2017-11-11T21:33:00.0000000Z\"}]},\
+        \ \"news\": {\"_type\": \"News\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#News\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/news\\/search?q=Lady+Gaga\", \"value\": [{\"_type\": \"NewsArticle\"\
+        , \"contractualRules\": [{\"_type\": \"ContractualRules\\/TextAttribution\"\
+        , \"text\": \"Washington Post\"}], \"name\": \"Lady Gaga tries on yet another\
+        \ new hat at Capital One Arena \u2014 but it doesn\u2019t quite fit\", \"\
+        url\": \"https:\\/\\/www.washingtonpost.com\\/entertainment\\/music\\/lady-gaga-tries-on-yet-another-new-hat-at-capital-one-arena--but-it-doesnt-quite-fit\\\
+        /2017\\/11\\/20\\/aef1c722-ce04-11e7-a87b-47f14b73162a_story.html\", \"image\"\
+        : {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.washingtonpost.com\\\
+        /rf\\/image_1484w\\/2010-2019\\/WashingtonPost\\/2017\\/11\\/20\\/Production\\\
+        /Daily\\/Style\\/Images\\/869967946.jpg?t=20170517\", \"thumbnail\": {\"_type\"\
+        : \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.4B6A16F85648C01698F24284E0AC41CC&pid=News\"\
+        , \"width\": 700, \"height\": 465}}, \"description\": \"If you watched the\
+        \ American Music Awards on Sunday night, you saw Lady Gaga\u2019s performance\
+        \ of her latest single, \u201CThe Cure.\u201D The song is a love-heals-all-wounds\
+        \ ballad that sounds like everything else on pop radio, and the performance\
+        \ relied on the ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"\
+        https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/1d804cce-259a-4bf1-b771-509e0fdf1f07\"\
+        , \"name\": \"Lady Gaga\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/972cf30f-083d-1633-2cd8-602a6890a2e1\"\
+        , \"name\": \"Capital One\"}], \"provider\": [{\"_type\": \"Organization\"\
+        , \"name\": \"Washington Post\", \"image\": {\"_type\": \"ImageObject\", \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\\
+        /th?id=ON.SIR11200741251a5b8e140a4a07def415e616d000a0&pid=News\"}}}], \"datePublished\"\
+        : \"2017-11-20T17:21:00.0000000Z\", \"category\": \"Entertainment\"}, {\"\
+        _type\": \"NewsArticle\", \"contractualRules\": [{\"_type\": \"ContractualRules\\\
+        /TextAttribution\", \"text\": \"Refinery29\"}], \"name\": \"Lady Gaga Gave\
+        \ The Most Emotional Acceptance Speech At The AMAs\", \"url\": \"http:\\/\\\
+        /www.refinery29.com\\/2017\\/11\\/181725\\/lady-gaga-amas-acceptance-speech-inspirational-quote\"\
+        , \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"http:\\/\\/s1.r29static.com\\\
+        /\\/bin\\/entry\\/420\\/0,0,2000,1050\\/x,80\\/1890187\\/image.jpg\", \"thumbnail\"\
+        : {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\\
+        /th?id=ON.BE2E167FC766AFD901954B3E607E3C2D&pid=News\", \"width\": 700, \"\
+        height\": 367}}, \"description\": \"The 2017 AMAs were a total bro fest, with\
+        \ men nominated for and winning most of the awards. But, not even Niall Horan\
+        \ could take the spotlight away from Lady Gaga who, in addition to performing\
+        \ a moving rendition of \\\"The Cure,\\\" won the award for Favorite ...\"\
+        , \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/1d804cce-259a-4bf1-b771-509e0fdf1f07\", \"name\": \"\
+        Lady Gaga\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/entities\\/db7eacbf-be55-55cf-c655-80b75a244892\", \"name\": \"\
+        American Music Awards\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/51d78ec7-4056-27b1-4c40-bafa682c8199\"\
+        , \"name\": \"Speech\"}], \"provider\": [{\"_type\": \"Organization\", \"\
+        name\": \"Refinery29\", \"image\": {\"_type\": \"ImageObject\", \"thumbnail\"\
+        : {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\\
+        /th?id=ON.SIR11201123225607c0d6068facaffc61e241d255b7&pid=News\"}}}], \"datePublished\"\
+        : \"2017-11-20T20:01:00.0000000Z\", \"category\": \"Entertainment\"}, {\"\
+        _type\": \"NewsArticle\", \"contractualRules\": [{\"_type\": \"ContractualRules\\\
+        /TextAttribution\", \"text\": \"Entertainment Weekly Online\"}], \"name\"\
+        : \"Lady Gaga provides the 'The Cure' in soaring AMAs performance\", \"url\"\
+        : \"http:\\/\\/ew.com\\/music\\/2017\\/11\\/19\\/lady-gaga-provides-the-the-cure-in-soaring-amas-performance\\\
+        /\", \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /ewedit.files.wordpress.com\\/2017\\/11\\/gettyimages-634608864.jpg?crop=0px%2C0px%2C2700px%2C1417.5px&resize=1200%2C630\"\
+        , \"thumbnail\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /www.bing.com\\/th?id=ON.4022F280EE54444980A260EFCF4ADBAD&pid=News\", \"width\"\
+        : 700, \"height\": 367}}, \"description\": \"Lady Gaga may not have the fancy\
+        \ things, but she gave us everything \u2014 including a stunning rendition\
+        \ of her hit single \u201CThe Cure\u201D \u2014 during her 2017 American Music\
+        \ Awards performance. Clad in an elaborate metallic costume, Gaga belted the\
+        \ song live ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/1d804cce-259a-4bf1-b771-509e0fdf1f07\"\
+        , \"name\": \"Lady Gaga\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/98d80d49-bc9d-05bd-ff5a-37918ee6f52a\"\
+        , \"name\": \"The Cure\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/db7eacbf-be55-55cf-c655-80b75a244892\"\
+        , \"name\": \"American Music Awards\"}], \"provider\": [{\"_type\": \"Organization\"\
+        , \"name\": \"Entertainment Weekly Online\", \"image\": {\"_type\": \"ImageObject\"\
+        , \"thumbnail\": {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\\
+        /www.bing.com\\/th?id=ON.SIR112008356e72db2a579695421e662e84f04ea80c&pid=News\"\
+        }}}], \"datePublished\": \"2017-11-20T01:29:00.0000000Z\", \"category\": \"\
+        Entertainment\"}, {\"_type\": \"NewsArticle\", \"contractualRules\": [{\"\
+        _type\": \"ContractualRules\\/TextAttribution\", \"text\": \"Just Jared\"\
+        }], \"name\": \"Lady Gaga Gets Emotional After AMAs 2017 Win (Video)\", \"\
+        url\": \"http:\\/\\/www.justjared.com\\/2017\\/11\\/19\\/lady-gaga-gets-emotional-after-amas-2017-win\\\
+        /\", \"image\": {\"_type\": \"ImageObject\", \"contentUrl\": \"http:\\/\\\
+        /cdn04.cdn.justjared.com\\/wp-content\\/uploads\\/headlines\\/2017\\/11\\\
+        /lady-gaga-american-music-awards-2017.jpg\", \"thumbnail\": {\"_type\": \"\
+        ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.184B1F9D0A50C5DDD0929FEADC9B52D5&pid=News\"\
+        , \"width\": 300, \"height\": 300}}, \"description\": \"Lady Gaga looks so\
+        \ fierce while posing on her very own red carpet during the 2017 American\
+        \ Music Awards. The 31-year-old entertainer had a show in Washington, D.C.\
+        \ on Sunday night (November 19), so she had a red carpet backdrop flown out\
+        \ to her and she ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"\
+        https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/1d804cce-259a-4bf1-b771-509e0fdf1f07\"\
+        , \"name\": \"Lady Gaga\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/5edea7de-030c-9059-6f84-8025aaede4b4\"\
+        , \"name\": \"American Music Awards of 2013\"}, {\"_type\": \"Thing\", \"\
+        readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\\
+        /8f796ea1-0d0c-70c2-3ac2-d3eb5939e149\", \"name\": \"American Music Awards\"\
+        }], \"provider\": [{\"_type\": \"Organization\", \"name\": \"Just Jared\"\
+        , \"image\": {\"_type\": \"ImageObject\", \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"contentUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.SIR112010251ce87af6411d8216d74c4f136f82cfda&pid=News\"\
+        }}}], \"datePublished\": \"2017-11-20T06:30:00.0000000Z\", \"category\": \"\
+        Entertainment\"}, {\"_type\": \"NewsArticle\", \"contractualRules\": [{\"\
+        _type\": \"ContractualRules\\/TextAttribution\", \"text\": \"Billboard\"}],\
+        \ \"name\": \"Lady Gaga Dazzles With 'The Cure' Performance at the 2017 AMAs\"\
+        , \"url\": \"http:\\/\\/www.billboard.com\\/articles\\/events\\/amas\\/8039530\\\
+        /lady-gaga-the-cure-amas-2017\", \"description\": \"It wasn't the Super Bowl\
+        \ halftime show, but Lady Gaga treated her American Music Awards appearance\
+        \ with the same extravagant bombast. (The song she chose wasn't even released\
+        \ when she took on television's biggest stage last February, so hats off to\
+        \ Gaga ...\", \"about\": [{\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/1d804cce-259a-4bf1-b771-509e0fdf1f07\"\
+        , \"name\": \"Lady Gaga\"}, {\"_type\": \"Thing\", \"readLink\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/db7eacbf-be55-55cf-c655-80b75a244892\"\
+        , \"name\": \"American Music Awards\"}, {\"_type\": \"Thing\", \"readLink\"\
+        : \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/entities\\/89e600cb-2586-b453-0303-9eaeb2569bd9\"\
+        , \"name\": \"Billboard\"}], \"provider\": [{\"_type\": \"Organization\",\
+        \ \"name\": \"Billboard\", \"image\": {\"_type\": \"ImageObject\", \"thumbnail\"\
+        : {\"_type\": \"ImageObject\", \"contentUrl\": \"https:\\/\\/www.bing.com\\\
+        /th?id=ON.SIR11200915339db668c63acf75d5bcc8be7728b693&pid=News\"}}}], \"datePublished\"\
+        : \"2017-11-20T07:38:00.0000000Z\", \"video\": {\"_type\": \"VideoObject\"\
+        , \"name\": \"Lady Gaga Dazzles With 'The Cure' Performance at the 2017 AMAs\"\
+        , \"thumbnailUrl\": \"https:\\/\\/www.bing.com\\/th?id=ON.DFAD9CCFD2008F821C15A4EE27B40AEB&pid=News\"\
+        , \"embedHtml\": \"<iframe src='http:\\/\\/players.brightcove.net\\/1125911414\\\
+        /VJ949r8Fg_default\\/index.html?videoId=5652209776001' allowfullscreen frameborder=0><\\\
+        /iframe>\", \"allowHttpsEmbed\": true, \"thumbnail\": {\"_type\": \"ImageObject\"\
+        , \"width\": 480, \"height\": 317}}, \"category\": \"Entertainment\"}]}, \"\
+        videos\": {\"_type\": \"Videos\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#Videos\", \"readLink\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/videos\\/search?q=lady+gaga\", \"webSearchUrl\": \"https:\\/\\\
+        /www.bing.com\\/videos\\/search?q=lady+gaga\", \"isFamilyFriendly\": true,\
+        \ \"value\": [{\"_type\": \"VideoObject\", \"webSearchUrl\": \"https:\\/\\\
+        /www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=47ECE91D496E6E27402847ECE91D496E6E274028\"\
+        , \"name\": \"Lady Gaga - John Wayne\", \"description\": \"LADY GAGA \\/ JOANNE\
+        \ NEW ALBUM \\/ OUT NOW iTunes: http:\\/\\/gaga.lk\\/Joanne Apple Music: http:\\\
+        /\\/gaga.lk\\/JoanneAP Spotify: http:\\/\\/gaga.lk\\/JoanneSP Google Play:\
+        \ http:\\/\\/gaga.lk ...\", \"thumbnailUrl\": \"https:\\/\\/tse3.mm.bing.net\\\
+        /th?id=OVP.KwL8qbgwC3IfHUsrK6x2vQIIEk&pid=Api\", \"datePublished\": \"2017-02-07T22:27:50.0000000\"\
+        , \"publisher\": [{\"_type\": \"Organization\", \"name\": \"YouTube\"}], \"\
+        isAccessibleForFree\": true, \"contentUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=o9iQ8lIfyEs\", \"hostPageUrl\": \"https:\\/\\/www.youtube.com\\/watch?v=o9iQ8lIfyEs\"\
+        , \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\": \"https:\\/\\/www.youtube.com\\\
+        /watch?v=o9iQ8lIfyEs\", \"width\": 1280, \"height\": 720, \"duration\": \"\
+        PT2M57S\", \"motionThumbnailUrl\": \"https:\\/\\/tse3.mm.bing.net\\/th?id=OM.KEAnbm5JHensRw_1499395892&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"1280\\\" height=\\\"720\\\" src=\\\"\
+        http:\\/\\/www.youtube.com\\/embed\\/o9iQ8lIfyEs?autoplay=1\\\" frameborder=\\\
+        \"0\\\" allowfullscreen><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\"\
+        : 27309838, \"thumbnail\": {\"_type\": \"ImageObject\", \"width\": 520, \"\
+        height\": 292}, \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"\
+        _type\": \"VideoObject\", \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\\
+        /search?q=Lady%20Gaga&view=detail&mid=D5C55CCF4650C99782C0D5C55CCF4650C99782C0\"\
+        , \"name\": \"Perfect Illusion - Lady Gaga\", \"description\": \"Watch Perfect\
+        \ Illusion by Lady Gaga online at vevo.com. Discover the latest music videos\
+        \ by Lady Gaga on Vevo.\", \"thumbnailUrl\": \"https:\\/\\/tse2.mm.bing.net\\\
+        /th?id=OVP.oFpCgzZnFQVdD1TxNNeWHwHgEO&pid=Api\", \"datePublished\": \"2016-09-21T01:00:00.0000000\"\
+        , \"publisher\": [{\"_type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/perfect-illusion\\\
+        /USUV71602754\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /perfect-illusion\\/USUV71602754\", \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\"\
+        : \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/perfect-illusion\\/USUV71602754\"\
+        , \"width\": 1280, \"height\": 720, \"duration\": \"PT3M4S\", \"motionThumbnailUrl\"\
+        : \"https:\\/\\/tse2.mm.bing.net\\/th?id=OM.wIKXyVBGz1zF1Q_1509251532&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71602754&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 110970877, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 480, \"height\": 270},\
+        \ \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=FF45BC353A5CFE739C66FF45BC353A5CFE739C66\"\
+        , \"name\": \"Million Reasons - Lady Gaga\", \"description\": \"Watch Million\
+        \ Reasons by Lady Gaga online at vevo.com. Discover the latest music videos\
+        \ by Lady Gaga on Vevo.\", \"thumbnailUrl\": \"https:\\/\\/tse2.mm.bing.net\\\
+        /th?id=OVP.EYOfKxy50q8D3ADDJWAciAHgEO&pid=Api\", \"datePublished\": \"2016-12-14T19:05:00.0000000\"\
+        , \"publisher\": [{\"_type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/million-reasons\\\
+        /USUV71603712\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /million-reasons\\/USUV71603712\", \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\"\
+        : \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/million-reasons\\/USUV71603712\"\
+        , \"width\": 1280, \"height\": 720, \"duration\": \"PT4M12S\", \"motionThumbnailUrl\"\
+        : \"https:\\/\\/tse2.mm.bing.net\\/th?id=OM.Zpxz%2flw6NbxF%2fw_1510725068&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71603712&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 89732971, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 480, \"height\": 270},\
+        \ \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=F09A79F31C5C2A1B9E49F09A79F31C5C2A1B9E49\"\
+        , \"name\": \"The Cure - Lady Gaga\", \"description\": \"Watch The Cure by\
+        \ Lady Gaga online at vevo.com. Discover the latest music videos by Lady Gaga\
+        \ on Vevo.\", \"thumbnailUrl\": \"https:\\/\\/tse2.mm.bing.net\\/th?id=OVP.o8HqDZK1UYrF14t_RZG_HwHgEO&pid=Api\"\
+        , \"datePublished\": \"2017-04-17T03:00:00.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\":\
+        \ true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/the-cure-(audio)\\\
+        /USUV71700979\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /the-cure-(audio)\\/USUV71700979\", \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\"\
+        : \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/the-cure-(audio)\\/USUV71700979\"\
+        , \"width\": 1280, \"height\": 720, \"duration\": \"PT3M29S\", \"motionThumbnailUrl\"\
+        : \"https:\\/\\/tse2.mm.bing.net\\/th?id=OM.SZ4bKlwc83ma8A_1504572316&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71700979&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 33844095, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 480, \"height\": 270},\
+        \ \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=22E72C00ED206FC44ED722E72C00ED206FC44ED7\"\
+        , \"name\": \"John Wayne - Lady Gaga\", \"description\": \"Watch John Wayne\
+        \ by Lady Gaga online at vevo.com. Discover the latest music videos by Lady\
+        \ Gaga on Vevo.\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OVP._17OEDHEuK-xD_TKu93DXwHgEO&pid=Api\"\
+        , \"datePublished\": \"2017-02-09T16:30:00.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\":\
+        \ true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/john-wayne\\\
+        /USUV71700244\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /john-wayne\\/USUV71700244\", \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\"\
+        : \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/john-wayne\\/USUV71700244\"\
+        , \"width\": 1280, \"height\": 720, \"duration\": \"PT2M57S\", \"motionThumbnailUrl\"\
+        : \"https:\\/\\/tse1.mm.bing.net\\/th?id=OM.107EbyDtACznIg_1510115051&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71700244&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 27206192, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 480, \"height\": 270},\
+        \ \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=FC5C5C27BB3D4A94851AFC5C5C27BB3D4A94851A\"\
+        , \"name\": \"The Cure - Lady Gaga\", \"description\": \"Watch The Cure by\
+        \ Lady Gaga online at vevo.com. Discover the latest music videos by Lady Gaga\
+        \ on Vevo.\", \"thumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OVP.HSqvh2gu7K_8E9Y7tJgdTwEgEO&pid=Api\"\
+        , \"datePublished\": \"2017-05-01T17:00:00.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\":\
+        \ true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/the-cure-(lyric-video)\\\
+        /USUV71701089\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /the-cure-(lyric-video)\\/USUV71701089\", \"encodingFormat\": \"mp4\", \"\
+        hostPageDisplayUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/the-cure-(lyric-video)\\\
+        /USUV71701089\", \"width\": 1280, \"height\": 720, \"duration\": \"PT3M29S\"\
+        , \"motionThumbnailUrl\": \"https:\\/\\/tse1.mm.bing.net\\/th?id=OM.GoWUSj27J1xc%2fA_1505559377&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71701089&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 14575562, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 288, \"height\": 270},\
+        \ \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=998B92B25A93D5853314998B92B25A93D5853314\"\
+        , \"name\": \"A-YO - Lady Gaga\", \"description\": \"Watch A-YO by Lady Gaga\
+        \ online at vevo.com. Discover the latest music videos by Lady Gaga on Vevo.\"\
+        , \"thumbnailUrl\": \"https:\\/\\/tse3.mm.bing.net\\/th?id=OVP.7a5bRcdvixM32yqn3Ckm5wHgEO&pid=Api\"\
+        , \"datePublished\": \"2016-10-18T15:30:00.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\":\
+        \ true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/a-yo-(audio)\\\
+        /USUV71603278\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /a-yo-(audio)\\/USUV71603278\", \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\"\
+        : \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/a-yo-(audio)\\/USUV71603278\"\
+        , \"width\": 1280, \"height\": 720, \"duration\": \"PT3M26S\", \"motionThumbnailUrl\"\
+        : \"https:\\/\\/tse3.mm.bing.net\\/th?id=OM.FDOF1ZNaspKLmQ_1504442063&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71603278&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 15684705, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 480, \"height\": 270},\
+        \ \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=97B74FFCF8F0070B734D97B74FFCF8F0070B734D\"\
+        , \"name\": \"Million Reasons - Lady Gaga\", \"description\": \"Watch Million\
+        \ Reasons by Lady Gaga online at vevo.com. Discover the latest music videos\
+        \ by Lady Gaga on Vevo.\", \"thumbnailUrl\": \"https:\\/\\/tse3.mm.bing.net\\\
+        /th?id=OVP.DtHqwLMBC6FPppdwcIZf5QHgEO&pid=Api\", \"datePublished\": \"2016-10-06T03:00:00.0000000\"\
+        , \"publisher\": [{\"_type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/million-reasons-(audio)\\\
+        /USUV71603019\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /million-reasons-(audio)\\/USUV71603019\", \"encodingFormat\": \"mp4\", \"\
+        hostPageDisplayUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/million-reasons-(audio)\\\
+        /USUV71603019\", \"width\": 1280, \"height\": 720, \"duration\": \"PT3M21S\"\
+        , \"motionThumbnailUrl\": \"https:\\/\\/tse3.mm.bing.net\\/th?id=OM.TXMLB%2fD4%2fE%2b3lw_1509176714&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71603019&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 68133919, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 480, \"height\": 270},\
+        \ \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=9AFC105505EE6F8BF0759AFC105505EE6F8BF075\"\
+        , \"name\": \"Perfect Illusion - Lady Gaga\", \"description\": \"Watch Perfect\
+        \ Illusion by Lady Gaga online at vevo.com. Discover the latest music videos\
+        \ by Lady Gaga on Vevo.\", \"thumbnailUrl\": \"https:\\/\\/tse4.mm.bing.net\\\
+        /th?id=OVP.9CS_HYXf92KhSXTu71bSMAHgEO&pid=Api\", \"datePublished\": \"2016-09-09T03:00:00.0000000\"\
+        , \"publisher\": [{\"_type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\"\
+        : true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/perfect-illusion-(audio)\\\
+        /USUV71602595\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /perfect-illusion-(audio)\\/USUV71602595\", \"encodingFormat\": \"mp4\", \"\
+        hostPageDisplayUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/perfect-illusion-(audio)\\\
+        /USUV71602595\", \"width\": 1280, \"height\": 720, \"duration\": \"PT3M\"\
+        , \"motionThumbnailUrl\": \"https:\\/\\/tse4.mm.bing.net\\/th?id=OM.dfCLb%2b4FVRD8mg_1510887021&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71602595&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 27582656, \"\
+        thumbnail\": {\"_type\": \"ImageObject\", \"width\": 480, \"height\": 270},\
+        \ \"allowMobileEmbed\": true, \"isSuperfresh\": false}, {\"_type\": \"VideoObject\"\
+        , \"webSearchUrl\": \"https:\\/\\/www.bing.com\\/videos\\/search?q=Lady%20Gaga&view=detail&mid=87B2D50AED8B489E412187B2D50AED8B489E4121\"\
+        , \"name\": \"A-YO - Lady Gaga\", \"description\": \"Watch A-YO by Lady Gaga\
+        \ online at vevo.com. Discover the latest music videos by Lady Gaga on Vevo.\"\
+        , \"thumbnailUrl\": \"https:\\/\\/tse4.mm.bing.net\\/th?id=OVP.QImnZRO5ZI-0HcpAmG3zaQHgEO&pid=Api\"\
+        , \"datePublished\": \"2016-10-28T03:00:00.0000000\", \"publisher\": [{\"\
+        _type\": \"Organization\", \"name\": \"VEVO\"}], \"isAccessibleForFree\":\
+        \ true, \"contentUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/a-yo\\\
+        /USUV71603293\", \"hostPageUrl\": \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\\
+        /a-yo\\/USUV71603293\", \"encodingFormat\": \"mp4\", \"hostPageDisplayUrl\"\
+        : \"https:\\/\\/www.vevo.com\\/watch\\/lady-gaga\\/a-yo\\/USUV71603293\",\
+        \ \"width\": 1280, \"height\": 720, \"duration\": \"PT3M44S\", \"motionThumbnailUrl\"\
+        : \"https:\\/\\/tse4.mm.bing.net\\/th?id=OM.IUGeSIvtCtWyhw_1507500004&pid=Api\"\
+        , \"embedHtml\": \"<iframe width=\\\"640\\\" height=\\\"360\\\" src=\\\"https:\\\
+        /\\/embed.vevo.com?isrc=USUV71603293&autoplay=true\\\" allowfullscreen=\\\"\
+        \\\"><\\/iframe>\", \"allowHttpsEmbed\": true, \"viewCount\": 909337, \"thumbnail\"\
+        : {\"_type\": \"ImageObject\", \"width\": 480, \"height\": 270}, \"allowMobileEmbed\"\
+        : true, \"isSuperfresh\": false}], \"scenario\": \"List\"}, \"rankingResponse\"\
+        : {\"_type\": \"Ranking\\/RankingResponse\", \"mainline\": {\"_type\": \"\
+        Ranking\\/RankingGroup\", \"items\": [{\"_type\": \"Ranking\\/RankingItem\"\
+        , \"answerType\": \"News\", \"value\": {\"_type\": \"Identifiable\", \"id\"\
+        : \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#News\"}}, {\"_type\"\
+        : \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 0, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.0\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 1, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.1\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 2, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.2\"}}, {\"_type\":\
+        \ \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\"\
+        : 3, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.3\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"Videos\", \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#Videos\"}}, {\"_type\": \"Ranking\\\
+        /RankingItem\", \"answerType\": \"WebPages\", \"resultIndex\": 4, \"value\"\
+        : {\"_type\": \"Identifiable\", \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\\
+        /api\\/v7\\/#WebPages.4\"}}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\"\
+        : \"WebPages\", \"resultIndex\": 5, \"value\": {\"_type\": \"Identifiable\"\
+        , \"id\": \"https:\\/\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.5\"\
+        }}, {\"_type\": \"Ranking\\/RankingItem\", \"answerType\": \"WebPages\", \"\
+        resultIndex\": 6, \"value\": {\"_type\": \"Identifiable\", \"id\": \"https:\\\
+        /\\/api.cognitive.microsoft.com\\/api\\/v7\\/#WebPages.6\"}}]}}}"}
+    headers:
+      apim-request-id: [efcb6ea2-69b9-4fe4-a73e-fbff97c4e2ee]
+      bingapis-market: [en-US]
+      bingapis-sessionid: [51B517AF2F514287B8F04E4406558FD5]
+      bingapis-traceid: [C0DF8805B2F849D09CBDF8C368A56272]
+      cache-control: ['private, max-age=0']
+      content-length: ['28870']
+      content-type: [application/json; charset=utf-8]
+      date: ['Tue, 21 Nov 2017 00:38:34 GMT']
+      expires: ['Tue, 21 Nov 2017 00:37:34 GMT']
+      p3p: [CP="NON UNI COM NAV STA LOC CURa DEVa PSAa PSDa OUR IND"]
+      server: [Microsoft-HTTPAPI/2.0]
+      strict-transport-security: [max-age=31536000; includeSubDomains; preload]
+      vary: [Accept-Encoding]
+      x-content-type-options: [nosniff]
+      x-msapi-userstate: [d96e]
+      x-msedge-clientid: [2B0007B0C1B1654834920CF1C02664DF]
+      x-msedge-ref: ['Ref A: C0DF8805B2F849D09CBDF8C368A56272 Ref B: CO1EDGE0209 Ref
+          C: 2017-11-21T00:38:34Z']
+    status: {code: 200, message: OK}
+version: 1
