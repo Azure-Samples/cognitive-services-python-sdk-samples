@@ -15,7 +15,7 @@ We provide several meta-packages to help you install several packages at a time.
 
 ### Prerequisites
 
-1.  A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/directory/) by navigating to the **Search** services and acquiring an API key. You can get a trial key for **free** which will expire after 30 days.
+1.  A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/en-us/services/cognitive-services/directory/) by navigating to the **Search** services and acquiring an API key. You can get a trial key for **free** which will expire after 30 days. To execute both samples, you need an EntitySearch key and a Bing WebSearch key.
 
 ### Installation
 
@@ -51,19 +51,19 @@ We provide several meta-packages to help you install several packages at a time.
     pip install -r requirements.txt
     ```
 
-3.  Set up the environment variable SUBSCRIPTION_KEY with your CS key.
+3.  Set up the environment variable ENTITYSEARCH_SUBSCRIPTION_KEY with your CS key if you want to execute EntitySearch tests.
+4.  Set up the environment variable WEBSEARCH_SUBSCRIPTION_KEY with your CS key if you want to execute WebSearch tests.
 
 ## Demo
 
 A demo app is included to show how to use the project.
 
-To run the demo, follow these steps:
+To run the complte demo, execute `python example.py`
 
-(Add steps to start up the demo)
+To run each individual demo, point directly to the file:
 
-1.
-2.
-3.
+1. `python samples/entity_search_sample.py`
+2. `python samples/web_search_sample.py`
 
 To see the code of each example, simply look at the examples in the Samples folder. They are written to be isolated in scope so that you can see only what you're interested in.
 
