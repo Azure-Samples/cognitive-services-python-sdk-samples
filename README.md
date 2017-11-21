@@ -7,7 +7,7 @@ These samples will show you how to get up and running using the Python SDKs for 
 This project framework provides examples for the following services:
 
 * Using the **Bing Entity Search SDK** [azure-cognititiveservices-search-entitysearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-entitysearch) for the [Entity Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-entity-search-api/)
-* Using the **Bing Web Search SDK** [azure-cognititiveservices-search-entitysearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-entitysearch) for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/)
+* Using the **Bing Web Search SDK** [azure-cognititiveservices-search-websearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-websearch) for the [Web Search API](https://azure.microsoft.com/en-us/services/cognitive-services/bing-web-search-api/)
 
 We provide several meta-packages to help you install several packages at a time. Please note that meta-packages are only recommended for development purpose. It's recommended in production to always pin specific version of individual packages.
 
@@ -24,16 +24,15 @@ We provide several meta-packages to help you install several packages at a time.
     This sample (and the SDK) is compatible with Python 2.7, 3.3, 3.4, 3.5 and 3.6.
 
 2.  We recommend that you use a [virtual environment](https://docs.python.org/3/tutorial/venv.html)
-    to run this example, but it's not mandatory.
-    Install and initialize the virtual environment with:
+    to run this example, but it's not required.
+    Install and initialize the virtual environment with the "venv" module on Python 3 (you must install [virtualenv](https://pypi.python.org/pypi/virtualenv) for Python 2.7):
 
     ```
-    pip install virtualenv
-    virtualenv mytestenv
+    python -m venv mytestenv # Might be "python3" or "py -3.6" depending on your Python installation
     cd mytestenv
-    source bin/activate     # Linux shell (Bash, ZSH, etc.) only
-    ./scripts/activate      # PowerShell only
-    ./scripts/activate.bat  # Windows CMD only
+    source bin/activate      # Linux shell (Bash, ZSH, etc.) only
+    ./scripts/activate       # PowerShell only
+    ./scripts/activate.bat   # Windows CMD only
     ```
 
 ### Quickstart
@@ -58,7 +57,7 @@ We provide several meta-packages to help you install several packages at a time.
 
 A demo app is included to show how to use the project.
 
-To run the complte demo, execute `python example.py`
+To run the complete demo, execute `python example.py`
 
 To run each individual demo, point directly to the file:
 
