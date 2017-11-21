@@ -51,8 +51,8 @@ We provide several meta-packages to help you install several packages at a time.
     pip install -r requirements.txt
     ```
 
-3.  Set up the environment variable ENTITYSEARCH_SUBSCRIPTION_KEY with your CS key if you want to execute EntitySearch tests.
-4.  Set up the environment variable WEBSEARCH_SUBSCRIPTION_KEY with your CS key if you want to execute WebSearch tests.
+3.  Set up the environment variable `ENTITYSEARCH_SUBSCRIPTION_KEY` with your CS key if you want to execute EntitySearch tests.
+4.  Set up the environment variable `WEBSEARCH_SUBSCRIPTION_KEY` with your CS key if you want to execute WebSearch tests.
 
 ## Demo
 
@@ -62,8 +62,8 @@ To run the complte demo, execute `python example.py`
 
 To run each individual demo, point directly to the file:
 
-1. `python samples/entity_search_sample.py`
-2. `python samples/web_search_sample.py`
+1. `python samples/entity_search_samples.py`
+2. `python samples/web_search_samples.py`
 
 To see the code of each example, simply look at the examples in the Samples folder. They are written to be isolated in scope so that you can see only what you're interested in.
 

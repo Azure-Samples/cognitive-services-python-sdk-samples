@@ -2,6 +2,8 @@ from azure.cognitiveservices.search.websearch import WebSearchAPI
 from azure.cognitiveservices.search.websearch.models import SafeSearch
 from msrest.authentication import CognitiveServicesCredentials
 
+SUBSCRIPTION_KEY_ENV_NAME = "WEBSEARCH_SUBSCRIPTION_KEY"
+
 def result_types_lookup(subscription_key):
     """WebSearchResultTypesLookup.
 
@@ -154,4 +156,4 @@ def web_search_with_answer_count_promote_and_safe_search(subscription_key):
 
 if __name__ == "__main__":
     from tools import execute_samples
-    execute_samples(globals())
+    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

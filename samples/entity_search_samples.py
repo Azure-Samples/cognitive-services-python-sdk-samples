@@ -2,6 +2,7 @@ from azure.cognitiveservices.search.entitysearch import EntitySearchAPI
 from azure.cognitiveservices.search.entitysearch.models import Place, ErrorResponseException
 from msrest.authentication import CognitiveServicesCredentials
 
+SUBSCRIPTION_KEY_ENV_NAME = "ENTITYSEARCH_SUBSCRIPTION_KEY"
 
 def dominant_entity_lookup(subscription_key):
     """DominantEntityLookup.
@@ -182,4 +183,4 @@ def error(subscription_key):
 
 if __name__ == "__main__":
     from tools import execute_samples
-    execute_samples(globals())
+    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
