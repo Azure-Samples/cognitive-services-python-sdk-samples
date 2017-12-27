@@ -1,3 +1,7 @@
+git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-language-spellcheck&subdirectory=azure-cognitiveservices-language-spellcheck
+git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-customsearch&subdirectory=azure-cognitiveservices-search-customsearch
 git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-entitysearch&subdirectory=azure-cognitiveservices-search-entitysearch
-git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-websearch&subdirectory=azure-cognitiveservices-search-websearch
+git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-imagesearch&subdirectory=azure-cognitiveservices-search-imagesearch
+git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-newssearch&subdirectory=azure-cognitiveservices-search-newssearch
 git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-videosearch&subdirectory=azure-cognitiveservices-search-videosearch
+git+https://github.com/Azure/azure-sdk-for-python#egg=azure-cognitiveservices-search-websearch&subdirectory=azure-cognitiveservices-search-websearch
