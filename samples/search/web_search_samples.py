@@ -104,14 +104,15 @@ def web_search_with_response_filter(subscription_key):
     client = WebSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
-        web_data = client.web.search(query="Microsoft", response_filter=["news"])
-        print("Searched for Query# \" Microsoft \" with response filters \"news\"")
+        web_data = client.web.search(query="Microsoft", response_filter=["News"])
+        print("Searched for Query# \" Microsoft \" with response filters \"News\"")
 
-        if web_data.web_pages.value:
+        # News attribute since I filtered "News"
+        if web_data.news.value:
 
-            print("Webpage Results#{}".format(len(web_data.web_pages.value)))
+            print("Webpage Results#{}".format(len(web_data.news.value)))
 
-            first_web_page = web_data.web_pages.value[0]
+            first_web_page = web_data.news.value[0]
             print("First web page name: {} ".format(first_web_page.name))
             print("First web page URL: {} ".format(first_web_page.url))
 
