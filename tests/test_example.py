@@ -27,10 +27,16 @@ class SearchExampleTest(ReplayableTest):
         if self.in_recording:
             run_all_samples()
         else:
-            with mock.patch.dict('os.environ',
-                {"ENTITYSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
-                 "WEBSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000"}):
-                 run_all_samples()
+            with mock.patch.dict('os.environ', {
+                "ENTITYSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
+                "WEBSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
+                "SPELLCHECK_SUBSCRIPTION_KEY": "0000000000000000000000000000",
+                "CUSTOMSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
+                "IMAGESEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
+                "NEWSSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
+                "WEBSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
+                }):
+                run_all_samples()
 
 
 
