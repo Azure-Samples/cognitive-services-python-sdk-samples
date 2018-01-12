@@ -9,6 +9,7 @@ This project framework provides examples for the following services:
 ### Language
 
 * Using the **Bing Spell Check SDK** [azure-cognititiveservices-language-spellcheck](http://pypi.python.org/pypi/azure-cognititiveservices-language-spellcheck) for the [Bing Spell Check API](https://azure.microsoft.com/services/cognitive-services/spell-check/)
+* Using the **Text Analytics SDK** [azure-cognititiveservices-language-textanalytics](http://pypi.python.org/pypi/azure-cognititiveservices-language-textanalytics) for the [Tet Analytics API](https://azure.microsoft.com/services/cognitive-services/text-analytics/)
 
 ### Search
 
@@ -63,6 +64,7 @@ We provide several meta-packages to help you install several packages at a time.
     ```
 
 4.  Set up the environment variable `SPELLCHECK_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests.
+4.  Set up the environment variable `TEXTANALYTICS_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests. You might override too `TEXTANALYTICS_LOCATION` (westcentralus by default).
 3.  Set up the environment variable `CUSTOMSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute CustomSearch tests.
 3.  Set up the environment variable `ENTITYSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute EntitySearch tests.
 4.  Set up the environment variable `IMAGESEARCH_SUBSCRIPTION_KEY` with your key if you want to execute ImageSearch tests.
@@ -78,7 +80,7 @@ To run the complete demo, execute `python example.py`
 
 To run each individual demo, point directly to the file. For example (i.e. not complete list):
 
-2. `python samples/language/spellchack_samples.py`
+2. `python samples/language/spellcheck_samples.py`
 1. `python samples/search/entity_search_samples.py`
 2. `python samples/search/video_search_samples.py`
 
