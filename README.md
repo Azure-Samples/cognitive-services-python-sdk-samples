@@ -13,12 +13,16 @@ This project framework provides examples for the following services:
 
 ### Search
 
-* Using the **Bing Custom Search SDK** [azure-cognititiveservices-search-customsearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-customsearch) for the [Custom Search API](https://azure.microsoft.com/services/cognitive-services/bing-custom-search//)
+* Using the **Bing Custom Search SDK** [azure-cognititiveservices-search-customsearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-customsearch) for the [Custom Search API](https://azure.microsoft.com/services/cognitive-services/bing-custom-search/)
 * Using the **Bing Entity Search SDK** [azure-cognititiveservices-search-entitysearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-entitysearch) for the [Entity Search API](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/)
 * Using the **Bing Image Search SDK** [azure-cognititiveservices-search-imagesearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-imagesearch) for the [Image Search API](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)
 * Using the **Bing News Search SDK** [azure-cognititiveservices-search-newssearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-newssearch) for the [News Search API](https://azure.microsoft.com/services/cognitive-services/bing-news-search-api/)
 * Using the **Bing Video Search SDK** [azure-cognititiveservices-search-videosearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-videosearch) for the [Video Search API](https://azure.microsoft.com/services/cognitive-services/bing-video-search-api/)
 * Using the **Bing Web Search SDK** [azure-cognititiveservices-search-websearch](http://pypi.python.org/pypi/azure-cognititiveservices-search-websearch) for the [Web Search API](https://azure.microsoft.com/services/cognitive-services/bing-web-search-api/)
+
+### Vision
+
+* Using the **Computer Vision SDK** [azure-cognititiveservices-vision-computervision](http://pypi.python.org/pypi/azure-cognititiveservices-vision-computervision) for the [Computer Vision API](https://azure.microsoft.com/services/cognitive-services/computer-vision/)
 
 We provide several meta-packages to help you install several packages at a time. Please note that meta-packages are only recommended for development purpose. It's recommended in production to always pin specific version of individual packages.
 
@@ -72,6 +76,7 @@ We provide several meta-packages to help you install several packages at a time.
 4.  Set up the environment variable `NEWSSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute NewsSearch tests.
 4.  Set up the environment variable `VIDEOSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute VideoSearch tests.
 4.  Set up the environment variable `WEBSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute WebSearch tests.
+4.  Set up the environment variable `COMPUTERVISION_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests. You might override too `COMPUTERVISION_LOCATION` (westcentralus by default).
 
 ## Demo
 
