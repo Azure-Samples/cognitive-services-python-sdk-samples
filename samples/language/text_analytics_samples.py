@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsAPI
