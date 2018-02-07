@@ -23,6 +23,7 @@ This project framework provides examples for the following services:
 ### Vision
 
 * Using the **Computer Vision SDK** [azure-cognititiveservices-vision-computervision](http://pypi.python.org/pypi/azure-cognititiveservices-vision-computervision) for the [Computer Vision API](https://azure.microsoft.com/services/cognitive-services/computer-vision/)
+* Using the **Content Moderator SDK** [azure-cognititiveservices-vision-contentmoderator](http://pypi.python.org/pypi/azure-cognititiveservices-vision-contentmoderator) for the [Content Moderator API](https://azure.microsoft.com/services/cognitive-services/content-moderator/)
 
 We provide several meta-packages to help you install several packages at a time. Please note that meta-packages are only recommended for development purpose. It's recommended in production to always pin specific version of individual packages.
 
@@ -76,7 +77,8 @@ We provide several meta-packages to help you install several packages at a time.
 4.  Set up the environment variable `NEWSSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute NewsSearch tests.
 4.  Set up the environment variable `VIDEOSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute VideoSearch tests.
 4.  Set up the environment variable `WEBSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute WebSearch tests.
-4.  Set up the environment variable `COMPUTERVISION_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests. You might override too `COMPUTERVISION_LOCATION` (westcentralus by default).
+4.  Set up the environment variable `COMPUTERVISION_SUBSCRIPTION_KEY` with your key if you want to execute Computer Vision tests. You might override too `COMPUTERVISION_LOCATION` (westcentralus by default).
+4.  Set up the environment variable `CONTENTMODERATOR_SUBSCRIPTION_KEY` with your key if you want to execute Content Moderator tests. You might override too `CONTENTMODERATOR_LOCATION` (westcentralus by default).
 
 ## Demo
 
