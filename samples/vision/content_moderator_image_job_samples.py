@@ -8,8 +8,8 @@ from msrest.authentication import CognitiveServicesCredentials
 SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
 CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcentralus")
 
-def image_review(subscription_key):
-    """ImageReview.
+def image_review_jobs(subscription_key):
+    """ImageReviewJobs.
 
     This will review an image using workflow and job.
     """
@@ -82,6 +82,7 @@ def image_review(subscription_key):
     #     "r": "False"
     #   }
     # }    
+
 
 if __name__ == "__main__":
     import sys, os.path
