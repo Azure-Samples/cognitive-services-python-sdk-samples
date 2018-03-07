@@ -7,12 +7,12 @@ SUBSCRIPTION_KEY_ENV_NAME = "ENTITYSEARCH_SUBSCRIPTION_KEY"
 def dominant_entity_lookup(subscription_key):
     """DominantEntityLookup.
 
-    This will look up a single entity (tom cruise) and print out a short description about them.
+    This will look up a single entity (Satya Nadella) and print out a short description about them.
     """
     client = EntitySearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
-        entity_data = client.entities.search(query="tom cruise")
+        entity_data = client.entities.search(query="satya nadella")
 
         if entity_data.entities.value:
             # find the entity that represents the dominant one
@@ -21,10 +21,10 @@ def dominant_entity_lookup(subscription_key):
                              if entity.entity_presentation_info.entity_scenario == "DominantEntity"]
 
             if main_entities:
-                print('Searched for "Tom Cruise" and found a dominant entity with this description:')
+                print('Searched for "Satya Nadella" and found a dominant entity with this description:')
                 print(main_entities[0].description)
             else:
-                print("Couldn't find main entity tom cruise!")
+                print("Couldn't find main entity Satya Nadella!")
         
         else:
             print("Didn't see any data..")
@@ -35,12 +35,12 @@ def dominant_entity_lookup(subscription_key):
 def handling_disambiguation(subscription_key):
     """HandlingDisambiguation.
 
-    "This will handle disambiguation results for an ambiguous query (harry potter)".
+    "This will handle disambiguation results for an ambiguous query (William Gates)".
     """
     client = EntitySearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
-        entity_data = client.entities.search(query="harry potter")
+        entity_data = client.entities.search(query="william gates")
 
         if entity_data.entities.value:
             # find the entity that represents the dominant one
@@ -55,11 +55,11 @@ def handling_disambiguation(subscription_key):
                 main_entity = main_entities[0]
                 type_hint = main_entity.entity_presentation_info.entity_type_display_hint
                 
-                print('Searched for "harry potter" and found a dominant entity {}with this description:'.format(
+                print('Searched for "William Gates" and found a dominant entity {}with this description:'.format(
                     '"with type hint "{}" '.format(type_hint) if type_hint else ''))
                 print(main_entity.description)
             else:
-                print("Couldn't find a reliable dominant entity for harry potter!")
+                print("Couldn't find a reliable dominant entity for William Gates!")
         
             if disambig_entities:
                 print("\nThis query is pretty ambiguous and can be referring to multiple things. Did you mean one of these:")
@@ -68,7 +68,7 @@ def handling_disambiguation(subscription_key):
                     suggestions.append("{} the {}".format(disambig_entity.name, disambig_entity.entity_presentation_info.entity_type_display_hint))
                 print(", or ".join(suggestions))
             else:
-                print("We didn't find any disambiguation items for harry potter, so we must be certain what you're talking about!")
+                print("We didn't find any disambiguation items for William Gates, so we must be certain what you're talking about!")
 
         else:
             print("Didn't see any data..")
