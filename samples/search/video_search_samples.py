@@ -7,13 +7,13 @@ SUBSCRIPTION_KEY_ENV_NAME = "VIDEOSEARCH_SUBSCRIPTION_KEY"
 def video_search(subscription_key):
     """VideoSearch.
 
-    This will search videos for (Nasa CubeSat) then verify number of results and print out id, name and url of first video result.
+    This will search videos for (SwiftKey) then verify number of results and print out id, name and url of first video result.
     """
     client = VideoSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
-        video_result = client.videos.search(query="Nasa CubeSat")
-        print("Search videos for query \"Nasa CubeSat\"")
+        video_result = client.videos.search(query="SwiftKey")
+        print("Search videos for query \"SwiftKey\"")
 
         if video_result.value:
             first_video_result = video_result.value[0]
@@ -31,18 +31,18 @@ def video_search(subscription_key):
 def video_search_with_filtering(subscription_key):
     """VideoSearchWithFilters.
 
-    This will search videos for (Interstellar Trailer) that is free, short and 1080p resolution then verify number of results and print out id, name and url of first video result
+    This will search videos for (Bellevue Trailer) that is free, short and 1080p resolution then verify number of results and print out id, name and url of first video result
     """
     client = VideoSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
         video_result = client.videos.search(
-            query="Interstellar Trailer",
+            query="Bellevue Trailer",
             pricing=VideoPricing.free,  # Can use the str "free" too
             length=VideoLength.short,   # Can use the str "short" too
             resolution=VideoResolution.hd1080p  # Can use the str "hd1080p" too
         )
-        print("Search videos for query \"Interstellar Trailer\" that is free, short and 1080p resolution")
+        print("Search videos for query \"Bellevue Trailer\" that is free, short and 1080p resolution")
 
         if video_result.value:
             first_video_result = video_result.value[0]
@@ -105,16 +105,16 @@ def video_trending(subscription_key):
 def video_detail(subscription_key):
     """VideoDetail.
 
-    This will search videos for (Interstellar Trailer) and then search for detail information of the first video
+    This will search videos for (Bellevue Trailer) and then search for detail information of the first video
     """
     client = VideoSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
-        video_result = client.videos.search(query="Interstellar Trailer")
+        video_result = client.videos.search(query="Bellevue Trailer")
         first_video_result = video_result.value[0]
 
         video_details = client.videos.details(
-            query="Interstellar Trailer",
+            query="Bellevue Trailer",
             id=first_video_result.video_id,
             modules=[VideoInsightModule.all]  # Can use ["all"] too
         )
