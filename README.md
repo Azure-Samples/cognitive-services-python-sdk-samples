@@ -70,7 +70,7 @@ We provide several meta-packages to help you install several packages at a time.
     ```
 
 4.  Set up the environment variable `SPELLCHECK_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests.
-4.  Set up the environment variable `TEXTANALYTICS_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests. You might override too `TEXTANALYTICS_LOCATION` (westcentralus by default).
+4.  Set up the environment variable `TEXTANALYTICS_SUBSCRIPTION_KEY` with your key if you want to execute TextAnalytics tests. You might override too `TEXTANALYTICS_LOCATION` (westcentralus by default).
 3.  Set up the environment variable `CUSTOMSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute CustomSearch tests.
 3.  Set up the environment variable `ENTITYSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute EntitySearch tests.
 4.  Set up the environment variable `IMAGESEARCH_SUBSCRIPTION_KEY` with your key if you want to execute ImageSearch tests.
