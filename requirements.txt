@@ -8,3 +8,4 @@ azure-cognitiveservices-search-videosearch
 azure-cognitiveservices-search-websearch
 azure-cognitiveservices-vision-computervision
 azure-cognitiveservices-vision-contentmoderator
+azure-cognitiveservices-vision-customvision
