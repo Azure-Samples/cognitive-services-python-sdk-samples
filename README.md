@@ -1,3 +1,9 @@
+---
+services: cognitive-services
+platforms: python
+author: lmazuel
+---
+
 # Cognitive Services Python SDK Samples
 
 These samples will show you how to get up and running using the Python SDKs for various Cognitive Services services. They'll cover a few rudimentary use cases and hopefully express best practices for interacting with the data from these APIs.
