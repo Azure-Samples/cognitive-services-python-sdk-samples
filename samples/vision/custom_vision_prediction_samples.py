@@ -7,6 +7,9 @@ from azure.cognitiveservices.vision.customvision.prediction.prediction_endpoint 
 TRAINING_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_KEY"
 
+# Add this directory to the path so that custom_vision_training_samples can be found
+sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "."))
+
 IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
 
 def find_or_train_project():
