@@ -5,6 +5,7 @@ azure-cognitiveservices-search-entitysearch
 azure-cognitiveservices-search-imagesearch
 azure-cognitiveservices-search-newssearch
 azure-cognitiveservices-search-videosearch
+azure-cognitiveservices-search-visualsearch
 azure-cognitiveservices-search-websearch
 azure-cognitiveservices-vision-computervision
 azure-cognitiveservices-vision-contentmoderator
