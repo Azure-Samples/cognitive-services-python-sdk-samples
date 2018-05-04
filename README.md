@@ -24,6 +24,7 @@ This project framework provides examples for the following services:
 * Using the **Bing Image Search SDK** [azure-cognitiveservices-search-imagesearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-imagesearch) for the [Image Search API](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)
 * Using the **Bing News Search SDK** [azure-cognitiveservices-search-newssearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-newssearch) for the [News Search API](https://azure.microsoft.com/services/cognitive-services/bing-news-search-api/)
 * Using the **Bing Video Search SDK** [azure-cognitiveservices-search-videosearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-videosearch) for the [Video Search API](https://azure.microsoft.com/services/cognitive-services/bing-video-search-api/)
+* Using the **Bing Visual Search SDK** [azure-cognitiveservices-search-visualsearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-visualsearch) for the [Visual Search API](https://azure.microsoft.com/services/cognitive-services/bing-visual-search-api/)
 * Using the **Bing Web Search SDK** [azure-cognitiveservices-search-websearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-websearch) for the [Web Search API](https://azure.microsoft.com/services/cognitive-services/bing-web-search-api/)
 
 ### Vision
@@ -83,6 +84,7 @@ We provide several meta-packages to help you install several packages at a time.
 4.  Set up the environment variable `IMAGESEARCH_SUBSCRIPTION_KEY` with your key if you want to execute ImageSearch tests.
 4.  Set up the environment variable `NEWSSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute NewsSearch tests.
 4.  Set up the environment variable `VIDEOSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute VideoSearch tests.
+4.  Set up the environment variable `VISUALSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute VideoSearch tests.
 4.  Set up the environment variable `WEBSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute WebSearch tests.
 4.  Set up the environment variable `COMPUTERVISION_SUBSCRIPTION_KEY` with your key if you want to execute Computer Vision tests. You might override too `COMPUTERVISION_LOCATION` (westcentralus by default).
 4.  Set up the environment variable `CONTENTMODERATOR_SUBSCRIPTION_KEY` with your key if you want to execute Content Moderator tests. You might override too `CONTENTMODERATOR_LOCATION` (westcentralus by default).
