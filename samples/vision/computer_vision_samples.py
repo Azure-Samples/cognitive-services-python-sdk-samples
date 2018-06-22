@@ -29,7 +29,7 @@ def image_analysis_in_stream(subscription_key):
             ]
         )
 
-    print("This imsage can be described as: {}\n".format(image_analysis.description.captions[0].text))
+    print("This image can be described as: {}\n".format(image_analysis.description.captions[0].text))
 
     print("Tags associated with this image:\nTag\t\tConfidence")
     for tag in image_analysis.tags:
@@ -37,6 +37,54 @@ def image_analysis_in_stream(subscription_key):
 
     print("\nThe primary colors of this image are: {}".format(image_analysis.color.dominant_colors))
 
+def recognize_text(subscription_key):
+    """RecognizeTextUsingRecognizeAPI.
+
+    This will recognize text of the given image using the recognizeText API.
+    """
+    import time
+    client = ComputerVisionAPI(COMPUTERVISION_LOCATION, CognitiveServicesCredentials(subscription_key))
+
+    with open(os.path.join(IMAGES_FOLDER, "make_things_happen.jpg"), "rb") as image_stream:
+        job = client.recognize_text_in_stream(
+            image_stream,
+            mode="Printed",
+            raw=True
+        )
+    operation_id = job.headers['Operation-Location'].split('/')[-1]
+
+    image_analysis = client.get_text_operation_result(operation_id)
+    while image_analysis.status in ['NotStarted', 'Running']:
+        time.sleep(1)
+        image_analysis = client.get_text_operation_result(operation_id)
+
+    print("Job completion is: {}\n".format(image_analysis.status))
+
+    print("Recognized:\n")
+    lines = image_analysis.recognition_result.lines
+    print(lines[0].words[0].text)  # "make"
+    print(lines[1].words[0].text)  # "things"
+    print(lines[2].words[0].text)  # "happen"
+
+def recognize_printed_text_in_stream(subscription_key):
+    """RecognizedPrintedTextUsingOCR_API.
+
+    This will do an OCR analysis of the given image.
+    """
+    import time
+    client = ComputerVisionAPI(COMPUTERVISION_LOCATION, CognitiveServicesCredentials(subscription_key))
+
+    with open(os.path.join(IMAGES_FOLDER, "computer_vision_ocr.png"), "rb") as image_stream:
+        image_analysis = client.recognize_printed_text_in_stream(
+            image_stream,
+            language="en"
+        )
+
+    lines = image_analysis.regions[0].lines
+    print("Recognized:\n")
+    for line in lines:
+        line_text = " ".join([word.text for word in line.words])
+        print(line_text)
 
 if __name__ == "__main__":
     import sys, os.path
