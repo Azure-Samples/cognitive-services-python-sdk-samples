@@ -15,7 +15,7 @@ def train_project(subscription_key):
 
     # Create a new project
     print ("Creating project...")
-    project = trainer.create_project(SAMPLE_PROJECT_NAME, Classifier.multiclass)
+    project = trainer.create_project(SAMPLE_PROJECT_NAME, classification_type=Classifier.multiclass)
 
     # Make two tags in the new project
     hemlock_tag = trainer.create_tag(project.id, "Hemlock")
