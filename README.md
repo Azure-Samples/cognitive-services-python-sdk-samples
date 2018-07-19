@@ -19,6 +19,7 @@ This project framework provides examples for the following services:
 
 ### Search
 
+* Using the **Bing Autosuggest SDK** [azure-cognitiveservices-search-customsearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-autosuggest) for the [Autosuggest API](https://azure.microsoft.com/services/cognitive-services/autosuggest/)
 * Using the **Bing Custom Search SDK** [azure-cognitiveservices-search-customsearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-customsearch) for the [Custom Search API](https://azure.microsoft.com/services/cognitive-services/bing-custom-search/)
 * Using the **Bing Entity Search SDK** [azure-cognitiveservices-search-entitysearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-entitysearch) for the [Entity Search API](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/)
 * Using the **Bing Image Search SDK** [azure-cognitiveservices-search-imagesearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-imagesearch) for the [Image Search API](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)
@@ -49,9 +50,9 @@ We provide several meta-packages to help you install several packages at a time.
 
     This sample (and the SDK) is compatible with Python 2.7, 3.3, 3.4, 3.5 and 3.6.
 
-2.  General recommendation for Python development is to use a Virtual Environment. 
+2.  General recommendation for Python development is to use a Virtual Environment.
     For more information, see https://docs.python.org/3/tutorial/venv.html
-    
+
     Install and initialize the virtual environment with the "venv" module on Python 3 (you must install [virtualenv](https://pypi.python.org/pypi/virtualenv) for Python 2.7):
 
     ```
@@ -79,6 +80,7 @@ We provide several meta-packages to help you install several packages at a time.
 
 4.  Set up the environment variable `SPELLCHECK_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests.
 4.  Set up the environment variable `TEXTANALYTICS_SUBSCRIPTION_KEY` with your key if you want to execute TextAnalytics tests. You might override too `TEXTANALYTICS_LOCATION` (westcentralus by default).
+3.  Set up the environment variable `AUTOSUGGEST_SUBSCRIPTION_KEY` with your key if you want to execute Autosuggest tests.
 3.  Set up the environment variable `CUSTOMSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute CustomSearch tests.
 3.  Set up the environment variable `ENTITYSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute EntitySearch tests.
 4.  Set up the environment variable `IMAGESEARCH_SUBSCRIPTION_KEY` with your key if you want to execute ImageSearch tests.
