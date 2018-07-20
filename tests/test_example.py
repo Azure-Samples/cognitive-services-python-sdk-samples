@@ -28,6 +28,7 @@ class SearchExampleTest(ReplayableTest):
             run_all_samples()
         else:
             with mock.patch.dict('os.environ', {
+                "AUTOSUGGEST_SUBSCRIPTION_KEY": "0000000000000000000000000000",
                 "ENTITYSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
                 "WEBSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
                 "SPELLCHECK_SUBSCRIPTION_KEY": "0000000000000000000000000000",

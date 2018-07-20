@@ -29,7 +29,7 @@ def execute_samples(module_globals, key_env_variable):
     try:
         subscription_key = sys.argv[1] if len(sys.argv) >= 2 else os.environ[key_env_variable]
     except KeyError:
-        raise SubscriptionKeyError("You need to either set the {} env variable.".format(key_env_variable))
+        raise SubscriptionKeyError("You need to either set the {} env variable or pass the key as an argument.".format(key_env_variable))
 
     for func in list(module_globals.values()):
         if not isinstance(func, types.FunctionType):

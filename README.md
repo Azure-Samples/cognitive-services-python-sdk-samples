@@ -78,7 +78,7 @@ We provide several meta-packages to help you install several packages at a time.
     ```
 
 4.  Set up the environment variable `SPELLCHECK_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests.
-4.  Set up the environment variable `TEXTANALYTICS_SUBSCRIPTION_KEY` with your key if you want to execute TextAnalytics tests. You might override too `TEXTANALYTICS_LOCATION` (westcentralus by default).
+4.  Set up the environment variable `TEXTANALYTICS_SUBSCRIPTION_KEY` with your key if you want to execute TextAnalytics tests. You might need to override `TEXTANALYTICS_LOCATION` (westcentralus by default).
 3.  Set up the environment variable `CUSTOMSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute CustomSearch tests.
 3.  Set up the environment variable `ENTITYSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute EntitySearch tests.
 4.  Set up the environment variable `IMAGESEARCH_SUBSCRIPTION_KEY` with your key if you want to execute ImageSearch tests.
@@ -86,8 +86,9 @@ We provide several meta-packages to help you install several packages at a time.
 4.  Set up the environment variable `VIDEOSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute VideoSearch tests.
 4.  Set up the environment variable `VISUALSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute VideoSearch tests.
 4.  Set up the environment variable `WEBSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute WebSearch tests.
-4.  Set up the environment variable `COMPUTERVISION_SUBSCRIPTION_KEY` with your key if you want to execute Computer Vision tests. You might override too `COMPUTERVISION_LOCATION` (westcentralus by default).
-4.  Set up the environment variable `CONTENTMODERATOR_SUBSCRIPTION_KEY` with your key if you want to execute Content Moderator tests. You might override too `CONTENTMODERATOR_LOCATION` (westcentralus by default).
+4.  Set up the environment variable `AUTOSUGGEST_SUBSCRIPTION_KEY` with your key if you want to execute AutoSuggest tests.
+4.  Set up the environment variable `COMPUTERVISION_SUBSCRIPTION_KEY` with your key if you want to execute Computer Vision tests. You might need to override `COMPUTERVISION_LOCATION` (westcentralus by default).
+4.  Set up the environment variable `CONTENTMODERATOR_SUBSCRIPTION_KEY` with your key if you want to execute Content Moderator tests. You might need to override `CONTENTMODERATOR_LOCATION` (westcentralus by default).
 4.  Set up the environment variable `CUSTOMVISION_TRAINING_KEY` with your key if you want to execute CustomVision Training tests.
 4.  Set up the environment variable `CUSTOMVISION_PREDICTION_KEY` with your key if you want to execute CustomVision Prediction tests.
 
