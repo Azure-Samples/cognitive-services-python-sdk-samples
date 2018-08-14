@@ -1,7 +1,7 @@
 ---
 services: cognitive-services, luis, language-understanding
-platforms: dotnet
-author: cahann
+platforms: python
+author: cahann, lmazuel
 ---
 
 # Cognitive Services: LUIS Runtime Sample
@@ -23,7 +23,7 @@ If you want to test this sample, you have to import the pre-build [LuisApp.json]
 
 Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
 
-Finally, edit the [appsettings.json](Microsoft.Azure.CognitiveServices.LUIS.Sample/appsettings.json) file and update the attribute placeholders with the values corresponding to your Subscription, Application and Azure Region where the application was deployed.
+Finally, edit the [luis_runtime_samples.py](luis_runtime_samples.py) file and update the attribute placeholders with the values corresponding to your Application and Azure Region where the application was deployed.
 
 #### Where to find the Application ID and Subscription Key
 
@@ -56,13 +56,13 @@ from msrest.authentication import CognitiveServicesCredentials
 
 // Create client with SuscriptionKey and Azure region
 client = LUISRuntimeClient(
-    'https://westus.api.cognitive.microsoft.com',
-    CognitiveServicesCredentials(subscription_key),
+    'https://westus.api.cognitive.microsoft.com',             # Change "westus" to your region if necessary
+    CognitiveServicesCredentials("[LUIS_SUBSCRIPTION_KEY]"),  # Put your LUIS Subscription key
 )
 
 // Predict
 luis_result = client.prediction.resolve(
-    "[LUIS_APPLICATION_ID]",
+    "[LUIS_APPLICATION_ID]",                                  # Put your LUIS Application ID
     "Text to Predict or User input"
 )
 ````
