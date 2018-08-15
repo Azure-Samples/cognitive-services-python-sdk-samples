@@ -1,3 +1,4 @@
+import json
 import time
 import datetime
 from pprint import pprint
@@ -8,7 +9,7 @@ from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "LUIS_SUBSCRIPTION_KEY"
 
-def booking_app(subscription_key):
+def booking_app(subscription_kuy):
     """Authoring.
 
     This will create a LUIS Booking application, train and publish it.
@@ -202,9 +203,37 @@ def management(subscription_key):
         )
         print("Your app version has been cloned.")
 
+        # Export the version
+        print("\nExport version 0.2 as JSON")
+        luis_app = client.versions.export(
+            app_id,
+            "0.2"
+        )
+        luis_app_as_json = json.dumps(luis_app.serialize())
+        # You can now save this JSON string as a file
+
+        # Import the version
+        print("\nImport previously exported version as 0.3")
+        luis_app
+        client.versions.import_method(
+            app_id,
+            json.loads(luis_app_as_json),
+            "0.3"
+        )
+
+        # Listing versions
+        print("\nList all versions in this app")
+        for version in client.versions.list(app_id):
+            print("\t->Version: '{}', training status: {}".format(version.version, version.training_status))
+
         # Print app details
         print("\nPrint app '{}' details".format(default_app_name))
         details = client.apps.get(app_id)
+        pprint(details.as_dict())  # as_dict "dictify" the object, by default it's attribute based. e.g. details.name
+
+        # Print version details
+        print("\nPrint version '{}' details".format(version_id))
+        details = client.versions.get(app_id, version_id)
         pprint(details.as_dict())  # as_dict "dictify" the object, by default it's attribute based. e.g. details.name
 
         # Delete an app

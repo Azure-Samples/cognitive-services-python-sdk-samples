@@ -6,12 +6,29 @@ author: cahann, lmazuel
 
 # Cognitive Services: LUIS Runtime Sample
 
-A example demonstrating how to consume the LUIS Runtime SDK to predict user utterances.
+A example demonstrating how:
+- to consume the LUIS Authoring SDK to build an app or manage it
+- to consume the LUIS Runtime SDK to predict user utterances.
 
-### Prerequisites
+## Prerequisites
 
 The minimum prerequisites to run this sample are:
 * A [LUIS.ai account](https://www.luis.ai/) where to upload the sample's LUIS model.
+
+The first step is to get your Programmatic Key. Go to the home page, [www.luis.ai](https://www.luis.ai/), and log in. After creating your LUIS account, a starter key, also known as a programmatic key, is created automatically for LUIS account. To find the programmatic key, click on the account name in the upper-right navigation bar to open [Account Settings](https://www.luis.ai/user/settings), which displays the Programmatic Key.
+
+![Get the programmatic key](images/programmatic-key.png)
+
+Set the `LUIS_SUBSCRIPTION_KEY` environment variable to this programmtic key to continue.
+
+## Cognitive Services: LUIS Authoring Sample
+
+We provide two samples:
+
+- The booking sample whos a complete example on how to create an app, create intent, utterances, trained and publish the app
+- The management example shows some management operations: import or export an app, listing the different versions of an app, cloning a version, etc.
+
+## Cognitive Services: LUIS Runtime Sample
 
 #### LUIS Application
 
