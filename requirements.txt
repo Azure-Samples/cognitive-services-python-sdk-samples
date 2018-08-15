@@ -1,3 +1,4 @@
+azure-cognitiveservices-language-luis
 azure-cognitiveservices-language-spellcheck
 azure-cognitiveservices-language-textanalytics
 azure-cognitiveservices-search-autosuggest
