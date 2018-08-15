@@ -25,8 +25,8 @@ Set the `LUIS_SUBSCRIPTION_KEY` environment variable to this programmtic key to 
 
 We provide two samples:
 
-- The booking sample whos a complete example on how to create an app, create intent, utterances, trained and publish the app
-- The management example shows some management operations: import or export an app, listing the different versions of an app, cloning a version, etc.
+- The booking sample who is a complete example on how to create an app, create intents, utterances, training and publishing the app
+- The management example shows management operations: import or export an app/version, listing the different versions of an app, cloning a version, etc.
 
 ## Cognitive Services: LUIS Runtime Sample
 
