@@ -14,6 +14,7 @@ This project framework provides examples for the following services:
 
 ### Language
 
+* Using the **LUIS SDK** [azure-cognitiveservices-language-luis](http://pypi.python.org/pypi/azure-cognitiveservices-language-luis) for the [LUIS API](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/)
 * Using the **Bing Spell Check SDK** [azure-cognitiveservices-language-spellcheck](http://pypi.python.org/pypi/azure-cognitiveservices-language-spellcheck) for the [Bing Spell Check API](https://azure.microsoft.com/services/cognitive-services/spell-check/)
 * Using the **Text Analytics SDK** [azure-cognitiveservices-language-textanalytics](http://pypi.python.org/pypi/azure-cognitiveservices-language-textanalytics) for the [Tet Analytics API](https://azure.microsoft.com/services/cognitive-services/text-analytics/)
 
@@ -78,6 +79,7 @@ We provide several meta-packages to help you install several packages at a time.
     pip install -r requirements.txt
     ```
 
+4.  Set up the environment variable `LUIS_SUBSCRIPTION_KEY` with your key if you want to execute LUIS tests.
 4.  Set up the environment variable `SPELLCHECK_SUBSCRIPTION_KEY` with your key if you want to execute SpellCheck tests.
 4.  Set up the environment variable `TEXTANALYTICS_SUBSCRIPTION_KEY` with your key if you want to execute TextAnalytics tests. You might override too `TEXTANALYTICS_LOCATION` (westcentralus by default).
 3.  Set up the environment variable `AUTOSUGGEST_SUBSCRIPTION_KEY` with your key if you want to execute Autosuggest tests.
