@@ -1,5 +1,6 @@
 import time
 import datetime
+from pprint import pprint
 
 from azure.cognitiveservices.language.luis.authoring import LUISAuthoringClient
 
@@ -10,7 +11,7 @@ SUBSCRIPTION_KEY_ENV_NAME = "LUIS_SUBSCRIPTION_KEY"
 def booking_app(subscription_key):
     """Authoring.
 
-    This will create a LUIS Booking application.
+    This will create a LUIS Booking application, train and publish it.
     """
     client = LUISAuthoringClient(
         'https://westus.api.cognitive.microsoft.com',
@@ -162,6 +163,57 @@ def booking_app(subscription_key):
     except Exception as err:
         print("Encountered exception. {}".format(err))
 
+def management(subscription_key):
+    """Managing
+
+    This will show how to manage your LUIS applications.
+    """
+    client = LUISAuthoringClient(
+        'https://westus.api.cognitive.microsoft.com',
+        CognitiveServicesCredentials(subscription_key),
+    )
+
+    try:
+        # Create a LUIS app
+        default_app_name = "Contoso-{}".format(datetime.datetime.now())
+        version_id = "0.1"
+
+        print("Creating App {}, version {}".format(default_app_name, version_id))
+
+        app_id = client.apps.add({
+            'name': default_app_name,
+            'initial_version_id': version_id,
+            'description': "New App created with LUIS Python sample",
+            'culture': 'en-us',
+        })
+        print("Created app {}".format(app_id))
+
+        # Listing app
+        print("\nList all apps")
+        for app in client.apps.list():
+            print("\t->App: '{}'".format(app.name))
+
+        # Cloning a version
+        print("\nCloning version 0.1 into 0.2")
+        client.versions.clone(
+            app_id,
+            "0.1",  # Source
+            "0.2"   # New version name
+        )
+        print("Your app version has been cloned.")
+
+        # Print app details
+        print("\nPrint app '{}' details".format(default_app_name))
+        details = client.apps.get(app_id)
+        pprint(details.as_dict())  # as_dict "dictify" the object, by default it's attribute based. e.g. details.name
+
+        # Delete an app
+        print("\nDelete app '{}'".format(default_app_name))
+        client.apps.delete(app_id)
+        print("App deleted!")
+
+    except Exception as err:
+        print("Encountered exception. {}".format(err))
 
 if __name__ == "__main__":
     import sys, os.path
