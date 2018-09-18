@@ -15,11 +15,11 @@ A example demonstrating how:
 The minimum prerequisites to run this sample are:
 * A [LUIS.ai account](https://www.luis.ai/) where to upload the sample's LUIS model.
 
-The first step is to get your Programmatic Key. Go to the home page, [www.luis.ai](https://www.luis.ai/), and log in. After creating your LUIS account, a starter key, also known as a programmatic key, is created automatically for LUIS account. To find the programmatic key, click on the account name in the upper-right navigation bar to open [Account Settings](https://www.luis.ai/user/settings), which displays the Programmatic Key.
+The first step is to get your Authoring Key. Go to the home page, [www.luis.ai](https://www.luis.ai/), and log in. After creating your LUIS account, a starter key, also known as a authoring key, is created automatically for LUIS account. To find the authoring key, click on the account name in the upper-right navigation bar to open [Account Settings](https://www.luis.ai/user/settings), which displays the Authoring Key.
 
 ![Get the programmatic key](images/programmatic-key.png)
 
-Set the `LUIS_SUBSCRIPTION_KEY` environment variable to this programmatic key to continue.
+Set the `LUIS_SUBSCRIPTION_KEY` environment variable to this authoring key to continue.
 
 ## Cognitive Services: LUIS Authoring Sample
 
@@ -40,7 +40,7 @@ If you want to test this sample, you have to import the pre-build [LuisApp.json]
 
 Once you imported the application you'll need to "train" the model ([Training](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/train-test)) before you can "Publish" the model in an HTTP endpoint. For more information, take a look at [Publishing a Model](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/publishapp).
 
-Finally, edit the [luis_runtime_samples.py](luis_runtime_samples.py) file and update the attribute placeholders with the values corresponding to your Application and Azure Region where the application was deployed.
+Finally, edit the [luis_runtime_samples.py](luis_runtime_samples.py) file and update the attribute placeholders with the values corresponding to your Application and Endpoint where the application was deployed.
 
 #### Where to find the Application ID and Subscription Key
 
@@ -52,9 +52,9 @@ You'll need these two values to configure the LuisDialog through the LuisModel a
 
     ![App Settings](images/prereqs-appid.png)
 
-2. Subscription Key and Azure Region
+2. Subscription Key and Endpoint
 
-    Click on the Publish App link from the top of the LUIS application dashboard. Once your app is published, copy the Region and Key String from *Starter_Key* from the Endpoints table on the Publish App page.
+    Click on the Publish App link from the top of the LUIS application dashboard. Once your app is published, copy the Endpoint and Key String from *Starter_Key* from the Endpoints table on the Publish App page.
 
     ![Programmatic API Key](images/prereqs-apikey.png)
 
@@ -71,7 +71,7 @@ From Python, use the [azure-cognitiveservices-language-luis](http://pypi.python.
 from azure.cognitiveservices.language.luis.runtime import LUISRuntimeClient
 from msrest.authentication import CognitiveServicesCredentials
 
-// Create client with SubscriptionKey and Azure region
+// Create client with SubscriptionKey and Endpoint
 client = LUISRuntimeClient(
     'https://westus.api.cognitive.microsoft.com',             # Change "westus" to your region if necessary
     CognitiveServicesCredentials("[LUIS_SUBSCRIPTION_KEY]"),  # Put your LUIS Subscription key
