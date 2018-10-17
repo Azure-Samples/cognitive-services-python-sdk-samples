@@ -31,6 +31,7 @@ This project framework provides examples for the following services:
 
 ### Vision
 
+* Using the **Face SDK** [azure-cognitiveservices-vision-face](http://pypi.python.org/pypi/azure-cognitiveservices-vision-face) for the [Face API](https://azure.microsoft.com/services/cognitive-services/face/)
 * Using the **Computer Vision SDK** [azure-cognitiveservices-vision-computervision](http://pypi.python.org/pypi/azure-cognitiveservices-vision-computervision) for the [Computer Vision API](https://azure.microsoft.com/services/cognitive-services/computer-vision/)
 * Using the **Content Moderator SDK** [azure-cognitiveservices-vision-contentmoderator](http://pypi.python.org/pypi/azure-cognitiveservices-vision-contentmoderator) for the [Content Moderator API](https://azure.microsoft.com/services/cognitive-services/content-moderator/)
 * Using the **Custom Vision SDK** [azure-cognitiveservices-vision-customvision](http://pypi.python.org/pypi/azure-cognitiveservices-vision-customvision) for the [Custom Vision API](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/)
