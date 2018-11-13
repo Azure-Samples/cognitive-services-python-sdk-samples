@@ -10,9 +10,8 @@ import time
 SUBSCRIPTION_KEY_ENV_NAME = "FACE_SUBSCRIPTION_KEY"
 FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
 
-def find_similar_in_face_ids(subscription_key):
+def find_similar_in_face_ids(face_base_url, subscription_key):
     print("Sample of finding similar faces in face ids.")
-    face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
     image_url_prefix = "https://csdx.blob.core.windows.net/resources/Face/Images/"
     target_image_file_names = ["Family1-Dad1.jpg",
@@ -29,11 +28,11 @@ def find_similar_in_face_ids(subscription_key):
 
     for target_image_file_name in target_image_file_names:
         # Detect faces from target image url.
-        faces = face_client.face.detect_with_url(image_url_prefix + target_image_file_name)
+        faces = detect_faces(face_client, image_url_prefix + target_image_file_name)
         # Add detected face id to target_face_ids
         target_face_ids.append(faces[0].face_id)
     # Detect faces from source image url.
-    detected_faces = face_client.face.detect_with_url(image_url_prefix + source_image_file_name)
+    detected_faces = detect_faces(face_client, image_url_prefix + source_image_file_name)
     # Find similar example of face id to face ids.
     similar_results = face_client.face.find_similar(detected_faces[0].face_id, None, None, target_face_ids)
     if len(similar_results) == 0:
@@ -42,9 +41,8 @@ def find_similar_in_face_ids(subscription_key):
         print("Faces from {} & {} are similar with confidence: {}.".format(source_image_file_name, similar_result.face_id, similar_result.confidence))
     print("")
 
-def find_similar_in_face_list(subscription_key):
+def find_similar_in_face_list(face_base_url, subscription_key):
     print("Sample of finding similar faces in face list.")
-    face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
     image_url_prefix = "https://csdx.blob.core.windows.net/resources/Face/Images/"
     target_image_file_names = ["Family1-Dad1.jpg",
@@ -74,7 +72,7 @@ def find_similar_in_face_list(subscription_key):
         raise Exception("No persisted face in face list {}".format(face_list_id))
 
     # Detect faces from source image url.
-    detected_faces = face_client.face.detect_with_url(image_url_prefix + source_image_file_name)
+    detected_faces = detect_faces(face_client, image_url_prefix + source_image_file_name)
 
     # Find similar example of face id to face list.
     similar_results = face_client.face.find_similar(detected_faces[0].face_id, face_list_id)
@@ -90,9 +88,8 @@ def find_similar_in_face_list(subscription_key):
     print("Delete face list {}.".format(face_list_id))
     print("")
 
-def find_similar_in_large_face_list(subscription_key):
+def find_similar_in_large_face_list(face_base_url, subscription_key):
     print("Sample of finding similar faces in large face list.")
-    face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
     image_url_prefix = "https://csdx.blob.core.windows.net/resources/Face/Images/"
     target_image_file_names = ["Family1-Dad1.jpg",
@@ -156,6 +153,7 @@ def find_similar_in_large_face_list(subscription_key):
 
 
 if __name__ == "__main__":
-    #find_similar_in_face_ids("e312068d12604dee97f59230ff788d60")
-    #find_similar_in_face_list("e312068d12604dee97f59230ff788d60")
-    find_similar_in_large_face_list("e312068d12604dee97f59230ff788d60")
+    face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
+    find_similar_in_face_ids(face_base_url, "e312068d12604dee97f59230ff788d60")
+    find_similar_in_face_list(face_base_url, "e312068d12604dee97f59230ff788d60")
+    find_similar_in_large_face_list(face_base_url, "e312068d12604dee97f59230ff788d60")
