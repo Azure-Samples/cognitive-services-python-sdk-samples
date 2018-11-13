@@ -6,9 +6,9 @@ import os
 SUBSCRIPTION_KEY_ENV_NAME = "FACE_SUBSCRIPTION_KEY"
 FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
 
-def face_detection_run(subscription_key):
+def face_detection_run(face_base_url, subscription_key):
     print("Sample of face detection.")
-    face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
+
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
     image_url_prefix = "https://csdx.blob.core.windows.net/resources/Face/Images/"
     image_file_names = ["detection1.jpg",
@@ -122,7 +122,8 @@ def get_hair(hair):
 
 
 if __name__ == "__main__":
-    face_detection_run("e312068d12604dee97f59230ff788d60")
+    face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
+    face_detection_run(face_base_url, "e312068d12604dee97f59230ff788d60")
 
 
 
