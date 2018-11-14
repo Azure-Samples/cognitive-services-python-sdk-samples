@@ -20,22 +20,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="33" />
+          <entry key="py" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="33" />
+          <entry key="Python" value="35" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="14786" />
+          <entry key="py" value="17638" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="14786" />
+          <entry key="Python" value="17638" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
@@ -58,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samples/vision/face/find_similar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1445">
-              <caret line="157" column="78" selection-start-line="157" selection-start-column="46" selection-end-line="157" selection-end-column="78" />
+            <state relative-caret-position="153">
+              <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="64" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
                 <marker date="1542137636142" expanded="true" signature="4747:8064" ph="..." />
@@ -68,47 +68,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samples/vision/face/identify.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="556">
-              <caret line="127" column="59" lean-forward="true" selection-start-line="127" selection-start-column="59" selection-end-line="127" selection-end-column="59" />
+            <state relative-caret-position="255">
+              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="82" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
-                <marker date="1542149836550" expanded="true" signature="472:477" ph="..." />
-                <marker date="1542149836550" expanded="true" signature="4206:7969" ph="..." />
+                <marker date="1542149914319" expanded="true" signature="472:477" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python36/Lib/site-packages/azure/cognitiveservices/vision/face/operations/large_person_group_person_operations.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/samples/vision/face/verify.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="571" selection-start-line="571" selection-end-line="571" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/samples/vision/face/group.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="3" selection-end-column="9" />
+            <state relative-caret-position="641">
+              <caret line="149" column="26" lean-forward="true" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
-                <marker date="1542137114719" expanded="true" signature="350:355" ph="..." />
+                <marker date="1542153941273" expanded="true" signature="466:471" ph="..." />
+                <marker date="1542153941273" expanded="true" signature="5024:7526" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python36/Lib/site-packages/azure/cognitiveservices/vision/face/operations/face_operations.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="813">
-              <caret line="178" column="4" selection-start-line="178" selection-start-column="4" selection-end-line="178" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -145,6 +127,7 @@
         <option value="$PROJECT_DIR$/samples/vision/face/group.py" />
         <option value="$PROJECT_DIR$/samples/vision/face/find_similar.py" />
         <option value="$PROJECT_DIR$/samples/vision/face/identify.py" />
+        <option value="$PROJECT_DIR$/samples/vision/face/verify.py" />
       </list>
     </option>
   </component>
@@ -222,7 +205,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.identify">
+  <component name="RunManager" selected="Python.verify">
     <configuration name="common" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="cognitive-services-python-sdk-samples" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -236,27 +219,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/samples/vision/face/common.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="detection" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="cognitive-services-python-sdk-samples" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/samples/vision/face" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/samples/vision/face/detection.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -328,20 +290,41 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="verify" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="cognitive-services-python-sdk-samples" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/samples/vision/face" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/samples/vision/face/verify.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.common" />
-      <item itemvalue="Python.detection" />
       <item itemvalue="Python.find_similar" />
       <item itemvalue="Python.group" />
       <item itemvalue="Python.identify" />
+      <item itemvalue="Python.verify" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.verify" />
         <item itemvalue="Python.identify" />
         <item itemvalue="Python.group" />
         <item itemvalue="Python.find_similar" />
         <item itemvalue="Python.common" />
-        <item itemvalue="Python.detection" />
       </list>
     </recent_temporary>
   </component>
@@ -521,17 +504,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/samples/vision/face/find_similar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="157" column="78" selection-start-line="157" selection-start-column="46" selection-end-line="157" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <marker date="1542137636142" expanded="true" signature="4747:8064" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/samples/vision/face/detection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1785">
@@ -551,12 +523,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/samples/vision/face/identify.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="127" column="59" lean-forward="true" selection-start-line="127" selection-start-column="59" selection-end-line="127" selection-end-column="59" />
+        <state relative-caret-position="255">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="82" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
-            <marker date="1542149836550" expanded="true" signature="472:477" ph="..." />
-            <marker date="1542149836550" expanded="true" signature="4206:7969" ph="..." />
+            <marker date="1542149914319" expanded="true" signature="472:477" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/vision/face/find_similar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <marker date="1542137636142" expanded="true" signature="4747:8064" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/vision/face/verify.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="149" column="26" lean-forward="true" selection-start-line="149" selection-start-column="26" selection-end-line="149" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <marker date="1542153941273" expanded="true" signature="466:471" ph="..." />
+            <marker date="1542153941273" expanded="true" signature="5024:7526" ph="..." />
           </folding>
         </state>
       </provider>
