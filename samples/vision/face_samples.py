@@ -1,7 +1,7 @@
 import os.path
 
 from azure.cognitiveservices.vision.face import FaceClient
-from azure.cognitiveservices.vision.face.models import FaceAttributeType, Gender
+from azure.cognitiveservices.vision.face.models import FaceAttributeType
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "FACE_SUBSCRIPTION_KEY"

@@ -1,6 +1,6 @@
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
-from azure.cognitiveservices.vision.face.models import FaceAttributeType, FaceAttributes, HairColorType
+from azure.cognitiveservices.vision.face.models import FaceAttributeType, HairColorType
 import os
 
 SUBSCRIPTION_KEY_ENV_NAME = os.environ.get("FACE_SUBSCRIPTION_KEY")

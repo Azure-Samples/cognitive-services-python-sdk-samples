@@ -1,5 +1,5 @@
 from azure.cognitiveservices.vision.face import FaceClient
-from azure.cognitiveservices.vision.face.models import Person, TrainingStatusType
+from azure.cognitiveservices.vision.face.models import Person
 from msrest.authentication import CognitiveServicesCredentials
 from samples.vision.face.common import detect_faces
 import os

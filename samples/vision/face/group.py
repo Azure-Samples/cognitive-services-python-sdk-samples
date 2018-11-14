@@ -19,7 +19,6 @@ def group_run(face_base_url, subscription_key):
                                "Family2-Man1.jpg",
                                "Family3-Lady1.jpg",
                                "Family3-Man1.jpg"]
-    source_image_file_name = "findsimilar.jpg"
 
     faces = {}
     face_ids = []
