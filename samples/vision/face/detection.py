@@ -3,7 +3,7 @@ from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.face.models import FaceAttributeType, FaceAttributes, HairColorType
 import os
 
-SUBSCRIPTION_KEY_ENV_NAME = "FACE_SUBSCRIPTION_KEY"
+SUBSCRIPTION_KEY_ENV_NAME = os.environ.get("FACE_SUBSCRIPTION_KEY")
 FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
 
 def face_detection_run(face_base_url, subscription_key):
@@ -123,7 +123,7 @@ def get_hair(hair):
 
 if __name__ == "__main__":
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
-    face_detection_run(face_base_url, "e312068d12604dee97f59230ff788d60")
+    face_detection_run(face_base_url, SUBSCRIPTION_KEY_ENV_NAME)
 
 
 

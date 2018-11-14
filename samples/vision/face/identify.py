@@ -6,7 +6,7 @@ import os
 import uuid
 import time
 
-SUBSCRIPTION_KEY_ENV_NAME = "FACE_SUBSCRIPTION_KEY"
+SUBSCRIPTION_KEY_ENV_NAME = os.environ.get("FACE_SUBSCRIPTION_KEY")
 FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
 
 

@@ -1,7 +1,8 @@
 from azure.cognitiveservices.vision.face import FaceClient
 from msrest.authentication import CognitiveServicesCredentials
 import os
-SUBSCRIPTION_KEY_ENV_NAME = os.environ.get("SUBSCRIPTION_KEY_ENV_NAME")
+
+SUBSCRIPTION_KEY_ENV_NAME = os.environ.get("FACE_SUBSCRIPTION_KEY")
 FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
 
 
@@ -19,8 +20,6 @@ def detect_faces(face_client, image_url):
 
 
 if __name__ == "__main__":
-    SUBSCRIPTION_KEY_ENV_NAME = os.environ.get("SUBSCRIPTION_KEY_ENV_NAME")
-    FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
-    face_client = FaceClient(face_base_url, CognitiveServicesCredentials("e312068d12604dee97f59230ff788d60"))
+    face_client = FaceClient(face_base_url, CognitiveServicesCredentials(SUBSCRIPTION_KEY_ENV_NAME))
     detect_faces(face_client, "https://www.elsworth.com/wp/wp-content/uploads/2018/04/8ODT-e1524703208444-768x1024.jpg")

@@ -4,9 +4,8 @@ from msrest.authentication import CognitiveServicesCredentials
 from samples.vision.face.common import detect_faces
 import os
 import uuid
-import time
 
-SUBSCRIPTION_KEY_ENV_NAME = "FACE_SUBSCRIPTION_KEY"
+SUBSCRIPTION_KEY_ENV_NAME = os.environ.get("FACE_SUBSCRIPTION_KEY")
 FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
 
 def verify_face_to_face(face_base_url, subscription_key):
@@ -149,6 +148,6 @@ def verify_in_large_person_group(face_base_url, subscription_key):
 
 if __name__ == "__main__":
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
-    verify_face_to_face(face_base_url, "e312068d12604dee97f59230ff788d60")
-    verify_in_person_group(face_base_url, "e312068d12604dee97f59230ff788d60")
-    verify_in_large_person_group(face_base_url, "e312068d12604dee97f59230ff788d60")
+    verify_face_to_face(face_base_url, SUBSCRIPTION_KEY_ENV_NAME)
+    verify_in_person_group(face_base_url, SUBSCRIPTION_KEY_ENV_NAME)
+    verify_in_large_person_group(face_base_url, SUBSCRIPTION_KEY_ENV_NAME)
