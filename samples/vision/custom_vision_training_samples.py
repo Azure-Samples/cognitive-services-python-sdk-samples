@@ -1,7 +1,7 @@
 import os
 import time
 
-from azure.cognitiveservices.vision.customvision.training.custom_vision_training_client import CustomVisionTrainingClient
+from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
 
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SAMPLE_PROJECT_NAME = "Python SDK Sample"

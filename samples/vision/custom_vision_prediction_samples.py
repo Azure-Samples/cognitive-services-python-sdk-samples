@@ -1,8 +1,8 @@
 import os
 import sys
 
-from azure.cognitiveservices.vision.customvision.training.custom_vision_training_client import CustomVisionTrainingClient
-from azure.cognitiveservices.vision.customvision.prediction.custom_vision_prediction_client import CustomVisionPredictionClient
+from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
+from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
 
 TRAINING_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_KEY"
