@@ -2,14 +2,15 @@ import os
 import sys
 import time
 
-from azure.cognitiveservices.vision.customvision.training import training_api
+from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateEntry, Region
-from azure.cognitiveservices.vision.customvision.prediction import prediction_endpoint
-from azure.cognitiveservices.vision.customvision.prediction.prediction_endpoint import models
+from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
 
 # Replace with a valid key
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 PREDICTION_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_KEY"
+
+ENDPOINT = "https://southcentralus.api.cognitive.microsoft.com"
 
 # Add this directory to the path so that custom_vision_training_samples can be found
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "."))
@@ -26,7 +27,7 @@ def run_sample(subscription_key):
     predict_project(prediction_key, project, iteration)
 
 def train_project(training_key):
-    trainer = training_api.TrainingApi(training_key)
+    trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
 
     # Find the object detection domain
     obj_detection_domain = next(domain for domain in trainer.get_domains() if domain.type == "ObjectDetection")
@@ -119,7 +120,7 @@ def train_project(training_key):
     return project, iteration
 
 def predict_project(prediction_key, project, iteration):
-    predictor = prediction_endpoint.PredictionEndpoint(prediction_key)
+    predictor = CustomVisionPredictionClient(prediction_key, endpoint=ENDPOINT)
 
     # Open the sample image and get back the prediction results.
     with open(os.path.join(IMAGES_FOLDER, "Test", "test_od_image.jpg"), mode="rb") as test_data:
