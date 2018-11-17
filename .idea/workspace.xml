@@ -21,13 +21,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="jpg" value="1" />
-          <entry key="py" value="57" />
+          <entry key="py" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="Python" value="57" />
+          <entry key="Python" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -45,6 +45,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/samples/language/text_analytics_samples.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="692">
+              <caret line="126" column="57" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
+              <folding>
+                <element signature="e#25#34#0" expanded="true" />
+                <marker date="1542414588863" expanded="true" signature="3860:3863" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samples/search/custom_search_samples.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Lib/site-packages/azure/cognitiveservices/search/customsearch/custom_search_client.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="527">
@@ -96,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/samples/search/visual_search_samples.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="153" selection-end-column="7" />
+            <state relative-caret-position="437">
+              <caret line="185" column="69" lean-forward="true" selection-start-line="185" selection-start-column="69" selection-end-line="185" selection-end-column="69" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -153,9 +166,9 @@
         <option value="$PROJECT_DIR$/samples/vision/face/verify.py" />
         <option value="$PROJECT_DIR$/samples/vision/face/detection.py" />
         <option value="$PROJECT_DIR$/samples/search/visual_search_samples.py" />
-        <option value="$PROJECT_DIR$/samples/language/text_analytics_samples.py" />
         <option value="$PROJECT_DIR$/samples/tools.py" />
         <option value="$PROJECT_DIR$/samples/vision/face_samples.py" />
+        <option value="$PROJECT_DIR$/samples/language/text_analytics_samples.py" />
       </list>
     </option>
   </component>
@@ -188,13 +201,13 @@
               <item name="cognitive-services-python-sdk-samples" type="b2602c69:ProjectViewProjectNode" />
               <item name="cognitive-services-python-sdk-samples" type="462c0819:PsiDirectoryNode" />
               <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="search" type="462c0819:PsiDirectoryNode" />
+              <item name="language" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cognitive-services-python-sdk-samples" type="b2602c69:ProjectViewProjectNode" />
               <item name="cognitive-services-python-sdk-samples" type="462c0819:PsiDirectoryNode" />
               <item name="samples" type="462c0819:PsiDirectoryNode" />
-              <item name="vision" type="462c0819:PsiDirectoryNode" />
+              <item name="search" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cognitive-services-python-sdk-samples" type="b2602c69:ProjectViewProjectNode" />
@@ -369,12 +382,12 @@
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24980299" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980299" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3299532" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3299532" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3299532" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39937598" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -507,13 +520,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/samples/vision/face/group.py" />
-    <entry file="file://$PROJECT_DIR$/samples/language/text_analytics_samples.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="122" selection-start-line="122" selection-end-line="122" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Lib/site-packages/tools/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -547,16 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/samples/search/visual_search_samples.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="150" column="5" selection-start-line="150" selection-start-column="5" selection-end-line="153" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/samples/vision/face_samples.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-311">
@@ -564,6 +560,13 @@
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Lib/site-packages/azure/cognitiveservices/search/customsearch/custom_search_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -577,10 +580,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Lib/site-packages/azure/cognitiveservices/search/customsearch/custom_search_client.py">
+    <entry file="file://$PROJECT_DIR$/samples/search/visual_search_samples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="81" />
+        <state relative-caret-position="437">
+          <caret line="185" column="69" lean-forward="true" selection-start-line="185" selection-start-column="69" selection-end-line="185" selection-end-column="69" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/language/text_analytics_samples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="692">
+          <caret line="126" column="57" selection-start-line="126" selection-start-column="57" selection-end-line="126" selection-end-column="57" />
+          <folding>
+            <element signature="e#25#34#0" expanded="true" />
+            <marker date="1542414588863" expanded="true" signature="3860:3863" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

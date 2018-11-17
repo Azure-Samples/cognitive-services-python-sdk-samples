@@ -121,8 +121,7 @@ def sentiment(subscription_key):
 
 
 if __name__ == "__main__":
-    # import sys, os.path
-    # sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    # from tools import execute_samples
-    #execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
-    language_extraction("027b004824b34b009f533ab4274f2dbb")
+    import sys, os.path
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
+    from tools import execute_samples
+    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
