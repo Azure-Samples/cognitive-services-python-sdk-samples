@@ -196,7 +196,8 @@ def search_insights_token_with_crop_area(subscription_key):
         print("Couldn't find image tags!")
 
 if __name__ == "__main__":
-    import sys, os.path
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    # import sys, os.path
+    # sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
+    # from tools import execute_samples
+    # execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    search_url_with_filters("a0568b2af2ad4db3b0756035e2b43ad6")
