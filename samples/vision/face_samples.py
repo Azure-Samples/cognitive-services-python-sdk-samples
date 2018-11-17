@@ -10,16 +10,11 @@ FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
 
 IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images", "Face")
 
-
-'''
-Sample that returns the faces detected in an image
-
-Parameter face_client: a FaceClient instance.
-Parameter image_url: the url for the image where faces are to be detected.
-Returns: a list of faces detected in the image
-'''
 def detect_faces(face_client, image_url):
-    '''Detect faces in an image'''
+    """DetectFaces.
+
+    This will detect the faces found in the image with url image_url using the provided FaceClient instance and return a list of faces detected in the image.
+    """
 
     detected_faces = face_client.face.detect_with_url(image_url, True, False, None, None, False)
     if detected_faces is None or len(detected_faces) == 0:
@@ -31,14 +26,11 @@ def detect_faces(face_client, image_url):
 
 
 
-'''
-Sample that prints out all of facial attributes for a list of images.
-
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def face_detection(subscription_key):
-    '''Face detection and attributes'''
+    """FaceDetection.
+
+    This will print out all of the facial attributes for a list of images.
+    """
 
     '''
     Helper function for face_detection sample that returns a string representation of a person's accessories.
@@ -171,14 +163,11 @@ def face_detection(subscription_key):
             print()
 
 
-'''
-Sample that shows how to detect similar faces from a list of images against a single image using face ids.
-
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def find_similar_in_face_ids(subscription_key):
-    '''Finding similar faces using face ids'''
+    """FindSimilarInFaceIds.
+
+    This will detect similar faces from a list of images against a single image using face ids.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
@@ -211,14 +200,12 @@ def find_similar_in_face_ids(subscription_key):
     print("")
 
 
-'''
-Sample that shows how to detect similar faces from a list of images against a single image by placing the list of images in a face list.
 
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def find_similar_in_face_list(subscription_key):
-    '''Detecting similar faces in a face list'''
+    """FindSimilarInFaceList
+
+    This will detect similar faces from a list of images against a single image by placing the images in a face list.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
@@ -268,14 +255,11 @@ def find_similar_in_face_list(subscription_key):
 
 
 
-'''
-Sample that shows how to detect similar faces from a list of images against a single image by placing the list of images in a large face list.
-
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def find_similar_in_large_face_list(subscription_key):
-    '''Detecting similar faces in a large face list'''
+    """FindSimilarInLargeFaceList.
+
+    This will detect similar faces from a list of images against a single image by placing the list of images in a large face list.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
@@ -340,14 +324,12 @@ def find_similar_in_large_face_list(subscription_key):
     print("")
 
 
-'''
-Sample of grouping faces based on similarity in a group and of grouping faces that don't have any other faces with similar features into a messy group.
 
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def group_run(subscription_key):
-    '''Sample of grouping faces'''
+    """GroupRun.
+
+    This will group faces based on similarity in a group, and will place faces that don't have any other similar faces in a messy group.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
@@ -399,7 +381,10 @@ Parameter face_base_url: the endpoint for the Face API calls.
 Parameter subscription_key: the Face API key.
 '''
 def identify_in_person_group(subscription_key):
-    '''Identifying faces in a group of people'''
+    """IdentifyInPersonGroup
+
+    This will identify faces in a group of people.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
@@ -471,14 +456,12 @@ def identify_in_person_group(subscription_key):
     print("")
 
 
-'''
-Sample of how to identify faces in a large person group.
 
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def identify_in_large_person_group(subscription_key):
-    '''Identifying faces in a large person group'''
+    """IdentifyInLargePersonGroup.
+
+    This will identify faces in a large person group.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
@@ -549,14 +532,12 @@ def identify_in_large_person_group(subscription_key):
     print("Delete the large person group {}.".format(large_person_group_id))
     print("")
 
-'''
-Sample of verifying whether faces detected as similar are the same person.
 
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def verify_face_to_face(subscription_key):
-    '''Verifying face to face'''
+    """VerifyFaceToFace
+
+    This will verify whether faces detected as similar are the same person.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
@@ -598,14 +579,12 @@ def verify_face_to_face(subscription_key):
     print("")
 
 
-'''
-Sample of verifying whether faces detected as similar in a group are of the same person.
 
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def verify_in_person_group(subscription_key):
-    '''Verifying face to person group'''
+    """VerifyInPersonGroup
+
+    This will verify whether faces detected as similar in a group are of the same person.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
@@ -652,11 +631,12 @@ def verify_in_person_group(subscription_key):
     print("")
 
 
-'''
-Sample of verifying whether faces detected as similar in a large group are of the same person.
-'''
+
 def verify_in_large_person_group(subscription_key):
-    '''Verifying person to large person group'''
+    """VerifyInLargePersonGroup
+
+    This will verify whether faces detected as similar in a large group are of the same person.
+    """
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
