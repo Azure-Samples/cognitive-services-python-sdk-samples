@@ -21,7 +21,7 @@ def search_image_binary(subscription_key):
 
     This will send an image binary in the body of the post request and print out the imageInsightsToken, the number of tags, the number of actions, and the first actionType.
     """
-    client = VisualSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = VisualSearchAPI(credentials=CognitiveServicesCredentials(subscription_key), base_url="https://api.cognitive.microsoft.com/bing/v7.0")
 
     image_path = os.path.join(TEST_IMAGES, "image.jpg")
     with open(image_path, "rb") as image_fd:
@@ -198,5 +198,5 @@ def search_insights_token_with_crop_area(subscription_key):
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
