@@ -1,25 +1,26 @@
-from azure.cognitiveservices.search.customsearch import CustomSearchClient
-from azure.cognitiveservices.search.imagesearch import ImageSearchAPI
+from azure.cognitiveservices.search.customimagesearch import CustomImageSearchAPI
 from msrest.authentication import CognitiveServicesCredentials
 
+SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMIMAGESEARCH_SUBSCRIPTION_KEY"
 
-def custom_image_search_result_lookup(subscription_key, custom_config):
+
+def custom_image_search_result_lookup(subscription_key):
     """CustomImageSearchResultLookup
 
     This will look up a single query (Xbox) and print out number of results, insights token, thumbnail url, content url for the first image result
     """
-    client = ImageSearchAPI(credentials=CognitiveServicesCredentials(subscription_key))
+    client = CustomImageSearchAPI(credentials=CognitiveServicesCredentials(subscription_key))
     try:
-        image_results = client.images.search(query="Xbox", custom_config=1)
+        image_results = client.custom_instance.image_search(query="Xbox", custom_config=1)
         print("Searched for Query \" Xbox \"")
 
         # WebPages
-        if (len(image_results) > 0):
+        if (len(image_results.value) > 0):
             # find the first web page
-            first_image_result = image_results[0]
+            first_image_result = image_results.value[0]
 
             if (first_image_result):
-                print("Image result count: {}".format(len(image_results)))
+                print("Image result count: {}".format(len(image_results.value)))
                 print("First image insights token: {}".format(first_image_result.image_insights_token))
                 print("First image thumbnail url: {}".format(first_image_result.thumbnail_url))
                 print("First image content url: {}".format(first_image_result.content_url))
@@ -33,4 +34,7 @@ def custom_image_search_result_lookup(subscription_key, custom_config):
 
 
 if __name__ == "__main__":
-    custom_image_search_result_lookup("65bcdb9d6e9e4b7faf271ef2e2dc0fa4", 1)
+    import sys, os.path
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
+    from tools import execute_samples
+    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
