@@ -157,15 +157,15 @@ def entity_extraction(subscription_key):
         )
 
         for document in response.documents:
-            print("Document ID: {}".format(document.id))
+            print("Document ID: {}".format(document['Id']))
             print("\t Entities:")
-            for entity in document.entities:
+            for entity in document['Entities']:
                 print("\t\tEntity Name: {}".format(entity.name))
                 print("\t\tWikipedia Language: {}".format(entity.wikipedia_language))
                 print("\t\tWikipedia Url: {}".format(entity.wikipedia_url))
                 print("\t\tNumber of times appeared on the text: {}".format(len(entity.matches)))
-                # print("\t\tEntity Type: {}".format(entity.type))
-                # print("\t\tEntity SubType: {}".format(entity.sub_type))
+                print("\t\tEntity Type: {}".format(entity.type))
+                print("\t\tEntity SubType: {}".format(entity.sub_type))
                 print("\n")
 
     except Exception as err:
@@ -176,5 +176,5 @@ def entity_extraction(subscription_key):
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
