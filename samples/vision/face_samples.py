@@ -1,9 +1,10 @@
-from azure.cognitiveservices.vision.face import FaceClient
-from msrest.authentication import CognitiveServicesCredentials
-from azure.cognitiveservices.vision.face.models import FaceAttributeType, HairColorType, TrainingStatusType, Person
 import os
 import uuid
 import time
+
+from azure.cognitiveservices.vision.face import FaceClient
+from msrest.authentication import CognitiveServicesCredentials
+from azure.cognitiveservices.vision.face.models import FaceAttributeType, HairColorType, TrainingStatusType, Person
 
 SUBSCRIPTION_KEY_ENV_NAME = "FACE_SUBSCRIPTION_KEY"
 FACE_LOCATION = os.environ.get("FACE_LOCATION", "westcentralus")
@@ -12,8 +13,10 @@ IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "image
 
 def image_analysis_in_stream(subscription_key):
     """ImageAnalysisInStream.
+
     This will analyze an image from a stream and return all available features.
     """
+
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(face_base_url, CognitiveServicesCredentials(subscription_key))
 
@@ -81,6 +84,7 @@ def detect_faces(subscription_key):
 
     This will detect the faces found in the image with url image_url using the provided FaceClient instance and print out the number of faces detected in an image.
     """
+
     image_url = "https://csdx.blob.core.windows.net/resources/Face/Images/Family1-Dad1.jpg"
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(endpoint=face_base_url, credentials=CognitiveServicesCredentials(subscription_key))
@@ -99,14 +103,12 @@ def face_detection(subscription_key):
     This will print out all of the facial attributes for a list of images.
     """
 
-    '''
-    Helper function for face_detection sample that returns a string representation of a person's accessories.
-
-    Parameter accessories: the accessories detected in an image.
-    Return: string representation of a person's accessories.
-    '''
-
     def get_accessories(accessories):
+        """Helper function for face_detection sample.
+
+        This will return a string representation of a person's accessories.
+        """
+
         if not accessories:
             return "No accessories"
         accessory_array = []
@@ -115,61 +117,42 @@ def face_detection(subscription_key):
             accessory_array.append(str(accessories[i]))
         return ",".join(accessory_array)
 
-    '''
-    Helper function for face_detection sample that determines the emotion a person is showing.
-
-    Parameter emotion: the emotion object detected in an image.
-    Return: the emotion that the face is showing in the image.
-    '''
 
     def get_emotion(emotion):
-        emotion_type = ""
-        emotion_value = 0.0
-        if emotion.anger > emotion_value:
-            emotion_type = "anger"
-            emotion_value = emotion.anger
-        if emotion.contempt > emotion_value:
-            emotion_type = "contempt"
-            emotion_value = emotion.contempt
-        if emotion.disgust > emotion_value:
-            emotion_type = "disgust"
-            emotion_value = emotion.disgust
-        if emotion.fear > emotion_value:
-            emotion_type = "fear"
-            emotion_value = emotion.fear
-        if emotion.happiness > emotion_value:
-            emotion_type = "happiness"
-            emotion_value = emotion.happiness
-        if emotion.neutral > emotion_value:
-            emotion_type = "neutral"
-            emotion_value = emotion.neutral
-        if emotion.sadness > emotion_value:
-            emotion_type = "sadness"
-            emotion_value = emotion.sadness
-        if emotion.surprise > emotion_value:
-            emotion_type = "surprise"
+        """Helper function for face_detection sample.
+
+        This will determine and return the emotion a person is showing.
+        """
+
+        max_emotion_value = 0.0
+        emotion_type = None
+
+        for emotion_attr in emotion._attribute_map:
+            curr_emotion_value = getattr(emotion, emotion_attr)
+            if curr_emotion_value > max_emotion_value:
+                max_emotion_value = curr_emotion_value
+                emotion_type = emotion_attr
         return emotion_type
 
-    '''
-    Helper function for face_detection sample that determines the hair color detected for a face in an image.
-
-    Parameter hair: hair object from a face detected in an image.
-    Return: the hair color.
-    '''
 
     def get_hair(hair):
-        if len(hair.hair_color) == 0:
+        """Helper function for face_detection sample.
+
+         This determines and returns the hair color detected for a face in an image.
+        """
+
+        if not hair.hair_color:
             return "invisible" if hair.invisible else "bald"
         return_color = HairColorType.unknown
         max_confidence = 0.0
 
         for hair_color in hair.hair_color:
             if hair_color.confidence <= max_confidence:
-                continue;
+                continue
             max_confidence = hair_color.confidence
-            return_color = hair_color.color;
+            return_color = hair_color.color
 
-        return str(return_color)
+        return return_color
 
     face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
     face_client = FaceClient(endpoint=face_base_url, credentials=CognitiveServicesCredentials(subscription_key))
@@ -435,12 +418,6 @@ def group_run(subscription_key):
     print("")
 
 
-'''
-Sample of how to identify faces in a group of people.
-
-Parameter face_base_url: the endpoint for the Face API calls.
-Parameter subscription_key: the Face API key.
-'''
 def identify_in_person_group(subscription_key):
     """IdentifyInPersonGroup
 
@@ -746,11 +723,12 @@ def verify_in_large_person_group(subscription_key):
     print("")
 
 
-"""DetectFacesHelper.
+def detect_faces_helper(face_client, image_url):
+    """Detect Faces Helper.
 
     This will detect the faces found in the image with url image_url using the provided FaceClient instance and return the faces identified in an image.
-"""
-def detect_faces_helper(face_client, image_url):
+    """
+
     detected_faces = face_client.face.detect_with_url(url=image_url)
     if not detected_faces:
         raise Exception('No face detected from image {}'.format(image_url))
@@ -758,8 +736,6 @@ def detect_faces_helper(face_client, image_url):
     if not detected_faces[0]:
         raise Exception("Parameter return_face_id of detect_with_stream or detect_with_url must be set to true (by default) for recognition purpose.")
     return detected_faces
-
-
 
 
 if __name__ == "__main__":
