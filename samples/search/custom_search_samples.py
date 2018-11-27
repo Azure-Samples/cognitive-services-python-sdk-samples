@@ -8,6 +8,7 @@ def custom_search_web_page_result_lookup(subscription_key):
 
     This will look up a single query (Xbox) and print out name and url for first web result.
     """
+
     client = CustomSearchClient(CognitiveServicesCredentials(subscription_key))
 
     try:
