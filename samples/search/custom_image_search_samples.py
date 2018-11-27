@@ -10,7 +10,7 @@ def custom_image_search_result_lookup(subscription_key):
     This will look up a single query (Xbox) and print out number of results, insights token, thumbnail url, content url for the first image result
     """
 
-    client = CustomImageSearchAPI(credentials=CognitiveServicesCredentials(subscription_key))
+    client = CustomImageSearchAPI(credentials=CognitiveServicesCredentials(subscription_key)) 
     try:
         image_results = client.custom_instance.image_search(query="Xbox", custom_config=1)
         print("Searched for Query \" Xbox \"")
