@@ -21,6 +21,7 @@ def search_image_binary(subscription_key):
 
     This will send an image binary in the body of the post request and print out the imageInsightsToken, the number of tags, the number of actions, and the first actionType.
     """
+
     client = VisualSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     image_path = os.path.join(TEST_IMAGES, "image.jpg")
@@ -62,12 +63,12 @@ def search_image_binary_with_crop_area(subscription_key):
 
     This will send an image binary in the body of the post request, along with a cropArea object, and print out the imageInsightsToken, the number of tags, the number of actions, and the first actionType.
     """
+
     client = VisualSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     image_path = os.path.join(TEST_IMAGES, "image.jpg")
     with open(image_path, "rb") as image_fd:
-
-        crop_area = CropArea(top=0.1,bottom=0.5,left=0.1,right=0.9)
+        crop_area = CropArea(top=0.1, bottom=0.5, left=0.1, right=0.9)
         knowledge_request = VisualSearchRequest(image_info=ImageInfo(crop_area=crop_area))
 
         # You need to pass the serialized form of the model
@@ -106,6 +107,7 @@ def search_url_with_filters(subscription_key):
 
     This will send an image url in the knowledgeRequest parameter, along with a \"site:www.bing.com\" filter, and print out the imageInsightsToken, the number of tags, the number of actions, and the first actionType.
     """
+
     client = VisualSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     image_url = "https://images.unsplash.com/photo-1512546148165-e50d714a565a?w=600&q=80"
@@ -152,6 +154,7 @@ def search_insights_token_with_crop_area(subscription_key):
 
     This will send an image insights token in the knowledgeRequest parameter, along with a cropArea object, and print out the imageInsightsToken, the number of tags, the number of actions, and the first actionType.
     """
+
     client = VisualSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     image_insights_token = "bcid_113F29C079F18F385732D8046EC80145*ccid_oV/QcH95*mid_687689FAFA449B35BC11A1AE6CEAB6F9A9B53708*thid_R.113F29C079F18F385732D8046EC80145"
@@ -197,6 +200,11 @@ def search_insights_token_with_crop_area(subscription_key):
 
 
 def search_url_with_json(subscription_key):
+    """VisualSearchURLWithJSON.
+
+    This will send a visual search request in JSON form, and print out the imageInsightsToken, the number of tags, and the first actionCount and actionType.
+    """
+
     client = VisualSearchAPI(CognitiveServicesCredentials(subscription_key))
     try:
         """
@@ -225,7 +233,7 @@ def search_url_with_json(subscription_key):
         visual_search_results = client.images.visual_search(knowledge_request=visual_search_request_json)
         print("Search visual search request with url of dog image")
 
-        if visual_search_results is None:
+        if not visual_search_results:
             print("No visual search result data.")
         else:
             # Visual Search results
