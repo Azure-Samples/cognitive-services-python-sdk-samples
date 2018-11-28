@@ -3,7 +3,6 @@
 import os
 
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
-import azure.cognitiveservices.language.textanalytics.models
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "TEXTANALYTICS_SUBSCRIPTION_KEY"
@@ -176,5 +175,5 @@ def entity_extraction(subscription_key):
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from samples.tools import execute_samples
+    from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
