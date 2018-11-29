@@ -102,3 +102,7 @@ ENV/
 
 # idea files
 .idea/
+
+#DS store
+.DS_Store
+samples/DS_Store
