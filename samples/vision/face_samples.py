@@ -109,13 +109,8 @@ def face_detection(subscription_key):
         This will return a string representation of a person's accessories.
         """
 
-        if not accessories:
-            return "No accessories"
-        accessory_array = []
-
-        for i in range(len(accessories)):
-            accessory_array.append(str(accessories[i]))
-        return ",".join(accessory_array)
+        accessory_str = ",".join([str(accessory) for accessory in accessories])
+        return accessory_str if accessory_str else "No accessories"
 
 
     def get_emotion(emotion):
@@ -147,10 +142,9 @@ def face_detection(subscription_key):
         max_confidence = 0.0
 
         for hair_color in hair.hair_color:
-            if hair_color.confidence <= max_confidence:
-                continue
-            max_confidence = hair_color.confidence
-            return_color = hair_color.color
+            if hair_color.confidence > max_confidence:
+                max_confidence = hair_color.confidence
+                return_color = hair_color.color
 
         return return_color
 
@@ -187,7 +181,8 @@ def face_detection(subscription_key):
             raise Exception("Parameter return_face_attributes of detect_with_stream_async must be set to get face attributes.")
 
         for face in detected_faces:
-            print("Face attributes of {}   Rectangle(Left/Top/Width/Height) : {} {} {} {}".format(image_file_name, face.face_rectangle.left, face.face_rectangle.top, face.face_rectangle.width, face.face_rectangle.height))
+            print("Face attributes of {}   Rectangle(Left/Top/Width/Height) : {} {} {} {}".format(image_file_name, face.face_rectangle.left,
+                                                                                                  face.face_rectangle.top, face.face_rectangle.width, face.face_rectangle.height))
             print("Face attributes of {}   Accessories : {}".format(image_file_name, get_accessories(face.face_attributes.accessories)))
             print("Face attributes of {}   Age : {}".format(image_file_name, face.face_attributes.age))
             print("Face attributes of {}   Blur : {}".format(image_file_name, face.face_attributes.blur.blur_level))
@@ -200,14 +195,16 @@ def face_detection(subscription_key):
             print("Face attributes of {}   Gender : {}".format(image_file_name, face.face_attributes.gender))
             print("Face attributes of {}   Glasses : {}".format(image_file_name, face.face_attributes.glasses))
             print("Face attributes of {}   Hair : {}".format(image_file_name, get_hair(face.face_attributes.hair)))
-            print("Face attributes of {}   HeadPose : Pitch: {}, Roll: {}, Yaw: {}".format(image_file_name, round(face.face_attributes.head_pose.pitch, 2), round(face.face_attributes.head_pose.roll, 2), round(face.face_attributes.head_pose.yaw, 2)))
+            print("Face attributes of {}   HeadPose : Pitch: {}, Roll: {}, Yaw: {}".format(image_file_name, round(face.face_attributes.head_pose.pitch, 2),
+                                                                                           round(face.face_attributes.head_pose.roll, 2), round(face.face_attributes.head_pose.yaw, 2)))
             if face.face_attributes.makeup.eye_makeup or face.face_attributes.makeup.lip_makeup:
                 print("Face attributes of {}   Makeup : Yes".format(image_file_name))
             else:
                 print("Face attributes of {}   Makeup : No".format(image_file_name))
             print("Face attributes of {}   Noise : {}".format(image_file_name, face.face_attributes.noise.noise_level))
             print("Face attributes of {}   Occlusion : EyeOccluded: {},   ForeheadOccluded: {},   MouthOccluded: {}".format(image_file_name, "Yes" if face.face_attributes.occlusion.eye_occluded else "No",
-                                                                                                                        "Yes" if face.face_attributes.occlusion.forehead_occluded else "No", "Yes" if face.face_attributes.occlusion.mouth_occluded else "No"))
+                                                                                                                            "Yes" if face.face_attributes.occlusion.forehead_occluded else "No",
+                                                                                                                            "Yes" if face.face_attributes.occlusion.mouth_occluded else "No"))
 
             print("Face attributes of {}   Smile : {}".format(image_file_name, face.face_attributes.smile))
             print()
@@ -232,13 +229,10 @@ def find_similar_in_face_ids(subscription_key):
                                 "Family3-Man1.jpg"]
 
     source_image_file_name = "findsimilar.jpg"
-    target_face_ids = []
+    # Detect faces from target image url and add detected face id to target_face_ids
+    target_face_ids = [detect_faces_helper(face_client=face_client, image_url=image_url_prefix + target_image_file_name)[0].face_id
+                       for target_image_file_name in target_image_file_names]
 
-    for target_image_file_name in target_image_file_names:
-        # Detect faces from target image url.
-        faces = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + target_image_file_name)
-        # Add detected face id to target_face_ids
-        target_face_ids.append(faces[0].face_id)
     # Detect faces from source image url.
     detected_faces = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name)
     # Find similar example of face id to face ids.
@@ -273,11 +267,15 @@ def find_similar_in_face_list(subscription_key):
     # Create a face list.
     face_list_id = str(uuid.uuid4())
     print("Create face list {}.".format(face_list_id))
-    face_client.face_list.create(face_list_id=face_list_id, name="face list for find_similar_in_face_list sample", user_data="face list for find_similar_in_face_list sample")
+    face_client.face_list.create(face_list_id=face_list_id,
+                                 name="face list for find_similar_in_face_list sample",
+                                 user_data="face list for find_similar_in_face_list sample")
 
     for target_image_file_name in target_image_file_names:
         # Add face to face list.
-        faces = face_client.face_list.add_face_from_url(face_list_id=face_list_id, url=image_url_prefix + target_image_file_name, user_data=target_image_file_name)
+        faces = face_client.face_list.add_face_from_url(face_list_id=face_list_id,
+                                                        url=image_url_prefix + target_image_file_name,
+                                                        user_data=target_image_file_name)
         if not faces:
             raise Exception("No face detected from image {}".format(target_image_file_name))
         print("Face from image {} is successfully added to the face list.".format(target_image_file_name))
@@ -300,8 +298,7 @@ def find_similar_in_face_list(subscription_key):
 
     # Delete the face list.
     face_client.face_list.delete(face_list_id=face_list_id)
-    print("Delete face list {}.".format(face_list_id))
-    print("")
+    print("Delete face list {}.\n".format(face_list_id))
 
 
 
@@ -328,10 +325,14 @@ def find_similar_in_large_face_list(subscription_key):
     # Create a large face list.
     large_face_list_id = str(uuid.uuid4())
     print("Create large face list {}.".format(large_face_list_id))
-    face_client.large_face_list.create(large_face_list_id=large_face_list_id, name="large face list for find_similar_in_large_face_list sample", user_data="large face list for find_similar_in_large_face_list sample")
+    face_client.large_face_list.create(large_face_list_id=large_face_list_id,
+                                       name="large face list for find_similar_in_large_face_list sample",
+                                       user_data="large face list for find_similar_in_large_face_list sample")
 
     for target_image_file_name in target_image_file_names:
-        faces = face_client.large_face_list.add_face_from_url(large_face_list_id=large_face_list_id, url=image_url_prefix + target_image_file_name, user_data=target_image_file_name)
+        faces = face_client.large_face_list.add_face_from_url(large_face_list_id=large_face_list_id,
+                                                              url=image_url_prefix + target_image_file_name,
+                                                              user_data=target_image_file_name)
         if not faces:
             raise Exception("No face detected from image {}.".format(target_image_file_name))
         print("Face from image {} is successfully added to the large face list.".format(target_image_file_name))
@@ -364,8 +365,7 @@ def find_similar_in_large_face_list(subscription_key):
 
     # Delete the large face list.
     face_client.large_face_list.delete(large_face_list_id=large_face_list_id)
-    print("Delete large face list {}.".format(large_face_list_id))
-    print("")
+    print("Delete large face list {}.\n".format(large_face_list_id))
 
 
 
@@ -444,9 +444,9 @@ def identify_in_person_group(subscription_key):
 
     for target_image_file_dictionary_name in target_image_file_dictionary.keys():
         person_id = face_client.person_group_person.create(person_group_id=person_group_id, name=target_image_file_dictionary_name).person_id
-
-        # Limit TPS
-        time.sleep(0.25)
+        #
+        # # Limit TPS
+        # time.sleep(0.25)
 
         # Create a person group person.
         person = Person(name=target_image_file_dictionary_name, user_data="Person for sample", person_id=person_id)
@@ -456,7 +456,10 @@ def identify_in_person_group(subscription_key):
         for target_image_file_name in target_image_file_dictionary[target_image_file_dictionary_name]:
             # Add face to the person group person
             print("Add face to the person group person {} from image.".format(target_image_file_dictionary_name, target_image_file_name))
-            face = face_client.person_group_person.add_face_from_url(person_group_id=person_group_id, person_id=person.person_id, url=image_url_prefix + target_image_file_name, user_data=target_image_file_name)
+            face = face_client.person_group_person.add_face_from_url(person_group_id=person_group_id,
+                                                                     person_id=person.person_id,
+                                                                     url=image_url_prefix + target_image_file_name,
+                                                                     user_data=target_image_file_name)
             if not face:
                 raise Exception("No persisted face from image {}".format(target_image_file_name))
 
@@ -465,18 +468,11 @@ def identify_in_person_group(subscription_key):
     face_client.person_group.train(person_group_id=person_group_id)
     training_status = face_client.person_group.get_training_status(person_group_id=person_group_id)
     print("Training status is {}".format(training_status.status))
-    if training_status.status != TrainingStatusType.running:
-        if training_status.status == TrainingStatusType.failed:
-            raise Exception("Training failed with message {}.".format(training_status.message))
+    if training_status.status == TrainingStatusType.failed:
+        raise Exception("Training failed with message {}.".format(training_status.message))
 
-    source_face_ids = []
-
-    # Detect faces from source image url.
-    detected_faces = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name)
-
-    # Add detected face id to source_face_ids
-    for detected_face in detected_faces:
-        source_face_ids.append(detected_face.face_id)
+    # Detect faces from source image url and add detected face id to source_face_ids
+    source_face_ids = [detected_face.face_id for detected_face in detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name)]
 
     # Identify example of identifying faces towards person group.
     identify_results = face_client.face.identify(face_ids=source_face_ids, person_group_id=person_group_id)
@@ -490,8 +486,7 @@ def identify_in_person_group(subscription_key):
 
     # Delete the person group.
     face_client.person_group.delete(person_group_id=person_group_id)
-    print("Delete the person group {}.".format(person_group_id))
-    print("")
+    print("Delete the person group {}.\n\n".format(person_group_id))
 
 
 
@@ -521,9 +516,9 @@ def identify_in_large_person_group(subscription_key):
 
     for target_image_file_dictionary_name in target_image_file_dictionary.keys():
         person_id = face_client.large_person_group_person.create(large_person_group_id=large_person_group_id, name=target_image_file_dictionary_name).person_id
-
-        # Limit TPS
-        time.sleep(0.25)
+        #
+        # # Limit TPS
+        # time.sleep(0.25)
 
         # Create a person group person.
         person = Person(name=target_image_file_dictionary_name, user_data="Person for sample", person_id=person_id)
@@ -533,7 +528,10 @@ def identify_in_large_person_group(subscription_key):
         for target_image_file_name in target_image_file_dictionary[target_image_file_dictionary_name]:
             # Add face to the person group person
             print("Add face to the large person group person {} from image.".format(target_image_file_dictionary_name, target_image_file_name))
-            face = face_client.large_person_group_person.add_face_from_url(large_person_group_id=large_person_group_id, person_id=person.person_id, url=image_url_prefix + target_image_file_name, user_data=target_image_file_name)
+            face = face_client.large_person_group_person.add_face_from_url(large_person_group_id=large_person_group_id,
+                                                                           person_id=person.person_id,
+                                                                           url=image_url_prefix + target_image_file_name,
+                                                                           user_data=target_image_file_name)
             if not face:
                 raise Exception("No persisted face from image {}".format(target_image_file_name))
 
@@ -545,15 +543,8 @@ def identify_in_large_person_group(subscription_key):
     if training_status.status == TrainingStatusType.failed:
         raise Exception("Training failed with message {}.".format(training_status.message))
 
-
-    source_face_ids = []
-
-    # Detect faces from source image url.
-    detected_faces = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name)
-
-    # Add detected face ids to source_face_ids
-    for detected_face in detected_faces:
-        source_face_ids.append(detected_face.face_id)
+    # Detect faces from source image url and add detected face ids to source_face_ids
+    source_face_ids = [detected_face.face_id for detected_face in detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name)]
 
     # Identify example of identifying faces towards large person group.
     identify_results = face_client.face.identify(face_ids=source_face_ids, large_person_group_id=large_person_group_id)
@@ -567,8 +558,7 @@ def identify_in_large_person_group(subscription_key):
 
     # Delete the person group.
     face_client.large_person_group.delete(large_person_group_id=large_person_group_id)
-    print("Delete the large person group {}.".format(large_person_group_id))
-    print("")
+    print("Delete the large person group {}.\n".format(large_person_group_id))
 
 
 def verify_face_to_face(subscription_key):
@@ -585,19 +575,15 @@ def verify_face_to_face(subscription_key):
     source_image_file_name1 = "Family1-Dad3.jpg"
     source_image_file_name2 = "Family1-Son1.jpg"
 
-    target_face_ids = []
-    for image_file_name in target_image_file_names:
-        # Detect faces from target image url.
-        detected_faces = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + image_file_name)
-        target_face_ids.append(detected_faces[0].face_id)
+    # Detect faces from target image url and add their face ids to target_face_ids
+    target_face_ids = [detect_faces_helper(face_client=face_client, image_url=image_url_prefix + image_file_name)[0].face_id
+                       for image_file_name in target_image_file_names]
 
     # Detect faces from source image file 1.
-    detected_faces1 = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name1)
-    source_face_id1 = detected_faces1[0].face_id
+    source_face_id1 = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name1)[0].face_id
 
     # Detect faces from source image file 2.
-    detected_faces2 = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name2)
-    source_face_id2 = detected_faces2[0].face_id
+    source_face_id2 = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name2)[0].face_id
 
     # Verification example for faces of the same person.
     verify_result1 = face_client.face.verify_face_to_face(face_id1=source_face_id1, face_id2=target_face_ids[0])
@@ -609,12 +595,11 @@ def verify_face_to_face(subscription_key):
     # Verification example for faces of different persons.
     verify_result2 = face_client.face.verify_face_to_face(face_id1=source_face_id2, face_id2=target_face_ids[0])
     if verify_result2.is_identical:
-        print("Faces from {} & {} are of the same (Negative) person, similarity confidence: {}.".format(
+        print("Faces from {} & {} are of the same (Negative) person, similarity confidence: {}.\n".format(
             source_image_file_name2, target_image_file_names[0], verify_result2.confidence))
     else:
-        print("Faces from {} & {} are of different (Positive) persons, similarity confidence: {}.".format(
+        print("Faces from {} & {} are of different (Positive) persons, similarity confidence: {}.\n".format(
             source_image_file_name2, target_image_file_names[0], verify_result2.confidence))
-    print("")
 
 
 
@@ -645,28 +630,23 @@ def verify_in_person_group(subscription_key):
     for target_image_file_name in target_image_file_names:
         # Add face to the person group.
         print("Add face to the person group person {} from image {}.".format(p.name, target_image_file_name))
-        faces = face_client.person_group_person.add_face_from_url(person_group_id=person_group_id, person_id=p.person_id, url=image_url_prefix + target_image_file_name, user_data=target_image_file_name)
+        faces = face_client.person_group_person.add_face_from_url(person_group_id=person_group_id, person_id=p.person_id,
+                                                                  url=image_url_prefix + target_image_file_name, user_data=target_image_file_name)
 
         if not faces:
             raise Exception("No persisted face from image {}.".format(target_image_file_name))
 
-    face_ids = []
-
-    # Add detected face id to face_ids
-    detected_faces = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name1)
-    face_ids.append(detected_faces[0].face_id)
-
     # Verification example for faces of the same person.
-    verify_result = face_client.face.verify_face_to_person(face_id=face_ids[0], person_id=p.person_id, person_group_id=person_group_id)
+    verify_result = face_client.face.verify_face_to_person(face_id=detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name1)[0].face_id,
+                                                           person_id=p.person_id, person_group_id=person_group_id)
     if verify_result.is_identical:
         print("Faces from {} & {} are of the same (Positive) person, similarity confidence: {}.".format(source_image_file_name1, p.name, verify_result.confidence))
     else:
         print("Faces from {} & {} are of different (Negative) persons, similarity confidence: {}.".format(source_image_file_name1, p.name, verify_result.confidence))
 
     # Delete the person group.
-    print("Delete the person group {}.".format(person_group_id))
+    print("Delete the person group {}.\n".format(person_group_id))
     face_client.person_group.delete(person_group_id=person_group_id)
-    print("")
 
 
 
@@ -697,19 +677,15 @@ def verify_in_large_person_group(subscription_key):
     for target_image_file_name in target_image_file_names:
         # Add face to the large person group.
         print("Add face to the large person group person {} from image {}.".format(p.name, target_image_file_name))
-        faces = face_client.large_person_group_person.add_face_from_url(large_person_group_id=large_person_group_id, person_id=p.person_id, url=image_url_prefix + target_image_file_name, user_data=target_image_file_name)
+        faces = face_client.large_person_group_person.add_face_from_url(large_person_group_id=large_person_group_id, person_id=p.person_id,
+                                                                        url=image_url_prefix + target_image_file_name, user_data=target_image_file_name)
 
         if not faces:
             raise Exception("No persisted face from image {}.".format(target_image_file_name))
 
-    face_ids = []
-
-    # Add detected face id to face_ids
-    detected_faces = detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name1)
-    face_ids.append(detected_faces[0].face_id)
-
     # Verification example for faces of the same person.
-    verify_result = face_client.face.verify_face_to_person(face_id=face_ids[0], person_id=p.person_id, large_person_group_id=large_person_group_id)
+    verify_result = face_client.face.verify_face_to_person(face_id=detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name1)[0].face_id,
+                                                           person_id=p.person_id, large_person_group_id=large_person_group_id)
     if verify_result.is_identical:
         print("Faces from {} & {} are of the same (Positive) person, similarity confidence: {}.".format(
             source_image_file_name1, p.name, verify_result.confidence))
@@ -718,9 +694,8 @@ def verify_in_large_person_group(subscription_key):
             source_image_file_name1, p.name, verify_result.confidence))
 
     # Delete the person group.
-    print("Delete the large person group {}.".format(large_person_group_id))
+    print("Delete the large person group {}.\n".format(large_person_group_id))
     face_client.large_person_group.delete(large_person_group_id=large_person_group_id)
-    print("")
 
 
 def detect_faces_helper(face_client, image_url):
