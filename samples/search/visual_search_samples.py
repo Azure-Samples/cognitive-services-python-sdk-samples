@@ -227,7 +227,7 @@ def search_url_with_json(subscription_key):
            }
          } 
         """
-        visual_search_request_json = "{\"imageInfo\":{\"url\":\"https://images.unsplash.com/photo-1512546148165-e50d714a565a?w=600&q=80\",\"cropArea\":{\"top\":0.1,\"bottom\":0.5,\"left\":0.1,\"right\":0.9}},\"knowledgeRequest\":{\"filters\":{\"site\":\"www.bing.com\"}}}";
+        visual_search_request_json = "{\"imageInfo\":{\"url\":\"https://images.unsplash.com/photo-1512546148165-e50d714a565a?w=600&q=80\",\"cropArea\":{\"top\":0.1,\"bottom\":0.5,\"left\":0.1,\"right\":0.9}},\"knowledgeRequest\":{\"filters\":{\"site\":\"www.bing.com\"}}}"
 
         # An image binary is not necessary here, as the image is specified via URL
         visual_search_results = client.images.visual_search(knowledge_request=visual_search_request_json)
@@ -259,6 +259,7 @@ def search_url_with_json(subscription_key):
 
     except Exception as e:
         print("Encountered exception. " + str(e))
+
 
 if __name__ == "__main__":
     import sys, os.path

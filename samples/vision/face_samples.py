@@ -1,7 +1,7 @@
 import os.path
 
 from azure.cognitiveservices.vision.face import FaceClient
-from azure.cognitiveservices.vision.face.models import FaceAttributeType
+from azure.cognitiveservices.vision.face.models import FaceAttributeType, Gender
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "FACE_SUBSCRIPTION_KEY"
@@ -79,6 +79,5 @@ def face_detect(subscription_key):
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    #from tools import execute_samples
-    face_detect("e312068d12604dee97f59230ff788d60")
-    #execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    from tools import execute_samples
+    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
