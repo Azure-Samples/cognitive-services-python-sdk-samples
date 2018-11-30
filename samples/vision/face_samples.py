@@ -127,7 +127,7 @@ def face_detection(subscription_key):
                 continue
             if emotion_value > max_emotion_value:
                 max_emotion_value = emotion_value
-                emotion_type = emotion_attr
+                emotion_type = emotion_name
         return emotion_type
 
 
@@ -253,6 +253,7 @@ def find_similar_in_face_ids(subscription_key):
     target_face_ids = [_detect_faces_helper(face_client=face_client, image_url=image_url_prefix + target_image_file_name)[0].face_id
                        for target_image_file_name in target_image_file_names]
 
+    detected_faces = _detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name)
     # Find similar example of face id to face ids.
     similar_results = face_client.face.find_similar(face_id=detected_faces[0].face_id, face_ids=target_face_ids)
     if not similar_results:
@@ -309,7 +310,6 @@ def find_similar_in_face_list(subscription_key):
     # Detect faces from source image url.
     detected_faces = _detect_faces_helper(face_client=face_client, image_url=image_url_prefix + source_image_file_name)
 
-    #CHECK WHETHER PERSISTED FACES IS IN DEFCREASING ORDER
     # Find similar example of face id to face list.
     similar_results = face_client.face.find_similar(face_id=detected_faces[0].face_id, face_list_id=face_list_id)
     for similar_result in similar_results:
