@@ -125,8 +125,8 @@ def sentiment(subscription_key):
 def entity_extraction(subscription_key):
     """EntityExtraction.
 
-        Extracts the entities from sentences and prints out their properties
-        """
+    Extracts the entities from sentences and prints out their properties
+    """
     endpoint = "https://{}.api.cognitive.microsoft.com".format(TEXTANALYTICS_LOCATION)
     client = TextAnalyticsClient(endpoint=endpoint, credentials=CognitiveServicesCredentials(subscription_key))
 
@@ -169,7 +169,6 @@ def entity_extraction(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
-
 
 
 if __name__ == "__main__":
