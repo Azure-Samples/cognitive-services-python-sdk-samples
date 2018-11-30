@@ -26,6 +26,7 @@ def custom_search_web_page_result_lookup(subscription_key):
     except Exception as err:
         print("Encountered exception. {}".format(err))
 
+
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
