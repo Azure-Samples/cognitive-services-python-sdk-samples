@@ -1,4 +1,4 @@
-from azure.cognitiveservices.search.customsearch import CustomSearchClient
+from azure.cognitiveservices.search.customsearch import CustomSearchAPI
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMSEARCH_SUBSCRIPTION_KEY"
@@ -8,7 +8,7 @@ def custom_search_web_page_result_lookup(subscription_key):
 
     This will look up a single query (Xbox) and print out name and url for first web result.
     """
-    client = CustomSearchClient(CognitiveServicesCredentials(subscription_key))
+    client = CustomSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
         web_data = client.custom_instance.search(query="xbox", custom_config=1)
@@ -27,6 +27,6 @@ def custom_search_web_page_result_lookup(subscription_key):
 
 if __name__ == "__main__":
     import sys, os.path
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from samples.tools import execute_samples
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))    
+    from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

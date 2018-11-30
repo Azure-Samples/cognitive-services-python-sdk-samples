@@ -32,6 +32,7 @@ def custom_image_search_result_lookup(subscription_key):
     except Exception as e:
         print("encountered exception. " + str(e))
 
+
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
