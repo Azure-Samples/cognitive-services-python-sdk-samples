@@ -1,17 +1,21 @@
 import os
 import time
- from azure.cognitiveservices.qnamaker import QnAMakerClient
+from azure.cognitiveservices.qnamaker import QnAMakerClient
 from azure.cognitiveservices.qnamaker.models import QnADTO, MetadataDTO, CreateKbDTO, OperationState, UpdateKbOperationDTO, UpdateKbOperationDTOAdd
 from msrest.authentication import CognitiveServicesCredentials
- SUBSCRIPTION_KEY_ENV_NAME = "QNA_SUBSCRIPTION_KEY"
+
+SUBSCRIPTION_KEY_ENV_NAME = "QNA_SUBSCRIPTION_KEY"
 QNA_LOCATION = os.environ.get("QNA_LOCATION", "westus")
- def knowledge_based_crud_sample(subscription_key):
+
+def knowledge_based_crud_sample(subscription_key):
     """KnowledgeBasedCRUDSample.
-     This will create, update, publish, download, then delete a knowledge base.
+
+    This will create, update, publish, download, then delete a knowledge base.
     """
     def _create_sample_kb(client):
         """Helper function for knowledge_based_crud_sample.
-         This helper function takes in a QnAMakerClient and returns an operation of a created knowledge base.
+
+        This helper function takes in a QnAMakerClient and returns an operation of a created knowledge base.
         """
         qna = QnADTO(
             answer="You can use our REST APIs to manage your knowledge base.",
@@ -27,9 +31,13 @@ QNA_LOCATION = os.environ.get("QNA_LOCATION", "westus")
         create_op = client.create_knowledgebase(create_kb_payload=create_kb_dto)
         create_op = _monitor_operation(client=client, operation=create_op)
         return create_op.resource_location.replace("/knowledgebases/", "")
-     def _monitor_operation(client, operation):
+
+
+
+    def _monitor_operation(client, operation):
         """Helper function for knowledge_based_crud_sample.
-         This helper function takes in a QnAMakerClient and an operation, and loops until the operation has either succeeded
+
+        This helper function takes in a QnAMakerClient and an operation, and loops until the operation has either succeeded
         or failed and returns the operation.
         """
         for i in range(20):
@@ -42,12 +50,15 @@ QNA_LOCATION = os.environ.get("QNA_LOCATION", "westus")
         if operation.operation_state != OperationState.succeeded:
             raise Exception("Operation {} failed to complete.".format(operation.operation_id))
         return operation
-     client = QnAMakerClient(endpoint="https://{}.api.cognitive.microsoft.com".format(QNA_LOCATION), credentials=CognitiveServicesCredentials(subscription_key))
-     # Create a KB
+
+    client = QnAMakerClient(endpoint="https://{}.api.cognitive.microsoft.com".format(QNA_LOCATION),
+                            credentials=CognitiveServicesCredentials(subscription_key))
+    # Create a KB
     print("Creating KB...")
     kb_id = _create_sample_kb(client=client)
     print("Created KB with ID: {}".format(kb_id))
-     # Update the KB
+
+    # Update the KB
     print("Updating KB...")
     update_kb_operation_dto = UpdateKbOperationDTO(
         add=UpdateKbOperationDTOAdd(
@@ -58,20 +69,26 @@ QNA_LOCATION = os.environ.get("QNA_LOCATION", "westus")
     )
     update_op = client.update_knowledgebase(kb_id=kb_id, update_kb=update_kb_operation_dto)
     _monitor_operation(client=client, operation=update_op)
-     # Publish the KB
+
+    # Publish the KB
     print("Publishing KB...")
     client.publish_knowledgebase(kb_id=kb_id)
     print("KB Published.")
-     # Download the KB
+
+    # Download the KB
     print("Downloading KB...")
     kb_data = client.download_knowledgebase(kb_id=kb_id, environment="Prod")
     print("KB Downloaded. It has {} QnAs.".format(len(kb_data.qna_documents)))
-     # Delete the KB
+
+    # Delete the KB
     print("Deleting KB...")
     client.delete_knowledgebase(kb_id=kb_id)
     print("KB Deleted.")
- if __name__ == "__main__":
+
+
+
+if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from samples.tools import execute_samples
+    from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
