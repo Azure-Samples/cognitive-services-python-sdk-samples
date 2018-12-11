@@ -1,17 +1,19 @@
 import os
 import time
 
-from azure.cognitiveservices.vision.customvision.training import training_api
+from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
 from azure.cognitiveservices.vision.customvision.training.models import Classifier
 
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SAMPLE_PROJECT_NAME = "Python SDK Sample"
 
+ENDPOINT = "https://southcentralus.api.cognitive.microsoft.com"
+
 IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
 
 def train_project(subscription_key):
 
-    trainer = training_api.TrainingApi(subscription_key)
+    trainer = CustomVisionTrainingClient(subscription_key, endpoint=ENDPOINT)
 
     # Create a new project
     print ("Creating project...")
