@@ -20,7 +20,7 @@ This project framework provides examples for the following services:
 
 ### Search
 
-* Using the **Bing Autosuggest SDK** [azure-cognitiveservices-search-customsearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-autosuggest) for the [Autosuggest API](https://azure.microsoft.com/services/cognitive-services/autosuggest/)
+* Using the **Bing Autosuggest SDK** [azure-cognitiveservices-search-autosuggest](http://pypi.python.org/pypi/azure-cognitiveservices-search-autosuggest) for the [Autosuggest API](https://azure.microsoft.com/services/cognitive-services/autosuggest/)
 * Using the **Bing Custom Search SDK** [azure-cognitiveservices-search-customsearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-customsearch) for the [Custom Search API](https://azure.microsoft.com/services/cognitive-services/bing-custom-search/)
 * Using the **Bing Entity Search SDK** [azure-cognitiveservices-search-entitysearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-entitysearch) for the [Entity Search API](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/)
 * Using the **Bing Image Search SDK** [azure-cognitiveservices-search-imagesearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-imagesearch) for the [Image Search API](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)
