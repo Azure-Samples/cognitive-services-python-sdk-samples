@@ -20,8 +20,9 @@ This project framework provides examples for the following services:
 
 ### Search
 
-* Using the **Bing Autosuggest SDK** [azure-cognitiveservices-search-customsearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-autosuggest) for the [Autosuggest API](https://azure.microsoft.com/services/cognitive-services/autosuggest/)
+* Using the **Bing Autosuggest SDK** [azure-cognitiveservices-search-autosuggest](http://pypi.python.org/pypi/azure-cognitiveservices-search-autosuggest) for the [Autosuggest API](https://azure.microsoft.com/services/cognitive-services/autosuggest/)
 * Using the **Bing Custom Search SDK** [azure-cognitiveservices-search-customsearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-customsearch) for the [Custom Search API](https://azure.microsoft.com/services/cognitive-services/bing-custom-search/)
+* Using the **Bing Custom Image Search SDK** [azure-cognitiveservices-search-customimagesearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-customimagesearch) for the [Custom Image Search API](https://azure.microsoft.com/services/cognitive-services/bing-custom-search/)
 * Using the **Bing Entity Search SDK** [azure-cognitiveservices-search-entitysearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-entitysearch) for the [Entity Search API](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/)
 * Using the **Bing Image Search SDK** [azure-cognitiveservices-search-imagesearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-imagesearch) for the [Image Search API](https://azure.microsoft.com/services/cognitive-services/bing-image-search-api/)
 * Using the **Bing News Search SDK** [azure-cognitiveservices-search-newssearch](http://pypi.python.org/pypi/azure-cognitiveservices-search-newssearch) for the [News Search API](https://azure.microsoft.com/services/cognitive-services/bing-news-search-api/)
@@ -85,6 +86,7 @@ We provide several meta-packages to help you install several packages at a time.
 4.  Set up the environment variable `TEXTANALYTICS_SUBSCRIPTION_KEY` with your key if you want to execute TextAnalytics tests. You might override too `TEXTANALYTICS_LOCATION` (westcentralus by default).
 3.  Set up the environment variable `AUTOSUGGEST_SUBSCRIPTION_KEY` with your key if you want to execute Autosuggest tests.
 3.  Set up the environment variable `CUSTOMSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute CustomSearch tests.
+3.  Set up the environment variable `CUSTOMIMAGESEARCH_SUBSCRIPTION_KEY` with your key if you want to execute CustomImageSearch tests.
 3.  Set up the environment variable `ENTITYSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute EntitySearch tests.
 4.  Set up the environment variable `IMAGESEARCH_SUBSCRIPTION_KEY` with your key if you want to execute ImageSearch tests.
 4.  Set up the environment variable `NEWSSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute NewsSearch tests.
