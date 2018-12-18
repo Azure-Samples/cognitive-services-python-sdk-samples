@@ -8,7 +8,7 @@ azure-cognitiveservices-search-entitysearch
 azure-cognitiveservices-search-imagesearch
 azure-cognitiveservices-search-newssearch
 azure-cognitiveservices-search-videosearch
-azure-cognitiveservices-search-visualsearch
+azure-cognitiveservices-search-visualsearch>=0.2.0  # sample won't work with previous versions
 azure-cognitiveservices-search-websearch
 azure-cognitiveservices-vision-computervision>=0.2.0  # sample won't work with previous versions
 azure-cognitiveservices-vision-contentmoderator
