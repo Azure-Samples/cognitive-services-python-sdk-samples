@@ -4,7 +4,7 @@ from random import random
 import uuid
 
 from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClient
-from azure.cognitiveservices.vision.contentmoderator.models import Content, Review, Frames
+from azure.cognitiveservices.vision.contentmoderator.models import Frames
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
@@ -20,7 +20,7 @@ def video_review(subscription_key):
     # This must be the team name you used to create your Content Moderator account. You can 
     # retrieve your team name from the Content Moderator web site. Your team name is the Id 
     # associated with your subscription.
-    team_name = "pysdktesting"
+    team_name = "cspythonsdk"
 
     # Create a review with the content pointing to a streaming endpoint (manifest)
     streamingcontent = "https://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest"
@@ -31,8 +31,8 @@ def video_review(subscription_key):
 
 
     client = ContentModeratorClient(
-        CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
-        CognitiveServicesCredentials(subscription_key)
+        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        credentials=CognitiveServicesCredentials(subscription_key)
     )
 
     #
@@ -48,9 +48,9 @@ def video_review(subscription_key):
     }
 
     reviews = client.reviews.create_video_reviews(
-        "application/json",
-        team_name,
-        [review_item]  # As many review item as you need
+        content_type="application/json",
+        team_name=team_name,
+        create_video_reviews_body=[review_item]  # As many review item as you need
     )
     review_id = reviews[0]  # Ordered list of string of review ID
 
@@ -77,10 +77,10 @@ def video_review(subscription_key):
         }
 
     client.reviews.add_video_frame_url(
-        "application/json",
-        team_name,
-        review_id,
-        [
+        content_type="application/json",
+        team_name=team_name,
+        review_id=review_id,
+        video_frame_body=[
             create_frames_to_add_to_reviews(17, frame1_url),
             create_frames_to_add_to_reviews(64, frame2_url),
             create_frames_to_add_to_reviews(144, frame3_url)
@@ -91,7 +91,12 @@ def video_review(subscription_key):
     # Get frames
     #
     print("\nGetting frames for the review with ID {}".format(review_id))
-    frames = client.reviews.get_video_frames(team_name, review_id, start_seed=0, no_of_records=1000)
+    frames = client.reviews.get_video_frames(
+        team_name=team_name,
+        review_id=review_id,
+        start_seed=0,
+        no_of_records=100
+    )
     assert isinstance(frames, Frames)
     pprint(frames.as_dict())
 
@@ -99,13 +104,13 @@ def video_review(subscription_key):
     # Get reviews details
     #
     print("\nGetting review details for the review with ID {}".format(review_id))
-    review_details = client.reviews.get_review(team_name, review_id)
+    review_details = client.reviews.get_review(team_name=team_name, review_id=review_id)
     pprint(review_details.as_dict())
 
     #
     # Public review
     #
-    client.reviews.publish_video_review(team_name, review_id)
+    client.reviews.publish_video_review(team_name=team_name, review_id=review_id)
 
     print("\nOpen your Content Moderator Dashboard and select Review > Video to see the review.")
 
