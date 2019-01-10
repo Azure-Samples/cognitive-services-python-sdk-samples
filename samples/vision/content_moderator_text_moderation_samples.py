@@ -1,6 +1,5 @@
 import os.path
 from pprint import pprint
-import time
 
 from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClient
 from azure.cognitiveservices.vision.contentmoderator.models import (
@@ -15,10 +14,7 @@ CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcen
 # performing image match operations against the list.
 LATENCY_DELAY = 0.5
 
-TEXT = """
-Is this a grabage email abcdef@abcd.com, phone: 6657789887, IP: 255.255.255.255, 1 Microsoft Way, Redmond, WA 98052.
-Crap is the profanity here. Is this information PII? phone 3144444444
-"""
+TEXT_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "text_files")
 
 def text_moderation(subscription_key):
     """TextModeration.
@@ -27,22 +23,23 @@ def text_moderation(subscription_key):
     """
     
     client = ContentModeratorClient(
-        CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
-        CognitiveServicesCredentials(subscription_key)
+        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        credentials=CognitiveServicesCredentials(subscription_key)
     )
 
     # Screen the input text: check for profanity, 
     # do autocorrect text, and check for personally identifying 
     # information (PII)
-    screen = client.text_moderation.screen_text(
-        "eng",
-        "text/plain",
-        TEXT,
-        autocorrect=True,
-        pii=True
-    )
-    assert isinstance(screen, Screen)
-    pprint(screen.as_dict())
+    with open(os.path.join(TEXT_FOLDER, 'content_moderator_text.txt'), "rb") as text_fd:
+        screen = client.text_moderation.screen_text(
+            text_content_type="text/plain",
+            text_content=text_fd,
+            language="eng",
+            autocorrect=True,
+            pii=True
+        )
+        assert isinstance(screen, Screen)
+        pprint(screen.as_dict())
 
 if __name__ == "__main__":
     import sys, os.path
