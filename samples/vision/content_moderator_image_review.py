@@ -18,7 +18,7 @@ def image_review(subscription_key):
     # This must be the team name you used to create your Content Moderator account. You can 
     # retrieve your team name from the Content Moderator web site. Your team name is the Id 
     # associated with your subscription.
-    team_name = "cspythonsdk"
+    team_name = "insert your team name here"
 
     # An image to review
     image_url = "https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png"
