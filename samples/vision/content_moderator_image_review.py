@@ -51,13 +51,13 @@ def image_review(subscription_key):
     review_id = reviews[0]  # Ordered list of string of review ID
 
     print("\nGet review details")
-    review_details = client.reviews.get_review(team_name, review_id)
+    review_details = client.reviews.get_review(team_name=team_name, review_id=review_id)
     pprint(review_details.as_dict())
 
     input("\nPerform manual reviews on the Content Moderator Review Site, and hit enter here.")
 
     print("\nGet review details")
-    review_details = client.reviews.get_review(team_name, review_id)
+    review_details = client.reviews.get_review(team_name=team_name, review_id=review_id)
     pprint(review_details.as_dict())
 
     # Your call back endpoint should have received an event like this:
@@ -76,5 +76,5 @@ def image_review(subscription_key):
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

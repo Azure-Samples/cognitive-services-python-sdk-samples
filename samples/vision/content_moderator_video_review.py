@@ -20,7 +20,7 @@ def video_review(subscription_key):
     # This must be the team name you used to create your Content Moderator account. You can 
     # retrieve your team name from the Content Moderator web site. Your team name is the Id 
     # associated with your subscription.
-    team_name = "cspythonsdk"
+    team_name = "insert your team name here"
 
     # Create a review with the content pointing to a streaming endpoint (manifest)
     streamingcontent = "https://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest"
