@@ -1,10 +1,8 @@
 import os.path
 from pprint import pprint
-import time
 
 from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClient
 from azure.cognitiveservices.vision.contentmoderator.models import (
-    APIErrorException,
     Evaluate,
     OCR,
     FoundFaces
@@ -26,8 +24,8 @@ def image_moderation(subscription_key):
     """
     
     client = ContentModeratorClient(
-        CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
-        CognitiveServicesCredentials(subscription_key)
+        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        credentials=CognitiveServicesCredentials(subscription_key)
     )
     
     for image_url in IMAGE_LIST:
@@ -35,18 +33,18 @@ def image_moderation(subscription_key):
 
         print("\nEvaluate for adult and racy content.")
         evaluation = client.image_moderation.evaluate_url_input(
-            "application/json",
-            data_representation="URL",
-            value=image_url,
+            content_type="application/json",
             cache_image=True,
+            data_representation="URL",
+            value=image_url
         )
         assert isinstance(evaluation, Evaluate)
         pprint(evaluation.as_dict())
 
         print("\nDetect and extract text.")
         evaluation = client.image_moderation.ocr_url_input(
-            "eng",
-            "application/json",
+            language="eng",
+            content_type="application/json",
             data_representation="URL",
             value=image_url,
             cache_image=True,
@@ -56,10 +54,10 @@ def image_moderation(subscription_key):
 
         print("\nDetect faces.")
         evaluation = client.image_moderation.find_faces_url_input(
-            "application/json",
-            data_representation="URL",
-            value=image_url,
+            content_type="application/json",
             cache_image=True,
+            data_representation="URL",
+            value=image_url
         )
         assert isinstance(evaluation, FoundFaces)
         pprint(evaluation.as_dict())
