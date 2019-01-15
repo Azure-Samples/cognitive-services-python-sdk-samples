@@ -1,4 +1,4 @@
-from azure.cognitiveservices.search.newssearch import NewsSearchAPI
+from azure.cognitiveservices.search.newssearch import NewsSearchClient
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "NEWSSEARCH_SUBSCRIPTION_KEY"
@@ -8,7 +8,10 @@ def news_search(subscription_key):
 
     This will search news for (Quantum  Computing) with market and count parameters then verify number of results and print out totalEstimatedMatches, name, url, description, published time and name of provider of the first news result
     """
-    client = NewsSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = NewsSearchClient(
+        endpoint="https://api.cognitive.microsoft.com",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         news_result = client.news.search(query="Quantum Computing", market="en-us", count=10)
@@ -35,7 +38,10 @@ def news_search_with_filtering(subscription_key):
 
     This will search most recent news for (Artificial Intelligence) with freshness and sortBy parameters then verify number of results and print out totalEstimatedMatches, name, url, description, published time and name of provider of the first news result.
     """
-    client = NewsSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = NewsSearchClient(
+        endpoint="https://api.cognitive.microsoft.com",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         news_result = client.news.search(
@@ -66,7 +72,10 @@ def news_category(subscription_key):
 
     This will search category news for movie and TV entertainment with safe search then verify number of results and print out category, name, url, description, published time and name of provider of the first news result.
     """
-    client = NewsSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = NewsSearchClient(
+        endpoint="https://api.cognitive.microsoft.com",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         news_result = client.news.category(
@@ -97,7 +106,10 @@ def news_trending(subscription_key):
 
     This will search news trending topics in Bing then verify number of results and print out name, text of query, webSearchUrl, newsSearchUrl and image Url of the first news result.
     """
-    client = NewsSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = NewsSearchClient(
+        endpoint="https://api.cognitive.microsoft.com",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         trending_topics = client.news.trending(market="en-us")
