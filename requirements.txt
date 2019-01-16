@@ -1,7 +1,7 @@
 azure-cognitiveservices-language-luis
 azure-cognitiveservices-language-spellcheck
 azure-cognitiveservices-language-textanalytics
-azure-cognitiveservices-search-autosuggest
+azure-cognitiveservices-search-autosuggest>=1.0
 azure-cognitiveservices-search-customsearch
 azure-cognitiveservices-search-entitysearch
 azure-cognitiveservices-search-imagesearch
