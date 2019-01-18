@@ -1,4 +1,4 @@
-from azure.cognitiveservices.search.entitysearch import EntitySearchAPI
+from azure.cognitiveservices.search.entitysearch import EntitySearchClient
 from azure.cognitiveservices.search.entitysearch.models import Place, ErrorResponseException
 from msrest.authentication import CognitiveServicesCredentials
 
@@ -9,7 +9,10 @@ def dominant_entity_lookup(subscription_key):
 
     This will look up a single entity (Satya Nadella) and print out a short description about them.
     """
-    client = EntitySearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = EntitySearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         entity_data = client.entities.search(query="satya nadella")
@@ -37,7 +40,10 @@ def handling_disambiguation(subscription_key):
 
     "This will handle disambiguation results for an ambiguous query (William Gates)".
     """
-    client = EntitySearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = EntitySearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         entity_data = client.entities.search(query="william gates")
@@ -81,7 +87,10 @@ def restaurant_lookup(subscription_key):
 
     This will look up a single restaurant (john howie bellevue) and print out its phone number.
     """
-    client = EntitySearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = EntitySearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         entity_data = client.entities.search(query="john howie bellevue")
@@ -123,7 +132,10 @@ def multiple_restaurant_lookup(subscription_key):
     This will look up a list of restaurants (seattle restaurants) and present their names and phone numbers.
     """
 
-    client = EntitySearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = EntitySearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         restaurants = client.entities.search(query="seattle restaurants")
@@ -163,7 +175,10 @@ def error(subscription_key):
     This triggers a bad request and shows how to read the error response.
     """
 
-    client = EntitySearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = EntitySearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         entity_data = client.entities.search(query="tom cruise", market="no-ty")
@@ -184,5 +199,5 @@ def error(subscription_key):
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))    
-    from tools import execute_samples
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
