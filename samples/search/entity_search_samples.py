@@ -10,7 +10,7 @@ def dominant_entity_lookup(subscription_key):
     This will look up a single entity (Satya Nadella) and print out a short description about them.
     """
     client = EntitySearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -41,7 +41,7 @@ def handling_disambiguation(subscription_key):
     "This will handle disambiguation results for an ambiguous query (William Gates)".
     """
     client = EntitySearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -88,7 +88,7 @@ def restaurant_lookup(subscription_key):
     This will look up a single restaurant (john howie bellevue) and print out its phone number.
     """
     client = EntitySearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -133,7 +133,7 @@ def multiple_restaurant_lookup(subscription_key):
     """
 
     client = EntitySearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -176,7 +176,7 @@ def error(subscription_key):
     """
 
     client = EntitySearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
