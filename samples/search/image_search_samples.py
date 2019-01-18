@@ -10,7 +10,7 @@ def image_search(subscription_key):
     This will search images for (canadian rockies) then verify number of results and print out first image result, pivot suggestion, and query expansion.
     """
     client = ImageSearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -66,7 +66,7 @@ def image_search_with_filters(subscription_key):
     This will search images for (studio ghibli), filtered for animated gifs and wide aspect, then verify number of results and print out insightsToken, thumbnail url and web url of first result.
     """
     client = ImageSearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -97,7 +97,7 @@ def image_trending(subscription_key):
     This will search for trending images then verify categories and tiles.
     """
     client = ImageSearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -130,7 +130,7 @@ def image_detail(subscription_key):
     This will search images for (degas) and then search for image details of the first image.
     """
     client = ImageSearchClient(
-        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -209,5 +209,5 @@ def image_detail(subscription_key):
 if __name__ == "__main__":
     import sys, os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))    
-    from tools import execute_samples
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
