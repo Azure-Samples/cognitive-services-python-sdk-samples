@@ -1,4 +1,4 @@
-from azure.cognitiveservices.search.imagesearch import ImageSearchAPI
+from azure.cognitiveservices.search.imagesearch import ImageSearchClient
 from azure.cognitiveservices.search.imagesearch.models import ImageType, ImageAspect, ImageInsightModule
 from msrest.authentication import CognitiveServicesCredentials
 
@@ -9,7 +9,10 @@ def image_search(subscription_key):
 
     This will search images for (canadian rockies) then verify number of results and print out first image result, pivot suggestion, and query expansion.
     """
-    client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = ImageSearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         image_results = client.images.search(query="canadian rockies")
@@ -62,7 +65,10 @@ def image_search_with_filters(subscription_key):
 
     This will search images for (studio ghibli), filtered for animated gifs and wide aspect, then verify number of results and print out insightsToken, thumbnail url and web url of first result.
     """
-    client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = ImageSearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         image_results = client.images.search(
@@ -90,7 +96,10 @@ def image_trending(subscription_key):
 
     This will search for trending images then verify categories and tiles.
     """
-    client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = ImageSearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         trending_result = client.images.trending()
@@ -120,7 +129,10 @@ def image_detail(subscription_key):
 
     This will search images for (degas) and then search for image details of the first image.
     """
-    client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = ImageSearchClient(
+        endpoint="https://api.cognitive.microsoft.com/bing/v7.0",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         image_results = client.images.search(query="degas")
