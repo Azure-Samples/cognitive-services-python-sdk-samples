@@ -12,7 +12,7 @@ IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "image
 def image_analysis_in_stream(subscription_key):
     """ImageAnalysisInStream.
 
-    This will analysis an image from a stream and return all available features.
+    This will analyze an image from a stream and return all available features.
     """
     client = ComputerVisionAPI(COMPUTERVISION_LOCATION, CognitiveServicesCredentials(subscription_key))
 
