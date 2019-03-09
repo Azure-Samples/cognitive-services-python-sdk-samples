@@ -1,6 +1,6 @@
 import os.path
 
-from azure.cognitiveservices.vision.computervision import ComputerVisionAPI
+from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from azure.cognitiveservices.vision.computervision.models import VisualFeatureTypes
 from msrest.authentication import CognitiveServicesCredentials
 
@@ -14,11 +14,14 @@ def image_analysis_in_stream(subscription_key):
 
     This will analyze an image from a stream and return all available features.
     """
-    client = ComputerVisionAPI(COMPUTERVISION_LOCATION, CognitiveServicesCredentials(subscription_key))
+    client = ComputerVisionClient(
+        endpoint="https://" + COMPUTERVISION_LOCATION + ".api.cognitive.microsoft.com/",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     with open(os.path.join(IMAGES_FOLDER, "house.jpg"), "rb") as image_stream:
         image_analysis = client.analyze_image_in_stream(
-            image_stream,
+            image=image_stream,
             visual_features=[
                 VisualFeatureTypes.image_type, # Could use simple str "ImageType"
                 VisualFeatureTypes.faces,      # Could use simple str "Faces"
@@ -43,11 +46,14 @@ def recognize_text(subscription_key):
     This will recognize text of the given image using the recognizeText API.
     """
     import time
-    client = ComputerVisionAPI(COMPUTERVISION_LOCATION, CognitiveServicesCredentials(subscription_key))
+    client = ComputerVisionClient(
+        endpoint="https://" + COMPUTERVISION_LOCATION + ".api.cognitive.microsoft.com/",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     with open(os.path.join(IMAGES_FOLDER, "make_things_happen.jpg"), "rb") as image_stream:
         job = client.recognize_text_in_stream(
-            image_stream,
+            image=image_stream,
             mode="Printed",
             raw=True
         )
@@ -56,7 +62,7 @@ def recognize_text(subscription_key):
     image_analysis = client.get_text_operation_result(operation_id)
     while image_analysis.status in ['NotStarted', 'Running']:
         time.sleep(1)
-        image_analysis = client.get_text_operation_result(operation_id)
+        image_analysis = client.get_text_operation_result(operation_id=operation_id)
 
     print("Job completion is: {}\n".format(image_analysis.status))
 
@@ -71,12 +77,14 @@ def recognize_printed_text_in_stream(subscription_key):
 
     This will do an OCR analysis of the given image.
     """
-    import time
-    client = ComputerVisionAPI(COMPUTERVISION_LOCATION, CognitiveServicesCredentials(subscription_key))
+    client = ComputerVisionClient(
+        endpoint="https://" + COMPUTERVISION_LOCATION + ".api.cognitive.microsoft.com/",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     with open(os.path.join(IMAGES_FOLDER, "computer_vision_ocr.png"), "rb") as image_stream:
         image_analysis = client.recognize_printed_text_in_stream(
-            image_stream,
+            image=image_stream,
             language="en"
         )
 
