@@ -10,6 +10,7 @@ from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
 CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcentralus")
+TEXT_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "text_files")
 
 
 def video_transcript_review(subscription_key):
@@ -22,7 +23,7 @@ def video_transcript_review(subscription_key):
     # This must be the team name you used to create your Content Moderator account. You can 
     # retrieve your team name from the Content Moderator web site. Your team name is the Id 
     # associated with your subscription.
-    team_name = "pysdktesting"
+    team_name = "insert your team name here"
 
     # Create a review with the content pointing to a streaming endpoint (manifest)
     streamingcontent = "https://amssamples.streaming.mediaservices.windows.net/91492735-c523-432b-ba01-faba6c2206a2/AzureMediaServicesPromo.ism/manifest"
@@ -37,8 +38,8 @@ def video_transcript_review(subscription_key):
     """
 
     client = ContentModeratorClient(
-        CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
-        CognitiveServicesCredentials(subscription_key)
+        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        credentials=CognitiveServicesCredentials(subscription_key)
     )
 
     #
@@ -54,9 +55,9 @@ def video_transcript_review(subscription_key):
     }
 
     reviews = client.reviews.create_video_reviews(
-        "application/json",
-        team_name,
-        [review_item]  # As many review item as you need
+        content_type="application/json",
+        team_name=team_name,
+        create_video_reviews_body=[review_item]  # As many review item as you need
     )
     review_id = reviews[0]  # Ordered list of string of review ID
 
@@ -65,42 +66,43 @@ def video_transcript_review(subscription_key):
     #
     print("\nAdding transcript to the review {}".format(review_id))
     client.reviews.add_video_transcript(
-        team_name,
-        review_id,
-        BytesIO(transcript),  # Can be a file descriptor, as long as its stream type
+        team_name=team_name,
+        review_id=review_id,
+        vt_tfile=BytesIO(transcript),  # Can be a file descriptor, as long as its stream type
     )
 
     #
     # Add transcript moderation result
     #
     print("\nAdding a transcript moderation result to the review with ID {}".format(review_id))
-    screen = client.text_moderation.screen_text(
-        "eng",
-        "text/plain",
-        transcript,
-    )
-    assert isinstance(screen, Screen)
-    pprint(screen.as_dict())
+    with open(os.path.join(TEXT_FOLDER, 'content_moderator_video_transcript.txt'), "rb") as text_fd:
+        screen = client.text_moderation.screen_text(
+            text_content_type="text/plain",
+            text_content=text_fd,
+            language="eng"
+        )
+        assert isinstance(screen, Screen)
+        pprint(screen.as_dict())
 
-    # Build a terms list with index
-    terms = []
-    for term in screen.terms:
-        terms.append({"index": term.index, "term": term.term})
+        # Build a terms list with index
+        terms = []
+        for term in screen.terms:
+            terms.append({"index": term.index, "term": term.term})
 
-    client.reviews.add_video_transcript_moderation_result(
-        "application/json",
-        team_name,
-        review_id,
-        [{
-            "timestamp": 0,
-            "terms": terms
-        }]
-    )
+        client.reviews.add_video_transcript_moderation_result(
+            content_type="application/json",
+            team_name=team_name,
+            review_id=review_id,
+            transcript_moderation_body=[{
+                "timestamp": 0,
+                "terms": terms
+            }]
+        )
 
     #
     # Public review
     #
-    client.reviews.publish_video_review(team_name, review_id)
+    client.reviews.publish_video_review(team_name=team_name, review_id=review_id)
 
     print("\nOpen your Content Moderator Dashboard and select Review > Video to see the review.")
 
