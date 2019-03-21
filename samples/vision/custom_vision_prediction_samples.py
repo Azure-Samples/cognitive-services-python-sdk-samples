@@ -7,6 +7,8 @@ from azure.cognitiveservices.vision.customvision.prediction import CustomVisionP
 TRAINING_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_KEY"
 
+PUBLISH_ITERATION_NAME = "classifyModel"
+
 ENDPOINT = "https://southcentralus.api.cognitive.microsoft.com"
 
 # Add this directory to the path so that custom_vision_training_samples can be found
@@ -19,7 +21,7 @@ def find_or_train_project():
         training_key = os.environ[TRAINING_KEY_ENV_NAME]
     except KeyError:
         raise SubscriptionKeyError("You need to set the {} env variable.".format(TRAINING_KEY_ENV_NAME))
-
+        
     # Use the training API to find the SDK sample project created from the training example.
     from custom_vision_training_samples import train_project, SAMPLE_PROJECT_NAME
     trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
@@ -38,7 +40,7 @@ def predict_project(subscription_key):
     project = find_or_train_project()
 
     with open(os.path.join(IMAGES_FOLDER, "Test", "test_image.jpg"), mode="rb") as test_data:
-         results = predictor.predict_image(project.id, test_data.read())
+         results = predictor.classify_image(project.id, PUBLISH_ITERATION_NAME, test_data.read())
 
     # Display the results.
     for prediction in results.predictions:

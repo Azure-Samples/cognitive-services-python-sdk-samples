@@ -98,8 +98,8 @@ We provide several meta-packages to help you install several packages at a time.
 4.  Set up the environment variable `WEBSEARCH_SUBSCRIPTION_KEY` with your key if you want to execute WebSearch tests.
 4.  Set up the environment variable `COMPUTERVISION_SUBSCRIPTION_KEY` with your key if you want to execute Computer Vision tests. You might override too `COMPUTERVISION_LOCATION` (westcentralus by default).
 4.  Set up the environment variable `CONTENTMODERATOR_SUBSCRIPTION_KEY` with your key if you want to execute Content Moderator tests. You might override too `CONTENTMODERATOR_LOCATION` (westcentralus by default).
-4.  Set up the environment variable `CUSTOMVISION_TRAINING_KEY` with your key if you want to execute CustomVision Training tests.
-4.  Set up the environment variable `CUSTOMVISION_PREDICTION_KEY` with your key if you want to execute CustomVision Prediction tests.
+4.  Set up the environment variable `CUSTOMVISION_TRAINING_KEY` with your key and `CUSTOMVISION_PREDICTION_ID` with a valid prediction resource id if you want to execute CustomVision Training tests.
+4.  Set up the environment variable `CUSTOMVISION_PREDICTION_KEY` with your key and `CUSTOMVISION_PREDICTION_ID` with a valid prediction resource id if you want to execute CustomVision Prediction tests.
 
 ## Demo
 
