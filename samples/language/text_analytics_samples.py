@@ -140,7 +140,6 @@ if __name__ == "__main__":
     import sys
     import os.path
 
-    print(os.path.abspath(os.path.join(__file__, "..", "..")))
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
 
