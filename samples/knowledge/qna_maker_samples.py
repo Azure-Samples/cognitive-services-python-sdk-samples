@@ -86,9 +86,4 @@ def knowledge_based_crud_sample(subscription_key):
     client.knowledgebase.delete(kb_id=kb_id)
     print("KB Deleted.")
 
-
-if __name__ == "__main__":
-    import sys, os.path
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+knowledge_based_crud_sample(SUBSCRIPTION_KEY_ENV_NAME)
