@@ -22,7 +22,7 @@ IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)))
 Authentication
 '''
 # Replace with a valid subscription key (keeping the quotes in place).
-KEY = 'cb2ea73e0f074a0e83e0ee50dc129f4b'
+KEY = '<ADD SUBSCRIPTION KEY HERE>'
 # Replace westus if it's not your region
 BASE_URL = 'https://westus.api.cognitive.microsoft.com'
 face_client = FaceClient(BASE_URL, CognitiveServicesCredentials(KEY))
