@@ -15,14 +15,14 @@ Prerequisites:
 '''
 # Group image for testing against
 group_photo = 'test-image.jpg'
-
-IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images", "Face")
+# To add subdirectories, ex: (os.path.realpath(__file__), "images-directory", "above-images-directory")
+IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)))
 
 ''' 
 Authentication
 '''
 # Replace with a valid subscription key (keeping the quotes in place).
-KEY = 'FACE_SUBSCRIPTION_KEY'
+KEY = 'cb2ea73e0f074a0e83e0ee50dc129f4b'
 # Replace westus if it's not your region
 BASE_URL = 'https://westus.api.cognitive.microsoft.com'
 face_client = FaceClient(BASE_URL, CognitiveServicesCredentials(KEY))
@@ -31,7 +31,9 @@ face_client = FaceClient(BASE_URL, CognitiveServicesCredentials(KEY))
 Create the PersonGroup
 '''
 # Create empty person group
-person_group_id = str(uuid.uuid4()) # generate random ID
+# person_group_id = str(uuid.uuid4()) # Uncomment to generate a random ID
+person_group_id = 'mypersongroup'
+print(person_group_id)
 face_client.person_group.create(person_group_id=person_group_id, name=person_group_id)
 
 # Define woman friend 
@@ -70,32 +72,31 @@ Train PersonGroup
 # Train the person group
 face_client.person_group.train(person_group_id)
 training_status = face_client.person_group.get_training_status(person_group_id)
-if training_status.status == TrainingStatusType.failed:
+if (training_status.status == TrainingStatusType.running):
+    print(training_status.status)
+elif (training_status.status == TrainingStatusType.failed):
     raise Exception('Training failed with message {}.'.format(training_status.message))
-
+print(training_status.status)
 
 '''
 Identify a face against a defined PersonGroup
 '''
 # Get test image
 test_image_array = glob.glob(os.path.join(IMAGES_FOLDER, group_photo))
-ti = open(test_image_array[0], 'r+b')
+image = open(test_image_array[0], 'r+b')
 
 # Detect faces
 face_ids = []
-faces = face_client.face.detect_with_stream(ti)
+faces = face_client.face.detect_with_stream(image)
 for face in faces:
     face_ids.append(face.face_id)
 
 # Identify faces
 results = face_client.face.identify(face_ids, person_group_id)
 if not results:
-    print('No person identified in the person group for faces from the {}.'.format(ti.name))
+    print('No person identified in the person group for faces from the {}.'.format(os.path.basename(image.name)))
 for person in results:
-    person_identified = face_client.person_group_person.get(person_group_id, person.candidates[0].person_id)
-    print('Person {}\'s face is identified in {}: person ID is {}, confidence is {}.'.format(person_identified.name,
-    ti.name,
-    person.face_id,
-    person.candidates[0].confidence))
+    print('Person for face ID {} is identified in {} with a confidence of {}.'.format(person.face_id, os.path.basename(image.name), person.candidates[0].confidence)) # Get topmost confidence score
 
-
+# Once finished, since testing, delete the PersonGroup from your resource, otherwise when you create it again, it won't allow duplicate person groups.
+face_client.person_group.delete(person_group_id)
