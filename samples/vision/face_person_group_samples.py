@@ -1,4 +1,4 @@
-import os, io, uuid, glob
+import os, io, uuid, glob, time
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.face import FaceClient
 from azure.cognitiveservices.vision.face.models import TrainingStatusType, Person
@@ -32,7 +32,7 @@ Create the PersonGroup
 '''
 # Create empty person group
 # person_group_id = str(uuid.uuid4()) # Uncomment to generate a random ID
-person_group_id = 'mypersongroup'
+person_group_id = 'my-unique-person-group'
 print(person_group_id)
 face_client.person_group.create(person_group_id=person_group_id, name=person_group_id)
 
@@ -72,11 +72,14 @@ Train PersonGroup
 # Train the person group
 face_client.person_group.train(person_group_id)
 training_status = face_client.person_group.get_training_status(person_group_id)
-if (training_status.status == TrainingStatusType.running):
+while (training_status.status == TrainingStatusType.running):
     print(training_status.status)
-elif (training_status.status == TrainingStatusType.failed):
-    raise Exception('Training failed with message {}.'.format(training_status.message))
-print(training_status.status)
+    if (training_status.status == TrainingStatusType.failed):
+        raise Exception('Training failed with message {}.'.format(training_status.message))
+    if (training_status.status == TrainingStatusType.succeeded):
+        print(training_status.status)
+        break
+    time.sleep(1)
 
 '''
 Identify a face against a defined PersonGroup
