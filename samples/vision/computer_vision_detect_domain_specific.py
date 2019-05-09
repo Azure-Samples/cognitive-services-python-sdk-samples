@@ -1,23 +1,29 @@
 # Microsoft Azure Computer Vision API - Detect Domain-Specific Content
-#
+
 # This script detects the domain-specific content in a remote image. The
 # Analyze Image By domain method of the Computer Vision API is used.
 # Available domains are landscapes and celebrities.
-#
+
+# Pass your Computer Vision subscription key on the command line when
+# invoking this script:
+#    python computer_vision_detect_domain_specific.py <subscription key here>
+
 # This script requires the Cognitive Services Computer Vision Python module:
 #     python -m pip install azure-cognitiveservices-vision-computervision
-#
+
 # This script runs under Python 3.4 or later.
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 
-# Add your subscription key below and make sure the endpoint given is in
-# the same region as the subscription.  Free trial keys are in westcentralus,
-# so if you are using a free trial, you won't need to change the endpoint.
+from sys import argv    # for getting subscription key from command line
 
-subscription_key = ""
-assert subscription_key, "Provide a valid Computer Vision subscription key"
+subscription_key = argv[1] if len(argv) > 1 else None
+assert subscription_key, "Provide a valid Computer Vision subscription key on the command line when invoking this script"
+
+# Make sure the endpoint given is in the same region as your subscription.
+# Free trial keys are in westcentralus, so if you are using a free trial,
+# you won't need to change the endpoint.
 
 endpoint = "https://westcentralus.api.cognitive.microsoft.com"
 
@@ -26,10 +32,11 @@ endpoint = "https://westcentralus.api.cognitive.microsoft.com"
 remote_image = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/celebrities.jpg"
 
 # Helper function to print celebrities
-def print_celebrities(celebs, ):
+def print_celebrities(celebs):
     if not celebs:
         print("No celebrities found")
         return
+    print("Found", len(celebs), "celebrity" if len(celebs) == 1 else "celebrities")
     for celeb in celebs:
         print("    {0} ({1:.1f}%)".format(celeb["name"], celeb["confidence"] * 100))
 

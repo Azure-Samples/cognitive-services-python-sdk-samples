@@ -1,11 +1,12 @@
-# Microsoft Azure Computer Vision API - Describe Image
+# Microsoft Azure Computer Vision API - Tag Images
 
-# This script retrieves a human-readable description of two images, one local
-# and one remote.
+# This script tags two images, one local and one remote.  The Analyze Image
+# method of the Computer Vision API is used in both cases, specifying that
+# we want tags related to the image.
 
 # Pass your Computer Vision subscription key on the command line when
 # invoking this script:
-#    python computer_vision_describe_image.py <subscription key here>
+#    python computer_vision_tag_images.py <subscription key here>
 
 # This script requires the Cognitive Services Computer Vision Python module:
 #     python -m pip install azure-cognitiveservices-vision-computervision
@@ -27,25 +28,25 @@ assert subscription_key, "Provide a valid Computer Vision subscription key on th
 endpoint = "https://westcentralus.api.cognitive.microsoft.com"
 
 # Paths to local and remote images.  The local image is a default Windows 10
-# wallpaper; you may substitute the path of any other local image.
+# wallpaper image; you may substitute the path of any other local image.
 
-local_image =  r"C:\Windows\Web\Wallpaper\Theme2\img10.jpg"
-remote_image = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/objects.jpg"
+local_image =  r"C:\Windows\Web\Wallpaper\Theme1\img1.jpg"
+remote_image = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-python-sdk-samples/master/samples/vision/images/house.jpg"
 
 # Instantiate the client
 
-client = ComputerVisionClient(endpoint, CognitiveServicesCredentials(subscription_key))
+client = ComputerVisionClient(endpoint,
+                              CognitiveServicesCredentials(subscription_key))
 
-# Get and print description of remote image
+# Get and print tags of remote image
 
 print("Analyzing", remote_image)
-caption = client.describe_image(remote_image).captions[0]
-print("This may be {} ({:.1f}% confidence)".format(caption.text,
-                                                   caption.confidence * 100))
+tags = client.analyze_image(remote_image, visual_features=["tags"]).tags
+print("Tags:", ", ".join(tag.name for tag in tags))
 
-# Get and print description of local image
+# Get and print tags of local image
 
 print("\nAnalyzing", local_image)
-caption = client.describe_image_in_stream(open(local_image, "rb")).captions[0]
-print("This may be {} ({:.1f}% confidence)".format(caption.text,
-                                                   caption.confidence * 100))
+tags = client.analyze_image_in_stream(open(local_image, "rb"),
+                                      visual_features=["tags"]).tags
+print("Tags:", ", ".join(tag.name for tag in tags))

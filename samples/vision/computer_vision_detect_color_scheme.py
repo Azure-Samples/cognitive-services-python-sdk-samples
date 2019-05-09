@@ -1,23 +1,29 @@
 # Microsoft Azure Computer Vision API - Detect Color Scheme
-#
+
 # This script detects the color schemes in two images, one local and one
 # remote.  The Analyze Image method of the Computer Vision API is used
 # in both cases, specifying that we want the image's color scheme.
-#
+
+# Pass your Computer Vision subscription key on the command line when
+# invoking this script:
+#    python computer_vision_detect_color_scheme.py <subscription key here>
+
 # This script requires the Cognitive Services Computer Vision Python module:
 #     python -m pip install azure-cognitiveservices-vision-computervision
-#
+
 # This script runs under Python 3.4 or later.
 
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 
-# Add your subscription key below and make sure the endpoint given is in
-# the same region as the subscription.  Free trial keys are in westcentralus,
-# so if you are using a free trial, you won't need to change the endpoint.
+from sys import argv    # for getting subscription key from command line
 
-subscription_key = ""
-assert subscription_key, "Provide a valid Computer Vision subscription key"
+subscription_key = argv[1] if len(argv) > 1 else None
+assert subscription_key, "Provide a valid Computer Vision subscription key on the command line when invoking this script"
+
+# Make sure the endpoint given is in the same region as your subscription.
+# Free trial keys are in westcentralus, so if you are using a free trial,
+# you won't need to change the endpoint.
 
 endpoint = "https://westcentralus.api.cognitive.microsoft.com"
 
