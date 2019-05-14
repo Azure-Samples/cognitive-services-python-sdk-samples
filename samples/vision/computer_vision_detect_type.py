@@ -17,10 +17,12 @@
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 
-from sys import argv    # for getting subscription key from command line
+from os import environ  # for getting subscription key from environment
 
-subscription_key = argv[1] if len(argv) > 1 else None
-assert subscription_key, "Provide a valid Computer Vision subscription key on the command line when invoking this script"
+KEY_VAR = "AZURE_COMPUTER_VISION_KEY"
+
+subscription_key = environ.get(KEY_VAR)
+assert subscription_key, "Set environment variable {} to your Computer Vision subscription key.".format(KEY_VAR)
 
 # Make sure the endpoint given is in the same region as your subscription.
 # Free trial keys are in westcentralus, so if you are using a free trial,
