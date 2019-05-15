@@ -29,18 +29,20 @@ assert subscription_key, "Set environment variable {} to your Computer Vision su
 
 endpoint = "https://westcentralus.api.cognitive.microsoft.com"
 
-# Path to remote image
+# Path to local and remote images.  Local image is a Microsoft Office photo you
+# might have on your computer, or substitute the path of any other local image.
 
+local_image = r"C:\Program Files\Microsoft Office\root\CLIPART\PUB60COR\PH02074U.BMP"
 remote_image = "https://raw.githubusercontent.com/Azure-Samples/cognitive-services-sample-data-files/master/ComputerVision/Images/celebrities.jpg"
 
 # Helper function to print celebrities
-def print_celebrities(celebs):
-    if not celebs:
-        print("No celebrities found")
+def print_objects(objects, kind, kinds):
+    if not objects:
+        print("No", kinds, "found")
         return
-    print("Found", len(celebs), "celebrity" if len(celebs) == 1 else "celebrities")
-    for celeb in celebs:
-        print("    {0} ({1:.1f}%)".format(celeb["name"], celeb["confidence"] * 100))
+    print("Found", len(objects), kind if len(objects) == 1 else kinds)
+    for obj in objects:
+        print("    {0} ({1:.1f}%)".format(obj["name"], obj["confidence"] * 100))
 
 # Instantiate the client
 
@@ -51,7 +53,11 @@ client = ComputerVisionClient(endpoint,
 
 print("Analyzing", remote_image)
 celebs = client.analyze_image_by_domain("celebrities", remote_image).result["celebrities"]
-print_celebrities(celebs)
+print_objects(celebs, "celebrity", "celebrities")
 
-# You can find landmarks or celebrities in local files as well, e.g.:
-# analyze_image_by_domain_in_stream("celebrities", open(local_image, "rb"))
+# Get and print landmarks found in local image
+
+print("\nAnalyzing", local_image)
+landmarks = client.analyze_image_by_domain_in_stream("landmarks",
+            open(local_image, "rb")).result["landmarks"]
+print_objects(landmarks, "landmark", "landmarks")
