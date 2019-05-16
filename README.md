@@ -15,6 +15,7 @@ This project framework provides examples for the following services:
 ### Knowledge
 * Using the **QnA SDK** [azure-cognitiveservices-knowledge-qnamaker](http://pypi.python.org/pypi/azure-cognitiveservices-knowledge-qnamaker) for the [QnA API](https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/)
 
+
 ### Language
 
 * Using the **LUIS SDK** [azure-cognitiveservices-language-luis](http://pypi.python.org/pypi/azure-cognitiveservices-language-luis) for the [LUIS API](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/)
