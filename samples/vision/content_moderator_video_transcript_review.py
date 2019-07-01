@@ -9,8 +9,10 @@ from azure.cognitiveservices.vision.contentmoderator.models import Content, Revi
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcentralus")
-TEXT_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "text_files")
+CONTENTMODERATOR_LOCATION = os.environ.get(
+    "CONTENTMODERATOR_LOCATION", "westcentralus")
+TEXT_FOLDER = os.path.join(os.path.dirname(
+    os.path.realpath(__file__)), "text_files")
 
 
 def video_transcript_review(subscription_key):
@@ -20,8 +22,8 @@ def video_transcript_review(subscription_key):
     """
 
     # The name of the team to assign the job to.
-    # This must be the team name you used to create your Content Moderator account. You can 
-    # retrieve your team name from the Content Moderator web site. Your team name is the Id 
+    # This must be the team name you used to create your Content Moderator account. You can
+    # retrieve your team name from the Content Moderator web site. Your team name is the Id
     # associated with your subscription.
     team_name = "insert your team name here"
 
@@ -47,7 +49,7 @@ def video_transcript_review(subscription_key):
     #
     print("Create review for {}.\n".format(streamingcontent))
     review_item = {
-        "content": streamingcontent, # How to download the image
+        "content": streamingcontent,  # How to download the image
         "content_id": uuid.uuid4(),  # Random id
         # Note: to create a published review, set the Status to "Pending".
         # However, you cannot add video frames or a transcript to a published review.
@@ -57,7 +59,8 @@ def video_transcript_review(subscription_key):
     reviews = client.reviews.create_video_reviews(
         content_type="application/json",
         team_name=team_name,
-        create_video_reviews_body=[review_item]  # As many review item as you need
+        # As many review item as you need
+        create_video_reviews_body=[review_item]
     )
     review_id = reviews[0]  # Ordered list of string of review ID
 
@@ -68,7 +71,8 @@ def video_transcript_review(subscription_key):
     client.reviews.add_video_transcript(
         team_name=team_name,
         review_id=review_id,
-        vt_tfile=BytesIO(transcript),  # Can be a file descriptor, as long as its stream type
+        # Can be a file descriptor, as long as its stream type
+        vt_tfile=BytesIO(transcript),
     )
 
     #
@@ -102,13 +106,15 @@ def video_transcript_review(subscription_key):
     #
     # Public review
     #
-    client.reviews.publish_video_review(team_name=team_name, review_id=review_id)
+    client.reviews.publish_video_review(
+        team_name=team_name, review_id=review_id)
 
     print("\nOpen your Content Moderator Dashboard and select Review > Video to see the review.")
 
 
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

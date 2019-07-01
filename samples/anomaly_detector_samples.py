@@ -7,9 +7,12 @@ import pandas as pd
 import os
 
 SUBSCRIPTION_KEY_ENV_NAME = "ANOMALYDETECTOR_SUBSCRIPTION_KEY"
-ANOMALYDETECTOR_LOCATION = os.environ.get("ANOMALYDETECTOR_LOCATION", "westcentralus")
+ANOMALYDETECTOR_LOCATION = os.environ.get(
+    "ANOMALYDETECTOR_LOCATION", "westcentralus")
 
-CSV_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "csv_files")
+CSV_FOLDER = os.path.join(os.path.dirname(
+    os.path.realpath(__file__)), "csv_files")
+
 
 def get_series_from_file(path):
     df = pd.read_csv(path, header=None, encoding="utf-8", parse_dates=[0])
@@ -18,16 +21,21 @@ def get_series_from_file(path):
         series.append(Point(timestamp=row[0], value=row[1]))
     return series
 
+
 def get_request():
-    series = get_series_from_file(os.path.join(CSV_FOLDER, "anomaly_detector_daily_series.csv"))
+    series = get_series_from_file(os.path.join(
+        CSV_FOLDER, "anomaly_detector_daily_series.csv"))
     return Request(series=series, granularity=Granularity.daily)
+
 
 def entire_detect(subscription_key):
     print("Sample of detecting anomalies in the entire series.")
 
-    endpoint = "https://{}.api.cognitive.microsoft.com".format(ANOMALYDETECTOR_LOCATION)
+    endpoint = "https://{}.api.cognitive.microsoft.com".format(
+        ANOMALYDETECTOR_LOCATION)
     try:
-        client = AnomalyDetectorClient(endpoint, CognitiveServicesCredentials(subscription_key))
+        client = AnomalyDetectorClient(
+            endpoint, CognitiveServicesCredentials(subscription_key))
         request = get_request()
         response = client.entire_detect(request)
         if True in response.is_anomaly:
@@ -44,12 +52,15 @@ def entire_detect(subscription_key):
         else:
             print(e)
 
+
 def last_detect(subscription_key):
     print("Sample of detecting whether the latest point in series is anomaly.")
 
-    endpoint = "https://{}.api.cognitive.microsoft.com".format(ANOMALYDETECTOR_LOCATION)
+    endpoint = "https://{}.api.cognitive.microsoft.com".format(
+        ANOMALYDETECTOR_LOCATION)
     try:
-        client = AnomalyDetectorClient(endpoint, CognitiveServicesCredentials(subscription_key))
+        client = AnomalyDetectorClient(
+            endpoint, CognitiveServicesCredentials(subscription_key))
         request = get_request()
         response = client.last_detect(request)
         if response.is_anomaly:
@@ -63,8 +74,10 @@ def last_detect(subscription_key):
         else:
             print(e)
 
+
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

@@ -5,7 +5,9 @@ from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClie
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcentralus")
+CONTENTMODERATOR_LOCATION = os.environ.get(
+    "CONTENTMODERATOR_LOCATION", "westcentralus")
+
 
 def image_review_jobs(subscription_key):
     """ImageReviewJobs.
@@ -19,13 +21,13 @@ def image_review_jobs(subscription_key):
     workflow_name = "insert your workflow name here"
 
     # The name of the team to assign the job to.
-    # This must be the team name you used to create your Content Moderator account. You can 
-    # retrieve your team name from the Content Moderator web site. Your team name is the Id 
+    # This must be the team name you used to create your Content Moderator account. You can
+    # retrieve your team name from the Content Moderator web site. Your team name is the Id
     # associated with your subscription.
     team_name = "insert your team name here"
 
     # An image with this text:
-    # IF WE DID ALL THE THINGS WE ARE CAPABLE OF DOING, WE WOULD LITERALLY ASTOUND OURSELVE 
+    # IF WE DID ALL THE THINGS WE ARE CAPABLE OF DOING, WE WOULD LITERALLY ASTOUND OURSELVE
     # Be sure your workflow create a review for this (e.g. OCR contains some words).
     image_url = "https://moderatorsampleimages.blob.core.windows.net/samples/sample2.jpg"
 
@@ -41,9 +43,10 @@ def image_review_jobs(subscription_key):
     job_result = client.reviews.create_job(
         team_name=team_name,
         content_type="Image",     # Possible values include: 'Image', 'Text', 'Video'
-        content_id="ContentID", # Id/Name to identify the content submitted.
+        content_id="ContentID",  # Id/Name to identify the content submitted.
         workflow_name=workflow_name,
-        job_content_type="application/json", # Possible values include: 'application/json', 'image/jpeg'
+        # Possible values include: 'application/json', 'image/jpeg'
+        job_content_type="application/json",
         content_value=image_url,
         call_back_endpoint=call_back_endpoint
     )
@@ -54,7 +57,7 @@ def image_review_jobs(subscription_key):
         team_name=team_name,
         job_id=job_id,
     )
-    pprint(job_details.as_dict())    
+    pprint(job_details.as_dict())
 
     input("\nPerform manual reviews on the Content Moderator Review Site, and hit enter here.")
     job_details = client.reviews.get_job_details(
@@ -101,7 +104,8 @@ def image_review_jobs(subscription_key):
 
 
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

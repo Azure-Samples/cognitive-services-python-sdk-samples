@@ -4,6 +4,7 @@ from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "WEBSEARCH_SUBSCRIPTION_KEY"
 
+
 def result_types_lookup(subscription_key):
     """WebSearchResultTypesLookup.
 
@@ -39,7 +40,7 @@ def result_types_lookup(subscription_key):
 
         else:
             print("Didn't see any Image..")
-        
+
         # News
         if web_data.news.value:
 
@@ -51,7 +52,7 @@ def result_types_lookup(subscription_key):
 
         else:
             print("Didn't see any News..")
-            
+
         # Videos
         if web_data.videos.value:
 
@@ -77,7 +78,8 @@ def web_results_with_count_and_offset(subscription_key):
     client = WebSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
-        web_data = client.web.search(query="Best restaurants in Seattle", offset=10, count=20)
+        web_data = client.web.search(
+            query="Best restaurants in Seattle", offset=10, count=20)
         print("Searched for Query# \" Best restaurants in Seattle \"")
 
         if web_data.web_pages.value:
@@ -104,7 +106,8 @@ def web_search_with_response_filter(subscription_key):
     client = WebSearchAPI(CognitiveServicesCredentials(subscription_key))
 
     try:
-        web_data = client.web.search(query="Microsoft", response_filter=["News"])
+        web_data = client.web.search(
+            query="Microsoft", response_filter=["News"])
         print("Searched for Query# \" Microsoft \" with response filters \"News\"")
 
         # News attribute since I filtered "News"
@@ -156,7 +159,8 @@ def web_search_with_answer_count_promote_and_safe_search(subscription_key):
 
 
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
