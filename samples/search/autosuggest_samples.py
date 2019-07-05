@@ -24,8 +24,7 @@ def autosuggest_lookup(subscription_key):
 
         if suggestions.suggestion_groups:
             print("Searched for \"Satya Nadella\" and found suggestions:")
-            # type: SuggestionsSuggestionGroup
-            suggestion_group = suggestions.suggestion_groups[0]
+            suggestion_group = suggestions.suggestion_groups[0]  # type: SuggestionsSuggestionGroup
             for suggestion in suggestion_group.search_suggestions:  # type: SearchAction
                 print("....................................")
                 print(suggestion.query)
