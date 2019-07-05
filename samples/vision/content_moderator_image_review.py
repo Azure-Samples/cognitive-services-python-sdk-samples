@@ -6,7 +6,9 @@ from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClie
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcentralus")
+CONTENTMODERATOR_LOCATION = os.environ.get(
+    "CONTENTMODERATOR_LOCATION", "westcentralus")
+
 
 def image_review(subscription_key):
     """ImageReview.
@@ -15,8 +17,8 @@ def image_review(subscription_key):
     """
 
     # The name of the team to assign the job to.
-    # This must be the team name you used to create your Content Moderator account. You can 
-    # retrieve your team name from the Content Moderator web site. Your team name is the Id 
+    # This must be the team name you used to create your Content Moderator account. You can
+    # retrieve your team name from the Content Moderator web site. Your team name is the Id
     # associated with your subscription.
     team_name = "insert your team name here"
 
@@ -51,13 +53,15 @@ def image_review(subscription_key):
     review_id = reviews[0]  # Ordered list of string of review ID
 
     print("\nGet review details")
-    review_details = client.reviews.get_review(team_name=team_name, review_id=review_id)
+    review_details = client.reviews.get_review(
+        team_name=team_name, review_id=review_id)
     pprint(review_details.as_dict())
 
     input("\nPerform manual reviews on the Content Moderator Review Site, and hit enter here.")
 
     print("\nGet review details")
-    review_details = client.reviews.get_review(team_name=team_name, review_id=review_id)
+    review_details = client.reviews.get_review(
+        team_name=team_name, review_id=review_id)
     pprint(review_details.as_dict())
 
     # Your call back endpoint should have received an event like this:
@@ -73,8 +77,10 @@ def image_review(subscription_key):
     #  'sub_team': 'public',
     #  'type': 'Image'}
 
+
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

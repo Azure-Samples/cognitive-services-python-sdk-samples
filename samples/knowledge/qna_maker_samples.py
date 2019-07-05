@@ -8,6 +8,7 @@ from msrest.authentication import CognitiveServicesCredentials
 SUBSCRIPTION_KEY_ENV_NAME = "QNA_SUBSCRIPTION_KEY"
 QNA_LOCATION = os.environ.get("QNA_LOCATION", "westus")
 
+
 def knowledge_based_crud_sample(subscription_key):
     """KnowledgeBasedCRUDSample.
 
@@ -23,16 +24,17 @@ def knowledge_based_crud_sample(subscription_key):
             questions=["How do I manage my knowledgebase?"],
             metadata=[MetadataDTO(name="Category", value="api")]
         )
-        urls = ["https://docs.microsoft.com/en-in/azure/cognitive-services/qnamaker/faqs"]
+        urls = [
+            "https://docs.microsoft.com/en-in/azure/cognitive-services/qnamaker/faqs"]
         create_kb_dto = CreateKbDTO(
             name="QnA Maker FAQ from quickstart",
             qna_list=[qna],
             urls=urls
         )
-        create_op = client.knowledgebase.create(create_kb_payload=create_kb_dto)
+        create_op = client.knowledgebase.create(
+            create_kb_payload=create_kb_dto)
         create_op = _monitor_operation(client=client, operation=create_op)
         return create_op.resource_location.replace("/knowledgebases/", "")
-
 
     def _monitor_operation(client, operation):
         """Helper function for knowledge_based_crud_sample.
@@ -42,17 +44,20 @@ def knowledge_based_crud_sample(subscription_key):
         """
         for i in range(20):
             if operation.operation_state in [OperationStateType.not_started, OperationStateType.running]:
-                print("Waiting for operation: {} to complete.".format(operation.operation_id))
+                print("Waiting for operation: {} to complete.".format(
+                    operation.operation_id))
                 time.sleep(5)
-                operation = client.operations.get_details(operation_id=operation.operation_id)
+                operation = client.operations.get_details(
+                    operation_id=operation.operation_id)
             else:
                 break
         if operation.operation_state != OperationStateType.succeeded:
-            raise Exception("Operation {} failed to complete.".format(operation.operation_id))
+            raise Exception("Operation {} failed to complete.".format(
+                operation.operation_id))
         return operation
 
-
-    client = QnAMakerClient(endpoint="https://{}.api.cognitive.microsoft.com".format(QNA_LOCATION), credentials=CognitiveServicesCredentials(subscription_key))
+    client = QnAMakerClient(endpoint="https://{}.api.cognitive.microsoft.com".format(
+        QNA_LOCATION), credentials=CognitiveServicesCredentials(subscription_key))
 
     # Create a KB
     print("Creating KB...")
@@ -68,7 +73,8 @@ def knowledge_based_crud_sample(subscription_key):
             ]
         )
     )
-    update_op = client.knowledgebase.update(kb_id=kb_id, update_kb=update_kb_operation_dto)
+    update_op = client.knowledgebase.update(
+        kb_id=kb_id, update_kb=update_kb_operation_dto)
     _monitor_operation(client=client, operation=update_op)
 
     # Publish the KB
@@ -88,7 +94,8 @@ def knowledge_based_crud_sample(subscription_key):
 
 
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

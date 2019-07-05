@@ -10,24 +10,26 @@ from azure.cognitiveservices.vision.contentmoderator.models import (
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcentralus")
+CONTENTMODERATOR_LOCATION = os.environ.get(
+    "CONTENTMODERATOR_LOCATION", "westcentralus")
 
 IMAGE_LIST = [
     "https://moderatorsampleimages.blob.core.windows.net/samples/sample2.jpg",
     "https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png"
 ]
 
+
 def image_moderation(subscription_key):
     """ImageModeration.
 
     This will review an image using workflow and job.
     """
-    
+
     client = ContentModeratorClient(
         endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
         credentials=CognitiveServicesCredentials(subscription_key)
     )
-    
+
     for image_url in IMAGE_LIST:
         print("\nEvaluate image {}".format(image_url))
 
@@ -62,8 +64,10 @@ def image_moderation(subscription_key):
         assert isinstance(evaluation, FoundFaces)
         pprint(evaluation.as_dict())
 
+
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
