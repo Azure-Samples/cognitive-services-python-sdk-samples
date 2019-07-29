@@ -40,10 +40,10 @@ def image_analysis_in_stream(subscription_key):
 
     print("\nThe primary colors of this image are: {}".format(image_analysis.color.dominant_colors))
 
-def recognize_text(subscription_key):
-    """RecognizeTextUsingRecognizeAPI.
+def read_text(subscription_key):
+    """RecognizeTextUsingReadAPI.
 
-    This will recognize text of the given image using the recognizeText API.
+    This will recognize text of the given image using the Batch Read API.
     """
     import time
     client = ComputerVisionClient(
@@ -52,22 +52,22 @@ def recognize_text(subscription_key):
     )
 
     with open(os.path.join(IMAGES_FOLDER, "make_things_happen.jpg"), "rb") as image_stream:
-        job = client.recognize_text_in_stream(
+        job = client.batch_read_file_in_stream(
             image=image_stream,
             mode="Printed",
             raw=True
         )
     operation_id = job.headers['Operation-Location'].split('/')[-1]
 
-    image_analysis = client.get_text_operation_result(operation_id)
+    image_analysis = client.get_read_operation_result(operation_id)
     while image_analysis.status in ['NotStarted', 'Running']:
         time.sleep(1)
-        image_analysis = client.get_text_operation_result(operation_id=operation_id)
+        image_analysis = client.get_read_operation_result(operation_id=operation_id)
 
     print("Job completion is: {}\n".format(image_analysis.status))
 
     print("Recognized:\n")
-    lines = image_analysis.recognition_result.lines
+    lines = image_analysis.recognition_results.lines
     print(lines[0].words[0].text)  # "make"
     print(lines[1].words[0].text)  # "things"
     print(lines[2].words[0].text)  # "happen"
