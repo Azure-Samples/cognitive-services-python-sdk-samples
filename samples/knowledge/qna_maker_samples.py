@@ -5,8 +5,9 @@ from azure.cognitiveservices.knowledge.qnamaker import QnAMakerClient
 from azure.cognitiveservices.knowledge.qnamaker.models import QnADTO, MetadataDTO, CreateKbDTO, OperationStateType, UpdateKbOperationDTO, UpdateKbOperationDTOAdd
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "QNA_SUBSCRIPTION_KEY"
-QNA_LOCATION = os.environ.get("QNA_LOCATION", "westus")
+# Add your QnaMaker subscription key and endpoint to your environment variables.
+SUBSCRIPTION_KEY = os.environ['QNA_MAKER_SUBSCRIPTION_KEY']
+QNA_ENDPOINT = os.environ['QNA_MAKER_ENDPOINT']
 
 
 def knowledge_based_crud_sample(subscription_key):
@@ -56,8 +57,7 @@ def knowledge_based_crud_sample(subscription_key):
                 operation.operation_id))
         return operation
 
-    client = QnAMakerClient(endpoint="https://{}.api.cognitive.microsoft.com".format(
-        QNA_LOCATION), credentials=CognitiveServicesCredentials(subscription_key))
+    client = QnAMakerClient(endpoint=QNA_ENDPOINT), credentials=CognitiveServicesCredentials(subscription_key))
 
     # Create a KB
     print("Creating KB...")
@@ -98,4 +98,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
