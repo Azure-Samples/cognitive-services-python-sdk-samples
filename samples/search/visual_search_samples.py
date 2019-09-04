@@ -11,7 +11,8 @@ from azure.cognitiveservices.search.visualsearch.models import (
 )
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "VISUALSEARCH_SUBSCRIPTION_KEY"
+# Add your Bing Search V7 subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
 
 CWD = os.path.dirname(__file__)
 TEST_IMAGES = os.path.join(CWD, "TestImages")
@@ -293,4 +294,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
