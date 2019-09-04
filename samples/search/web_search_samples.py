@@ -2,7 +2,8 @@ from azure.cognitiveservices.search.websearch import WebSearchAPI
 from azure.cognitiveservices.search.websearch.models import SafeSearch
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "WEBSEARCH_SUBSCRIPTION_KEY"
+# Add your Bing Search V7 subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
 
 
 def result_types_lookup(subscription_key):
@@ -163,4 +164,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
