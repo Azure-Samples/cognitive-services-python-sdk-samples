@@ -2,7 +2,8 @@ from azure.cognitiveservices.search.entitysearch import EntitySearchAPI
 from azure.cognitiveservices.search.entitysearch.models import Place, ErrorResponseException
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "ENTITYSEARCH_SUBSCRIPTION_KEY"
+# Add your Bing Entity Search subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['BING_ENTITY_SEARCH_SUBSCRIPTION_KEY']
 
 
 def dominant_entity_lookup(subscription_key):
