@@ -1,7 +1,7 @@
 from azure.cognitiveservices.search.customsearch import CustomSearchClient
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMSEARCH_SUBSCRIPTION_KEY"
+SUBSCRIPTION_KEY = os.environ['BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY']
 
 
 def custom_search_web_page_result_lookup(subscription_key):
@@ -34,4 +34,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
