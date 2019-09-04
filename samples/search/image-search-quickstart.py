@@ -1,7 +1,8 @@
 from azure.cognitiveservices.search.imagesearch import ImageSearchAPI
 from msrest.authentication import CognitiveServicesCredentials
 
-subscription_key = "Enter your key here"
+# Add your Bing Search V7 subscription key to your environment variables.
+subscription_key = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
 search_term = "canadian rockies"
 
 """
