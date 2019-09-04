@@ -3,7 +3,7 @@ from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Custom Search subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY']
-\
+
 def custom_image_search_result_lookup(subscription_key):
     """CustomImageSearchResultLookup.
 
