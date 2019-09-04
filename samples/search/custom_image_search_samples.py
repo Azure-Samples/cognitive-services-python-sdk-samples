@@ -1,9 +1,9 @@
 from azure.cognitiveservices.search.customimagesearch import CustomImageSearchAPI
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMIMAGESEARCH_SUBSCRIPTION_KEY"
-
-
+# Add your Bing Custom Search subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY']
+\
 def custom_image_search_result_lookup(subscription_key):
     """CustomImageSearchResultLookup.
 
@@ -43,4 +43,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
