@@ -7,6 +7,7 @@ from azure.cognitiveservices.vision.customvision.prediction import CustomVisionP
 TRAINING_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_KEY"
 
+# Add your Custom Vision endpoint to your environment variables.
 ENDPOINT = os.environ['CUSTOM_VISION_ENDPOINT']
 
 # Add this directory to the path so that custom_vision_training_samples can be found
