@@ -7,7 +7,8 @@ from azure.cognitiveservices.vision.customvision.training.models import Classifi
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SAMPLE_PROJECT_NAME = "Python SDK Sample"
 
-ENDPOINT = "https://southcentralus.api.cognitive.microsoft.com"
+# Add your Custom Vision endpoint to your environment variables.
+ENDPOINT = os.environ["CUSTOM_VISION_ENDPOINT"]
 
 IMAGES_FOLDER = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), "images")
