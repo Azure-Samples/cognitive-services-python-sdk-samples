@@ -1,4 +1,4 @@
-import os.path
+import os, os.path
 from pprint import pprint
 
 from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClient
@@ -7,9 +7,9 @@ from azure.cognitiveservices.vision.contentmoderator.models import (
 )
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get(
-    "CONTENTMODERATOR_LOCATION", "westcentralus")
+# Add your Azure Content Moderator subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['CONTENT_MODERATOR_SUBSCRIPTION_KEY']
+
 TEXT_FOLDER = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), "text_files")
 
@@ -25,7 +25,7 @@ def text_moderation(subscription_key):
     """
 
     client = ContentModeratorClient(
-        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        endpoint=os.environ['CONTENT_MODERATOR_ENDPOINT'], # Add your Content Moderator endpoint to your environment variables.
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -49,4 +49,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
