@@ -5,10 +5,8 @@ import uuid
 from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClient
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get(
-    "CONTENTMODERATOR_LOCATION", "westcentralus")
-
+# Add your Azure Content Moderator subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['CONTENT_MODERATOR_SUBSCRIPTION_KEY']
 
 def image_review(subscription_key):
     """ImageReview.
@@ -29,7 +27,7 @@ def image_review(subscription_key):
     call_back_endpoint = "https://requestb.in/qmsakwqm"
 
     client = ContentModeratorClient(
-        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        endpoint=os.environ['CONTENT_MODERATOR_ENDPOINT'], # Add your Content Moderator endpoint to your environment variables.
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
