@@ -13,9 +13,8 @@ from azure.cognitiveservices.vision.contentmoderator.models import (
 )
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get(
-    "CONTENTMODERATOR_LOCATION", "westcentralus")
+# Add your Azure Content Moderator subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['CONTENT_MODERATOR_SUBSCRIPTION_KEY']
 
 # The number of minutes to delay after updating the search index before
 # performing image match operations against the list.
@@ -50,7 +49,8 @@ def image_lists(subscription_key):
     """
 
     client = ContentModeratorClient(
-        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        endpoint=os.environ['CONTENT_MODERATOR_ENDPOINT'], # Add your Content Moderator endpoint to your environment variables.
+
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -225,4 +225,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
