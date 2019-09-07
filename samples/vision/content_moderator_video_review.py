@@ -7,10 +7,8 @@ from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClie
 from azure.cognitiveservices.vision.contentmoderator.models import Frames
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get(
-    "CONTENTMODERATOR_LOCATION", "westcentralus")
-
+# Add your Azure Content Moderator subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['CONTENT_MODERATOR_SUBSCRIPTION_KEY']
 
 def video_review(subscription_key):
     """VideoReview.
@@ -32,7 +30,7 @@ def video_review(subscription_key):
     frame3_url = "https://blobthebuilder.blob.core.windows.net/sampleframes/ams-video-frame-3-02-24.PNG"
 
     client = ContentModeratorClient(
-        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        endpoint=os.environ['CONTENT_MODERATOR_ENDPOINT'], # Add your Content Moderator endpoint to your environment variables.
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -125,4 +123,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
