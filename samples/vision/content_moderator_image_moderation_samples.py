@@ -9,9 +9,8 @@ from azure.cognitiveservices.vision.contentmoderator.models import (
 )
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get(
-    "CONTENTMODERATOR_LOCATION", "westcentralus")
+# Add your Azure Content Moderator subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['CONTENT_MODERATOR_SUBSCRIPTION_KEY']
 
 IMAGE_LIST = [
     "https://moderatorsampleimages.blob.core.windows.net/samples/sample2.jpg",
@@ -26,7 +25,7 @@ def image_moderation(subscription_key):
     """
 
     client = ContentModeratorClient(
-        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        endpoint=os.environ['CONTENT_MODERATOR_ENDPOINT'], # Add your Content Moderator endpoint to your environment variables.
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
