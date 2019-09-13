@@ -1,7 +1,11 @@
 ---
-services: cognitive-services
-platforms: python
-author: lmazuel
+page_type: sample
+languages:
+- python
+products:
+- azure
+description: "These samples will show you how to get up and running using the Python SDKs for various Cognitive Services services."
+urlFragment: cognitive-services-python-sdk-samples
 ---
 
 # Cognitive Services Python SDK Samples
