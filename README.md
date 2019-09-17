@@ -24,7 +24,7 @@ This project framework provides examples for the following services:
 
 * Using the **LUIS SDK** [azure-cognitiveservices-language-luis](http://pypi.python.org/pypi/azure-cognitiveservices-language-luis) for the [LUIS API](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/)
 * Using the **Bing Spell Check SDK** [azure-cognitiveservices-language-spellcheck](http://pypi.python.org/pypi/azure-cognitiveservices-language-spellcheck) for the [Bing Spell Check API](https://azure.microsoft.com/services/cognitive-services/spell-check/)
-* Using the **Text Analytics SDK** [azure-cognitiveservices-language-textanalytics](http://pypi.python.org/pypi/azure-cognitiveservices-language-textanalytics) for the [Tet Analytics API](https://azure.microsoft.com/services/cognitive-services/text-analytics/)
+* Using the **Text Analytics SDK** [azure-cognitiveservices-language-textanalytics](http://pypi.python.org/pypi/azure-cognitiveservices-language-textanalytics) for the [Text Analytics API](https://azure.microsoft.com/services/cognitive-services/text-analytics/)
 
 ### Search
 
