@@ -6,9 +6,8 @@ from msrest.authentication import CognitiveServicesCredentials
 import pandas as pd
 import os
 
-SUBSCRIPTION_KEY_ENV_NAME = "ANOMALYDETECTOR_SUBSCRIPTION_KEY"
-ANOMALYDETECTOR_LOCATION = os.environ.get(
-    "ANOMALYDETECTOR_LOCATION", "westcentralus")
+# Add your Azure Anomaly Detector subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ.get["ANOMALY_DETECTOR_SUBSCRIPTION_KEY"]
 
 CSV_FOLDER = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), "csv_files")
@@ -30,9 +29,9 @@ def get_request():
 
 def entire_detect(subscription_key):
     print("Sample of detecting anomalies in the entire series.")
-
-    endpoint = "https://{}.api.cognitive.microsoft.com".format(
-        ANOMALYDETECTOR_LOCATION)
+    # Add your Azure Anomaly Detector subscription key to your environment variables.
+    endpoint = os.environ.get["ANOMALY_DETECTOR_ENDPOINT"]
+    
     try:
         client = AnomalyDetectorClient(
             endpoint, CognitiveServicesCredentials(subscription_key))
@@ -55,9 +54,9 @@ def entire_detect(subscription_key):
 
 def last_detect(subscription_key):
     print("Sample of detecting whether the latest point in series is anomaly.")
-
-    endpoint = "https://{}.api.cognitive.microsoft.com".format(
-        ANOMALYDETECTOR_LOCATION)
+    # Add your Azure Anomaly Detector subscription key to your environment variables.
+    endpoint = os.environ.get["ANOMALY_DETECTOR_ENDPOINT"]
+    
     try:
         client = AnomalyDetectorClient(
             endpoint, CognitiveServicesCredentials(subscription_key))
@@ -80,4 +79,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
