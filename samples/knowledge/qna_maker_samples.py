@@ -6,8 +6,8 @@ from azure.cognitiveservices.knowledge.qnamaker.models import QnADTO, MetadataDT
 from msrest.authentication import CognitiveServicesCredentials
 
 # Add your QnaMaker subscription key and endpoint to your environment variables.
-SUBSCRIPTION_KEY = os.environ['QNA_SUBSCRIPTION_KEY']
-QNA_ENDPOINT = os.environ['QNA_LOCATION']
+SUBSCRIPTION_KEY = os.environ['QNA_MAKER_SUBSCRIPTION_KEY']
+QNA_ENDPOINT = os.environ['QNA_MAKER_ENDPOINT']
 
 
 def knowledge_based_crud_sample(subscription_key):
@@ -98,4 +98,4 @@ if __name__ == "__main__":
     import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
