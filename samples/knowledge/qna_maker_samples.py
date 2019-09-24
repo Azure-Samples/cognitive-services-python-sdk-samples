@@ -57,7 +57,7 @@ def knowledge_based_crud_sample(subscription_key):
                 operation.operation_id))
         return operation
 
-    client = QnAMakerClient(endpoint=QNA_ENDPOINT), credentials=CognitiveServicesCredentials(subscription_key))
+    client = QnAMakerClient(endpoint=QNA_ENDPOINT, credentials=CognitiveServicesCredentials(subscription_key))
 
     # Create a KB
     print("Creating KB...")
