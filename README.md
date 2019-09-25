@@ -44,6 +44,7 @@ This project framework provides examples for the following services:
 * Using the **Computer Vision SDK** [azure-cognitiveservices-vision-computervision](http://pypi.python.org/pypi/azure-cognitiveservices-vision-computervision) for the [Computer Vision API](https://azure.microsoft.com/services/cognitive-services/computer-vision/)
 * Using the **Content Moderator SDK** [azure-cognitiveservices-vision-contentmoderator](http://pypi.python.org/pypi/azure-cognitiveservices-vision-contentmoderator) for the [Content Moderator API](https://azure.microsoft.com/services/cognitive-services/content-moderator/)
 * Using the **Custom Vision SDK** [azure-cognitiveservices-vision-customvision](http://pypi.python.org/pypi/azure-cognitiveservices-vision-customvision) for the [Custom Vision API](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/)
+* Using the **Ink Recognizer SDK** [azure-ai-inkrecognizer](http://) for the [Ink Recognizer API](https://azure.microsoft.com/services/cognitive-services/ink-recognizer/)
 
 We provide several meta-packages to help you install several packages at a time. Please note that meta-packages are only recommended for development purpose. It's recommended in production to always pin specific version of individual packages.
 
