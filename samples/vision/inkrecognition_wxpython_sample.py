@@ -14,12 +14,13 @@ CREDENTIAL = "FakeCredential"  # Put Azure credential instance here
 # Default value is "en-US".
 # If "language" in a stroke is specified, this will be overlaped in that stroke.
 LANGUAGE_RECOGNITION_LOCALE = "en-US"
-# This tell Ink Recognizer Service that domain of the application is writing,
-# i.e. all strokes are writing.
-# Default value is ApplicationKind.MIXED, which means let Ink Recognizer
-# Service detect kind of strokes.
+# This tell Ink Recognizer Service that domain of the application is mixed,
+# so Ink Recognizer Service will detect kind of each stroke.
+# You can set it into ApplicationKind.WRITING or ApplicationKind.DRAWING to specify
+# default kind of strokes and skip stroke kind detection precedure.
+# Default value is ApplicationKind.MIXED.
 # If "kind" in a stroke is specified, this will be overlaped in that stroke.
-APPLICATION_KIND = ApplicationKind.WRITING
+APPLICATION_KIND = ApplicationKind.MIXED
 
 
 # This ratio map the number of pixel for x and y axis coordinates on canvas
