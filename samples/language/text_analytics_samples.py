@@ -1,9 +1,12 @@
+# <imports>
 # -*- coding: utf-8 -*-
 
 import os
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
 from msrest.authentication import CognitiveServicesCredentials
+# </imports>
 
+# <initialVars>
 key_var_name = 'TEXT_ANALYTICS_SUBSCRIPTION_KEY'
 if not key_var_name in os.environ:
     raise Exception('Please set/export the environment variable: {}'.format(key_var_name))
@@ -13,12 +16,15 @@ endpoint_var_name = 'TEXT_ANALYTICS_ENDPOINT'
 if not endpoint_var_name in os.environ:
     raise Exception('Please set/export the environment variable: {}'.format(endpoint_var_name))
 endpoint = os.environ[endpoint_var_name]
+# <initialVars>
 
-def language_extraction(subscription_key):
-    """Language extraction.
+"""Language detection.
 
     This example detects the language of several strings. 
     """
+# <languageDetection>
+def language_detection():
+    
     credentials = CognitiveServicesCredentials(subscription_key)
     text_analytics = TextAnalyticsClient(
         endpoint=endpoint, credentials=credentials)
@@ -37,13 +43,17 @@ def language_extraction(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+language_detection()
+# </languageDetection>
 
 
-def key_phrases(subscription_key):
-    """Key-phrases.
+"""Key-phrases.
 
-    Returns the key talking points in several text examples.
-    """
+Returns the key talking points in several text examples.
+"""
+# <keyPhrases>
+def key_phrases():
+    
     credentials = CognitiveServicesCredentials(subscription_key)
     text_analytics = TextAnalyticsClient(
         endpoint=endpoint, credentials=credentials)
@@ -72,13 +82,17 @@ def key_phrases(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+key_phrases()
+# </keyPhrases>
 
+"""Sentiment.
 
-def sentiment(subscription_key):
-    """Sentiment.
+Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
+"""
 
-    Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
-    """
+# <sentimentAnalysis>
+def sentiment():
+    
     credentials = CognitiveServicesCredentials(subscription_key)
     text_analytics = TextAnalyticsClient(
         endpoint=endpoint, credentials=credentials)
@@ -100,13 +114,16 @@ def sentiment(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+sentiment()
+# </sentimentAnalysis> 
 
+"""EntityRecognition.
+Extracts the entities from sentences and prints out their properties.
+"""
 
-def entity_extraction(subscription_key):
-    """EntityExtraction.
-
-    Extracts the entities from sentences and prints out their properties.
-    """
+# <entityRecognition>
+def entity_recognition():
+    
     credentials = CognitiveServicesCredentials(subscription_key)
     text_analytics = TextAnalyticsClient(
         endpoint=endpoint, credentials=credentials)
@@ -131,7 +148,8 @@ def entity_extraction(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
-
+entity_recognition()
+# </entityExtraction>
 
 if __name__ == "__main__":
     import sys
