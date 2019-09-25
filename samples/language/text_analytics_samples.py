@@ -149,7 +149,7 @@ def entity_recognition():
     except Exception as err:
         print("Encountered exception. {}".format(err))
 entity_recognition()
-# </entityExtraction>
+# </entityRecognition>
 
 if __name__ == "__main__":
     import sys
