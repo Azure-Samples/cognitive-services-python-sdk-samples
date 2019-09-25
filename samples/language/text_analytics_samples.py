@@ -4,10 +4,15 @@ import os
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "TEXTANALYTICS_SUBSCRIPTION_KEY"
-TEXTANALYTICS_LOCATION = os.environ.get(
-    "TEXTANALYTICS_LOCATION", "westcentralus")
+key_var_name = 'TEXT_ANALYTICS_SUBSCRIPTION_KEY'
+if not key_var_name in os.environ:
+    raise Exception('Please set/export the environment variable: {}'.format(key_var_name))
+subscription_key = os.environ[key_var_name]
 
+endpoint_var_name = 'TEXT_ANALYTICS_ENDPOINT'
+if not endpoint_var_name in os.environ:
+    raise Exception('Please set/export the environment variable: {}'.format(endpoint_var_name))
+endpoint = os.environ[endpoint_var_name]
 
 def language_extraction(subscription_key):
     """Language extraction.
@@ -15,10 +20,8 @@ def language_extraction(subscription_key):
     This example detects the language of several strings. 
     """
     credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
     text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
+        endpoint=endpoint, credentials=credentials)
 
     try:
         documents = [
@@ -42,10 +45,8 @@ def key_phrases(subscription_key):
     Returns the key talking points in several text examples.
     """
     credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
     text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
+        endpoint=endpoint, credentials=credentials)
 
     try:
         documents = [
@@ -79,10 +80,8 @@ def sentiment(subscription_key):
     Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
     """
     credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
     text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
+        endpoint=endpoint, credentials=credentials)
 
     try:
         documents = [
@@ -109,10 +108,8 @@ def entity_extraction(subscription_key):
     Extracts the entities from sentences and prints out their properties.
     """
     credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
     text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
+        endpoint=endpoint, credentials=credentials)
 
     try:
         documents = [
