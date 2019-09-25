@@ -5,9 +5,9 @@ if six.PY2:
 else:
     from tkinter import *
     from tkinter import messagebox
-from azure.ai.inkrecognizer import ApplicationKind, InkPointUnit, InkStrokeKind
-from azure.ai.inkrecognizer import InkRecognizerClient, InkRecognitionUnitKind
 from collections import namedtuple
+from azure.ai.inkrecognizer import ApplicationKind, InkStrokeKind
+from azure.ai.inkrecognizer import InkRecognizerClient
 
 
 # Ink Recognizer Client Config
@@ -16,12 +16,14 @@ CREDENTIAL = "FakeCredential"  # Put Azure credential instance here
 
 
 # Recognition Config
-# This tell Ink Recognizer Service that the sample is in en-US. 
+# This tell Ink Recognizer Service that the sample is in en-US.
 # Default value is "en-US".
 # If "language" in a stroke is specified, this will be overlaped in that stroke.
 LANGUAGE_RECOGNITION_LOCALE = "en-US"
-# This tell Ink Recognizer Service that domain of the application is writing, i.e. all strokes are writing. 
-# Default value is ApplicationKind.MIXED, which means let Ink Recognizer Service detect kind of strokes.
+# This tell Ink Recognizer Service that domain of the application is writing,
+# i.e. all strokes are writing.
+# Default value is ApplicationKind.MIXED, which means let Ink Recognizer
+# Service detect kind of strokes.
 # If "kind" in a stroke is specified, this will be overlaped in that stroke.
 APPLICATION_KIND = ApplicationKind.WRITING
 
@@ -66,16 +68,18 @@ class RecognitionManager:
 
     def _pixel_to_mm(self, pixel):
         return pixel * 1.0 / self._pixel_per_mm
-    
+
     def reset_ink(self):
         self._ink_stroke_list = []
         self._root = None
         self._reset_stroke()
 
     def add_point(self, x, y):
-        # Convert from pixel to mm before sending to InkPoint
-        # You can also specify keyword argument "unit_multiple" in InkRecognizerClient constructor or in recognizer_ink() request
-        self._curr_stroke_points.append(InkPoint(self._pixel_to_mm(x), self._pixel_to_mm(y)))
+        # Convert from pixel to mm before sending to InkPoint.
+        # You can also specify keyword argument "unit_multiple" in
+        # InkRecognizerClient constructor or in recognizer_ink() request.
+        self._curr_stroke_points.append(
+            InkPoint(self._pixel_to_mm(x), self._pixel_to_mm(y)))
 
     def stroke_end(self):
         stroke = InkStroke(len(self._ink_stroke_list), self._curr_stroke_points)
@@ -86,11 +90,15 @@ class RecognitionManager:
         self._root = None
         try:
             root = self._client.recognize_ink(
-                self._ink_stroke_list, 
+                self._ink_stroke_list,
                 # Pre-set recognition type
-                application_kind=APPLICATION_KIND, 
+                application_kind=APPLICATION_KIND,
                 # Set language recognition locale
-                language=LANGUAGE_RECOGNITION_LOCALE)
+                language=LANGUAGE_RECOGNITION_LOCALE
+            )
+            # Aruments in request is for this request only
+            # You can also specify these arguments in InkRecognizerClient constructor, 
+            # which will be default arguments for each call.
             result_text = []
             for word in root.ink_words:
                 result_text.append(word.recognized_text)
@@ -116,11 +124,12 @@ class InkRecognizerDemo:
     def __init__(self):
         self._master = Tk()
         self._pack_widgets()
-        
-        self._recognition_manager = RecognitionManager(pixel_per_mm=self._master.winfo_fpixels("1m"))
+
+        self._recognition_manager = RecognitionManager(
+            pixel_per_mm=self._master.winfo_fpixels("1m"))
         # point for drawing stroke
         self._last_point = None
-        
+
     def _pack_widgets(self):
         self._master.title("Ink Recognizer Demo")
         # search words
@@ -130,12 +139,13 @@ class InkRecognizerDemo:
         search_entry.pack(pady=5)
         search_button.pack()
         # main canvas
-        self._canvas = Canvas(self._master, 
-                width=CANVAS_WIDTH, 
-                height=CANVAS_HEIGHT)
+        self._canvas = Canvas(
+            self._master,
+            width=CANVAS_WIDTH,
+            height=CANVAS_HEIGHT)
         self._canvas.pack(expand=YES, fill = BOTH)
-        self._canvas.bind( "<B1-Motion>", self._draw)
-        self._canvas.bind( "<Button-1>", self._stroke_start)
+        self._canvas.bind("<B1-Motion>", self._draw)
+        self._canvas.bind("<Button-1>", self._stroke_start)
         self._canvas.bind("<ButtonRelease-1>", self._stroke_end)
         # recognize and clear buttons
         recognize_button = Button(
@@ -146,7 +156,7 @@ class InkRecognizerDemo:
         clear_button.pack(pady=5)
 
     def _draw(self, event):
-        # paint on canvas 
+        # paint on canvas
         x_curr, y_curr = event.x, event.y
         if self._last_point is not None:
             x_last, y_last = self._last_point[0], self._last_point[1]
@@ -159,7 +169,7 @@ class InkRecognizerDemo:
     def _stroke_start(self, event):
         # nothing need to do
         pass
-    
+
     def _stroke_end(self, event):
         self._recognition_manager.stroke_end()
         self._last_point = None
@@ -167,14 +177,14 @@ class InkRecognizerDemo:
     def _clear_canvas(self):
         self._canvas.delete("all")
         self._recognition_manager.reset_ink()
-    
+
     def _recognize(self):
         self._recognition_manager.recognize()
 
     def _search(self):
         self._recognition_manager.search(self._search_variable.get())
 
-    def run(self): 
+    def run(self):
         mainloop()
 
 

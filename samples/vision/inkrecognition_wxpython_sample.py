@@ -10,23 +10,27 @@ CREDENTIAL = "FakeCredential"  # Put Azure credential instance here
 
 
 # Recognition Config
-# This tell Ink Recognizer Service that the sample is in en-US. 
+# This tell Ink Recognizer Service that the sample is in en-US.
 # Default value is "en-US".
 # If "language" in a stroke is specified, this will be overlaped in that stroke.
 LANGUAGE_RECOGNITION_LOCALE = "en-US"
-# This tell Ink Recognizer Service that domain of the application is writing, i.e. all strokes are writing. 
-# Default value is ApplicationKind.MIXED, which means let Ink Recognizer Service detect kind of strokes.
+# This tell Ink Recognizer Service that domain of the application is writing,
+# i.e. all strokes are writing.
+# Default value is ApplicationKind.MIXED, which means let Ink Recognizer
+# Service detect kind of strokes.
 # If "kind" in a stroke is specified, this will be overlaped in that stroke.
 APPLICATION_KIND = ApplicationKind.WRITING
 
 
-# This ratio map the number of pixel for x and y axis coordinates on canvas into number of mm
-# In InK Recognizer Server, every coordinate in InkPoint will multiply this number 
-# You may also want to mutliply /divide this value before sending request and after receiving response 
+# This ratio map the number of pixel for x and y axis coordinates on canvas
+# into number of mm.
+# In InK Recognizer Server, every coordinate in InkPoint will multiply this number. 
+# You may also want to mutliply /divide this value before sending request and
+# after receiving response.
 app = wx.App(False)
-mm_on_canvas = float(wx.GetDisplaySizeMM()[1]) 
+mm_on_canvas = float(wx.GetDisplaySizeMM()[1])
 pixel_on_canvas = float(wx.GetDisplaySize()[1])
-UNIT_MULTIPLE = mm_on_canvas / pixel_on_canvas 
+UNIT_MULTIPLE = mm_on_canvas / pixel_on_canvas
 
 
 # UI config
@@ -60,8 +64,9 @@ class InkStroke():
 class RecognitionManager:
     def __init__(self):
         self._client = InkRecognizerClient(
-            URL, CREDENTIAL, 
-            ink_point_unit=InkPointUnit.MM, 
+            URL,
+            CREDENTIAL,
+            ink_point_unit=InkPointUnit.MM,
             # Convert stroke unit from pixel to mm by specify unit_multiple
             # You can also multiply the number when creating InkPoints
             unit_multiple=UNIT_MULTIPLE,
@@ -69,9 +74,11 @@ class RecognitionManager:
             language=LANGUAGE_RECOGNITION_LOCALE,
             # Pre-set recognition type
             application_kind=APPLICATION_KIND
-            )
+        )
+        # Aruments in constructor becomes default arguments for each request
+        # You can also specify these arguments in recognize_ink() requests.
         self._reset_ink()
-    
+
     def _reset_ink(self):
         self._stroke_list = []
         self._reset_stroke()
@@ -88,11 +95,12 @@ class RecognitionManager:
         return
 
     def stroke_end(self):
-        stroke = InkStroke(len(self._stroke_list), 
-                           self._curr_stroke_points)
+        stroke = InkStroke(
+            len(self._stroke_list),
+            self._curr_stroke_points)
         self._stroke_list.append(stroke)
         self._reset_stroke()
-    
+
     def get_stroke_list(self):
         return self._stroke_list
 
@@ -150,12 +158,12 @@ class Canvas(wx.Panel):
     
     def on_click(self, event):
         self._recognition_manager.stroke_start()
-    
+
     def on_drag(self, event):
         if event.Dragging():
             self._recognition_manager.add_point(event.X, event.y)
             self.Refresh()
-    
+
     def on_release(self, event):
         self._recognition_manager.stroke_end()
         self.Refresh()
@@ -171,7 +179,7 @@ class Canvas(wx.Panel):
         self._recognition_manager.search(word, call_back)
 
 
-# Sample wxpython app 
+# Sample wxpython app
 class InkRecognizerDemo(wx.Frame):
     def __init__(self):
         super(InkRecognizerDemo, self).__init__(None)
@@ -184,18 +192,24 @@ class InkRecognizerDemo(wx.Frame):
         self.clear_button = wx.Button(self.view, wx.ID_ANY, 'Clear', (0, canvas_height - 30))
 
         self.search_text = wx.TextCtrl(self.view, wx.ID_ANY, "", (0, canvas_height - 120))
-        func_search = lambda event: self.view.search(event, self.search_text.GetLineText(0), call_back=self.show_search_result)
-        self.search_button.Bind(wx.EVT_BUTTON, func_search)
-        func_recognize = lambda event: self.view.recognize(event, call_back=self.show_result)
-        self.recognize_button.Bind(wx.EVT_BUTTON, func_recognize)
+        self.search_button.Bind(wx.EVT_BUTTON, self._search_function)
+        self.recognize_button.Bind(wx.EVT_BUTTON, self._recognize_function)
         self.clear_button.Bind(wx.EVT_BUTTON, self.view.clear)
-        
 
-    def show_result(self, result):
+    def _search_function(self, event):
+        return self.view.search(
+            event, 
+            self.search_text.GetLineText(0), 
+            call_back=self._show_search_result)
+
+    def _recognize_function(self, event):
+        return self.view.recognize(event, call_back=self._show_result)
+
+    def _show_result(self, result):
         dlg = wx.MessageDialog(self, result, "Recognition Result")
         dlg.ShowModal()
-    
-    def show_search_result(self, num_words):
+
+    def _show_search_result(self, num_words):
         dlg = wx.MessageDialog(self, "Find %s words" % num_words, "Recognition Result")
         dlg.ShowModal()
 
