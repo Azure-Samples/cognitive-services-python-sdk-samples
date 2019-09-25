@@ -16,7 +16,7 @@ endpoint_var_name = 'TEXT_ANALYTICS_ENDPOINT'
 if not endpoint_var_name in os.environ:
     raise Exception('Please set/export the environment variable: {}'.format(endpoint_var_name))
 endpoint = os.environ[endpoint_var_name]
-# <initialVars>
+# </initialVars>
 
 """Language detection.
 
