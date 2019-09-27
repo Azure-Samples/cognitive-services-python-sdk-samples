@@ -1,11 +1,12 @@
 import os
-import six
-if six.PY2:
-    from Tkinter import *
-    import tkMessageBox as messagebox
-else:
+try:
     from tkinter import *
     from tkinter import messagebox
+except ImportError:
+    # python <= 2.7
+    from Tkinter import *
+    import tkMessageBox as messagebox
+
 from collections import namedtuple
 from azure.cognitiveservices.inkrecognizer import ApplicationKind, InkStrokeKind
 from azure.cognitiveservices.inkrecognizer import InkRecognizerClient
