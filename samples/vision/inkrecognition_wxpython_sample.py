@@ -1,3 +1,4 @@
+import os
 import wx
 from azure.cognitiveservices.inkrecognizer import ApplicationKind, InkPointUnit, InkStrokeKind
 from azure.cognitiveservices.inkrecognizer import InkRecognizerClient
@@ -6,7 +7,8 @@ from collections import namedtuple
 
 # Ink Recognizer Client Config
 URL = "https://api.cognitive.microsoft.com/inkrecognizer"
-CREDENTIAL = "FakeCredential"  # Put Azure credential instance here
+CREDENTIAL = os.environ['INK_RECOGNIZER_SUBSCRIPTION_KEY'].strip()
+# You can also use Azure credential instance
 
 
 # Recognition Config

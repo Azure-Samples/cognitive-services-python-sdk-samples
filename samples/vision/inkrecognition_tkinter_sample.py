@@ -1,3 +1,4 @@
+import os
 import six
 if six.PY2:
     from Tkinter import *
@@ -12,7 +13,8 @@ from azure.cognitiveservices.inkrecognizer import InkRecognizerClient
 
 # Ink Recognizer Client Config
 URL = "https://api.cognitive.microsoft.com/inkrecognizer"
-CREDENTIAL = "FakeCredential"  # Put Azure credential instance here
+CREDENTIAL = os.environ['INK_RECOGNIZER_SUBSCRIPTION_KEY'].strip()
+# You can also use Azure credential instance
 
 
 # Recognition Config
