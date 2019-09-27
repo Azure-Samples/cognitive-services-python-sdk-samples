@@ -7,7 +7,7 @@ from collections import namedtuple
 
 # Ink Recognizer Client Config
 URL = "https://api.cognitive.microsoft.com/inkrecognizer"
-CREDENTIAL = os.environ['INK_RECOGNIZER_SUBSCRIPTION_KEY'].strip()
+CREDENTIAL = os.environ['INK_RECOGNITION_SUBSCRIPTION_KEY'].strip()
 # You can also use Azure credential instance
 
 
