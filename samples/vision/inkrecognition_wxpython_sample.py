@@ -1,6 +1,6 @@
 import wx
-from azure.ai.inkrecognizer import ApplicationKind, InkPointUnit, InkStrokeKind
-from azure.ai.inkrecognizer import InkRecognizerClient
+from azure.cognitiveservices.inkrecognizer import ApplicationKind, InkPointUnit, InkStrokeKind
+from azure.cognitiveservices.inkrecognizer import InkRecognizerClient
 from collections import namedtuple
 
 

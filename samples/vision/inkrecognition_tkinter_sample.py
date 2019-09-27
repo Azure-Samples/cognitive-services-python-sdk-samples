@@ -6,8 +6,8 @@ else:
     from tkinter import *
     from tkinter import messagebox
 from collections import namedtuple
-from azure.ai.inkrecognizer import ApplicationKind, InkStrokeKind
-from azure.ai.inkrecognizer import InkRecognizerClient
+from azure.cognitiveservices.inkrecognizer import ApplicationKind, InkStrokeKind
+from azure.cognitiveservices.inkrecognizer import InkRecognizerClient
 
 
 # Ink Recognizer Client Config
