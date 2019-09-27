@@ -16,4 +16,5 @@ azure-cognitiveservices-vision-contentmoderator>=1.0.0  # sample won't work with
 azure-cognitiveservices-vision-customvision>=0.4.0  # sample won't work with previous versions
 azure-cognitiveservices-vision-face
 azure-cognitiveservices-anomalydetector>=0.2.0 #  sample won't work with previous versions
+azure-cognitiveservices-inkrecognizer>=1.0.0
 pandas
