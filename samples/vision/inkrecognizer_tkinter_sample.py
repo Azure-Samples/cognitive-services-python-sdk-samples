@@ -13,7 +13,7 @@ from azure.cognitiveservices.inkrecognizer import InkRecognizerClient
 
 # Ink Recognizer Client Config
 URL = "https://api.cognitive.microsoft.com/inkrecognizer"
-CREDENTIAL = os.environ['INK_RECOGNITION_SUBSCRIPTION_KEY'].strip()
+CREDENTIAL = os.environ['INK_RECOGNIZER_SUBSCRIPTION_KEY'].strip()
 # You can also use Azure credential instance
 
 
@@ -80,7 +80,7 @@ class RecognitionManager:
     def add_point(self, x, y):
         # Convert from pixel to mm before sending to InkPoint.
         # You can also specify keyword argument "unit_multiple" in
-        # InkRecognizerClient constructor or in recognizer_ink() request.
+        # InkRecognizerClient constructor or in recognize_ink() request.
         self._curr_stroke_points.append(
             InkPoint(self._pixel_to_mm(x), self._pixel_to_mm(y)))
 

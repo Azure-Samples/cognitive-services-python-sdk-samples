@@ -106,7 +106,7 @@ We provide several meta-packages to help you install several packages at a time.
 4.  Set up the environment variable `CONTENTMODERATOR_SUBSCRIPTION_KEY` with your key if you want to execute Content Moderator tests. You might override too `CONTENTMODERATOR_LOCATION` (westcentralus by default).
 4.  Set up the environment variable `CUSTOMVISION_TRAINING_KEY` with your key if you want to execute CustomVision Training tests.
 4.  Set up the environment variable `CUSTOMVISION_PREDICTION_KEY` with your key if you want to execute CustomVision Prediction tests.
-4.  Set up the environment variable `INK_RECOGNITION_SUBSCRIPTION_KEY` with your key if you want to execute ink recognition tests.
+4.  Set up the environment variable `INK_RECOGNIZER_SUBSCRIPTION_KEY` with your key if you want to execute ink recognition tests.
 
 ## Demo
 
