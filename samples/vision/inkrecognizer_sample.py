@@ -12,7 +12,10 @@ from azure.cognitiveservices.inkrecognizer import ApplicationKind, InkStrokeKind
 from azure.cognitiveservices.inkrecognizer import InkRecognizerClient
 
 
-# Ink Recognizer Client Config
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+# <InkRecognizerClientConfig>
 URL = "https://api.cognitive.microsoft.com/inkrecognizer"
 CREDENTIAL = os.environ['INK_RECOGNIZER_SUBSCRIPTION_KEY'].strip()
 # You can also use Azure credential instance
@@ -30,16 +33,10 @@ LANGUAGE_RECOGNITION_LOCALE = "en-US"
 # Default value is ApplicationKind.MIXED.
 # If "kind" in a stroke is specified, this will be overlaped in that stroke.
 APPLICATION_KIND = ApplicationKind.MIXED
+# </InkRecognizerClientConfig>
 
 
-# UI Config
-CANVAS_WIDTH = 800
-CANVAS_HEIGHT = 500
-STROKE_COLOR = "#476042"  # python green
-STROKE_WIDTH = 3
-
-
-# Stroke Implementations
+# <StrokeImplementations>
 # Shows simple implementation of InkPoint and InkStroke
 InkPoint = namedtuple("InkPoint", "x y")
 
@@ -54,9 +51,11 @@ class InkStroke():
         self.points = ink_points
         self.kind = stroke_kind
         self.language = stroke_language
+# </StrokeImplementations>
 
 
-# Sample wrapper for InkRecognizerClient that shows how to
+# <KeyScenarioExample>
+# Wrapper for InkRecognizerClient that shows how to
 # (1) Convert stroke unit from pixel to mm
 # (2) Set language recognition locale
 # (3) Indexing a key word from recognition results
@@ -64,7 +63,16 @@ class InkStroke():
 class RecognitionManager:
     def __init__(self, pixel_per_mm):
         self._pixel_per_mm = pixel_per_mm
-        self._client = InkRecognizerClient(URL, CREDENTIAL)
+        self._client = InkRecognizerClient(
+            URL, 
+            CREDENTIAL,                 
+            # <SetApplicationKind>
+            application_kind=APPLICATION_KIND,
+            # </SetApplicationKind>
+            )
+            # Aruments in constructor becomes default arguments for each request
+            # You can also specify these arguments in recognize_ink() requests,
+            # which influence that request only
         self.reset_ink()
 
     def _reset_stroke(self):
@@ -79,11 +87,13 @@ class RecognitionManager:
         self._reset_stroke()
 
     def add_point(self, x, y):
+        # <UnitConversion>
         # Convert from pixel to mm before sending to InkPoint.
         # You can also specify keyword argument "unit_multiple" in
         # InkRecognizerClient constructor or in recognize_ink() request.
         self._curr_stroke_points.append(
             InkPoint(self._pixel_to_mm(x), self._pixel_to_mm(y)))
+        # </UnitConversion>
 
     def stroke_end(self):
         stroke = InkStroke(len(self._ink_stroke_list), self._curr_stroke_points)
@@ -95,10 +105,10 @@ class RecognitionManager:
         try:
             root = self._client.recognize_ink(
                 self._ink_stroke_list,
-                # Pre-set recognition type
-                application_kind=APPLICATION_KIND,
-                # Set language recognition locale
-                language=LANGUAGE_RECOGNITION_LOCALE
+                # <SetRecognitionLocale>
+                language=LANGUAGE_RECOGNITION_LOCALE,
+                # </SetRecognitionLocale>
+                logging_enable=True
             )
             # Aruments in request is for this request only
             # You can also specify these arguments in InkRecognizerClient constructor, 
@@ -115,15 +125,26 @@ class RecognitionManager:
             messagebox.showinfo("Error", e)
 
     def search(self, word):
-        # Indexing a key word from recognition results
+        # <IndexingKeyword>
         if self._root is not None:
-            words = self._root.find_word(word)
-            messagebox.showinfo("Search Result", "Find %s words" % len(words))
+            num_words = len(self._root.find_word(word))
         else:
-            messagebox.showinfo("Search Result", "Find %s words" % 0)
+            num_words = 0  
+        search_result = "Find %s word%s" % (num_words, "s" if num_words != 1 else "")
+        messagebox.showinfo("Search Result", search_result)
+        # </IndexingKeyword>
+# </KeyScenarioExample>
 
 
-# Sample UI
+# <SampleUIConfig>
+CANVAS_WIDTH = 800
+CANVAS_HEIGHT = 500
+STROKE_COLOR = "#476042"  # python green
+STROKE_WIDTH = 3
+# </SampleUIConfig>
+
+
+# <SampleUI>
 class InkRecognizerDemo:
     def __init__(self):
         self._master = Tk()
@@ -190,6 +211,7 @@ class InkRecognizerDemo:
 
     def run(self):
         mainloop()
+# </SampleUI>
 
 
 if __name__ == "__main__":

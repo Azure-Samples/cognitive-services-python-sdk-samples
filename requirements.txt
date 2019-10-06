@@ -17,5 +17,4 @@ azure-cognitiveservices-vision-customvision>=0.4.0  # sample won't work with pre
 azure-cognitiveservices-vision-face
 azure-cognitiveservices-anomalydetector>=0.2.0 #  sample won't work with previous versions
 azure-cognitiveservices-inkrecognizer>=1.0.0b1
-wxpython>=4.0.6
 pandas

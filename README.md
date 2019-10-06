@@ -119,7 +119,7 @@ To run each individual demo, point directly to the file. For example (i.e. not c
 1. `python samples/language/spellcheck_samples.py`
 2. `python samples/search/entity_search_samples.py`
 3. `python samples/search/video_search_samples.py`
-4. `python samples/vision/inkrecognizer_tkinter_sample.py`
+4. `python samples/vision/inkrecognizer_sample.py`
 
 To see the code of each example, simply look at the examples in the Samples folder. They are written to be isolated in scope so that you can see only what you're interested in.
 
