@@ -18,16 +18,21 @@ if not endpoint_var_name in os.environ:
 endpoint = os.environ[endpoint_var_name]
 # </initialVars>
 
+# <authentication>
+def authenticateClient():
+    credentials = CognitiveServicesCredentials(subscription_key)
+    text_analytics_client = TextAnalyticsClient(
+        endpoint=endpoint, credentials=credentials)
+    return text_analytics_client
+# </authentication>
+
 """Language detection.
 
     This example detects the language of several strings. 
     """
 # <languageDetection>
 def language_detection():
-    
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics = TextAnalyticsClient(
-        endpoint=endpoint, credentials=credentials)
+    client = authenticateClient()
 
     try:
         documents = [
@@ -35,7 +40,7 @@ def language_detection():
             {'id': '2', 'text': 'Este es un document escrito en Español.'},
             {'id': '3', 'text': '这是一个用中文写的文件'}
         ]
-        response = text_analytics.detect_language(documents=documents)
+        response = client.detect_language(documents=documents)
 
         for document in response.documents:
             print("Document Id: ", document.id, ", Language: ",
@@ -54,9 +59,7 @@ Returns the key talking points in several text examples.
 # <keyPhrases>
 def key_phrases():
     
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics = TextAnalyticsClient(
-        endpoint=endpoint, credentials=credentials)
+    client = authenticateClient()
 
     try:
         documents = [
@@ -72,7 +75,7 @@ def key_phrases():
             print(
                 "Asking key-phrases on '{}' (id: {})".format(document['text'], document['id']))
 
-        response = text_analytics.key_phrases(documents=documents)
+        response = client.key_phrases(documents=documents)
 
         for document in response.documents:
             print("Document Id: ", document.id)
@@ -93,9 +96,7 @@ Scores close to 1 indicate positive sentiment, while scores close to 0 indicate 
 # <sentimentAnalysis>
 def sentiment():
     
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics = TextAnalyticsClient(
-        endpoint=endpoint, credentials=credentials)
+    client = authenticateClient()
 
     try:
         documents = [
@@ -107,7 +108,7 @@ def sentiment():
                 "text": "L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."}
         ]
 
-        response = text_analytics.sentiment(documents=documents)
+        response = client.sentiment(documents=documents)
         for document in response.documents:
             print("Document Id: ", document.id, ", Sentiment Score: ",
                   "{:.2f}".format(document.score))
@@ -124,9 +125,7 @@ Extracts the entities from sentences and prints out their properties.
 # <entityRecognition>
 def entity_recognition():
     
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics = TextAnalyticsClient(
-        endpoint=endpoint, credentials=credentials)
+    client = authenticateClient()
 
     try:
         documents = [
@@ -134,7 +133,7 @@ def entity_recognition():
             {"id": "2", "language": "es",
                 "text": "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle."}
         ]
-        response = text_analytics.entities(documents=documents)
+        response = client.entities(documents=documents)
 
         for document in response.documents:
             print("Document Id: ", document.id)
