@@ -1,3 +1,4 @@
+# <imports>
 import os
 try:
     from tkinter import *
@@ -11,35 +12,27 @@ from collections import namedtuple
 from azure.cognitiveservices.inkrecognizer import ApplicationKind, InkStrokeKind
 from azure.cognitiveservices.inkrecognizer import InkRecognizerClient
 
-
 import logging
 logging.basicConfig(level=logging.DEBUG)
+# </imports>
 
+# You can also use an Azure credential instance
 # <InkRecognizerClientConfig>
 URL = "https://api.cognitive.microsoft.com/inkrecognizer"
 CREDENTIAL = os.environ['INK_RECOGNIZER_SUBSCRIPTION_KEY'].strip()
-# You can also use Azure credential instance
 
-
-# Recognition Config
-# This tell Ink Recognizer Service that the sample is in en-US.
-# Default value is "en-US".
-# If "language" in a stroke is specified, this will be overlaped in that stroke.
+# The default locale is "en-US". Setting a different language for a stroke will overload this value. 
 LANGUAGE_RECOGNITION_LOCALE = "en-US"
-# This tell Ink Recognizer Service that domain of the application is mixed,
-# so Ink Recognizer Service will detect kind of each stroke.
-# You can set it into ApplicationKind.WRITING or ApplicationKind.DRAWING to specify
-# default kind of strokes and skip stroke kind detection precedure.
-# Default value is ApplicationKind.MIXED.
-# If "kind" in a stroke is specified, this will be overlaped in that stroke.
+
+# The default ApplicationKind is "MIXED". Specify the kind of strokes being sent to the API with different ApplicationKind values.
+# For example, ApplicationKind.WRITING or ApplicationKind.DRAWING
+
 APPLICATION_KIND = ApplicationKind.MIXED
 # </InkRecognizerClientConfig>
 
-
-# <StrokeImplementations>
 # Shows simple implementation of InkPoint and InkStroke
+# <StrokeImplementations>
 InkPoint = namedtuple("InkPoint", "x y")
-
 
 class InkStroke():
     def __init__(self,
@@ -53,26 +46,47 @@ class InkStroke():
         self.language = stroke_language
 # </StrokeImplementations>
 
-
-# <KeyScenarioExample>
 # Wrapper for InkRecognizerClient that shows how to
 # (1) Convert stroke unit from pixel to mm
 # (2) Set language recognition locale
 # (3) Indexing a key word from recognition results
 # (4) Set application kind if user know expected type of ink content
+
+# <inkClient>
+class InkClient:
+    def __init__(self, url, key):
+        self._client = InkRecognizerClient(
+            url, 
+            key,                 
+            application_kind=APPLICATION_KIND, # default arguments for each request.
+            )
+    
+    def send_request(self, ink_stroke_list):
+        self._root = None
+        try:
+            root = self._client.recognize_ink(
+                ink_stroke_list, # Arguments for this request only.
+                language=LANGUAGE_RECOGNITION_LOCALE,
+                logging_enable=True
+            )
+            
+            result_text = []
+            for word in root.ink_words:
+                result_text.append(word.recognized_text)
+            for shape in root.ink_drawings:
+                result_text.append(shape.recognized_shape.value)
+            result_text = "\n".join(result_text)
+            return result_text
+            self._root = root
+        except Exception as e:
+            messagebox.showinfo("Error", e)
+# </inkClient>
+
+# <KeyScenarioExample>
 class RecognitionManager:
     def __init__(self, pixel_per_mm):
         self._pixel_per_mm = pixel_per_mm
-        self._client = InkRecognizerClient(
-            URL, 
-            CREDENTIAL,                 
-            # <SetApplicationKind>
-            application_kind=APPLICATION_KIND,
-            # </SetApplicationKind>
-            )
-            # Aruments in constructor becomes default arguments for each request
-            # You can also specify these arguments in recognize_ink() requests,
-            # which influence that request only
+        self._client = InkClient(URL, CREDENTIAL)
         self.reset_ink()
 
     def _reset_stroke(self):
@@ -86,14 +100,11 @@ class RecognitionManager:
         self._root = None
         self._reset_stroke()
 
+    # Convert from pixel to mm before adding to InkPoint.
     def add_point(self, x, y):
-        # <UnitConversion>
-        # Convert from pixel to mm before sending to InkPoint.
-        # You can also specify keyword argument "unit_multiple" in
-        # InkRecognizerClient constructor or in recognize_ink() request.
+        
         self._curr_stroke_points.append(
             InkPoint(self._pixel_to_mm(x), self._pixel_to_mm(y)))
-        # </UnitConversion>
 
     def stroke_end(self):
         stroke = InkStroke(len(self._ink_stroke_list), self._curr_stroke_points)
@@ -101,38 +112,16 @@ class RecognitionManager:
         self._reset_stroke()
 
     def recognize(self):
-        self._root = None
-        try:
-            root = self._client.recognize_ink(
-                self._ink_stroke_list,
-                # <SetRecognitionLocale>
-                language=LANGUAGE_RECOGNITION_LOCALE,
-                # </SetRecognitionLocale>
-                logging_enable=True
-            )
-            # Aruments in request is for this request only
-            # You can also specify these arguments in InkRecognizerClient constructor, 
-            # which will be default arguments for each call.
-            result_text = []
-            for word in root.ink_words:
-                result_text.append(word.recognized_text)
-            for shape in root.ink_drawings:
-                result_text.append(shape.recognized_shape.value)
-            result_text = "\n".join(result_text)
-            messagebox.showinfo("Result", result_text)
-            self._root = root
-        except Exception as e:
-            messagebox.showinfo("Error", e)
-
+        result_text = self._client.send_request(self._ink_stroke_list)
+        messagebox.showinfo("Result", result_text)
+        
     def search(self, word):
-        # <IndexingKeyword>
         if self._root is not None:
             num_words = len(self._root.find_word(word))
         else:
             num_words = 0  
         search_result = "Find %s word%s" % (num_words, "s" if num_words != 1 else "")
         messagebox.showinfo("Search Result", search_result)
-        # </IndexingKeyword>
 # </KeyScenarioExample>
 
 
@@ -213,7 +202,8 @@ class InkRecognizerDemo:
         mainloop()
 # </SampleUI>
 
-
+# <entrypoint>
 if __name__ == "__main__":
     demo = InkRecognizerDemo()
     demo.run()
+# </entrypoint>
