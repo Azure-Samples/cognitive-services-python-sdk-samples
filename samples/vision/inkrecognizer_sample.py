@@ -18,8 +18,8 @@ logging.basicConfig(level=logging.DEBUG)
 
 # You can also use an Azure credential instance
 # <InkRecognizerClientConfig>
-URL = "https://api.cognitive.microsoft.com/inkrecognizer"
-CREDENTIAL = os.environ['INK_RECOGNIZER_SUBSCRIPTION_KEY'].strip()
+INK_RECOGNIZER_URL = "https://api.cognitive.microsoft.com/inkrecognizer"
+KEY = os.environ['INK_RECOGNIZER_SUBSCRIPTION_KEY'].strip()
 
 # The default locale is "en-US". Setting a different language for a stroke will overload this value. 
 LANGUAGE_RECOGNITION_LOCALE = "en-US"
@@ -86,7 +86,7 @@ class InkClient:
 class RecognitionManager:
     def __init__(self, pixel_per_mm):
         self._pixel_per_mm = pixel_per_mm
-        self._client = InkClient(URL, CREDENTIAL)
+        self._client = InkClient(INK_RECOGNIZER_URL, KEY)
         self.reset_ink()
 
     def _reset_stroke(self):
