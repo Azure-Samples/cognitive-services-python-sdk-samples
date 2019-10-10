@@ -1,14 +1,20 @@
+azure-cognitiveservices-knowledge-qnamaker
 azure-cognitiveservices-language-luis
 azure-cognitiveservices-language-spellcheck
-azure-cognitiveservices-language-textanalytics
+azure-cognitiveservices-language-textanalytics>=0.2.0  # sample won't work with previous versions
 azure-cognitiveservices-search-autosuggest
-azure-cognitiveservices-search-customsearch
+azure-cognitiveservices-search-customimagesearch
+azure-cognitiveservices-search-customsearch>=0.2.0  # sample won't work with previous versions
 azure-cognitiveservices-search-entitysearch
 azure-cognitiveservices-search-imagesearch
 azure-cognitiveservices-search-newssearch
 azure-cognitiveservices-search-videosearch
-azure-cognitiveservices-search-visualsearch
+azure-cognitiveservices-search-visualsearch>=0.2.0  # sample won't work with previous versions
 azure-cognitiveservices-search-websearch
-azure-cognitiveservices-vision-computervision>=0.2.0  # sample won't work with previous versions
-azure-cognitiveservices-vision-contentmoderator
-azure-cognitiveservices-vision-customvision
+azure-cognitiveservices-vision-computervision>=0.3.0  # sample won't work with previous versions
+azure-cognitiveservices-vision-contentmoderator>=1.0.0  # sample won't work with previous versions
+azure-cognitiveservices-vision-customvision>=0.4.0  # sample won't work with previous versions
+azure-cognitiveservices-vision-face
+azure-cognitiveservices-anomalydetector>=0.2.0 #  sample won't work with previous versions
+azure-cognitiveservices-inkrecognizer>=1.0.0b1
+pandas
