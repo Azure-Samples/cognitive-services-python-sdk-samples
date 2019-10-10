@@ -125,15 +125,12 @@ class RecognitionManager:
 # </KeyScenarioExample>
 
 
-# <SampleUIConfig>
+# <SampleUI>
 CANVAS_WIDTH = 800
 CANVAS_HEIGHT = 500
 STROKE_COLOR = "#476042"  # python green
 STROKE_WIDTH = 3
-# </SampleUIConfig>
 
-
-# <SampleUI>
 class InkRecognizerDemo:
     def __init__(self):
         self._master = Tk()
