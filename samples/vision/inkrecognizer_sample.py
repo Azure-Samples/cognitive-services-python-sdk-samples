@@ -52,6 +52,7 @@ class InkStroke():
 # (3) Indexing a key word from recognition results
 # (4) Set application kind if user know expected type of ink content
 
+
 # <inkClient>
 class InkClient:
     def __init__(self, url, key):
@@ -60,8 +61,6 @@ class InkClient:
             key,                 
             application_kind=APPLICATION_KIND, # default arguments for each request.
             )
-# </inkClient>
-# <requestMethod>
     def send_request(self, ink_stroke_list):
         self._root = None
         try:
@@ -81,7 +80,7 @@ class InkClient:
             self._root = root
         except Exception as e:
             messagebox.showinfo("Error", e)
-# </requestMethod>
+# </inkClient>
 
 # <recognitionManager>
 class RecognitionManager:
