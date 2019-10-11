@@ -52,6 +52,7 @@ class InkStroke():
 # (3) Indexing a key word from recognition results
 # (4) Set application kind if user know expected type of ink content
 
+
 # <inkClient>
 class InkClient:
     def __init__(self, url, key):
