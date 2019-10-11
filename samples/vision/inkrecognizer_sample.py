@@ -81,7 +81,7 @@ class InkClient:
             self._root = root
         except Exception as e:
             messagebox.showinfo("Error", e)
-# <inkClientRequest>
+# </inkClientRequest>
 
 # <recognitionManager>
 class RecognitionManager:
