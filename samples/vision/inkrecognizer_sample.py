@@ -17,7 +17,7 @@ logging.basicConfig(level=logging.DEBUG)
 # </imports>
 
 # You can also use an Azure credential instance
-# <InkRecognizerClientConfig>
+# <inkRecognizerClientConfig>
 INK_RECOGNIZER_URL = "https://api.cognitive.microsoft.com/inkrecognizer"
 KEY = os.environ['INK_RECOGNITION_SUBSCRIPTION_KEY'].strip()
 
@@ -28,10 +28,10 @@ LANGUAGE_RECOGNITION_LOCALE = "en-US"
 # For example, ApplicationKind.WRITING or ApplicationKind.DRAWING
 
 APPLICATION_KIND = ApplicationKind.MIXED
-# </InkRecognizerClientConfig>
+# </inkRecognizerClientConfig>
 
 # Shows simple implementation of InkPoint and InkStroke
-# <StrokeImplementations>
+# <strokeImplementations>
 InkPoint = namedtuple("InkPoint", "x y")
 
 class InkStroke():
@@ -44,7 +44,7 @@ class InkStroke():
         self.points = ink_points
         self.kind = stroke_kind
         self.language = stroke_language
-# </StrokeImplementations>
+# </strokeImplementations>
 
 # Wrapper for InkRecognizerClient that shows how to
 # (1) Convert stroke unit from pixel to mm
@@ -126,7 +126,7 @@ class RecognitionManager:
 # </recognitionManager>
 
 
-# <SampleUI>
+# <sampleUI>
 CANVAS_WIDTH = 800
 CANVAS_HEIGHT = 500
 STROKE_COLOR = "#476042"  # python green
@@ -198,7 +198,7 @@ class InkRecognizerDemo:
 
     def run(self):
         mainloop()
-# </SampleUI>
+# </sampleUI>
 
 # <entrypoint>
 if __name__ == "__main__":
