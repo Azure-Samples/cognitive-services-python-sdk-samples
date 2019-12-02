@@ -149,5 +149,5 @@ if __name__ == "__main__":
 
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-
-    execute_samples(globals(), key)
+    key_env_name = "TEXTANALYTICS_SUBSCRIPTION_KEY"
+    execute_samples(globals(), key_env_name)
