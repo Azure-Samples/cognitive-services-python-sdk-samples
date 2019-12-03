@@ -1,4 +1,4 @@
-from azure.cognitiveservices.search.autosuggest import AutoSuggestSearchAPI
+from azure.cognitiveservices.search.autosuggest import AutoSuggestClient
 from azure.cognitiveservices.search.autosuggest.models import (
     Suggestions,
     SuggestionsSuggestionGroup,
@@ -16,8 +16,10 @@ def autosuggest_lookup(subscription_key):
 
     This will look up a single query (Xbox) and print out name and url for first web result.
     """
-    client = AutoSuggestSearchAPI(
-        CognitiveServicesCredentials(subscription_key))
+    client = AutoSuggestClient(
+        endpoint="https://api.cognitive.microsoft.com",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
 
     try:
         suggestions = client.auto_suggest(
@@ -46,8 +48,10 @@ def error(subscription_key):
     """
 
     # Breaking the subscription key on purpose
-    client = AutoSuggestSearchAPI(
-        CognitiveServicesCredentials(subscription_key+"1"))
+    client = AutoSuggestClient(
+        endpoint="https://api.cognitive.microsoft.com",
+        credentials=CognitiveServicesCredentials(subscription_key+"1")
+    )
 
     try:
         suggestions = client.auto_suggest(

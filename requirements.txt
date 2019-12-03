@@ -1,8 +1,8 @@
 azure-cognitiveservices-knowledge-qnamaker
 azure-cognitiveservices-language-luis
 azure-cognitiveservices-language-spellcheck
-azure-cognitiveservices-language-textanalytics>=0.2.0  # sample won't work with previous versions
-azure-cognitiveservices-search-autosuggest
+azure-cognitiveservices-language-textanalytics
+azure-cognitiveservices-search-autosuggest>=1.0
 azure-cognitiveservices-search-customsearch
 azure-cognitiveservices-search-entitysearch
 azure-cognitiveservices-search-imagesearch>=1.0
