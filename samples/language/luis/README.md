@@ -98,4 +98,4 @@ To get more information about how to get started in Bot Builder for .NET and Con
 * [Language Understanding Intelligent Service](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/)
 * [LUIS.ai](https://www.luis.ai)
 * [LUIS Docs](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)
-* [LUIS Runtime API v2 - Specification](https://github.com/Azure/azure-rest-api-specs/tree/current/specification/cognitiveservices/data-plane/LUIS/Runtime)
+* [LUIS Runtime API v2 - Specification](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/cognitiveservices/data-plane/LUIS/Runtime)
