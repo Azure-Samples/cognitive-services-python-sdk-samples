@@ -1,7 +1,11 @@
 ---
-services: cognitive-services
-platforms: python
-author: lmazuel
+page_type: sample
+languages:
+- python
+products:
+- azure
+description: "These samples will show you how to get up and running using the Python SDKs for various Cognitive Services services."
+urlFragment: cognitive-services-python-sdk-samples
 ---
 
 # Cognitive Services Python SDK Samples
@@ -15,11 +19,12 @@ This project framework provides examples for the following services:
 ### Knowledge
 * Using the **QnA SDK** [azure-cognitiveservices-knowledge-qnamaker](http://pypi.python.org/pypi/azure-cognitiveservices-knowledge-qnamaker) for the [QnA API](https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/)
 
+
 ### Language
 
 * Using the **LUIS SDK** [azure-cognitiveservices-language-luis](http://pypi.python.org/pypi/azure-cognitiveservices-language-luis) for the [LUIS API](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/)
 * Using the **Bing Spell Check SDK** [azure-cognitiveservices-language-spellcheck](http://pypi.python.org/pypi/azure-cognitiveservices-language-spellcheck) for the [Bing Spell Check API](https://azure.microsoft.com/services/cognitive-services/spell-check/)
-* Using the **Text Analytics SDK** [azure-cognitiveservices-language-textanalytics](http://pypi.python.org/pypi/azure-cognitiveservices-language-textanalytics) for the [Tet Analytics API](https://azure.microsoft.com/services/cognitive-services/text-analytics/)
+* Using the **Text Analytics SDK** [azure-cognitiveservices-language-textanalytics](http://pypi.python.org/pypi/azure-cognitiveservices-language-textanalytics) for the [Text Analytics API](https://azure.microsoft.com/services/cognitive-services/text-analytics/)
 
 ### Search
 
@@ -39,6 +44,7 @@ This project framework provides examples for the following services:
 * Using the **Computer Vision SDK** [azure-cognitiveservices-vision-computervision](http://pypi.python.org/pypi/azure-cognitiveservices-vision-computervision) for the [Computer Vision API](https://azure.microsoft.com/services/cognitive-services/computer-vision/)
 * Using the **Content Moderator SDK** [azure-cognitiveservices-vision-contentmoderator](http://pypi.python.org/pypi/azure-cognitiveservices-vision-contentmoderator) for the [Content Moderator API](https://azure.microsoft.com/services/cognitive-services/content-moderator/)
 * Using the **Custom Vision SDK** [azure-cognitiveservices-vision-customvision](http://pypi.python.org/pypi/azure-cognitiveservices-vision-customvision) for the [Custom Vision API](https://azure.microsoft.com/services/cognitive-services/custom-vision-service/)
+* Using the **Ink Recognizer SDK** [azure-cognitiveservices-inkrecognizer](https://pypi.org/project/azure-cognitiveservices-inkrecognizer/) for the [Ink Recognizer API](https://azure.microsoft.com/services/cognitive-services/ink-recognizer/)
 
 We provide several meta-packages to help you install several packages at a time. Please note that meta-packages are only recommended for development purpose. It's recommended in production to always pin specific version of individual packages.
 
@@ -101,6 +107,7 @@ We provide several meta-packages to help you install several packages at a time.
 4.  Set up the environment variable `CUSTOMVISION_TRAINING_KEY` with your key and `CUSTOMVISION_PREDICTION_ID` with a valid prediction resource id if you want to execute CustomVision Training tests.
 4.  Set up the environment variable `CUSTOMVISION_PREDICTION_KEY` with your key and `CUSTOMVISION_PREDICTION_ID` with a valid prediction resource id if you want to execute CustomVision Prediction tests.
 
+
 ## Demo
 
 A demo app is included to show how to use the project.
@@ -109,9 +116,10 @@ To run the complete demo, execute `python example.py`
 
 To run each individual demo, point directly to the file. For example (i.e. not complete list):
 
-2. `python samples/language/spellcheck_samples.py`
-1. `python samples/search/entity_search_samples.py`
-2. `python samples/search/video_search_samples.py`
+1. `python samples/language/spellcheck_samples.py`
+2. `python samples/search/entity_search_samples.py`
+3. `python samples/search/video_search_samples.py`
+4. `python samples/vision/inkrecognizer_sample.py`
 
 To see the code of each example, simply look at the examples in the Samples folder. They are written to be isolated in scope so that you can see only what you're interested in.
 

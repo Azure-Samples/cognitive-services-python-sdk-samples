@@ -1,183 +1,153 @@
+# <imports>
 # -*- coding: utf-8 -*-
 
 import os
-
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
 from msrest.authentication import CognitiveServicesCredentials
+# </imports>
 
-SUBSCRIPTION_KEY_ENV_NAME = "TEXTANALYTICS_SUBSCRIPTION_KEY"
-TEXTANALYTICS_LOCATION = os.environ.get("TEXTANALYTICS_LOCATION", "westcentralus")
+# <initialVars>
+key = "<paste-your-text-analytics-key-here>"
+endpoint = "<paste-your-text-analytics-endpoint-here>"
+# </initialVars>
 
+# <authentication>
+def authenticateClient():
+    credentials = CognitiveServicesCredentials(key)
+    text_analytics_client = TextAnalyticsClient(
+        endpoint=endpoint, credentials=credentials)
+    return text_analytics_client
+# </authentication>
 
-def language_extraction(subscription_key):
-    """Language extraction.
+"""Language detection.
 
-    This will detect the language of a few strings.
+    This example detects the language of several strings. 
     """
-    endpoint = "https://{}.api.cognitive.microsoft.com".format(TEXTANALYTICS_LOCATION)
-    client = TextAnalyticsClient(endpoint=endpoint, credentials=CognitiveServicesCredentials(subscription_key))
+# <languageDetection>
+def language_detection():
+    client = authenticateClient()
 
     try:
-        documents = [{
-            'id': 1,
-            'text': 'This is a document written in English.'
-        }, {
-            'id': 2,
-            'text': 'Este es un document escrito en Español.'
-        }, {
-            'id': 3,
-            'text': '这是一个用中文写的文件'
-        }]
-        for document in documents:
-            print("Asking language detection on '{}' (id: {})".format(document['text'], document['id']))
-        response = client.detect_language(
-            documents=documents
-        )
+        documents = [
+            {'id': '1', 'text': 'This is a document written in English.'},
+            {'id': '2', 'text': 'Este es un document escrito en Español.'},
+            {'id': '3', 'text': '这是一个用中文写的文件'}
+        ]
+        response = client.detect_language(documents=documents)
 
         for document in response.documents:
-            print("Found out that {} is {}".format(document.id, document.detected_languages[0].name))
+            print("Document Id: ", document.id, ", Language: ",
+                  document.detected_languages[0].name)
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+language_detection()
+# </languageDetection>
 
 
-def key_phrases(subscription_key):
-    """Key-phrases.
+"""Key-phrases.
 
-    The API returns a list of strings denoting the key talking points in the input text.
-    """
-    endpoint = "https://{}.api.cognitive.microsoft.com".format(TEXTANALYTICS_LOCATION)
-    client = TextAnalyticsClient(endpoint=endpoint, credentials=CognitiveServicesCredentials(subscription_key))
+Returns the key talking points in several text examples.
+"""
+# <keyPhrases>
+def key_phrases():
+    
+    client = authenticateClient()
 
     try:
-        documents = [{
-            'language': 'ja',
-            'id': 1,
-            'text': "猫は幸せ"
-        }, {
-            'language': 'de',
-            'id': 2,
-            'text': "Fahrt nach Stuttgart und dann zum Hotel zu Fu."
-        }, {
-            'language': 'en',
-            'id': 3,
-            'text': "My cat is stiff as a rock."
-        }, {
-            'language': 'es',
-            'id': 4,
-            'text': "A mi me encanta el fútbol!"
-        }]
+        documents = [
+            {"id": "1", "language": "ja", "text": "猫は幸せ"},
+            {"id": "2", "language": "de",
+                "text": "Fahrt nach Stuttgart und dann zum Hotel zu Fu."},
+            {"id": "3", "language": "en",
+                "text": "My cat might need to see a veterinarian."},
+            {"id": "4", "language": "es", "text": "A mi me encanta el fútbol!"}
+        ]
 
         for document in documents:
-            print("Asking key-phrases on '{}' (id: {})".format(document['text'], document['id']))
+            print(
+                "Asking key-phrases on '{}' (id: {})".format(document['text'], document['id']))
 
-        response = client.key_phrases(
-            documents=documents
-        )
+        response = client.key_phrases(documents=documents)
 
         for document in response.documents:
-            print("Found out that in document {}, key-phrases are:".format(document.id))
+            print("Document Id: ", document.id)
+            print("\tKey Phrases:")
             for phrase in document.key_phrases:
-                print("- {}".format(phrase))
+                print("\t\t", phrase)
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+key_phrases()
+# </keyPhrases>
 
+"""Sentiment.
 
-def sentiment(subscription_key):
-    """Sentiment.
+Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
+"""
 
-    Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
-    """
-    endpoint = "https://{}.api.cognitive.microsoft.com".format(TEXTANALYTICS_LOCATION)
-    client = TextAnalyticsClient(endpoint=endpoint, credentials=CognitiveServicesCredentials(subscription_key))
+# <sentimentAnalysis>
+def sentiment():
+    
+    client = authenticateClient()
 
     try:
-        documents = [{
-            'language': 'en',
-            'id': 0,
-            'text': "I had the best day of my life."
-        }, {
-            'language': 'en',
-            'id': 1,
-            'text': "This was a waste of my time. The speaker put me to sleep."
-        }, {
-            'language': 'es',
-            'id': 2,
-            'text': "No tengo dinero ni nada que dar..."
-        }, {
-            'language': 'it',
-            'id': 3,
-            'text': "L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."
-        }]
+        documents = [
+            {"id": "1", "language": "en", "text": "I had the best day of my life."},
+            {"id": "2", "language": "en",
+                "text": "This was a waste of my time. The speaker put me to sleep."},
+            {"id": "3", "language": "es", "text": "No tengo dinero ni nada que dar..."},
+            {"id": "4", "language": "it",
+                "text": "L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."}
+        ]
 
-        for document in documents:
-            print("Asking sentiment on '{}' (id: {})".format(document['text'], document['id']))
-
-        response = client.sentiment(
-            documents=documents
-        )
-
+        response = client.sentiment(documents=documents)
         for document in response.documents:
-            print("Found out that in document {}, sentimet score is {}:".format(document.id, document.score))
+            print("Document Id: ", document.id, ", Sentiment Score: ",
+                  "{:.2f}".format(document.score))
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+sentiment()
+# </sentimentAnalysis> 
 
+"""EntityRecognition.
+Extracts the entities from sentences and prints out their properties.
+"""
 
-def entity_extraction(subscription_key):
-    """EntityExtraction.
-
-    Extracts the entities from sentences and prints out their properties
-    """
-    endpoint = "https://{}.api.cognitive.microsoft.com".format(TEXTANALYTICS_LOCATION)
-    client = TextAnalyticsClient(endpoint=endpoint, credentials=CognitiveServicesCredentials(subscription_key))
+# <entityRecognition>
+def entity_recognition():
+    
+    client = authenticateClient()
 
     try:
-        documents = [{
-            'language': 'en',
-            'id': 0,
-            'text': "Microsoft released win10. Microsoft also released Hololens"
-        }, {
-            'language': 'en',
-            'id': 1,
-            'text': "Microsoft is an IT company."
-        }, {
-            'language': 'es',
-            'id': 2,
-            'text': "Microsoft lanzó win10. Microsoft también lanzó Hololens"
-        }, {
-            'language': 'es',
-            'id': 3,
-            'text': "Microsoft es una empresa de TI."
-        }]
-        for document in documents:
-            print("Extracting entities from '{}' (id: {})".format(document['text'], document['id']))
-
-        response = client.entities(
-            documents=documents
-        )
+        documents = [
+            {"id": "1", "language": "en", "text": "Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800."},
+            {"id": "2", "language": "es",
+                "text": "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle."}
+        ]
+        response = client.entities(documents=documents)
 
         for document in response.documents:
-            print("Document ID: {}".format(document['Id']))
-            print("\t Entities:")
-            for entity in document['Entities']:
-                print("\t\tEntity Name: {}".format(entity.name))
-                print("\t\tWikipedia Language: {}".format(entity.wikipedia_language))
-                print("\t\tWikipedia Url: {}".format(entity.wikipedia_url))
-                print("\t\tNumber of times appeared on the text: {}".format(len(entity.matches)))
-                print("\t\tEntity Type: {}".format(entity.type))
-                print("\t\tEntity SubType: {}".format(entity.sub_type))
-                print("\n")
+            print("Document Id: ", document.id)
+            print("\tKey Entities:")
+            for entity in document.entities:
+                print("\t\t", "NAME: ", entity.name, "\tType: ",
+                      entity.type, "\tSub-type: ", entity.sub_type)
+                for match in entity.matches:
+                    print("\t\t\tOffset: ", match.offset, "\tLength: ", match.length, "\tScore: ",
+                          "{:.2f}".format(match.entity_type_score))
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
-
+entity_recognition()
+# </entityRecognition>
 
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
 
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    key_env_name = "TEXTANALYTICS_SUBSCRIPTION_KEY"
+    execute_samples(globals(), key_env_name)

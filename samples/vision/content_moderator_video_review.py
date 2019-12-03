@@ -7,8 +7,8 @@ from azure.cognitiveservices.vision.contentmoderator import ContentModeratorClie
 from azure.cognitiveservices.vision.contentmoderator.models import Frames
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcentralus")
+# Add your Azure Content Moderator subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['CONTENT_MODERATOR_SUBSCRIPTION_KEY']
 
 def video_review(subscription_key):
     """VideoReview.
@@ -17,8 +17,8 @@ def video_review(subscription_key):
     """
 
     # The name of the team to assign the job to.
-    # This must be the team name you used to create your Content Moderator account. You can 
-    # retrieve your team name from the Content Moderator web site. Your team name is the Id 
+    # This must be the team name you used to create your Content Moderator account. You can
+    # retrieve your team name from the Content Moderator web site. Your team name is the Id
     # associated with your subscription.
     team_name = "insert your team name here"
 
@@ -29,9 +29,8 @@ def video_review(subscription_key):
     frame2_url = "https://blobthebuilder.blob.core.windows.net/sampleframes/ams-video-frame-2-01-04.PNG"
     frame3_url = "https://blobthebuilder.blob.core.windows.net/sampleframes/ams-video-frame-3-02-24.PNG"
 
-
     client = ContentModeratorClient(
-        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        endpoint=os.environ['CONTENT_MODERATOR_ENDPOINT'], # Add your Content Moderator endpoint to your environment variables.
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -40,7 +39,7 @@ def video_review(subscription_key):
     #
     print("Create review for {}.\n".format(streamingcontent))
     review_item = {
-        "content": streamingcontent, # How to download the image
+        "content": streamingcontent,  # How to download the image
         "content_id": uuid.uuid4(),  # Random id
         # Note: to create a published review, set the Status to "Pending".
         # However, you cannot add video frames or a transcript to a published review.
@@ -50,7 +49,8 @@ def video_review(subscription_key):
     reviews = client.reviews.create_video_reviews(
         content_type="application/json",
         team_name=team_name,
-        create_video_reviews_body=[review_item]  # As many review item as you need
+        # As many review item as you need
+        create_video_reviews_body=[review_item]
     )
     review_id = reviews[0]  # Ordered list of string of review ID
 
@@ -58,6 +58,7 @@ def video_review(subscription_key):
     # Add the frames from 17, 64, and 144 seconds.
     #
     print("\nAdding frames to the review {}".format(review_id))
+
     def create_frames_to_add_to_reviews(timestamp_seconds, url):
         return {
             'timestamp': timestamp_seconds * 1000,
@@ -104,19 +105,22 @@ def video_review(subscription_key):
     # Get reviews details
     #
     print("\nGetting review details for the review with ID {}".format(review_id))
-    review_details = client.reviews.get_review(team_name=team_name, review_id=review_id)
+    review_details = client.reviews.get_review(
+        team_name=team_name, review_id=review_id)
     pprint(review_details.as_dict())
 
     #
     # Public review
     #
-    client.reviews.publish_video_review(team_name=team_name, review_id=review_id)
+    client.reviews.publish_video_review(
+        team_name=team_name, review_id=review_id)
 
     print("\nOpen your Content Moderator Dashboard and select Review > Video to see the review.")
 
 
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    execute_samples(globals(), SUBSCRIPTION_KEY)
