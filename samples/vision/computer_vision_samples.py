@@ -5,9 +5,12 @@ from azure.cognitiveservices.vision.computervision.models import VisualFeatureTy
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "COMPUTERVISION_SUBSCRIPTION_KEY"
-COMPUTERVISION_LOCATION = os.environ.get("COMPUTERVISION_LOCATION", "westcentralus")
+COMPUTERVISION_LOCATION = os.environ.get(
+    "COMPUTERVISION_LOCATION", "westcentralus")
 
-IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
+IMAGES_FOLDER = os.path.join(os.path.dirname(
+    os.path.realpath(__file__)), "images")
+
 
 def image_analysis_in_stream(subscription_key):
     """ImageAnalysisInStream.
@@ -23,22 +26,25 @@ def image_analysis_in_stream(subscription_key):
         image_analysis = client.analyze_image_in_stream(
             image=image_stream,
             visual_features=[
-                VisualFeatureTypes.image_type, # Could use simple str "ImageType"
+                VisualFeatureTypes.image_type,  # Could use simple str "ImageType"
                 VisualFeatureTypes.faces,      # Could use simple str "Faces"
-                VisualFeatureTypes.categories, # Could use simple str "Categories"
+                VisualFeatureTypes.categories,  # Could use simple str "Categories"
                 VisualFeatureTypes.color,      # Could use simple str "Color"
                 VisualFeatureTypes.tags,       # Could use simple str "Tags"
-                VisualFeatureTypes.description # Could use simple str "Description"
+                VisualFeatureTypes.description  # Could use simple str "Description"
             ]
         )
 
-    print("This image can be described as: {}\n".format(image_analysis.description.captions[0].text))
+    print("This image can be described as: {}\n".format(
+        image_analysis.description.captions[0].text))
 
     print("Tags associated with this image:\nTag\t\tConfidence")
     for tag in image_analysis.tags:
         print("{}\t\t{}".format(tag.name, tag.confidence))
 
-    print("\nThe primary colors of this image are: {}".format(image_analysis.color.dominant_colors))
+    print("\nThe primary colors of this image are: {}".format(
+        image_analysis.color.dominant_colors))
+
 
 def recognize_text(subscription_key):
     """RecognizeTextUsingRecognizeAPI.
@@ -62,7 +68,8 @@ def recognize_text(subscription_key):
     image_analysis = client.get_text_operation_result(operation_id)
     while image_analysis.status in ['NotStarted', 'Running']:
         time.sleep(1)
-        image_analysis = client.get_text_operation_result(operation_id=operation_id)
+        image_analysis = client.get_text_operation_result(
+            operation_id=operation_id)
 
     print("Job completion is: {}\n".format(image_analysis.status))
 
@@ -71,6 +78,7 @@ def recognize_text(subscription_key):
     print(lines[0].words[0].text)  # "make"
     print(lines[1].words[0].text)  # "things"
     print(lines[2].words[0].text)  # "happen"
+
 
 def recognize_printed_text_in_stream(subscription_key):
     """RecognizedPrintedTextUsingOCR_API.
@@ -94,8 +102,9 @@ def recognize_printed_text_in_stream(subscription_key):
         line_text = " ".join([word.text for word in line.words])
         print(line_text)
 
+
 if __name__ == "__main__":
     import sys, os.path
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "..")))
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

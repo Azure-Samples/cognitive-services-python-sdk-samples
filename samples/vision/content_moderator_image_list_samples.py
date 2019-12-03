@@ -13,8 +13,8 @@ from azure.cognitiveservices.vision.contentmoderator.models import (
 )
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "CONTENTMODERATOR_SUBSCRIPTION_KEY"
-CONTENTMODERATOR_LOCATION = os.environ.get("CONTENTMODERATOR_LOCATION", "westcentralus")
+# Add your Azure Content Moderator subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['CONTENT_MODERATOR_SUBSCRIPTION_KEY']
 
 # The number of minutes to delay after updating the search index before
 # performing image match operations against the list.
@@ -30,7 +30,7 @@ IMAGE_LIST = {
         "https://moderatorsampleimages.blob.core.windows.net/samples/sample1.jpg",
         "https://moderatorsampleimages.blob.core.windows.net/samples/sample3.png",
         "https://moderatorsampleimages.blob.core.windows.net/samples/sample4.png",
-        "https://moderatorsampleimages.blob.core.windows.net/samples/sample16.png"        
+        "https://moderatorsampleimages.blob.core.windows.net/samples/sample16.png"
     ]
 }
 
@@ -38,17 +38,19 @@ IMAGES_TO_MATCH = [
     "https://moderatorsampleimages.blob.core.windows.net/samples/sample1.jpg",
     "https://moderatorsampleimages.blob.core.windows.net/samples/sample4.png",
     "https://moderatorsampleimages.blob.core.windows.net/samples/sample5.png",
-    "https://moderatorsampleimages.blob.core.windows.net/samples/sample16.png"    
+    "https://moderatorsampleimages.blob.core.windows.net/samples/sample16.png"
 ]
+
 
 def image_lists(subscription_key):
     """ImageList.
 
     This will review an image using workflow and job.
     """
-    
+
     client = ContentModeratorClient(
-        endpoint='https://'+CONTENTMODERATOR_LOCATION+'.api.cognitive.microsoft.com',
+        endpoint=os.environ['CONTENT_MODERATOR_ENDPOINT'], # Add your Content Moderator endpoint to your environment variables.
+
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -75,7 +77,8 @@ def image_lists(subscription_key):
 
     def add_images(list_id, image_url, label):
         """Generic add_images from url and label."""
-        print("\nAdding image {} to list {} with label {}.".format(image_url, list_id, label))
+        print("\nAdding image {} to list {} with label {}.".format(
+            image_url, list_id, label))
         try:
             added_image = client.list_management_image.add_image_url_input(
                 list_id=list_id,
@@ -121,12 +124,13 @@ def image_lists(subscription_key):
     )
     assert isinstance(updated_list, ImageList)
     pprint(updated_list.as_dict())
-    
+
     #
     # Get list details
     #
     print("\nGetting details for list {}".format(list_id))
-    list_details = client.list_management_image_lists.get_details(list_id=list_id)
+    list_details = client.list_management_image_lists.get_details(
+        list_id=list_id)
     assert isinstance(list_details, ImageList)
     pprint(list_details.as_dict())
 
@@ -134,11 +138,13 @@ def image_lists(subscription_key):
     # Refresh the index
     #
     print("\nRefreshing the search index for list {}".format(list_id))
-    refresh_index = client.list_management_image_lists.refresh_index_method(list_id=list_id)
+    refresh_index = client.list_management_image_lists.refresh_index_method(
+        list_id=list_id)
     assert isinstance(refresh_index, RefreshIndex)
     pprint(refresh_index.as_dict())
 
-    print("\nWaiting {} minutes to allow the server time to propagate the index changes.".format(LATENCY_DELAY))
+    print("\nWaiting {} minutes to allow the server time to propagate the index changes.".format(
+        LATENCY_DELAY))
     time.sleep(LATENCY_DELAY * 60)
 
     #
@@ -150,7 +156,7 @@ def image_lists(subscription_key):
             content_type="application/json",
             list_id=list_id,
             data_representation="URL",
-            value=image_url,            
+            value=image_url,
         )
         assert isinstance(match_result, MatchResponse)
         print("Is match? {}".format(match_result.is_match))
@@ -173,7 +179,8 @@ def image_lists(subscription_key):
     print("\nRefreshing the search index for list {}".format(list_id))
     client.list_management_image_lists.refresh_index_method(list_id=list_id)
 
-    print("\nWaiting {} minutes to allow the server time to propagate the index changes.".format(LATENCY_DELAY))
+    print("\nWaiting {} minutes to allow the server time to propagate the index changes.".format(
+        LATENCY_DELAY))
     time.sleep(LATENCY_DELAY * 60)
 
     #
@@ -186,7 +193,7 @@ def image_lists(subscription_key):
             content_type="application/json",
             list_id=list_id,
             data_representation="URL",
-            value=image_url,            
+            value=image_url,
         )
         assert isinstance(match_result, MatchResponse)
         print("Is match? {}".format(match_result.is_match))
@@ -212,8 +219,9 @@ def image_lists(subscription_key):
     image_lists = client.list_management_image_lists.get_all_image_lists()
     assert not any(list_id == image_list.id for image_list in image_lists)
 
+
 if __name__ == "__main__":
     import sys, os.path
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "..")))
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

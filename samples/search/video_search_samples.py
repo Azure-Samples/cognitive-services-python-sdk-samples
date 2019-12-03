@@ -2,7 +2,9 @@ from azure.cognitiveservices.search.videosearch import VideoSearchAPI
 from azure.cognitiveservices.search.videosearch.models import VideoPricing, VideoLength, VideoResolution, VideoInsightModule
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "VIDEOSEARCH_SUBSCRIPTION_KEY"
+# Add your Bing Search V7 subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
+
 
 def video_search(subscription_key):
     """VideoSearch.
@@ -71,9 +73,12 @@ def video_trending(subscription_key):
         # Banner tiles
         if trending_result.banner_tiles:
             first_banner_tile = trending_result.banner_tiles[0]
-            print("Banner tile count: {}".format(len(trending_result.banner_tiles)))
-            print("First banner tile text: {}".format(first_banner_tile.query.text))
-            print("First banner tile url: {}".format(first_banner_tile.query.web_search_url))
+            print("Banner tile count: {}".format(
+                len(trending_result.banner_tiles)))
+            print("First banner tile text: {}".format(
+                first_banner_tile.query.text))
+            print("First banner tile url: {}".format(
+                first_banner_tile.query.web_search_url))
         else:
             print("Couldn't find banner tiles!")
 
@@ -84,13 +89,17 @@ def video_trending(subscription_key):
             print("First category title: {}".format(first_category.title))
             if first_category.subcategories:
                 first_subcategory = first_category.subcategories[0]
-                print("Subcategory count: {}".format(len(first_category.subcategories)))
-                print("First subcategory title: {}".format(first_subcategory.title))
+                print("Subcategory count: {}".format(
+                    len(first_category.subcategories)))
+                print("First subcategory title: {}".format(
+                    first_subcategory.title))
                 if first_subcategory.tiles:
                     first_tile = first_subcategory.tiles[0]
-                    print("Subcategory tile count: {}".format(len(first_subcategory.tiles)))
+                    print("Subcategory tile count: {}".format(
+                        len(first_subcategory.tiles)))
                     print("First tile text: {}".format(first_tile.query.text))
-                    print("First tile url: {}".format(first_tile.query.web_search_url))
+                    print("First tile url: {}".format(
+                        first_tile.query.web_search_url))
                 else:
                     print("Couldn't find subcategory tiles!")
             else:
@@ -124,18 +133,25 @@ def video_detail(subscription_key):
         ))
 
         if video_details.video_result:
-            print("Expected Video id: {}".format(video_details.video_result.video_id))
-            print("Expected Video name: {}".format(video_details.video_result.name))
-            print("Expected Video url: {}".format(video_details.video_result.content_url))
+            print("Expected Video id: {}".format(
+                video_details.video_result.video_id))
+            print("Expected Video name: {}".format(
+                video_details.video_result.name))
+            print("Expected Video url: {}".format(
+                video_details.video_result.content_url))
         else:
             print("Couldn't find expected video")
 
         if video_details.related_videos.value:
             first_related_video = video_details.related_videos.value[0]
-            print("Related video count: {}".format(len(video_details.related_videos.value)))
-            print("First related video id: {}".format(first_related_video.video_id))
-            print("First related video name: {}".format(first_related_video.name))
-            print("First related video content url: {}".format(first_related_video.content_url))
+            print("Related video count: {}".format(
+                len(video_details.related_videos.value)))
+            print("First related video id: {}".format(
+                first_related_video.video_id))
+            print("First related video name: {}".format(
+                first_related_video.name))
+            print("First related video content url: {}".format(
+                first_related_video.content_url))
         else:
             print("Couldn't find any related video!")
 
@@ -145,6 +161,6 @@ def video_detail(subscription_key):
 
 if __name__ == "__main__":
     import sys, os.path
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))    
-    from tools import execute_samples
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "..")))    
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

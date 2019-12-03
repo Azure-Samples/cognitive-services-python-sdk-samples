@@ -1,24 +1,31 @@
+# <imports>
 # -*- coding: utf-8 -*-
 
 import os
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
 from msrest.authentication import CognitiveServicesCredentials
+# </imports>
 
-SUBSCRIPTION_KEY_ENV_NAME = "TEXTANALYTICS_SUBSCRIPTION_KEY"
-TEXTANALYTICS_LOCATION = os.environ.get(
-    "TEXTANALYTICS_LOCATION", "westcentralus")
+# <initialVars>
+key = "<paste-your-text-analytics-key-here>"
+endpoint = "<paste-your-text-analytics-endpoint-here>"
+# </initialVars>
 
+# <authentication>
+def authenticateClient():
+    credentials = CognitiveServicesCredentials(key)
+    text_analytics_client = TextAnalyticsClient(
+        endpoint=endpoint, credentials=credentials)
+    return text_analytics_client
+# </authentication>
 
-def language_extraction(subscription_key):
-    """Language extraction.
+"""Language detection.
 
     This example detects the language of several strings. 
     """
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
-    text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
+# <languageDetection>
+def language_detection():
+    client = authenticateClient()
 
     try:
         documents = [
@@ -26,7 +33,7 @@ def language_extraction(subscription_key):
             {'id': '2', 'text': 'Este es un document escrito en Español.'},
             {'id': '3', 'text': '这是一个用中文写的文件'}
         ]
-        response = text_analytics.detect_language(documents=documents)
+        response = client.detect_language(documents=documents)
 
         for document in response.documents:
             print("Document Id: ", document.id, ", Language: ",
@@ -34,18 +41,18 @@ def language_extraction(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+language_detection()
+# </languageDetection>
 
 
-def key_phrases(subscription_key):
-    """Key-phrases.
+"""Key-phrases.
 
-    Returns the key talking points in several text examples.
-    """
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
-    text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
+Returns the key talking points in several text examples.
+"""
+# <keyPhrases>
+def key_phrases():
+    
+    client = authenticateClient()
 
     try:
         documents = [
@@ -61,7 +68,7 @@ def key_phrases(subscription_key):
             print(
                 "Asking key-phrases on '{}' (id: {})".format(document['text'], document['id']))
 
-        response = text_analytics.key_phrases(documents=documents)
+        response = client.key_phrases(documents=documents)
 
         for document in response.documents:
             print("Document Id: ", document.id)
@@ -71,18 +78,18 @@ def key_phrases(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+key_phrases()
+# </keyPhrases>
 
+"""Sentiment.
 
-def sentiment(subscription_key):
-    """Sentiment.
+Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
+"""
 
-    Scores close to 1 indicate positive sentiment, while scores close to 0 indicate negative sentiment.
-    """
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
-    text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
+# <sentimentAnalysis>
+def sentiment():
+    
+    client = authenticateClient()
 
     try:
         documents = [
@@ -94,25 +101,24 @@ def sentiment(subscription_key):
                 "text": "L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."}
         ]
 
-        response = text_analytics.sentiment(documents=documents)
+        response = client.sentiment(documents=documents)
         for document in response.documents:
             print("Document Id: ", document.id, ", Sentiment Score: ",
                   "{:.2f}".format(document.score))
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
+sentiment()
+# </sentimentAnalysis> 
 
+"""EntityRecognition.
+Extracts the entities from sentences and prints out their properties.
+"""
 
-def entity_extraction(subscription_key):
-    """EntityExtraction.
-
-    Extracts the entities from sentences and prints out their properties.
-    """
-    credentials = CognitiveServicesCredentials(subscription_key)
-    text_analytics_url = "https://{}.api.cognitive.microsoft.com".format(
-        TEXTANALYTICS_LOCATION)
-    text_analytics = TextAnalyticsClient(
-        endpoint=text_analytics_url, credentials=credentials)
+# <entityRecognition>
+def entity_recognition():
+    
+    client = authenticateClient()
 
     try:
         documents = [
@@ -120,7 +126,7 @@ def entity_extraction(subscription_key):
             {"id": "2", "language": "es",
                 "text": "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle."}
         ]
-        response = text_analytics.entities(documents=documents)
+        response = client.entities(documents=documents)
 
         for document in response.documents:
             print("Document Id: ", document.id)
@@ -134,13 +140,11 @@ def entity_extraction(subscription_key):
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
-
+entity_recognition()
+# </entityRecognition>
 
 if __name__ == "__main__":
-    import sys
-    import os.path
-
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
-
+    import sys, os.path
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "..")))    
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

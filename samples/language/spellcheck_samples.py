@@ -1,7 +1,9 @@
 from azure.cognitiveservices.language.spellcheck import SpellCheckAPI
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY_ENV_NAME = "SPELLCHECK_SUBSCRIPTION_KEY"
+# Add your Bing Spell Check subscription key to your environment variables.
+SUBSCRIPTION_KEY = os.environ['BING_SPELL_CHECK_SUBSCRIPTION_KEY']
+
 
 def spellcheck(subscription_key):
     """SpellCheck.
@@ -17,15 +19,21 @@ def spellcheck(subscription_key):
         if result.flagged_tokens:
             first_spellcheck_result = result.flagged_tokens[0]
 
-            print("SpellCheck result count: {}".format(len(result.flagged_tokens)))
-            print("First SpellCheck token: {}".format(first_spellcheck_result.token))
-            print("First SpellCheck type: {}".format(first_spellcheck_result.type))
-            print("First SpellCheck suggestion count: {}".format(len(first_spellcheck_result.suggestions)))
+            print("SpellCheck result count: {}".format(
+                len(result.flagged_tokens)))
+            print("First SpellCheck token: {}".format(
+                first_spellcheck_result.token))
+            print("First SpellCheck type: {}".format(
+                first_spellcheck_result.type))
+            print("First SpellCheck suggestion count: {}".format(
+                len(first_spellcheck_result.suggestions)))
 
             if first_spellcheck_result.suggestions:
                 first_suggestion = first_spellcheck_result.suggestions[0]
-                print("First SpellCheck suggestion score: {}".format(first_suggestion.score))
-                print("First SpellCheck suggestion: {}".format(first_suggestion.suggestion))
+                print("First SpellCheck suggestion score: {}".format(
+                    first_suggestion.score))
+                print("First SpellCheck suggestion: {}".format(
+                    first_suggestion.suggestion))
             else:
                 print("Couldn't get any Spell check results!")
 
@@ -38,6 +46,6 @@ def spellcheck(subscription_key):
 
 if __name__ == "__main__":
     import sys, os.path
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))    
-    from tools import execute_samples
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "..")))    
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

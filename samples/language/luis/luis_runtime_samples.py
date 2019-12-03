@@ -10,6 +10,7 @@ SUBSCRIPTION_KEY_ENV_NAME = "LUIS_SUBSCRIPTION_KEY"
 
 CWD = os.path.dirname(__file__)
 
+
 def runtime(subscription_key):
     """Resolve.
 
@@ -47,7 +48,8 @@ def runtime(subscription_key):
 
 
 if __name__ == "__main__":
-    import sys, os.path
+    import sys
+    import os.path
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
