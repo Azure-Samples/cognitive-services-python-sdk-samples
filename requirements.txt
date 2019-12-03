@@ -5,8 +5,8 @@ azure-cognitiveservices-language-textanalytics
 azure-cognitiveservices-search-autosuggest>=1.0
 azure-cognitiveservices-search-customsearch
 azure-cognitiveservices-search-entitysearch
-azure-cognitiveservices-search-imagesearch>=1.0
-azure-cognitiveservices-search-newssearch
+azure-cognitiveservices-search-imagesearch
+azure-cognitiveservices-search-newssearch>=2.0.0
 azure-cognitiveservices-search-videosearch
 azure-cognitiveservices-search-visualsearch>=0.2.0  # sample won't work with previous versions
 azure-cognitiveservices-search-websearch
