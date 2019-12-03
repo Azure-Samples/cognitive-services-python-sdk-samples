@@ -144,10 +144,7 @@ entity_recognition()
 # </entityRecognition>
 
 if __name__ == "__main__":
-    import sys
-    import os.path
-
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
-    key_env_name = "TEXTANALYTICS_SUBSCRIPTION_KEY"
-    execute_samples(globals(), key_env_name)
+    import sys, os.path
+    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "..")))    
+    from samples.tools import execute_samples
+    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)

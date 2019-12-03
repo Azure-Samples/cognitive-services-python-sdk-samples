@@ -2,9 +2,11 @@ import os
 import sys
 import time
 
-from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
+from azure.cognitiveservices.vision.customvision.training import training_api
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateEntry, Region
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
+
+sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "..")))
 
 # Replace with a valid key
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
@@ -26,8 +28,8 @@ def run_sample(subscription_key):
     try:
         prediction_key = os.environ[PREDICTION_KEY_ENV_NAME]
     except KeyError:
-        raise SubscriptionKeyError(
-            "You need to set the {} env variable.".format(PREDICTION_KEY_ENV_NAME))
+        from samples.tools import SubscriptionKeyError
+        raise SubscriptionKeyError("You need to set the {} env variable.".format(PREDICTION_KEY_ENV_NAME))
 
     project, iteration = train_project(subscription_key)
     predict_project(prediction_key, project, iteration)
@@ -157,8 +159,5 @@ def predict_project(prediction_key, project, iteration):
 
 
 if __name__ == "__main__":
-    import sys
-    import os.path
-    sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
-    from tools import execute_samples
+    from samples.tools import execute_samples
     execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
