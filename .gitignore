@@ -100,7 +100,7 @@ ENV/
 # mypy
 .mypy_cache/
 
-# idea files
+# idea
 .idea/
 
 #DS store
