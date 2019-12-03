@@ -1,24 +1,24 @@
-'''
-References:
-    Quickstart: https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quickstarts-sdk/python-sdk
-    SDK: https://docs.microsoft.com/en-us/python/api/overview/azure/cognitiveservices/computervision?view=azure-python
-'''
-
 from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.computervision.models import TextRecognitionMode
 from azure.cognitiveservices.vision.computervision.models import TextOperationStatusCodes
 import time
 
+'''
+References:
+    Quickstart: https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/quickstarts-sdk/python-sdk
+    SDK: https://docs.microsoft.com/en-us/python/api/overview/azure/cognitiveservices/computervision?view=azure-python
+'''
+
 # Replace with your endpoint and key from the Azure portal
 endpoint = '<ADD ENDPOINT HERE>'
 key = '<ADD COMPUTER VISION SUBSCRIPTION KEY HERE>'
 
-# Alternatively, get endpoint and key from environment variables
+# Alternatively, uncomment and get endpoint/key from environment variables
 '''
 import os
-endpoint = os.environ['ACCOUNT_ENDPOINT']
-key = os.environ['ACCOUNT_KEY']
+endpoint = os.environ['COMPUTER_VISION_ENDPOINT']
+key = os.environ['COMPUTER_VISION_SUBSCRIPTION_KEY']
 '''
 
 # Set credentials
@@ -48,7 +48,7 @@ while True:
         break
     time.sleep(1)
 
-# Get data: text captured and its bounding box
+# Get data: displays text captured and its bounding box (position in the image)
 if result.status == TextOperationStatusCodes.succeeded:
     for textResult in result.recognition_results:
         for line in textResult.lines:
