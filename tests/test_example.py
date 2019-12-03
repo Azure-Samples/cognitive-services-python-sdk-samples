@@ -21,7 +21,8 @@ class SearchExampleTest(ReplayableTest):
 
     Be sure to set the two environment vaiables before staring it live.
     """
-    FILTER_HEADERS = ReplayableTest.FILTER_HEADERS + ['Ocp-Apim-Subscription-Key']
+    FILTER_HEADERS = ReplayableTest.FILTER_HEADERS + \
+        ['Ocp-Apim-Subscription-Key']
 
     def test_example(self):
         if self.in_recording:
@@ -37,9 +38,8 @@ class SearchExampleTest(ReplayableTest):
                 "WEBSEARCH_SUBSCRIPTION_KEY": "0000000000000000000000000000",
                 "CUSTOMVISION_TRAINING_KEY": "0000000000000000000000000000",
                 "CUSTOMVISION_PREDICTION_KEY": "0000000000000000000000000000",
-                }):
+            }):
                 run_all_samples()
-
 
 
 if __name__ == '__main__':
