@@ -10,15 +10,15 @@ References:
     SDK: https://docs.microsoft.com/en-us/python/api/overview/azure/cognitiveservices/computervision?view=azure-python
 '''
 
-# Replace with your region and key from the Azure portal
-endpoint = 'https://westus.api.cognitive.microsoft.com/'
-key = 'COMPUTER_VISION_KEY'
+# Replace with your endpoint and key from the Azure portal
+endpoint = '<ADD ENDPOINT HERE>'
+key = '<ADD COMPUTER VISION SUBSCRIPTION KEY HERE>'
 
 # Alternatively, uncomment and get endpoint/key from environment variables
 '''
 import os
-endpoint = os.environ['ACCOUNT_ENDPOINT']
-key = os.environ['ACCOUNT_KEY']
+endpoint = os.environ['COMPUTER_VISION_ENDPOINT']
+key = os.environ['COMPUTER_VISION_SUBSCRIPTION_KEY']
 '''
 
 # Set credentials
