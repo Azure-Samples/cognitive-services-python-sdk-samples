@@ -7,20 +7,13 @@ from msrest.authentication import CognitiveServicesCredentials
 # </imports>
 
 # <initialVars>
-key_var_name = 'TEXT_ANALYTICS_SUBSCRIPTION_KEY'
-if not key_var_name in os.environ:
-    raise Exception('Please set/export the environment variable: {}'.format(key_var_name))
-subscription_key = os.environ[key_var_name]
-
-endpoint_var_name = 'TEXT_ANALYTICS_ENDPOINT'
-if not endpoint_var_name in os.environ:
-    raise Exception('Please set/export the environment variable: {}'.format(endpoint_var_name))
-endpoint = os.environ[endpoint_var_name]
+key = "<paste-your-text-analytics-key-here>"
+endpoint = "<paste-your-text-analytics-endpoint-here>"
 # </initialVars>
 
 # <authentication>
 def authenticateClient():
-    credentials = CognitiveServicesCredentials(subscription_key)
+    credentials = CognitiveServicesCredentials(key)
     text_analytics_client = TextAnalyticsClient(
         endpoint=endpoint, credentials=credentials)
     return text_analytics_client
@@ -156,5 +149,5 @@ if __name__ == "__main__":
 
     sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..")))
     from tools import execute_samples
-
-    execute_samples(globals(), SUBSCRIPTION_KEY_ENV_NAME)
+    key_env_name = "TEXTANALYTICS_SUBSCRIPTION_KEY"
+    execute_samples(globals(), key_env_name)
