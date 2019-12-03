@@ -102,3 +102,6 @@ ENV/
 
 # idea
 .idea/
+
+#DS store
+.DS_Store
