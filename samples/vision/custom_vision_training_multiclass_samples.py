@@ -5,16 +5,28 @@ from azure.cognitiveservices.vision.customvision.training import CustomVisionTra
 from azure.cognitiveservices.vision.customvision.training.models import Classifier
 
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
+PREDICTION_RESOURCE_ID_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_ID"
+
 SAMPLE_PROJECT_NAME = "Python SDK Sample"
 
-# Add your Custom Vision endpoint to your environment variables.
-ENDPOINT = os.environ["CUSTOM_VISION_ENDPOINT"]
+# The prediction resource can be found with your keys and is tied to the Prediction Key
+PREDICTION_RESOURCE_ID = "enter your prediction resource"
+
+PUBLISH_ITERATION_NAME = "classifyModel"
+
+ENDPOINT = "https://southcentralus.api.cognitive.microsoft.com"
 
 IMAGES_FOLDER = os.path.join(os.path.dirname(
     os.path.realpath(__file__)), "images")
 
+class PredictionResourceMissingError(Exception):
+    pass
 
 def train_project(subscription_key):
+    try:
+        prediction_resource_id = os.environ[PREDICTION_RESOURCE_ID_KEY_ENV_NAME]
+    except KeyError:
+        raise PredictionResourceMissingError("Didn't find a prediction resource to publish to. Please set the {} environment variable".format(PREDICTION_RESOURCE_ID_KEY_ENV_NAME))
 
     trainer = CustomVisionTrainingClient(subscription_key, endpoint=ENDPOINT)
 
@@ -49,9 +61,10 @@ def train_project(subscription_key):
         print("Training status: " + iteration.status)
         time.sleep(1)
 
-    # The iteration is now trained. Make it the default project endpoint
-    trainer.update_iteration(project.id, iteration.id, is_default=True)
-    print("Done!")
+    # The iteration is now trained. Name and publish this iteration to a prediciton endpoint
+    trainer.publish_iteration(project.id, iteration.id, PUBLISH_ITERATION_NAME, prediction_resource_id)
+    print ("Done!")
+
     return project
 
 

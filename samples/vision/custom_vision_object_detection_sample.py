@@ -8,10 +8,12 @@ from azure.cognitiveservices.vision.customvision.prediction import CustomVisionP
 
 # Replace with a valid key
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
+PREDICTION_RESOURCE_ID_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_ID"
 PREDICTION_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_KEY"
 
-# Add your Custom Vision endpoint to your environment variables.
-ENDPOINT = os.environ["CUSTOM_VISION_ENDPOINT"]
+PUBLISH_ITERATION_NAME = "classifyModel"
+
+ENDPOINT = "https://southcentralus.api.cognitive.microsoft.com"
 
 # Add this directory to the path so that custom_vision_training_samples can be found
 sys.path.append(os.path.join(os.path.dirname(os.path.realpath(__file__)), "."))
@@ -32,11 +34,16 @@ def run_sample(subscription_key):
 
 
 def train_project(training_key):
+    try:
+        prediction_resource_id = os.environ[PREDICTION_RESOURCE_ID_KEY_ENV_NAME]
+    except KeyError:
+        raise PredictionResourceMissingError("Didn't find a prediction resource to publish to. Please set the {} environment variable".format(PREDICTION_RESOURCE_ID_KEY_ENV_NAME))
+
     trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
 
     # Find the object detection domain
-    obj_detection_domain = next(
-        domain for domain in trainer.get_domains() if domain.type == "ObjectDetection")
+
+    obj_detection_domain = next(domain for domain in trainer.get_domains() if domain.type == "ObjectDetection" and domain.name == "General")
 
     # Create a new project
     print("Creating project...")
@@ -115,19 +122,25 @@ def train_project(training_key):
             tagged_images_with_regions.append(ImageFileCreateEntry(
                 name=file_name, contents=image_contents.read(), regions=regions))
 
-    trainer.create_images_from_files(
-        project.id, images=tagged_images_with_regions)
+    trainer.create_images_from_files(project.id, images=tagged_images_with_regions)
 
-    print("Training...")
+    print ("Training...")
+
     iteration = trainer.train_project(project.id)
     while (iteration.status != "Completed"):
         iteration = trainer.get_iteration(project.id, iteration.id)
         print("Training status: " + iteration.status)
         time.sleep(1)
 
+
+    # The iteration is now trained. Name and publish this iteration to a prediciton endpoint
+    trainer.publish_iteration(project.id, iteration.id, PUBLISH_ITERATION_NAME, prediction_resource_id)
+    print ("Done!")
+
     # The iteration is now trained. Make it the default project endpoint
     trainer.update_iteration(project.id, iteration.id, is_default=True)
     print("Done!")
+
     return project, iteration
 
 
@@ -136,12 +149,11 @@ def predict_project(prediction_key, project, iteration):
 
     # Open the sample image and get back the prediction results.
     with open(os.path.join(IMAGES_FOLDER, "Test", "test_od_image.jpg"), mode="rb") as test_data:
-        results = predictor.predict_image(project.id, test_data, iteration.id)
+        results = predictor.detect_image(project.id, PUBLISH_ITERATION_NAME, test_data)
 
     # Display the results.
     for prediction in results.predictions:
-        print("\t" + prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100), prediction.bounding_box.left,
-              prediction.bounding_box.top, prediction.bounding_box.width, prediction.bounding_box.height)
+        print("\t" + prediction.tag_name + ": {0:.2f}% bbox.left = {1:.2f}, bbox.top = {2:.2f}, bbox.width = {3:.2f}, bbox.height = {4:.2f}".format(prediction.probability * 100, prediction.bounding_box.left, prediction.bounding_box.top, prediction.bounding_box.width, prediction.bounding_box.height))
 
 
 if __name__ == "__main__":
