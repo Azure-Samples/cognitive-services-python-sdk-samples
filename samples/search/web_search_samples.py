@@ -5,6 +5,10 @@ from msrest.authentication import CognitiveServicesCredentials
 # Add your Bing Search V7 subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
 
+# Comment this logging mute out, if you want to include logging
+logger = logging.getLogger()  # get the default logger
+logger.setLevel(50)  # set the skip all log which is smaller than critical (50)
+
 
 def result_types_lookup(subscription_key):
     """WebSearchResultTypesLookup.
