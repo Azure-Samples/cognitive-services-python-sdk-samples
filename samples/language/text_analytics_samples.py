@@ -10,6 +10,7 @@ from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
 from msrest.authentication import CognitiveServicesCredentials
 # </imports>
 
+
 # <initialVars>
 key = "<paste-your-text-analytics-key-here>"
 endpoint = "<paste-your-text-analytics-endpoint-here>"
