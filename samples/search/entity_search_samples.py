@@ -1,4 +1,4 @@
-from azure.cognitiveservices.search.entitysearch import EntitySearchClient
+from azure.cognitiveservices.search.entitysearch import EntitySearchAPI
 from azure.cognitiveservices.search.entitysearch.models import Place, ErrorResponseException
 from msrest.authentication import CognitiveServicesCredentials
 
@@ -11,7 +11,7 @@ def dominant_entity_lookup(subscription_key):
 
     This will look up a single entity (Satya Nadella) and print out a short description about them.
     """
-    client = EntitySearchClient(
+    client = EntitySearchAPI(
         endpoint="https://api.cognitive.microsoft.com",
         credentials=CognitiveServicesCredentials(subscription_key)
     )
