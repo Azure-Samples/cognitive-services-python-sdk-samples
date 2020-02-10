@@ -1,3 +1,5 @@
+import os
+
 from azure.cognitiveservices.search.autosuggest import AutoSuggestClient
 from azure.cognitiveservices.search.autosuggest.models import (
     Suggestions,
@@ -8,8 +10,8 @@ from azure.cognitiveservices.search.autosuggest.models import (
 from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Autosuggest subscription key to your environment variables.
-SUBSCRIPTION_KEY= os.environ['BING_AUTOSUGGEST_SUBSCRIPTION_KEY']
-
+SUBSCRIPTION_KEY = os.environ['BING_AUTOSUGGEST_SUBSCRIPTION_KEY']
+ENDPOINT = os.environ['BING_AUTOSUGGEST_ENDPOINT']
 
 def autosuggest_lookup(subscription_key):
     """AutoSuggestLookup.
@@ -17,7 +19,7 @@ def autosuggest_lookup(subscription_key):
     This will look up a single query (Xbox) and print out name and url for first web result.
     """
     client = AutoSuggestClient(
-        endpoint="https://api.cognitive.microsoft.com",
+        endpoint=ENDPOINT,
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
@@ -49,7 +51,7 @@ def error(subscription_key):
 
     # Breaking the subscription key on purpose
     client = AutoSuggestClient(
-        endpoint="https://api.cognitive.microsoft.com",
+        endpoint=ENDPOINT,
         credentials=CognitiveServicesCredentials(subscription_key+"1")
     )
 
