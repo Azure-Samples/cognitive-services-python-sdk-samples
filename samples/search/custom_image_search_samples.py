@@ -1,8 +1,11 @@
-from azure.cognitiveservices.search.customimagesearch import CustomImageSearchAPI
+import os
+
+from azure.cognitiveservices.search.customimagesearch import CustomImageSearchClient
 from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Custom Search subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY']
+ENDPOINT = os.environ['BING_CUSTOM_SEARCH_ENDPOINT']
 
 def custom_image_search_result_lookup(subscription_key):
     """CustomImageSearchResultLookup.
@@ -10,7 +13,8 @@ def custom_image_search_result_lookup(subscription_key):
     This will look up a single query (Xbox) and print out number of results, insights token, thumbnail url, content url for the first image result
     """
 
-    client = CustomImageSearchAPI(
+    client = CustomImageSearchClient(
+        endpoint=ENDPOINT,
         credentials=CognitiveServicesCredentials(subscription_key))
     try:
         image_results = client.custom_instance.image_search(
