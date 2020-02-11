@@ -1,9 +1,11 @@
+import os
+
 from azure.cognitiveservices.search.newssearch import NewsSearchClient
 from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Search V7 subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
-
+ENDPOINT = os.environ['BING_SEARCH_V7_ENDPOINT']
 
 def news_search(subscription_key):
     """NewsSearch.
@@ -11,7 +13,7 @@ def news_search(subscription_key):
     This will search news for (Quantum  Computing) with market and count parameters then verify number of results and print out totalEstimatedMatches, name, url, description, published time and name of provider of the first news result
     """
     client = NewsSearchClient(
-        endpoint="https://api.cognitive.microsoft.com",
+        endpoint=ENDPOINT,
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
