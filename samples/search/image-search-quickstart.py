@@ -1,15 +1,17 @@
-from azure.cognitiveservices.search.imagesearch import ImageSearchAPI
+from azure.cognitiveservices.search.imagesearch import ImageSearchClient
 from msrest.authentication import CognitiveServicesCredentials
 
-# Add your Bing Search V7 subscription key to your environment variables.
-subscription_key = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
+# Add your Bing Search V7 subscription key and endpoint to your environment variables.
+SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
+ENDPOINT = os.environ['BING_ENTITY_SEARCH_ENDPOINT']
+
 search_term = "canadian rockies"
 
 """
 This application will search images on the web with the Bing Image Search API and print out first image result.
 """
 # create the image search client
-client = ImageSearchAPI(CognitiveServicesCredentials(subscription_key))
+client = ImageSearchClient(ENDPOINT, CognitiveServicesCredentials(SUBSCRIPTION_KEY))
 # send a search query to the Bing Image Search API
 image_results = client.images.search(query=search_term)
 print("Searching the web for images of: {}".format(search_term))
