@@ -6,7 +6,7 @@ from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Search V7 subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
-endpoint = os.environ['BING_SEARCH_V7_ENDPOINT']
+ENDPOINT = os.environ['BING_SEARCH_V7_ENDPOINT']
 
 def video_search(subscription_key):
     """VideoSearch.
