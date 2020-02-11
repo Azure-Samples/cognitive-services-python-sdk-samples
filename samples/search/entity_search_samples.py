@@ -1,3 +1,5 @@
+import os
+
 from azure.cognitiveservices.search.entitysearch import EntitySearchClient
 from azure.cognitiveservices.search.entitysearch.models import Place, ErrorResponseException
 from msrest.authentication import CognitiveServicesCredentials
