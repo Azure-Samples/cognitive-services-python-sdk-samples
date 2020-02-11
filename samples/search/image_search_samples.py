@@ -1,9 +1,11 @@
+import os
+
 from azure.cognitiveservices.search.imagesearch import ImageSearchClient
 from azure.cognitiveservices.search.imagesearch.models import ImageType, ImageAspect, ImageInsightModule
 from msrest.authentication import CognitiveServicesCredentials
 
-SUBSCRIPTION_KEY = "IMAGESEARCH_SUBSCRIPTION_KEY"
-
+SUBSCRIPTION_KEY = os.environ["BING_IMAGE_SEARCH_SUBSCRIPTION_KEY"]
+ENDPOINT = os.environ['BING_IMAGE_SEARCH_ENDPOINT']
 
 def image_search(subscription_key):
     """ImageSearch.
@@ -11,7 +13,7 @@ def image_search(subscription_key):
     This will search images for (canadian rockies) then verify number of results and print out first image result, pivot suggestion, and query expansion.
     """
     client = ImageSearchClient(
-        endpoint="https://api.cognitive.microsoft.com",
+        endpoint=ENDPOINT,
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
