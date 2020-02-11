@@ -1,9 +1,12 @@
-from azure.cognitiveservices.search.websearch import WebSearchAPI
+import os
+
+from azure.cognitiveservices.search.websearch import WebSearchClient
 from azure.cognitiveservices.search.websearch.models import SafeSearch
 from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Search V7 subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
+ENDPOINT = os.environ['BING_SEARCH_V7_ENDPOINT']
 
 # Comment this logging mute out, if you want to include logging
 logger = logging.getLogger()  # get the default logger
@@ -15,7 +18,7 @@ def result_types_lookup(subscription_key):
 
     This will look up a single query (Xbox) and print out name and url for first web, image, news and videos results.
     """
-    client = WebSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = WebSearchClient(ENDPOINT, CognitiveServicesCredentials(subscription_key))
 
     try:
 
