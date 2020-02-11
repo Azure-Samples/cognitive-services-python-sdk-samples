@@ -1,17 +1,19 @@
-from azure.cognitiveservices.search.videosearch import VideoSearchAPI
+import os
+
+from azure.cognitiveservices.search.videosearch import VideoSearchClient
 from azure.cognitiveservices.search.videosearch.models import VideoPricing, VideoLength, VideoResolution, VideoInsightModule
 from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Search V7 subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
-
+endpoint = os.environ['BING_SEARCH_V7_ENDPOINT']
 
 def video_search(subscription_key):
     """VideoSearch.
 
     This will search videos for (SwiftKey) then verify number of results and print out id, name and url of first video result.
     """
-    client = VideoSearchAPI(CognitiveServicesCredentials(subscription_key))
+    client = VideoSearchClient(ENDPOINT, CognitiveServicesCredentials(subscription_key))
 
     try:
         video_result = client.videos.search(query="SwiftKey")
