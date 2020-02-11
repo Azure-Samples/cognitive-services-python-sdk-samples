@@ -1,7 +1,10 @@
+import os
+
 from azure.cognitiveservices.search.customsearch import CustomSearchClient
 from msrest.authentication import CognitiveServicesCredentials
 
 SUBSCRIPTION_KEY = os.environ['BING_CUSTOM_SEARCH_SUBSCRIPTION_KEY']
+ENDPOINT = os.environ['BING_CUSTOM_SEARCH_ENDPOINT']
 
 def custom_search_web_page_result_lookup(subscription_key):
     """CustomSearch.
@@ -9,7 +12,9 @@ def custom_search_web_page_result_lookup(subscription_key):
     This will look up a single query (Xbox) and print out name and url for first web result.
     """
 
-    client = CustomSearchClient(CognitiveServicesCredentials(subscription_key))
+    client = CustomSearchClient(
+        endpoint=ENDPOINT,
+        credentials=CognitiveServicesCredentials(subscription_key))
 
     try:
         web_data = client.custom_instance.search(query="xbox", custom_config=1)
