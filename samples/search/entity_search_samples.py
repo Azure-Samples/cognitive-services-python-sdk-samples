@@ -1,18 +1,18 @@
-from azure.cognitiveservices.search.entitysearch import EntitySearchAPI
+from azure.cognitiveservices.search.entitysearch import EntitySearchClient
 from azure.cognitiveservices.search.entitysearch.models import Place, ErrorResponseException
 from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Entity Search subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_ENTITY_SEARCH_SUBSCRIPTION_KEY']
-
+ENDPOINT = os.environ['BING_ENTITY_SEARCH_ENDPOINT']
 
 def dominant_entity_lookup(subscription_key):
     """DominantEntityLookup.
 
     This will look up a single entity (Satya Nadella) and print out a short description about them.
     """
-    client = EntitySearchAPI(
-        endpoint="https://api.cognitive.microsoft.com",
+    client = EntitySearchClient(
+        endpoint=ENDPOINT,
         credentials=CognitiveServicesCredentials(subscription_key)
     )
 
