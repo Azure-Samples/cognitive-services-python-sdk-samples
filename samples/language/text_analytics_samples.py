@@ -1,3 +1,7 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License. See License.txt in the project root for
+# license information.
+
 # <imports>
 # -*- coding: utf-8 -*-
 
@@ -10,7 +14,7 @@ from msrest.authentication import CognitiveServicesCredentials
 key_var_name = 'TEXT_ANALYTICS_SUBSCRIPTION_KEY'
 if not key_var_name in os.environ:
     raise Exception('Please set/export the environment variable: {}'.format(key_var_name))
-subscription_key = os.environ[key_var_name]
+key = os.environ[key_var_name]
 
 endpoint_var_name = 'TEXT_ANALYTICS_ENDPOINT'
 if not endpoint_var_name in os.environ:
@@ -20,7 +24,7 @@ endpoint = os.environ[endpoint_var_name]
 
 # <authentication>
 def authenticateClient():
-    credentials = CognitiveServicesCredentials(subscription_key)
+    credentials = CognitiveServicesCredentials(key)
     text_analytics_client = TextAnalyticsClient(
         endpoint=endpoint, credentials=credentials)
     return text_analytics_client
