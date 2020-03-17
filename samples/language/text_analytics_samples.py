@@ -1,3 +1,7 @@
+# Copyright (c) Microsoft Corporation. All rights reserved.
+# Licensed under the MIT License. See License.txt in the project root for
+# license information.
+
 # <imports>
 # -*- coding: utf-8 -*-
 
@@ -5,6 +9,7 @@ import os
 from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
 from msrest.authentication import CognitiveServicesCredentials
 # </imports>
+
 
 # <initialVars>
 key_var_name = 'TEXT_ANALYTICS_SUBSCRIPTION_KEY'
