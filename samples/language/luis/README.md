@@ -6,7 +6,7 @@ author: cahann, lmazuel
 
 # Cognitive Services: LUIS Runtime Sample
 
-A example demonstrating how:
+An example demonstrating how:
 - to consume the LUIS Authoring SDK to build an app or manage it
 - to consume the LUIS Runtime SDK to predict user utterances.
 
