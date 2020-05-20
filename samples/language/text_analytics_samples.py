@@ -6,8 +6,8 @@
 # -*- coding: utf-8 -*-
 
 import os
-from azure.cognitiveservices.language.textanalytics import TextAnalyticsClient
-from msrest.authentication import CognitiveServicesCredentials
+from azure.ai.textanalytics import TextAnalyticsClient
+from azure.core.credentials import AzureKeyCredential
 # </imports>
 
 # <initialVars>
@@ -24,9 +24,9 @@ endpoint = os.environ[endpoint_var_name]
 
 # <authentication>
 def authenticateClient():
-    credentials = CognitiveServicesCredentials(key)
+    credential = AzureKeyCredential(key)
     text_analytics_client = TextAnalyticsClient(
-        endpoint=endpoint, credentials=credentials)
+        endpoint=endpoint, credential=credential)
     return text_analytics_client
 # </authentication>
 
@@ -46,9 +46,9 @@ def language_detection():
         ]
         response = client.detect_language(documents=documents)
 
-        for document in response.documents:
+        for document in response:
             print("Document Id: ", document.id, ", Language: ",
-                  document.detected_languages[0].name)
+                  document.primary_language.name)
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
@@ -79,9 +79,9 @@ def key_phrases():
             print(
                 "Asking key-phrases on '{}' (id: {})".format(document['text'], document['id']))
 
-        response = client.key_phrases(documents=documents)
+        response = client.extract_key_phrases(documents=documents)
 
-        for document in response.documents:
+        for document in response:
             print("Document Id: ", document.id)
             print("\tKey Phrases:")
             for phrase in document.key_phrases:
@@ -112,10 +112,13 @@ def sentiment():
                 "text": "L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."}
         ]
 
-        response = client.sentiment(documents=documents)
-        for document in response.documents:
-            print("Document Id: ", document.id, ", Sentiment Score: ",
-                  "{:.2f}".format(document.score))
+        response = client.analyze_sentiment(documents=documents)
+        for document in response:
+            print("Document Id: ", document.id, ", Sentiment: ", document.sentiment)
+            score = document.confidence_scores
+            print("\tConfidence Scores: ")
+            print("\t\tNegative: {:.2f}\tNeutral: {:.2f}\tPositive: {:.2f}"
+                  .format(score.negative, score.neutral, score.positive))
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
@@ -137,17 +140,14 @@ def entity_recognition():
             {"id": "2", "language": "es",
                 "text": "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle."}
         ]
-        response = client.entities(documents=documents)
+        response = client.recognize_entities(documents=documents)
 
-        for document in response.documents:
+        for document in response:
             print("Document Id: ", document.id)
             print("\tKey Entities:")
             for entity in document.entities:
-                print("\t\t", "NAME: ", entity.name, "\tType: ",
-                      entity.type, "\tSub-type: ", entity.sub_type)
-                for match in entity.matches:
-                    print("\t\t\tOffset: ", match.offset, "\tLength: ", match.length, "\tScore: ",
-                          "{:.2f}".format(match.entity_type_score))
+                print("\t\t", "NAME: ", entity.text, "\tCategory: ", entity.category,
+                      "\tSub-Category: ", entity.subcategory, "\tConfidence Score: ", entity.confidence_score)
 
     except Exception as err:
         print("Encountered exception. {}".format(err))
