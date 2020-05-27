@@ -43,7 +43,7 @@ def train_project(training_key):
         raise PredictionResourceMissingError("Didn't find a prediction resource to publish to. Please set the {} environment variable".format(PREDICTION_RESOURCE_ID_KEY_ENV_NAME))
 
     credentials = ApiKeyCredentials(in_headers={"Training-key": training_key})
-    trainer = CustomVisionTrainingClient(endpoint=ENDPOINT, credentials)
+    trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
     # Find the object detection domain
 
@@ -150,7 +150,7 @@ def train_project(training_key):
 
 def predict_project(prediction_key, project, iteration):
     credentials = ApiKeyCredentials(in_headers={"Prediction-key": prediction_key})
-    predictor = CustomVisionPredictionClient(endpoint=ENDPOINT, credentials)
+    predictor = CustomVisionPredictionClient(ENDPOINT, credentials)
 
     # Open the sample image and get back the prediction results.
     with open(os.path.join(IMAGES_FOLDER, "Test", "test_od_image.jpg"), mode="rb") as test_data:

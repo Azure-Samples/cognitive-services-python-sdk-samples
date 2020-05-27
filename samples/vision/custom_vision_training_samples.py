@@ -27,7 +27,7 @@ def train_project(subscription_key):
         raise PredictionResourceMissingError("Didn't find a prediction resource to publish to. Please set the {} environment variable".format(PREDICTION_RESOURCE_ID_KEY_ENV_NAME))
 
     credentials = ApiKeyCredentials(in_headers={"Training-key": subscription_key})
-    trainer = CustomVisionTrainingClient(endpoint=ENDPOINT, credentials)
+    trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
     # Create a new project
     print("Creating project...")

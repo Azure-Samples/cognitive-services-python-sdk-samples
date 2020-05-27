@@ -19,7 +19,7 @@ IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "image
 
 def train_project(subscription_key):
     credentials = ApiKeyCredentials(in_headers={"Training-key": subscription_key})
-    trainer = CustomVisionTrainingClient(endpoint=ENDPOINT, credentials)
+    trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
     # Create a new project
     print ("Creating project...")

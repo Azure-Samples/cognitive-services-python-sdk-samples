@@ -28,7 +28,7 @@ def find_or_train_project():
     # Use the training API to find the SDK sample project created from the training example.
     from custom_vision_training_samples import train_project, SAMPLE_PROJECT_NAME
     credentials = ApiKeyCredentials(in_headers={"Training-key": training_key})
-    trainer = CustomVisionTrainingClient(endpoint=ENDPOINT, credentials)
+    trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
     for proj in trainer.get_projects():
         if (proj.name == SAMPLE_PROJECT_NAME):
@@ -40,7 +40,7 @@ def find_or_train_project():
 
 def predict_project(subscription_key):
     credentials = ApiKeyCredentials(in_headers={"Prediction-key": subscription_key})
-    predictor = CustomVisionPredictionClient(endpoint=ENDPOINT, credentials)
+    predictor = CustomVisionPredictionClient(ENDPOINT, credentials)
 
     # Find or train a new project to use for prediction.
     project = find_or_train_project()
