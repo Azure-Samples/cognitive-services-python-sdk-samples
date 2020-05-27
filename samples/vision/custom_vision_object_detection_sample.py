@@ -141,10 +141,6 @@ def train_project(training_key):
     trainer.publish_iteration(project.id, iteration.id, PUBLISH_ITERATION_NAME, prediction_resource_id)
     print ("Done!")
 
-    # The iteration is now trained. Make it the default project endpoint
-    trainer.update_iteration(project.id, iteration.id, is_default=True)
-    print("Done!")
-
     return project, iteration
 
 

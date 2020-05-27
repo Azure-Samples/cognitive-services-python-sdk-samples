@@ -9,7 +9,7 @@ SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SAMPLE_PROJECT_NAME = "Python SDK Sample"
 
 # The prediction resource can be found with your keys and is tied to the Prediction Key
-PREDICTION_RESOURCE_ID = "enter your prediction resource"
+PREDICTION_RESOURCE_ID_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_ID"
 
 PUBLISH_ITERATION_NAME = "classifyModel"
 
@@ -18,6 +18,11 @@ ENDPOINT = "https://southcentralus.api.cognitive.microsoft.com"
 IMAGES_FOLDER = os.path.join(os.path.dirname(os.path.realpath(__file__)), "images")
 
 def train_project(subscription_key):
+    try:
+        prediction_resource_id = os.environ[PREDICTION_RESOURCE_ID_KEY_ENV_NAME]
+    except KeyError:
+        raise PredictionResourceMissingError("Didn't find a prediction resource to publish to. Please set the {} environment variable".format(PREDICTION_RESOURCE_ID_KEY_ENV_NAME))
+
     credentials = ApiKeyCredentials(in_headers={"Training-key": subscription_key})
     trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
@@ -50,7 +55,7 @@ def train_project(subscription_key):
         time.sleep(1)
 
     # The iteration is now trained. Name and publish this iteration to a prediciton endpoint
-    trainer.publish_iteration(project.id, iteration.id, PUBLISH_ITERATION_NAME, PREDICTION_RESOURCE_ID)
+    trainer.publish_iteration(project.id, iteration.id, PUBLISH_ITERATION_NAME, prediction_resource_id)
     print ("Done!")
     return project
 
