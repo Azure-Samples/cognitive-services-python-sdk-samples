@@ -52,7 +52,7 @@ We provide several meta-packages to help you install several packages at a time.
 
 ### Prerequisites
 
-1.  A cognitive services API key with which to authenticate the SDK's calls. [Sign up here](https://azure.microsoft.com/services/cognitive-services/directory/) by navigating to the **Language** or **Search** services and acquiring an API key. You can get a trial key for **free** which will expire after 30 days or create a Cognitive Services account on the Azure portal through the *Use with an Azure subscription* button.
+1.  A cognitive services API key with which to authenticate the SDK's calls. [Create a new Azure account, and try Cognitive Services for free.](https://azure.microsoft.com/free/cognitive-services/)
 
 > Subscription keys are usually per service. For example, the subscription key for Spell Check will not be the same than Custom Search. Read the previous *sign up* link or the Azure portal for details on subscription keys.
 
