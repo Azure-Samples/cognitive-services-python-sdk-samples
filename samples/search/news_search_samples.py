@@ -5,6 +5,7 @@ from msrest.authentication import CognitiveServicesCredentials
 
 # Add your Bing Search V7 subscription key to your environment variables.
 SUBSCRIPTION_KEY = os.environ['BING_SEARCH_V7_SUBSCRIPTION_KEY']
+# Note: your endpoint should not include the /bing/v7.0 suffix
 ENDPOINT = os.environ['BING_SEARCH_V7_ENDPOINT']
 
 def news_search(subscription_key):
