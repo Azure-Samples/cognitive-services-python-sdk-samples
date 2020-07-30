@@ -12,10 +12,6 @@ SUBSCRIPTION_KEY = "INSERT KEY HERE"
 # You must use the same region as you used to get your subscription
 # keys. For example, if you got your subscription keys from westus,
 # replace "westcentralus" with "westus".
-#
-# Free trial subscription keys are generated in the westcentralus
-# region. If you use a free trial subscription key, you shouldn't
-# need to change the region.
 FACE_LOCATION = "westcentralus"
 
 face_base_url = "https://{}.api.cognitive.microsoft.com".format(FACE_LOCATION)
