@@ -2,6 +2,7 @@ import os
 import time
 
 from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
+from msrest.authentication import ApiKeyCredentials
 
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 PREDICTION_RESOURCE_ID_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_ID"
@@ -25,7 +26,8 @@ def train_project(subscription_key):
     except KeyError:
         raise PredictionResourceMissingError("Didn't find a prediction resource to publish to. Please set the {} environment variable".format(PREDICTION_RESOURCE_ID_KEY_ENV_NAME))
 
-    trainer = CustomVisionTrainingClient(subscription_key, endpoint=ENDPOINT)
+    credentials = ApiKeyCredentials(in_headers={"Training-key": subscription_key})
+    trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
     # Create a new project
     print("Creating project...")

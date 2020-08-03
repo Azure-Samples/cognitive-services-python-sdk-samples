@@ -5,6 +5,7 @@ import time
 from azure.cognitiveservices.vision.customvision.training import training_api
 from azure.cognitiveservices.vision.customvision.training.models import ImageFileCreateEntry, Region
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
+from msrest.authentication import ApiKeyCredentials
 
 sys.path.append(os.path.abspath(os.path.join(__file__, "..", "..", "..")))
 
@@ -41,7 +42,8 @@ def train_project(training_key):
     except KeyError:
         raise PredictionResourceMissingError("Didn't find a prediction resource to publish to. Please set the {} environment variable".format(PREDICTION_RESOURCE_ID_KEY_ENV_NAME))
 
-    trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
+    credentials = ApiKeyCredentials(in_headers={"Training-key": training_key})
+    trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
     # Find the object detection domain
 
@@ -139,15 +141,12 @@ def train_project(training_key):
     trainer.publish_iteration(project.id, iteration.id, PUBLISH_ITERATION_NAME, prediction_resource_id)
     print ("Done!")
 
-    # The iteration is now trained. Make it the default project endpoint
-    trainer.update_iteration(project.id, iteration.id, is_default=True)
-    print("Done!")
-
     return project, iteration
 
 
 def predict_project(prediction_key, project, iteration):
-    predictor = CustomVisionPredictionClient(prediction_key, endpoint=ENDPOINT)
+    credentials = ApiKeyCredentials(in_headers={"Prediction-key": prediction_key})
+    predictor = CustomVisionPredictionClient(ENDPOINT, credentials)
 
     # Open the sample image and get back the prediction results.
     with open(os.path.join(IMAGES_FOLDER, "Test", "test_od_image.jpg"), mode="rb") as test_data:

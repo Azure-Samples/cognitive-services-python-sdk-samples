@@ -3,6 +3,7 @@ import sys
 
 from azure.cognitiveservices.vision.customvision.training import CustomVisionTrainingClient
 from azure.cognitiveservices.vision.customvision.prediction import CustomVisionPredictionClient
+from msrest.authentication import ApiKeyCredentials
 
 TRAINING_KEY_ENV_NAME = "CUSTOMVISION_TRAINING_KEY"
 SUBSCRIPTION_KEY_ENV_NAME = "CUSTOMVISION_PREDICTION_KEY"
@@ -26,7 +27,8 @@ def find_or_train_project():
 
     # Use the training API to find the SDK sample project created from the training example.
     from custom_vision_training_samples import train_project, SAMPLE_PROJECT_NAME
-    trainer = CustomVisionTrainingClient(training_key, endpoint=ENDPOINT)
+    credentials = ApiKeyCredentials(in_headers={"Training-key": training_key})
+    trainer = CustomVisionTrainingClient(ENDPOINT, credentials)
 
     for proj in trainer.get_projects():
         if (proj.name == SAMPLE_PROJECT_NAME):
@@ -37,8 +39,8 @@ def find_or_train_project():
 
 
 def predict_project(subscription_key):
-    predictor = CustomVisionPredictionClient(
-        subscription_key, endpoint=ENDPOINT)
+    credentials = ApiKeyCredentials(in_headers={"Prediction-key": subscription_key})
+    predictor = CustomVisionPredictionClient(ENDPOINT, credentials)
 
     # Find or train a new project to use for prediction.
     project = find_or_train_project()
