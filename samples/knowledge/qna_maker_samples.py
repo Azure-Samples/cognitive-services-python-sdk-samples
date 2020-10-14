@@ -1,8 +1,8 @@
 import os
 import time
 
-from azure.cognitiveservices.knowledge.qnamaker import QnAMakerClient
-from azure.cognitiveservices.knowledge.qnamaker.models import QnADTO, MetadataDTO, CreateKbDTO, OperationStateType, UpdateKbOperationDTO, UpdateKbOperationDTOAdd
+from azure.cognitiveservices.knowledge.qnamaker.authoring  import QnAMakerClient
+from azure.cognitiveservices.knowledge.qnamaker.authoring.models import QnADTO, MetadataDTO, CreateKbDTO, OperationStateType, UpdateKbOperationDTO, UpdateKbOperationDTOAdd
 from msrest.authentication import CognitiveServicesCredentials
 
 # Add your QnaMaker subscription key and endpoint to your environment variables.
