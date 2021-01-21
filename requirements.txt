@@ -1,19 +1,19 @@
-azure-cognitiveservices-knowledge-qnamaker
+azure-cognitiveservices-knowledge-qnamaker==0.3.0
 azure-cognitiveservices-language-luis
 azure-cognitiveservices-language-spellcheck
-azure-cognitiveservices-language-textanalytics
-azure-cognitiveservices-search-autosuggest>=0.1.0
+azure-ai-textanalytics==5.0.0
+azure-cognitiveservices-search-autosuggest==0.1.0
 azure-cognitiveservices-search-customsearch
 azure-cognitiveservices-search-entitysearch
 azure-cognitiveservices-search-imagesearch
-azure-cognitiveservices-search-newssearch>=2.0.0
+azure-cognitiveservices-search-newssearch==2.0.0
 azure-cognitiveservices-search-videosearch
-azure-cognitiveservices-search-visualsearch>=0.2.0  # sample won't work with previous versions
+azure-cognitiveservices-search-visualsearch==0.2.0  # sample won't work with previous versions
 azure-cognitiveservices-search-websearch
-azure-cognitiveservices-vision-computervision>=0.3.0  # sample won't work with previous versions
-azure-cognitiveservices-vision-contentmoderator>=1.0.0  # sample won't work with previous versions
-azure-cognitiveservices-vision-customvision>=0.4.0  # sample won't work with previous versions
+azure-cognitiveservices-vision-computervision==0.3.0  # sample won't work with previous versions
+azure-cognitiveservices-vision-contentmoderator==1.0.0  # sample won't work with previous versions
+azure-cognitiveservices-vision-customvision==0.4.0  # sample won't work with previous versions
 azure-cognitiveservices-vision-face
-azure-cognitiveservices-anomalydetector>=0.2.0 #  sample won't work with previous versions
-azure-cognitiveservices-inkrecognizer>=1.0.0b1
+azure-ai-anomalydetector==3.0.0b2    # sample won't work with previous versions
+azure-cognitiveservices-inkrecognizer==1.0.0b1
 pandas
