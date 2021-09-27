@@ -31,7 +31,8 @@ def image_analysis_in_stream(subscription_key):
                 VisualFeatureTypes.categories,  # Could use simple str "Categories"
                 VisualFeatureTypes.color,      # Could use simple str "Color"
                 VisualFeatureTypes.tags,       # Could use simple str "Tags"
-                VisualFeatureTypes.description  # Could use simple str "Description"
+                VisualFeatureTypes.description,  # Could use simple str "Description"
+                VisualFeatureTypes.brands     # Could use simple str "Brands"
             ]
         )
 
@@ -102,6 +103,25 @@ def recognize_printed_text_in_stream(subscription_key):
         line_text = " ".join([word.text for word in line.words])
         print(line_text)
 
+def recognize_brands_in_stream(subscription_key):
+    """RecognizeBrandsInStream.
+
+    This will recognize brands of the given image using the recognizeBrands API.
+    """
+    client = ComputerVisionClient(
+        endpoint="https://" + COMPUTERVISION_LOCATION + ".api.cognitive.microsoft.com/",
+        credentials=CognitiveServicesCredentials(subscription_key)
+    )
+
+    with open(os.path.join(IMAGES_FOLDER, "make_things_happen.jpg"), "rb") as image_stream:
+        image_analysis = client.recognize_brand_in_stream(
+            image=image_stream
+        )
+
+    print("Recognized:\n")
+    for brand in image_analysis.brands:
+        if brand.confidence >= 0.75:
+            print(f"\nLogo of {brand.name} between {brand.rectangle.x}, {brand.rectangle.y} and {brand.rectangle.w}, {brand.rectangle.h}")
 
 if __name__ == "__main__":
     import sys, os.path
